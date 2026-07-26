@@ -1,0 +1,35 @@
+name: Generate Weekly Edition
+
+on:
+  # Runs every Thursday at 6pm Pacific (Friday 1am UTC)
+  schedule:
+    - cron: "0 1 * * 5"
+  # Also allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate this week's edition
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run generate
+
+      - name: Commit and push updated site
+        run: |
+          git config user.name "Sammy's SF Bot"
+          git config user.email "bot@sammyssf.com"
+          git add index.html
+          git diff --staged --quiet || (git commit -m "🎉 New edition: $(date +'%B %d, %Y')" && git push)

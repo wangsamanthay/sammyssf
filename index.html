@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SF This Week — July 25–31, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --fog: #F0F2F5; --night: #1A1D23; --bay: #2E6B8A; --sunset: #E8734A;
+    --golden: #D4A843; --mist: #C8CDD5; --white: #FFFFFF; --card-bg: #FFFFFF;
+    --rose: #AD1457; --rose-light: #FCE4EC;
+  }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--fog); color: var(--night); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* HEADER */
+  .header { background: var(--night); color: var(--white); padding: 2.5rem 1.5rem 0; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #E8734A 0%, #D4536B 50%, #2E6B8A 100%); opacity: 0.9; }
+  .header * { position: relative; z-index: 1; }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #FFD9C4; margin-bottom: 0.5rem; }
+  .header h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2.8rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.3rem; }
+  .header h1 em { font-style: italic; }
+  .header-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: rgba(255,255,255,0.55); margin-bottom: 0.75rem; }
+  .header-date { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+
+  /* TABS */
+  .tabs { display: flex; gap: 0; justify-content: center; padding: 0 1rem; }
+  .tab { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; padding: 0.7rem 1.2rem; color: rgba(255,255,255,0.5); background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; white-space: nowrap; letter-spacing: 0.01em; }
+  .tab:hover { color: rgba(255,255,255,0.8); }
+  .tab.active { color: var(--white); border-bottom-color: var(--sunset); }
+  @media (max-width: 520px) { .tab { font-size: 0.68rem; padding: 0.6rem 0.7rem; } }
+
+  /* VIEWS */
+  .view { display: none; max-width: 700px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .view.active { display: block; }
+
+  /* SHARED CARD STYLES */
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bay); margin-bottom: 1rem; padding-top: 2rem; border-top: 2px solid var(--night); }
+  .section-label:first-child { padding-top: 0; border-top: none; }
+
+  .card { background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem; }
+  .card h3 { font-family: 'Instrument Serif', serif; font-size: 1.3rem; font-weight: 400; line-height: 1.3; }
+  .card-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.05em; color: var(--sunset); white-space: nowrap; padding-top: 0.3rem; }
+  .card p { font-size: 0.88rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+  .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; }
+  .tag-free { background: #D4EDDA; color: #1B5E20; }
+  .tag-food { background: #FFF3E0; color: #BF360C; }
+  .tag-music { background: #E8DEF8; color: #4A148C; }
+  .tag-outdoors { background: #E0F2F1; color: #004D40; }
+  .tag-arts { background: #FCE4EC; color: #880E4F; }
+  .tag-nightlife { background: var(--night); color: var(--fog); }
+  .tag-bars { background: #EFEBE9; color: #5D4037; }
+  .tag-new { background: #FFF8E1; color: #F57F17; }
+  .price-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; color: var(--bay); margin-left: auto; padding-left: 0.5rem; }
+
+  .highlight-card { background: linear-gradient(135deg, var(--night) 0%, #2D2040 100%); color: var(--white); border-radius: 12px; padding: 2rem 1.5rem; margin-bottom: 1rem; }
+  .highlight-card .card-when { color: var(--golden); }
+  .highlight-card h3 { color: var(--white); font-size: 1.5rem; }
+  .highlight-card p { color: rgba(255,255,255,0.75); }
+  .highlight-card .tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
+  .highlight-card .price-badge { color: var(--golden); }
+
+  /* EATS/BARS GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  @media (max-width: 540px) { .grid-2 { grid-template-columns: 1fr; } }
+  .mini-card { background: var(--card-bg); border-radius: 10px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .mini-card h4 { font-family: 'Instrument Serif', serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 0.25rem; }
+  .mini-card .mini-type { font-size: 0.7rem; color: var(--sunset); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+  .mini-card p { font-size: 0.8rem; color: #666; line-height: 1.5; }
+  .mini-card .mini-price { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--bay); margin-top: 0.5rem; }
+
+  .ongoing { background: var(--fog); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 1.25rem; margin-bottom: 0.75rem; }
+  .ongoing h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .ongoing p { font-size: 0.8rem; color: #666; line-height: 1.5; }
+
+  /* ===== DATE NIGHT VIEW ===== */
+  .dn-intro { text-align: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .dn-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .dn-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
+
+  .dn-card { background: var(--card-bg); border-radius: 16px; padding: 0; margin-bottom: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; }
+  .dn-tier { padding: 1rem 1.75rem 0; display: flex; align-items: center; gap: 0.75rem; }
+  .dn-tier-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; }
+  .dn-tier-free .dn-tier-badge { background: #D4EDDA; color: #1B5E20; }
+  .dn-tier-mid .dn-tier-badge { background: #E3F2FD; color: #1565C0; }
+  .dn-tier-splurge .dn-tier-badge { background: var(--rose-light); color: var(--rose); }
+  .dn-tier-est { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #999; }
+
+  .dn-body { padding: 1rem 1.75rem 1.75rem; }
+  .dn-body h3 { font-family: 'Instrument Serif', serif; font-size: 1.6rem; font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; }
+  .dn-body .dn-tagline { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1rem; color: #888; margin-bottom: 1.25rem; }
+
+  .dn-steps { list-style: none; padding: 0; margin: 0; }
+  .dn-step { display: flex; gap: 1rem; margin-bottom: 1.25rem; position: relative; padding-left: 2.5rem; }
+  .dn-step:last-child { margin-bottom: 0; }
+  .dn-step::before { content: attr(data-step); position: absolute; left: 0; top: 0; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--fog); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; display: flex; align-items: center; justify-content: center; color: var(--night); }
+  .dn-tier-splurge .dn-step::before { background: var(--rose-light); color: var(--rose); }
+  .dn-tier-mid .dn-step::before { background: #E3F2FD; color: #1565C0; }
+  .dn-tier-free .dn-step::before { background: #D4EDDA; color: #1B5E20; }
+  .dn-step-title { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.15rem; }
+  .dn-step-detail { font-size: 0.82rem; color: #666; line-height: 1.55; }
+  .dn-step-time { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--sunset); margin-bottom: 0.15rem; }
+
+  /* SPORTS VIEW */
+  .sport-row { display: flex; align-items: center; background: var(--card-bg); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.6rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); gap: 1rem; }
+  .sport-row .sr-teams { flex: 1; }
+  .sport-row .sr-teams h4 { font-size: 0.9rem; font-weight: 600; }
+  .sport-row .sr-teams p { font-size: 0.78rem; color: #888; }
+  .sport-row .sr-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--sunset); text-align: right; white-space: nowrap; }
+  .sport-row .sr-price { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--bay); text-align: right; white-space: nowrap; }
+  .sport-note { font-size: 0.82rem; color: #888; font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem; }
+
+  /* FILTER BAR (This Week only) */
+  .filter-bar { margin-bottom: 1.5rem; }
+  .filter-row { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-bottom: 0.5rem; }
+  .filter-row:last-child { margin-bottom: 0; }
+  .filter-row-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); min-width: 36px; }
+  .fbtn { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 0.3rem 0.65rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.1); background: transparent; color: #777; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .fbtn:hover { border-color: var(--night); color: var(--night); }
+  .fbtn.on { background: var(--night); color: var(--white); border-color: var(--night); }
+  .fbtn.on[data-c="food"]     { background: #BF360C; border-color: #BF360C; }
+  .fbtn.on[data-c="music"]    { background: #4A148C; border-color: #4A148C; }
+  .fbtn.on[data-c="arts"]     { background: #880E4F; border-color: #880E4F; }
+  .fbtn.on[data-c="outdoors"] { background: #004D40; border-color: #004D40; }
+  .fbtn.on[data-c="sports"]   { background: #1565C0; border-color: #1565C0; }
+  .fbtn.on[data-p="free"]     { background: #1B5E20; border-color: #1B5E20; }
+  .fbtn.on[data-p="$"]        { background: var(--bay); border-color: var(--bay); }
+  .fbtn.on[data-p="$$"]       { background: var(--sunset); border-color: var(--sunset); }
+  .fbtn.on[data-p="$$$"]      { background: #8D6E63; border-color: #8D6E63; }
+  .filter-count { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--mist); margin-left: auto; }
+  .picks-empty { text-align: center; padding: 2.5rem 1rem; color: #999; font-size: 0.88rem; display: none; }
+  .picks-empty.show { display: block; }
+  .picks-empty a { color: var(--bay); cursor: pointer; text-decoration: underline; }
+  .card.filtered-out { display: none; }
+  .section-label.filtered-out { display: none; }
+  .ongoing.filtered-out { display: none; }
+
+  /* FOOTER */
+  .share-bar { text-align: center; margin: 2rem 0; }
+  .share-btn { display: inline-block; background: var(--night); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; padding: 0.7rem 1.8rem; border-radius: 100px; cursor: pointer; border: none; transition: background 0.15s; letter-spacing: 0.02em; }
+  .share-btn:hover { background: var(--bay); }
+  .footer { text-align: center; padding: 2rem 1.5rem 3rem; font-size: 0.8rem; color: var(--mist); }
+  .footer .sign-off { font-family: 'Instrument Serif', serif; font-size: 1.2rem; color: var(--night); margin-bottom: 0.5rem; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-eyebrow">Weekly picks from your bff Sammy</div>
+  <h1>Sammy's <em>SF</em></h1>
+  <div class="header-sub">the scene this week</div>
+  <div class="header-date">July 25 – 31, 2026</div>
+  <div class="tabs">
+    <button class="tab active" onclick="showView('picks')">This Week</button>
+    <button class="tab" onclick="showView('datenight')">Date Night</button>
+    <button class="tab" onclick="showView('eats')">Eats & Bars</button>
+    <button class="tab" onclick="showView('sports')">Sports</button>
+    <button class="tab" onclick="showView('concerts')">Concerts</button>
+  </div>
+</div>
+
+<!-- ==================== THIS WEEK ==================== -->
+<div class="view active" id="view-picks">
+
+  <div class="filter-bar">
+    <div class="filter-row">
+      <span class="filter-row-label">Vibe</span>
+      <button class="fbtn" data-c="music" onclick="tog(this,'c')">🎵 Music</button>
+      <button class="fbtn" data-c="arts" onclick="tog(this,'c')">🎨 Arts</button>
+      <button class="fbtn" data-c="food" onclick="tog(this,'c')">🍽 Food</button>
+      <button class="fbtn" data-c="outdoors" onclick="tog(this,'c')">🌿 Outdoors</button>
+      <button class="fbtn" data-c="sports" onclick="tog(this,'c')">⚾ Sports</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-row-label">Price</span>
+      <button class="fbtn" data-p="free" onclick="tog(this,'p')">Free</button>
+      <button class="fbtn" data-p="$" onclick="tog(this,'p')">$</button>
+      <button class="fbtn" data-p="$$" onclick="tog(this,'p')">$$</button>
+      <button class="fbtn" data-p="$$$" onclick="tog(this,'p')">$$$</button>
+      <span class="filter-count" id="fcount"></span>
+    </div>
+  </div>
+
+  <div class="section-label" style="border-top:none;padding-top:0">Editor's Picks</div>
+
+  <div class="highlight-card card" data-cats="music" data-price="free">
+    <div class="card-top">
+      <h3>Suki Waterhouse at Stern Grove</h3>
+      <div class="card-when">Sun Jul 26 · 2pm</div>
+    </div>
+    <p>Free concert in the eucalyptus-lined amphitheater. Doors at noon, show at 2. Bring a jacket. Try the community box office for day-of passes.</p>
+    <div class="tags">
+      <span class="tag">Free</span>
+      <span class="tag">Music</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="music" data-price="$$$">
+    <div class="card-top">
+      <h3>St. Vincent w/ SF Symphony</h3>
+      <div class="card-when">Thu Jul 30</div>
+    </div>
+    <p>First-ever orchestral tour at Davies Symphony Hall. Grammy-winning catalog backed by a full symphony. This is the show of the week.</p>
+    <div class="tags">
+      <span class="tag tag-music">Concert</span>
+      <span class="price-badge">$$$ · $75+</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="arts" data-price="free">
+    <div class="card-top">
+      <h3>Outdoor Movie: The Princess Diaries</h3>
+      <div class="card-when">Sat Jul 25 · 6pm</div>
+    </div>
+    <p>Union Square's free summer movie series. Pre-show at 6, film at sunset. Bring a blanket.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="tag tag-arts">Film</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="food" data-price="$">
+    <div class="card-top">
+      <h3>Jollibee Opens on Market Street</h3>
+      <div class="card-when">Fri Jul 31</div>
+    </div>
+    <p>The beloved Filipino chain opens at 934 Market near Powell BART — first SF location since 2011. Fried chicken, Peach Mango Pie. Expect lines.</p>
+    <div class="tags">
+      <span class="tag tag-new">New Opening</span>
+      <span class="tag tag-food">Food</span>
+      <span class="price-badge">$ · Under $15</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="music" data-price="$$">
+    <div class="card-top">
+      <h3>Chance Peña at The Fillmore</h3>
+      <div class="card-when">Sat Jul 25 · 8pm</div>
+    </div>
+    <p>Pop and acoustic singer-songwriter tonight at one of the city's most iconic venues. Standing room, doors at 7.</p>
+    <div class="tags">
+      <span class="tag tag-music">Concert</span>
+      <span class="price-badge">$$ · ~$35–50</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="sports,outdoors" data-price="$">
+    <div class="card-top">
+      <h3>Oakland Ballers: Halloween in July</h3>
+      <div class="card-when">Sun Jul 26 · 1:05pm</div>
+    </div>
+    <p>Indie baseball with weird theme nights at Raimondi Park. Tonight is "Night of the Living Possum." Friday is Grateful Dead Night. Tickets ~$24.</p>
+    <div class="tags">
+      <span class="tag tag-outdoors">Baseball</span>
+      <span class="price-badge">$ · ~$24</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="arts" data-price="free">
+    <div class="card-top">
+      <h3>ChoreoFest + Free Museum Weekend</h3>
+      <div class="card-when">Sat–Sun Jul 25–26</div>
+    </div>
+    <p>Free outdoor dance festival at Yerba Buena Gardens (Sat 2–4pm), plus free admission all weekend at the Museum of Craft & Design.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="tag tag-arts">Arts</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="arts" data-price="$$">
+    <div class="card-top">
+      <h3>Matisse's Jazz Unbound — Last Chance</h3>
+      <div class="card-when">Through Jul 26</div>
+    </div>
+    <p>Exhibition closes this weekend at the de Young in Golden Gate Park. Pair it with a post-marathon walk.</p>
+    <div class="tags">
+      <span class="tag tag-arts">Art</span>
+      <span class="price-badge">$$ · ~$30</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="outdoors" data-price="free">
+    <div class="card-top">
+      <h3>SF Marathon Weekend</h3>
+      <div class="card-when">Sat–Sun Jul 25–26</div>
+    </div>
+    <p>Thousands of runners cross the Golden Gate Bridge and wind through the city. Spectator energy is block-party level — grab coffee and a good corner.</p>
+    <div class="tags">
+      <span class="tag tag-outdoors">Outdoors</span>
+      <span class="tag tag-free">Free to watch</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="food" data-price="free">
+    <div class="card-top">
+      <h3>Tokyo Central Food Fair</h3>
+      <div class="card-when">Sat–Sun Jul 25–26 · 9am–9pm</div>
+    </div>
+    <p>Free food samples, giveaways, and deals on Japanese groceries at Bay Street Emeryville. Worth the trip across the bridge.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="tag tag-food">Food</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="sports" data-price="$$">
+    <div class="card-top">
+      <h3>Giants vs. Brewers (4 home games)</h3>
+      <div class="card-when">Sun–Wed · Oracle Park</div>
+    </div>
+    <p>Angels series finale Sunday, then Brewers Mon–Wed. Wednesday's 12:45pm day game is a sneaky midweek outing.</p>
+    <div class="tags">
+      <span class="tag tag-outdoors">Baseball</span>
+      <span class="price-badge">$$ · From $15</span>
+    </div>
+  </div>
+
+  <div class="picks-empty" id="picks-empty">
+    Nothing matches those filters. <a onclick="resetFilters()">Clear all</a>
+  </div>
+
+  <div class="section-label" data-ongoing="true">Always On This Summer</div>
+  <div class="ongoing" data-cats="music" data-price="free"><h4>Stern Grove Sundays</h4><p>Free concerts every Sunday through Aug 16. Coming up: Violent Femmes (Aug 2), Patti LaBelle (Aug 9), Public Enemy (Aug 15), Al Green (Aug 16).</p></div>
+  <div class="ongoing" data-cats="music" data-price="free"><h4>Lunch Break Concerts</h4><p>130+ free lunchtime concerts in public plazas near Market St, through late September.</p></div>
+  <div class="ongoing" data-cats="food" data-price="$"><h4>Fort Mason Night Market</h4><p>Monthly evening market with food vendors, DJs, makers, and pop-ups along the waterfront.</p></div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== DATE NIGHT ==================== -->
+<div class="view" id="view-datenight">
+  <div class="dn-intro">
+    <h2>Three nights out, planned for you.</h2>
+    <p>Pick a budget. We'll tell you where to go, what to order, and when to show up.</p>
+  </div>
+
+  <div class="dn-card dn-tier-free">
+    <div class="dn-tier">
+      <span class="dn-tier-badge">The Free One</span>
+      <span class="dn-tier-est">$0 + whatever you eat</span>
+    </div>
+    <div class="dn-body">
+      <h3>Movie Under the Stars</h3>
+      <p class="dn-tagline">Blankets, The Princess Diaries, and dumplings at midnight.</p>
+      <ul class="dn-steps">
+        <li class="dn-step" data-step="1">
+          <div>
+            <div class="dn-step-time">5:30 PM</div>
+            <div class="dn-step-title">Grab provisions</div>
+            <div class="dn-step-detail">Pick up snacks and a bottle of something at a corner store near Union Square. Or pack from home if you're organized like that.</div>
+          </div>
+        </li>
+        <li class="dn-step" data-step="2">
+          <div>
+            <div class="dn-step-time">6:00 PM</div>
+            <div class="dn-step-title">Claim your spot at Union Square</div>
+            <div class="dn-step-detail">The free outdoor movie series has pre-show activities starting at 6. Lay out a blanket, settle in while the sky turns pink.</div>
+          </div>
+        </li>
+        <li class="dn-step" data-step="3">
+          <div>
+            <div class="dn-step-time">Sunset</div>
+            <div class="dn-step-title">The Princess Diaries rolls</div>
+            <div class="dn-step-detail">A perfect crowd movie. Fun even if you've seen it. Especially if you've seen it.</div>
+          </div>
+        </li>
+        <li class="dn-step" data-step="4">
+          <div>
+            <div class="dn-step-time">~10 PM</div>
+            <div class="dn-step-title">Late-night dumplings in Chinatown</div>
+            <div class="dn-step-detail">It's a 10-minute walk. Good Fortune Dumpling House or wherever looks good and open. End the night with soup dumplings and no bill over $25.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dn-card dn-tier-mid">
+    <div class="dn-tier">
+      <span class="dn-tier-badge">The Midrange Move</span>
+      <span class="dn-tier-est">~$80–120 for two</span>
+    </div>
+    <div class="dn-body">
+      <h3>Mission Cocktail Crawl</h3>
+      <p class="dn-tagline">New bars, good food, and a neighborhood that rewards wandering.</p>
+      <ul class="dn-steps">
+        <li class="dn-step" data-step="1">
+          <div>
+            <div class="dn-step-time">6:30 PM</div>
+            <div class="dn-step-title">Start at Stray Dog</div>
+            <div class="dn-step-detail">New cafe-bar on Utah & 24th. Pandan lattes during the day, pan-Asian cocktails at night. Shanghai-inspired, tiny, and just opened. Get an early drink while it's still mellow.</div>
+          </div>
+        </li>
+        <li class="dn-step" data-step="2">
+          <div>
+            <div class="dn-step-time">7:30 PM</div>
+            <div class="dn-step-title">Dinner nearby</div>
+            <div class="dn-step-detail">Walk to your pick. Jilli for Korean drinking food and makgeolli (the popcorn fried chicken is mandatory). Or Big Finish for wine under $14/glass and cacio e pepe.</div>
+          </div>
+        </li>
+        <li class="dn-step" data-step="3">
+          <div>
+            <div class="dn-step-time">9:30 PM</div>
+            <div class="dn-step-title">Nightcap at the Madrone parklet</div>
+            <div class="dn-step-detail">Madrone Art Bar on Haight is doing a book sale in their parklet Saturday, but any night the bar itself is a vibe — murals, DJs, and a crowd that's been coming for years.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dn-card dn-tier-splurge">
+    <div class="dn-tier">
+      <span class="dn-tier-badge">The Splurge</span>
+      <span class="dn-tier-est">~$150–200 for two</span>
+    </div>
+    <div class="dn-body">
+      <h3>Symphony & Speakeasy</h3>
+      <p class="dn-tagline">St. Vincent with an orchestra, then cocktails in a hidden lounge. Thursday only.</p>
+      <ul class="dn-steps">
+        <li class="dn-step" data-step="1">
+          <div>
+            <div class="dn-step-time">6:00 PM</div>
+            <div class="dn-step-title">Early dinner at Hayes Valley</div>
+            <div class="dn-step-detail">Davies Symphony Hall is right by Hayes Valley. Grab dinner before the show — lots of walkable options. Keep it light, you want to be energized not sleepy.</div>
+          </div>
+        </li>
+        <li class="dn-step" data-step="2">
+          <div>
+            <div class="dn-step-time">7:30 PM</div>
+            <div class="dn-step-title">St. Vincent w/ the SF Symphony</div>
+            <div class="dn-step-detail">Annie Clark's catalog — "Los Ageless," "Cruel," "Digital Witness" — performed with a full orchestra conducted by Jules Buckley. First-ever orchestral run. It's going to be extraordinary.</div>
+          </div>
+        </li>
+        <li class="dn-step" data-step="3">
+          <div>
+            <div class="dn-step-time">~10 PM</div>
+            <div class="dn-step-title">Cocktails at Valley Club</div>
+            <div class="dn-step-detail">Cab to Hotel G's mezzanine in Union Square. Low lights, velvet corners, and The Lovemaker — a Negroni riff with raspberry and cocoa butter. The kind of place where you stay longer than planned.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== EATS & BARS ==================== -->
+<div class="view" id="view-eats">
+  <div class="section-label" style="border-top:none;padding-top:0">New Restaurant Openings</div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Jollibee</h3>
+      <div class="card-when">Opens Fri Jul 31</div>
+    </div>
+    <p>934 Market St near Powell BART. First SF location since 2011. Fried chicken, Jolly Spaghetti, Peach Mango Pie. The mayor announced it on X. Expect lines day one.</p>
+    <div class="tags"><span class="tag tag-new">New</span><span class="tag tag-food">Filipino</span><span class="price-badge">$ · Under $15</span></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="mini-card"><div class="mini-type">Middle Eastern · Ferry Building</div><h4>Hayati</h4><p>Taking over the old Boulettes Larder space. From the team behind Sens.</p><div class="mini-price">$$ · $25–50/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Spanish Tapas · Berkeley</div><h4>Mesón</h4><p>Former César staff. Patatas bravas, bocadillos, cocktails in Westbrae.</p><div class="mini-price">$$ · $30–55/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Cafe & Cocktails · Mission</div><h4>Stray Dog</h4><p>Shanghai-inspired all-day cafe → pan-Asian cocktail bar at night. Utah & 24th.</p><div class="mini-price">$ · $8–20</div></div>
+    <div class="mini-card"><div class="mini-type">Russian Bakery · Mission</div><h4>Cinderella Bakery</h4><p>The Richmond favorite's long-awaited second location. Rye bread and honey cakes.</p><div class="mini-price">$ · $5–15</div></div>
+  </div>
+
+  <div class="section-label">Bars Worth Hitting</div>
+
+  <div class="grid-2">
+    <div class="mini-card"><div class="mini-type">Korean · Mission</div><h4>Jilli</h4><p>Makgeolli from teapots, popcorn fried chicken, kimchi vodka rigatoni. Communal and loud.</p><div class="mini-price">$$ · $15–20/drink + food</div></div>
+    <div class="mini-card"><div class="mini-type">Cocktail Lounge · Union Square</div><h4>Valley Club</h4><p>Hotel G mezzanine. Low lights, cocoa-butter Negroni. Date-night energy.</p><div class="mini-price">$$ · $18–22/cocktail</div></div>
+    <div class="mini-card"><div class="mini-type">Wine Tavern · Mission</div><h4>Big Finish</h4><p>48 wines on tap, most under $14. Buffalo wings and cacio e pepe.</p><div class="mini-price">$ · Under $14/glass</div></div>
+    <div class="mini-card"><div class="mini-type">Japanese · SoMa</div><h4>Bar Shoji</h4><p>Coffee by day, cocktail den by night. Wagyu-fat-washed whisky, fondue burger.</p><div class="mini-price">$$ · $18–24/cocktail</div></div>
+    <div class="mini-card"><div class="mini-type">Neighborhood · Upper Haight</div><h4>The Green Heron</h4><p>Took over Hobson's Choice. Martinis, old fashioneds, Miller Lite — no judgment.</p><div class="mini-price">$ · $8–15/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Brewery · Dogpatch</div><h4>Standard Deviant at Pier 70</h4><p>Waterfront taproom. Barrel-aged rosé-saison wine-beer hybrid. Huge industrial space.</p><div class="mini-price">$ · $8–12/beer</div></div>
+    <div class="mini-card"><div class="mini-type">Sports Bar · Castro</div><h4>Rikki's</h4><p>First women-focused bar in the Castro in years. Valkyries watch parties, lavender cocktails.</p><div class="mini-price">$ · $10–16/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Members Club · FiDi</div><h4>The Bank at Amador</h4><p>1908 bank turned social club. Marble walls, vault door, three kinds of martinis. $50/mo.</p><div class="mini-price">$$ · $50/mo + drinks</div></div>
+  </div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== SPORTS ==================== -->
+<div class="view" id="view-sports">
+  <div class="section-label" style="border-top:none;padding-top:0">⚾ Giants · Oracle Park</div>
+
+  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Angels</h4><p>Series finale</p></div><div class="sr-when">Sun Jul 26<br>1:05 PM</div><div class="sr-price">From $15</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Brewers</h4><p>Game 1</p></div><div class="sr-when">Mon Jul 27<br>6:45 PM</div><div class="sr-price">From $15</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Brewers</h4><p>Game 2</p></div><div class="sr-when">Tue Jul 28<br>6:45 PM</div><div class="sr-price">From $15</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Brewers</h4><p>Day game — midweek gem</p></div><div class="sr-when">Wed Jul 29<br>12:45 PM</div><div class="sr-price">From $15</div></div>
+  <p class="sport-note">Giants head to San Diego Thu–Fri to close the week.</p>
+
+  <div class="section-label">⚾ Oakland Ballers · Raimondi Park</div>
+
+  <div class="sport-row"><div class="sr-teams"><h4>Ballers vs. Boise Hawks</h4><p>🦝 Night of the Living Possum</p></div><div class="sr-when">Sat Jul 25<br>4:35 PM</div><div class="sr-price">~$24</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Ballers vs. Boise Hawks</h4><p>🎃 Halloween in July</p></div><div class="sr-when">Sun Jul 26<br>1:05 PM</div><div class="sr-price">~$24</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Ballers vs. PBL Travel Team</h4><p>💀 Grateful Dead Night</p></div><div class="sr-when">Fri Jul 31<br>6:35 PM</div><div class="sr-price">~$28</div></div>
+  <p class="sport-note">Cheap indie baseball, wild theme nights. Raimondi Park, 1800 Wood St, Oakland.</p>
+
+  <div class="section-label">🏀 Valkyries · WNBA</div>
+
+  <div class="sport-row"><div class="sr-teams"><h4>Valkyries @ Phoenix Mercury</h4><p>Record: 13-8 · Favored (65.6%)</p></div><div class="sr-when">Wed Jul 29<br>7:00 PM</div><div class="sr-price">Away game</div></div>
+  <p class="sport-note">Watch at Rikki's in the Castro for packed watch parties. Next home game: Sun Aug 2 vs. Toronto at Chase Center.</p>
+
+  <div class="section-label">💪 Also This Weekend</div>
+  <div class="sport-row"><div class="sr-teams"><h4>CrossFit Games</h4><p>SAP Center, San Jose</p></div><div class="sr-when">Sat–Sun<br>Jul 25–27</div><div class="sr-price">$75+</div></div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== CONCERTS ==================== -->
+<div class="view" id="view-concerts">
+  <div class="section-label" style="border-top:none;padding-top:0">This Weekend</div>
+
+  <div class="highlight-card card">
+    <div class="card-top">
+      <h3>Suki Waterhouse · Stern Grove</h3>
+      <div class="card-when">Sun Jul 26 · 2pm</div>
+    </div>
+    <p>Free concert in the amphitheater. Doors at noon, show at 2. Try the community box office for day-of passes. Bring a jacket — it's near the ocean.</p>
+    <div class="tags"><span class="tag">Free</span><span class="tag">Outdoors</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Chance Peña · The Fillmore</h3><div class="card-when">Sat Jul 25 · 8pm</div></div>
+    <p>Pop and acoustic singer-songwriter touring through SF. Standing room / open dance floor. Doors at 7.</p>
+    <div class="tags"><span class="tag tag-music">Pop / Acoustic</span><span class="price-badge">$$ · ~$35–50</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Party Pupils · The Midway</h3><div class="card-when">Sat Jul 25 · 2pm</div></div>
+    <p>Daytime dance party at The Midway in SoMa.</p>
+    <div class="tags"><span class="tag tag-music">DJ / Dance</span><span class="price-badge">$$ · ~$30–45</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Andy Grammer + Walk Off The Earth</h3><div class="card-when">Sun Jul 26 · 7pm</div></div>
+    <p>Outdoor amphitheater at the Green Music Center in Rohnert Park. Worth the drive for a summer evening.</p>
+    <div class="tags"><span class="tag tag-music">Pop</span><span class="price-badge">$$ · $40–70</span></div>
+  </div>
+
+  <div class="section-label">This Week</div>
+
+  <div class="card">
+    <div class="card-top"><h3>St. Vincent w/ SF Symphony</h3><div class="card-when">Thu Jul 30 · 7:30pm</div></div>
+    <p>First-ever orchestral tour. Full catalog performed with the San Francisco Symphony at Davies Symphony Hall. Conducted by Jules Buckley. The show of the week.</p>
+    <div class="tags"><span class="tag tag-music">Art Pop / Orchestral</span><span class="price-badge">$$$ · $75+</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Trevor Noah · The Mountain Winery</h3><div class="card-when">Sun–Tue Jul 26–28</div></div>
+    <p>Three nights at the outdoor amphitheater in Saratoga. Bring a layer and grab wine before the show.</p>
+    <div class="tags"><span class="tag tag-nightlife">Comedy</span><span class="price-badge">$$$ · $80+</span></div>
+  </div>
+
+  <div class="section-label">Nightly Live Music</div>
+
+  <div class="card">
+    <div class="card-top"><h3>The Deluxe · Haight St</h3><div class="card-when">Every night</div></div>
+    <p>Live jazz and soul nightly, $5–$10 cover. Mon: DeLuxe Jazz Collective. Thu: Tony Peebles. Fri: Angela LaFlamme. Sat: Hammond Cheese Combo + Big Blu Soul Revue ($15).</p>
+    <div class="tags"><span class="tag tag-music">Jazz / Soul</span><span class="price-badge">$ · $5–15</span></div>
+  </div>
+
+  <div class="section-label">Broadway & Theater</div>
+
+  <div class="card">
+    <div class="card-top"><h3>Beauty and the Beast · Orpheum Theatre</h3><div class="card-when">Multiple shows</div></div>
+    <p>Broadway touring production on Market Street. Matinee and evening shows available this week.</p>
+    <div class="tags"><span class="tag tag-arts">Broadway</span><span class="price-badge">$$ · $50–130+</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Hairspray · SF Playhouse</h3><div class="card-when">Through Sep 12</div></div>
+    <p>The musical is running all summer. Intimate theater — every seat is a good seat.</p>
+    <div class="tags"><span class="tag tag-arts">Theater</span><span class="price-badge">$$ · $35–75</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>SF Symphony: Matilda (Live-to-Picture)</h3><div class="card-when">Sun Jul 26 · 2pm</div></div>
+    <p>The orchestra plays the score live while the film screens. At Davies Symphony Hall — fun for all ages.</p>
+    <div class="tags"><span class="tag tag-arts">Film + Orchestra</span><span class="price-badge">$$ · $30–60</span></div>
+  </div>
+
+  <div class="section-label">Coming Up</div>
+  <div class="ongoing"><h4>Stern Grove · Remaining Lineup</h4><p>Violent Femmes (Aug 2) · Patti LaBelle (Aug 9) · Public Enemy (Aug 15) · Al Green (Aug 16). All free.</p></div>
+  <div class="ongoing"><h4>Outside Lands · Aug 7–9</h4><p>Charli XCX, Rufus Du Sol, The Strokes. Golden Gate Park. Tickets on sale now.</p></div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<div class="footer">
+  <div class="sign-off">See you out there. — Sammy</div>
+  <p>Sammy's SF · Issue 01 · July 2026</p>
+</div>
+
+<script>
+// Tab switching
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Filters (This Week tab only)
+const ac = new Set(), ap = new Set();
+
+function tog(btn, type) {
+  btn.classList.toggle('on');
+  const val = type === 'c' ? btn.dataset.c : btn.dataset.p;
+  const set = type === 'c' ? ac : ap;
+  set.has(val) ? set.delete(val) : set.add(val);
+  filterPicks();
+}
+
+function resetFilters() {
+  ac.clear(); ap.clear();
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+  filterPicks();
+}
+
+function filterPicks() {
+  const view = document.getElementById('view-picks');
+  const items = view.querySelectorAll('.card, .ongoing');
+  let vis = 0;
+  const any = ac.size > 0 || ap.size > 0;
+
+  items.forEach(el => {
+    const cats = (el.dataset.cats || '').split(',').filter(Boolean);
+    const price = el.dataset.price || '';
+    const catOk = ac.size === 0 || cats.some(c => ac.has(c));
+    const priceOk = ap.size === 0 || ap.has(price);
+    if (catOk && priceOk) { el.classList.remove('filtered-out'); vis++; }
+    else { el.classList.add('filtered-out'); }
+  });
+
+  // Hide section labels if all their siblings are hidden
+  view.querySelectorAll('.section-label').forEach(label => {
+    let next = label.nextElementSibling;
+    let hasVis = false;
+    while (next && !next.classList.contains('section-label') && !next.classList.contains('filter-bar') && !next.classList.contains('share-bar') && !next.classList.contains('picks-empty')) {
+      if ((next.classList.contains('card') || next.classList.contains('ongoing')) && !next.classList.contains('filtered-out')) hasVis = true;
+      next = next.nextElementSibling;
+    }
+    label.classList.toggle('filtered-out', !hasVis);
+  });
+
+  document.getElementById('picks-empty').classList.toggle('show', any && vis === 0);
+  const fc = document.getElementById('fcount');
+  fc.textContent = any ? vis + ' match' + (vis !== 1 ? 'es' : '') : '';
+}
+
+// Share
+function shareThis() {
+  if (navigator.share) {
+    navigator.share({ title: 'SF This Week — July 25–31', text: 'Fun stuff happening in SF this week.', url: window.location.href }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = event.target;
+      btn.textContent = 'Link copied!';
+      setTimeout(() => btn.textContent = 'Share with friends', 2000);
+    });
+  }
+}
+</script>
+
+</body>
+</html>

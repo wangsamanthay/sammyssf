@@ -1,0 +1,12 @@
+{
+  "name": "sammys-sf",
+  "version": "1.0.0",
+  "description": "Weekly picks from your bff Sammy — auto-generated SF events guide",
+  "type": "module",
+  "scripts": {
+    "generate": "node generate.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}
