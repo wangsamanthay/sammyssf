@@ -123,9 +123,10 @@
   .fbtn:hover { border-color: var(--night); color: var(--night); }
   .fbtn.on { background: var(--night); color: var(--white); border-color: var(--night); }
   .fbtn.on[data-c="music"]    { background: #4A148C; border-color: #4A148C; }
-  .fbtn.on[data-c="museums"]  { background: #880E4F; border-color: #880E4F; }
   .fbtn.on[data-c="shows"]    { background: #6A1B9A; border-color: #6A1B9A; }
   .fbtn.on[data-c="food"]     { background: #BF360C; border-color: #BF360C; }
+  .fbtn.on[data-c="nightlife"]{ background: #311B92; border-color: #311B92; }
+  .fbtn.on[data-c="active"]   { background: #004D40; border-color: #004D40; }
   .fbtn.on[data-c="sports"]   { background: #1565C0; border-color: #1565C0; }
   .fbtn.on[data-p="free"]     { background: #1B5E20; border-color: #1B5E20; }
   .fbtn.on[data-p="$"]        { background: var(--bay); border-color: var(--bay); }
@@ -165,6 +166,10 @@
   .occasion-view { display: none; }
   .occasion-view.active { display: block; }
 
+  .card-link { display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--bay); text-decoration: none; margin-top: 0.25rem; transition: color 0.15s; }
+  .card-link:hover { color: var(--sunset); }
+  .card-link::after { content: ' →'; }
+
   /* NEWSLETTER SIGNUP */
   .signup { background: var(--night); border-radius: 14px; padding: 2.5rem 2rem; text-align: center; margin: 2.5rem 0; position: relative; overflow: hidden; }
   .signup::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #E8734A 0%, #D4536B 50%, #2E6B8A 100%); opacity: 0.15; }
@@ -193,6 +198,7 @@
     <button class="tab" onclick="showView('eats')">Eats & Bars</button>
     <button class="tab" onclick="showView('sports')">Sports</button>
     <button class="tab" onclick="showView('concerts')">Concerts</button>
+    <button class="tab" onclick="showView('singles')">Singles</button>
     <button class="tab" onclick="showView('plans')">Playbooks</button>
   </div>
 </div>
@@ -204,9 +210,10 @@
     <div class="filter-row">
       <span class="filter-row-label">Vibe</span>
       <button class="fbtn" data-c="music" onclick="tog(this,'c')">🎵 Music</button>
-      <button class="fbtn" data-c="museums" onclick="tog(this,'c')">🖼 Museums & Art</button>
-      <button class="fbtn" data-c="shows" onclick="tog(this,'c')">🎭 Shows</button>
+      <button class="fbtn" data-c="shows" onclick="tog(this,'c')">🎭 Museums & Shows</button>
       <button class="fbtn" data-c="food" onclick="tog(this,'c')">🍽 Food</button>
+      <button class="fbtn" data-c="nightlife" onclick="tog(this,'c')">🌙 Nightlife</button>
+      <button class="fbtn" data-c="active" onclick="tog(this,'c')">🏃 Outdoors</button>
       <button class="fbtn" data-c="sports" onclick="tog(this,'c')">⚾ Sports</button>
     </div>
     <div class="filter-row">
@@ -390,6 +397,67 @@
     </div>
   </div>
 
+  <div class="card" data-cats="nightlife" data-price="$$">
+    <div class="card-top">
+      <h3>Party Pupils at The Midway</h3>
+      <div class="card-when">Sat Jul 25 · 2pm</div>
+    </div>
+    <p>Daytime dance party at The Midway in SoMa. Open-air warehouse vibes, multiple rooms, and you'll be home by 9.</p>
+    <div class="tags">
+      <span class="tag tag-nightlife">Day Party</span>
+      <span class="price-badge">$$ · ~$30–45</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="nightlife,music" data-price="$">
+    <div class="card-top">
+      <h3>Live Jazz at The Deluxe</h3>
+      <div class="card-when">Nightly · Haight St</div>
+    </div>
+    <p>Jazz and soul every night, $5–$10 cover. Mon: DeLuxe Jazz Collective. Thu: Tony Peebles. Sat: Big Blu Soul Revue + Hammond Cheese Combo ($15).</p>
+    <div class="tags">
+      <span class="tag tag-music">Jazz</span>
+      <span class="tag tag-nightlife">Live</span>
+      <span class="price-badge">$ · $5–15</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="active" data-price="free">
+    <div class="card-top">
+      <h3>Lands End Trail</h3>
+      <div class="card-when">Any day · Outer Richmond</div>
+    </div>
+    <p>3.4-mile coastal trail with views of the Golden Gate Bridge, Marin Headlands, and the Sutro Baths ruins. Best at sunset. Bring layers — it's always windier than you think.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="price-badge">Hike · 1.5 hrs</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="active" data-price="free">
+    <div class="card-top">
+      <h3>Batteries to Bluffs Trail</h3>
+      <div class="card-when">Any day · Presidio</div>
+    </div>
+    <p>Hidden beach trail in the Presidio — stairs down to Marshall's Beach with Golden Gate views you can't get anywhere else. Short but steep. Go on a clear morning.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="price-badge">Hike · 45 min</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="active" data-price="$">
+    <div class="card-top">
+      <h3>Kayaking at McCovey Cove</h3>
+      <div class="card-when">Sat–Sun mornings</div>
+    </div>
+    <p>Rent a kayak from the Embarcadero and paddle around McCovey Cove and under the Bay Bridge. On game days, you can catch home runs from the water.</p>
+    <div class="tags">
+      <span class="tag tag-outdoors">Water Sports</span>
+      <span class="price-badge">$ · ~$20/hr</span>
+    </div>
+  </div>
+
   <div class="picks-empty" id="picks-empty">
     Nothing matches those filters. <a onclick="resetFilters()">Clear all</a>
   </div>
@@ -397,7 +465,113 @@
   <div class="section-label" data-ongoing="true">Always On This Summer</div>
   <div class="ongoing" data-cats="music" data-price="free"><h4>Stern Grove Sundays</h4><p>Free concerts every Sunday through Aug 16. Coming up: Violent Femmes (Aug 2), Patti LaBelle (Aug 9), Public Enemy (Aug 15), Al Green (Aug 16).</p></div>
   <div class="ongoing" data-cats="music" data-price="free"><h4>Lunch Break Concerts</h4><p>130+ free lunchtime concerts in public plazas near Market St, through late September.</p></div>
-  <div class="ongoing" data-cats="food" data-price="$"><h4>Fort Mason Night Market</h4><p>Monthly evening market with food vendors, DJs, makers, and pop-ups along the waterfront.</p></div>
+  <div class="ongoing" data-cats="food,nightlife" data-price="$"><h4>Fort Mason Night Market</h4><p>Monthly evening market with food vendors, DJs, makers, and pop-ups along the waterfront.</p></div>
+  <div class="ongoing" data-cats="nightlife" data-price="$"><h4>Emporium Arcade Bar</h4><p>Free classic arcade games, cheap drinks, DJ nights on weekends. Divisadero location has a massive back room.</p></div>
+  <div class="ongoing" data-cats="active" data-price="free"><h4>Outdoor Yoga at Dolores Park</h4><p>Free community yoga Saturdays at 10am on the south slope. Bring your own mat. All levels.</p></div>
+  <div class="ongoing" data-cats="shows,nightlife" data-price="$$"><h4>Oasis Drag Shows</h4><p>SF's premier drag venue in SoMa. Multiple shows weekly — brunches, late nights, themed revues. Check their calendar.</p></div>
+  <div class="ongoing" data-cats="shows" data-price="free"><h4>City Lights Bookstore Events</h4><p>Free readings, book launches, and poetry nights at the legendary North Beach bookstore. Check their calendar — something almost every week.</p></div>
+  <div class="ongoing" data-cats="active" data-price="$"><h4>Treasure Island Flea Market</h4><p>Last weekend of every month. Vintage finds, local makers, food trucks, and panoramic city views. $5 entry.</p></div>
+  <div class="ongoing" data-cats="active" data-price="free"><h4>Alemany Flea Market</h4><p>Every Sunday, 7am–3pm. SF's oldest flea market — junk, treasures, produce, and characters. Free to browse. Cash only for vendors.</p></div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== SINGLES ==================== -->
+<div class="view" id="view-singles">
+  <div class="plans-intro">
+    <h2>Meet people IRL</h2>
+    <p>Speed dating, mixers, social sports, and ways to actually talk to humans.</p>
+  </div>
+
+  <div class="section-label" style="border-top:none;padding-top:0">This Week</div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>DateFaster Singles Mixer</h3>
+      <div class="card-when">Sat evenings · Rotating venues</div>
+    </div>
+    <p>Low-pressure mixer with icebreakers and free first drink. No timers, no speed dating rotations — just mingle at your own pace. Come solo or bring a wingperson.</p>
+    <a class="card-link" href="https://www.eventbrite.com/d/ca--san-francisco/single/" target="_blank">Find next event on Eventbrite</a>
+    <div class="tags">
+      <span class="tag tag-nightlife">Mixer</span>
+      <span class="price-badge">$$ · ~$30–45</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Speed Dating at Calicraft</h3>
+      <div class="card-when">Next: Aug 9 · Ages 26–42</div>
+    </div>
+    <p>Classic speed dating at a brewery. 5-minute rounds, real faces, no swiping. Events sell out — grab a ticket early. Multiple age range events throughout the month.</p>
+    <a class="card-link" href="https://speeddatingsanfrancisco.com/" target="_blank">See upcoming events</a>
+    <div class="tags">
+      <span class="tag tag-nightlife">Speed Dating</span>
+      <span class="price-badge">$$ · ~$35–55</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Thursday Singles Events</h3>
+      <div class="card-when">Weekly · Various venues</div>
+    </div>
+    <p>The "Thursday" app runs weekly in-person events — bar takeovers, rooftop parties, and themed nights. Big crowds, good energy.</p>
+    <a class="card-link" href="https://events.getthursday.com/san-francisco/" target="_blank">See this week's event</a>
+    <div class="tags">
+      <span class="tag tag-nightlife">Social</span>
+      <span class="price-badge">$ · $10–25</span>
+    </div>
+  </div>
+
+  <div class="section-label">Social Sports Leagues</div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Volo Sports Leagues</h3>
+      <div class="card-when">Ongoing · Sign up anytime</div>
+    </div>
+    <p>Kickball, soccer, volleyball, pickleball, dodgeball — join solo and get placed on a team. Huge chunk of players are free agents looking to meet people. Games in Mission, SoMa, Marina, and Golden Gate Park.</p>
+    <a class="card-link" href="https://www.volosports.com/san-francisco" target="_blank">Browse leagues</a>
+    <div class="tags">
+      <span class="tag tag-outdoors">Social Sports</span>
+      <span class="price-badge">$$ · ~$60–80/season</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Play Recess</h3>
+      <div class="card-when">Weekly · Various locations</div>
+    </div>
+    <p>The most social, least competitive league in SF. Different sport every week — think adult recess. Perfect if you want to meet people and don't care about winning.</p>
+    <a class="card-link" href="https://www.zogsports.com/sf/social-leagues/" target="_blank">Sign up for a season</a>
+    <div class="tags">
+      <span class="tag tag-outdoors">Social Sports</span>
+      <span class="price-badge">$$ · ~$60/season</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Silly Pickles · Pickleball League</h3>
+      <div class="card-when">Weekly · Bay Padel, Treasure Island</div>
+    </div>
+    <p>6–8 week pickleball league where you rotate partners every round. Join solo — you'll leave with friends. Beginner intro sessions included. Indoor courts, free parking, lounge with snack bar.</p>
+    <a class="card-link" href="https://sillypickles.com/collections/san-francisco-california" target="_blank">Join a league</a>
+    <div class="tags">
+      <span class="tag tag-outdoors">Pickleball</span>
+      <span class="price-badge">$$ · ~$70/season</span>
+    </div>
+  </div>
+
+  <div class="section-label">Low-Key Ways to Meet People</div>
+
+  <div class="ongoing"><h4>Running Clubs</h4><p>November Project (free, Wed + Fri 6:30am, various locations), SF Road Runners, Midnight Runners (Thursday nights). Show up, run, make friends. No sign-up needed for most.</p></div>
+  <div class="ongoing"><h4>Book Clubs & Reading Groups</h4><p>Green Apple Books and City Lights both host regular reading groups. Also check Meetup for genre-specific clubs — romance, sci-fi, nonfiction all have active SF groups.</p></div>
+  <div class="ongoing"><h4>Volunteer Groups</h4><p>One Brick (drop-in volunteering, no commitment), SF Parks Alliance, Glide Memorial. Great way to meet people while doing something good.</p></div>
+  <div class="ongoing"><h4>Classes & Workshops</h4><p>Pottery at Claymakers, cooking at 18 Reasons, dance at ODC. Sign up solo — the class format makes conversation happen naturally.</p></div>
+  <div class="ongoing"><h4>ZogSports Leagues</h4><p>More competitive than Volo/Recess. Bowling, kickball, flag football, softball. Post-game bar sponsorships mean every game night ends at a bar together.</p></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
@@ -407,7 +581,7 @@
 
   <div class="plans-intro">
     <h2>Curated Playbooks</h2>
-    <p>Pick the occasion. Sammy's got the whole night planned.</p>
+    <p>Pick the occasion. We've got the whole night planned.</p>
   </div>
 
   <div class="occasion-picker">
@@ -853,7 +1027,7 @@
 </div>
 
 <div class="footer">
-  <div class="sign-off">See you out there. — Sammy</div>
+  <div class="sign-off">See you out there.</div>
   <p>Sammy's SF · Issue 01 · July 2026</p>
 </div>
 

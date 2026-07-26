@@ -84,13 +84,21 @@ Generate the complete updated HTML file for the week of ${dateRange} (Issue #${S
 2. Update the header date to "${dateRange}"
 3. Update the footer to "Issue ${String(issueNum).padStart(2, "0")}"
 4. Replace all event cards with this week's events from the research
-5. THIS WEEK tab: Pick the 8-10 best events across all categories. Include data-cats and data-price attributes for filtering.
-6. DATE NIGHT tab: Create 3 new curated date plans (Free / $$ / $$$) using this week's actual events
+5. THIS WEEK tab: Pick 12-15 best events across all categories. Include data-cats and data-price attributes for filtering.
+6. PLAYBOOKS tab: Create 3 itineraries per occasion (Date Night, Solo Date, Birthday, Friends Visiting, Parents in Town) at Free/$$/$$$ tiers using this week's actual events
 7. EATS & BARS tab: Update with any new openings. Keep bars that are still relevant from last week.
 8. SPORTS tab: Update all game schedules
 9. CONCERTS tab: Update all shows and concerts
 10. Keep the writing voice fun, warm, and friend-to-friend — like texting your group chat
 11. Price tiers: free, $ (under $20), $$ ($20-75), $$$ ($75+)
+12. Category definitions for data-cats:
+    - music: concerts, live music, DJs, music festivals
+    - shows: broadway, theater, comedy, drag shows, film screenings, museums, art exhibitions, book readings, poetry nights, open mics, immersive experiences
+    - food: restaurants, food fairs, new openings, cooking classes, tastings
+    - nightlife: DJ nights, club events, day parties, arcade bars, karaoke, trivia nights, late night events
+    - active: hikes, outdoor yoga, kayaking, bike rides, flea markets, pop-up experiences, farmers markets, vintage shopping, outdoor fitness
+    - sports: professional sports, amateur events, watch parties, fitness competitions
+    Cards can have multiple categories (e.g. data-cats="nightlife,music")
 
 Output ONLY the complete HTML file, no markdown fences or explanation.`,
     },
