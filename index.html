@@ -77,7 +77,7 @@
   .ongoing h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
   .ongoing p { font-size: 0.8rem; color: #666; line-height: 1.5; }
 
-  /* ===== DATE NIGHT VIEW ===== */
+  /* ===== PLANS VIEW (itinerary cards) ===== */
   .dn-intro { text-align: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
   .dn-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
   .dn-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
@@ -122,10 +122,10 @@
   .fbtn { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 0.3rem 0.65rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.1); background: transparent; color: #777; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
   .fbtn:hover { border-color: var(--night); color: var(--night); }
   .fbtn.on { background: var(--night); color: var(--white); border-color: var(--night); }
-  .fbtn.on[data-c="food"]     { background: #BF360C; border-color: #BF360C; }
   .fbtn.on[data-c="music"]    { background: #4A148C; border-color: #4A148C; }
-  .fbtn.on[data-c="arts"]     { background: #880E4F; border-color: #880E4F; }
-  .fbtn.on[data-c="outdoors"] { background: #004D40; border-color: #004D40; }
+  .fbtn.on[data-c="museums"]  { background: #880E4F; border-color: #880E4F; }
+  .fbtn.on[data-c="shows"]    { background: #6A1B9A; border-color: #6A1B9A; }
+  .fbtn.on[data-c="food"]     { background: #BF360C; border-color: #BF360C; }
   .fbtn.on[data-c="sports"]   { background: #1565C0; border-color: #1565C0; }
   .fbtn.on[data-p="free"]     { background: #1B5E20; border-color: #1B5E20; }
   .fbtn.on[data-p="$"]        { background: var(--bay); border-color: var(--bay); }
@@ -145,6 +145,40 @@
   .share-btn:hover { background: var(--bay); }
   .footer { text-align: center; padding: 2rem 1.5rem 3rem; font-size: 0.8rem; color: var(--mist); }
   .footer .sign-off { font-family: 'Instrument Serif', serif; font-size: 1.2rem; color: var(--night); margin-bottom: 0.5rem; }
+
+  /* ===== PLANS VIEW ===== */
+  .plans-intro { text-align: center; margin-bottom: 1.5rem; }
+  .plans-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .plans-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
+
+  .occasion-picker { display: flex; gap: 0.4rem; justify-content: center; margin-bottom: 2rem; flex-wrap: nowrap; }
+  .occasion-btn { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; padding: 0.5rem 0.9rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.12); background: transparent; color: #666; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  @media (max-width: 520px) { .occasion-picker { flex-wrap: wrap; } .occasion-btn { font-size: 0.68rem; padding: 0.45rem 0.7rem; } }
+  .occasion-btn:hover { border-color: var(--night); color: var(--night); }
+  .occasion-btn.active { background: var(--night); color: var(--white); border-color: var(--night); }
+  .occasion-btn.active[data-oc="date"] { background: var(--rose); border-color: var(--rose); }
+  .occasion-btn.active[data-oc="solo"] { background: #00838F; border-color: #00838F; }
+  .occasion-btn.active[data-oc="birthday"] { background: #E65100; border-color: #E65100; }
+  .occasion-btn.active[data-oc="friends"] { background: #1565C0; border-color: #1565C0; }
+  .occasion-btn.active[data-oc="parents"] { background: #2E7D32; border-color: #2E7D32; }
+
+  .occasion-view { display: none; }
+  .occasion-view.active { display: block; }
+
+  /* NEWSLETTER SIGNUP */
+  .signup { background: var(--night); border-radius: 14px; padding: 2.5rem 2rem; text-align: center; margin: 2.5rem 0; position: relative; overflow: hidden; }
+  .signup::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #E8734A 0%, #D4536B 50%, #2E6B8A 100%); opacity: 0.15; }
+  .signup * { position: relative; z-index: 1; }
+  .signup h3 { font-family: 'Instrument Serif', serif; font-size: 1.5rem; font-weight: 400; color: var(--white); margin-bottom: 0.4rem; }
+  .signup p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; }
+  .signup-form { display: flex; gap: 0.5rem; max-width: 380px; margin: 0 auto; }
+  .signup-form input { flex: 1; padding: 0.7rem 1rem; border-radius: 100px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.82rem; outline: none; transition: border-color 0.2s; }
+  .signup-form input::placeholder { color: rgba(255,255,255,0.3); }
+  .signup-form input:focus { border-color: var(--sunset); }
+  .signup-form button { padding: 0.7rem 1.4rem; border-radius: 100px; border: none; background: var(--sunset); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+  .signup-form button:hover { background: #D4633A; }
+  .signup-note { font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 0.75rem; }
+  @media (max-width: 420px) { .signup-form { flex-direction: column; } }
 </style>
 </head>
 <body>
@@ -156,10 +190,10 @@
   <div class="header-date">July 25 – 31, 2026</div>
   <div class="tabs">
     <button class="tab active" onclick="showView('picks')">This Week</button>
-    <button class="tab" onclick="showView('datenight')">Date Night</button>
     <button class="tab" onclick="showView('eats')">Eats & Bars</button>
     <button class="tab" onclick="showView('sports')">Sports</button>
     <button class="tab" onclick="showView('concerts')">Concerts</button>
+    <button class="tab" onclick="showView('plans')">Playbooks</button>
   </div>
 </div>
 
@@ -170,9 +204,9 @@
     <div class="filter-row">
       <span class="filter-row-label">Vibe</span>
       <button class="fbtn" data-c="music" onclick="tog(this,'c')">🎵 Music</button>
-      <button class="fbtn" data-c="arts" onclick="tog(this,'c')">🎨 Arts</button>
+      <button class="fbtn" data-c="museums" onclick="tog(this,'c')">🖼 Museums & Art</button>
+      <button class="fbtn" data-c="shows" onclick="tog(this,'c')">🎭 Shows</button>
       <button class="fbtn" data-c="food" onclick="tog(this,'c')">🍽 Food</button>
-      <button class="fbtn" data-c="outdoors" onclick="tog(this,'c')">🌿 Outdoors</button>
       <button class="fbtn" data-c="sports" onclick="tog(this,'c')">⚾ Sports</button>
     </div>
     <div class="filter-row">
@@ -187,7 +221,7 @@
 
   <div class="section-label" style="border-top:none;padding-top:0">Editor's Picks</div>
 
-  <div class="highlight-card card" data-cats="music" data-price="free">
+  <div class="highlight-card card" data-cats="sports""""""""" data-price="free">
     <div class="card-top">
       <h3>Suki Waterhouse at Stern Grove</h3>
       <div class="card-when">Sun Jul 26 · 2pm</div>
@@ -320,6 +354,42 @@
     </div>
   </div>
 
+  <div class="card" data-cats="arts" data-price="$$">
+    <div class="card-top">
+      <h3>Beauty and the Beast · Orpheum Theatre</h3>
+      <div class="card-when">Multiple shows this week</div>
+    </div>
+    <p>The Broadway touring production is in town on Market Street. Matinee and evening shows available.</p>
+    <div class="tags">
+      <span class="tag tag-arts">Broadway</span>
+      <span class="price-badge">$$ · $50–130+</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="arts" data-price="$$$">
+    <div class="card-top">
+      <h3>Trevor Noah · The Mountain Winery</h3>
+      <div class="card-when">Sun–Tue Jul 26–28</div>
+    </div>
+    <p>Three nights at the outdoor amphitheater in Saratoga. Bring a layer and arrive early to grab wine before the show.</p>
+    <div class="tags">
+      <span class="tag tag-nightlife">Comedy</span>
+      <span class="price-badge">$$$ · $80+</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="arts" data-price="$$">
+    <div class="card-top">
+      <h3>Hairspray · SF Playhouse</h3>
+      <div class="card-when">Through Sep 12</div>
+    </div>
+    <p>The musical is running all summer. Intimate theater — every seat is a good seat.</p>
+    <div class="tags">
+      <span class="tag tag-arts">Theater</span>
+      <span class="price-badge">$$ · $35–75</span>
+    </div>
+  </div>
+
   <div class="picks-empty" id="picks-empty">
     Nothing matches those filters. <a onclick="resetFilters()">Clear all</a>
   </div>
@@ -332,120 +402,297 @@
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
-<!-- ==================== DATE NIGHT ==================== -->
-<div class="view" id="view-datenight">
-  <div class="dn-intro">
-    <h2>Three nights out, planned for you.</h2>
-    <p>Pick a budget. We'll tell you where to go, what to order, and when to show up.</p>
+<!-- ==================== PLANS ==================== -->
+<div class="view" id="view-plans">
+
+  <div class="plans-intro">
+    <h2>Curated Playbooks</h2>
+    <p>Pick the occasion. Sammy's got the whole night planned.</p>
   </div>
 
-  <div class="dn-card dn-tier-free">
-    <div class="dn-tier">
-      <span class="dn-tier-badge">The Free One</span>
-      <span class="dn-tier-est">$0 + whatever you eat</span>
-    </div>
-    <div class="dn-body">
-      <h3>Movie Under the Stars</h3>
-      <p class="dn-tagline">Blankets, The Princess Diaries, and dumplings at midnight.</p>
-      <ul class="dn-steps">
-        <li class="dn-step" data-step="1">
-          <div>
-            <div class="dn-step-time">5:30 PM</div>
-            <div class="dn-step-title">Grab provisions</div>
-            <div class="dn-step-detail">Pick up snacks and a bottle of something at a corner store near Union Square. Or pack from home if you're organized like that.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="2">
-          <div>
-            <div class="dn-step-time">6:00 PM</div>
-            <div class="dn-step-title">Claim your spot at Union Square</div>
-            <div class="dn-step-detail">The free outdoor movie series has pre-show activities starting at 6. Lay out a blanket, settle in while the sky turns pink.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="3">
-          <div>
-            <div class="dn-step-time">Sunset</div>
-            <div class="dn-step-title">The Princess Diaries rolls</div>
-            <div class="dn-step-detail">A perfect crowd movie. Fun even if you've seen it. Especially if you've seen it.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="4">
-          <div>
-            <div class="dn-step-time">~10 PM</div>
-            <div class="dn-step-title">Late-night dumplings in Chinatown</div>
-            <div class="dn-step-detail">It's a 10-minute walk. Good Fortune Dumpling House or wherever looks good and open. End the night with soup dumplings and no bill over $25.</div>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="occasion-picker">
+    <button class="occasion-btn active" data-oc="date" onclick="showOccasion('date')">💘 Date Night</button>
+    <button class="occasion-btn" data-oc="solo" onclick="showOccasion('solo')">✨ Solo Date</button>
+    <button class="occasion-btn" data-oc="birthday" onclick="showOccasion('birthday')">🎂 Birthday</button>
+    <button class="occasion-btn" data-oc="friends" onclick="showOccasion('friends')">🎉 Friends Visiting</button>
+    <button class="occasion-btn" data-oc="parents" onclick="showOccasion('parents')">👨‍👩‍👧 Parents in Town</button>
   </div>
 
-  <div class="dn-card dn-tier-mid">
-    <div class="dn-tier">
-      <span class="dn-tier-badge">The Midrange Move</span>
-      <span class="dn-tier-est">~$80–120 for two</span>
+  <!-- DATE NIGHT -->
+  <div class="occasion-view active" id="oc-date">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Free One</span>
+        <span class="dn-tier-est">$0 + whatever you eat</span>
+      </div>
+      <div class="dn-body">
+        <h3>Movie Under the Stars</h3>
+        <p class="dn-tagline">Blankets, The Princess Diaries, and dumplings at midnight.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">5:30 PM</div><div class="dn-step-title">Grab provisions</div><div class="dn-step-detail">Pick up snacks and a bottle of something at a corner store near Union Square. Or pack from home if you're organized like that.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">6:00 PM</div><div class="dn-step-title">Claim your spot at Union Square</div><div class="dn-step-detail">Free outdoor movie series. Pre-show activities at 6, lay out a blanket, settle in while the sky turns pink.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">Sunset</div><div class="dn-step-title">The Princess Diaries rolls</div><div class="dn-step-detail">A perfect crowd movie. Fun even if you've seen it. Especially if you've seen it.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">~10 PM</div><div class="dn-step-title">Late-night dumplings in Chinatown</div><div class="dn-step-detail">10-minute walk. Good Fortune Dumpling House or wherever looks good. Soup dumplings, no bill over $25.</div></div></li>
+        </ul>
+      </div>
     </div>
-    <div class="dn-body">
-      <h3>Mission Cocktail Crawl</h3>
-      <p class="dn-tagline">New bars, good food, and a neighborhood that rewards wandering.</p>
-      <ul class="dn-steps">
-        <li class="dn-step" data-step="1">
-          <div>
-            <div class="dn-step-time">6:30 PM</div>
-            <div class="dn-step-title">Start at Stray Dog</div>
-            <div class="dn-step-detail">New cafe-bar on Utah & 24th. Pandan lattes during the day, pan-Asian cocktails at night. Shanghai-inspired, tiny, and just opened. Get an early drink while it's still mellow.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="2">
-          <div>
-            <div class="dn-step-time">7:30 PM</div>
-            <div class="dn-step-title">Dinner nearby</div>
-            <div class="dn-step-detail">Walk to your pick. Jilli for Korean drinking food and makgeolli (the popcorn fried chicken is mandatory). Or Big Finish for wine under $14/glass and cacio e pepe.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="3">
-          <div>
-            <div class="dn-step-time">9:30 PM</div>
-            <div class="dn-step-title">Nightcap at the Madrone parklet</div>
-            <div class="dn-step-detail">Madrone Art Bar on Haight is doing a book sale in their parklet Saturday, but any night the bar itself is a vibe — murals, DJs, and a crowd that's been coming for years.</div>
-          </div>
-        </li>
-      </ul>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Midrange Move</span>
+        <span class="dn-tier-est">~$80–120 for two</span>
+      </div>
+      <div class="dn-body">
+        <h3>Mission Cocktail Crawl</h3>
+        <p class="dn-tagline">New bars, good food, and a neighborhood that rewards wandering.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">6:30 PM</div><div class="dn-step-title">Start at Stray Dog</div><div class="dn-step-detail">New cafe-bar on Utah & 24th. Pandan lattes by day, pan-Asian cocktails at night. Shanghai-inspired, tiny, just opened.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30 PM</div><div class="dn-step-title">Dinner nearby</div><div class="dn-step-detail">Jilli for Korean drinking food and makgeolli (popcorn fried chicken is mandatory). Or Big Finish for wine under $14/glass and cacio e pepe.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">9:30 PM</div><div class="dn-step-title">Nightcap at Madrone</div><div class="dn-step-detail">Madrone Art Bar on Haight — murals, DJs, and a crowd that's been coming for years. The parklet is perfect on warm nights.</div></div></li>
+        </ul>
+      </div>
     </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Splurge</span>
+        <span class="dn-tier-est">~$150–200 for two</span>
+      </div>
+      <div class="dn-body">
+        <h3>Symphony & Speakeasy</h3>
+        <p class="dn-tagline">St. Vincent with an orchestra, then cocktails in a hidden lounge. Thursday only.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">6:00 PM</div><div class="dn-step-title">Early dinner at Hayes Valley</div><div class="dn-step-detail">Davies Symphony Hall is right by Hayes Valley. Lots of walkable options. Keep it light — you want to be energized, not sleepy.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30 PM</div><div class="dn-step-title">St. Vincent w/ the SF Symphony</div><div class="dn-step-detail">Full catalog performed with a symphony orchestra conducted by Jules Buckley. First-ever orchestral run. It's going to be extraordinary.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">~10 PM</div><div class="dn-step-title">Cocktails at Valley Club</div><div class="dn-step-detail">Cab to Hotel G's mezzanine in Union Square. Low lights, velvet corners, and a Negroni riff with cocoa butter. The kind of place where you stay longer than planned.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
-  <div class="dn-card dn-tier-splurge">
-    <div class="dn-tier">
-      <span class="dn-tier-badge">The Splurge</span>
-      <span class="dn-tier-est">~$150–200 for two</span>
+  <!-- SOLO DAY -->
+  <div class="occasion-view" id="oc-solo">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Wander</span>
+        <span class="dn-tier-est">Free (+ coffee)</span>
+      </div>
+      <div class="dn-body">
+        <h3>Slow Morning, Long Walk</h3>
+        <p class="dn-tagline">No plans, no people, no rush. Just you and the city.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">9:30 AM</div><div class="dn-step-title">Coffee and a book at Sightglass</div><div class="dn-step-detail">The SoMa location has high ceilings and long tables. Bring a book or just people-watch. No one's in a hurry here.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">11:00 AM</div><div class="dn-step-title">Walk the Embarcadero</div><div class="dn-step-detail">Ferry Building to Fisherman's Wharf along the water. Put on a podcast or go silent — either works. Stop at the wave organ if you've never been.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">1:00 PM</div><div class="dn-step-title">Solo lunch at the counter</div><div class="dn-step-detail">Cinderella Bakery's new Mission location for rye bread and borscht. Or grab a bench at Dolores Park with a burrito from La Taqueria. Main character lunch.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">3:00 PM</div><div class="dn-step-title">Museum of Craft & Design (free this weekend)</div><div class="dn-step-detail">Small enough to not be exhausting, interesting enough to feel like you did something. The Video Craft exhibition plus the weaving project.</div></div></li>
+        </ul>
+      </div>
     </div>
-    <div class="dn-body">
-      <h3>Symphony & Speakeasy</h3>
-      <p class="dn-tagline">St. Vincent with an orchestra, then cocktails in a hidden lounge. Thursday only.</p>
-      <ul class="dn-steps">
-        <li class="dn-step" data-step="1">
-          <div>
-            <div class="dn-step-time">6:00 PM</div>
-            <div class="dn-step-title">Early dinner at Hayes Valley</div>
-            <div class="dn-step-detail">Davies Symphony Hall is right by Hayes Valley. Grab dinner before the show — lots of walkable options. Keep it light, you want to be energized not sleepy.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="2">
-          <div>
-            <div class="dn-step-time">7:30 PM</div>
-            <div class="dn-step-title">St. Vincent w/ the SF Symphony</div>
-            <div class="dn-step-detail">Annie Clark's catalog — "Los Ageless," "Cruel," "Digital Witness" — performed with a full orchestra conducted by Jules Buckley. First-ever orchestral run. It's going to be extraordinary.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="3">
-          <div>
-            <div class="dn-step-time">~10 PM</div>
-            <div class="dn-step-title">Cocktails at Valley Club</div>
-            <div class="dn-step-detail">Cab to Hotel G's mezzanine in Union Square. Low lights, velvet corners, and The Lovemaker — a Negroni riff with raspberry and cocoa butter. The kind of place where you stay longer than planned.</div>
-          </div>
-        </li>
-      </ul>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Treat Yourself</span>
+        <span class="dn-tier-est">~$60–90</span>
+      </div>
+      <div class="dn-body">
+        <h3>Art, Wine & a Counter Seat</h3>
+        <p class="dn-tagline">A day that feels like a little vacation without leaving the city.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:30 AM</div><div class="dn-step-title">Matisse at the de Young — last chance</div><div class="dn-step-detail">Go before it closes this weekend. Solo museum visits hit different — you go at your own pace, linger where you want, skip what you don't.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">1:00 PM</div><div class="dn-step-title">Lunch in the park</div><div class="dn-step-detail">Grab something from the de Young cafe or walk to Nopalito on 9th Ave for pozole. Eat slowly.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">3:00 PM</div><div class="dn-step-title">Wine at Big Finish</div><div class="dn-step-detail">48 wines on tap, organized by finish style so you don't need to know anything. Grab a seat at the bar, try 2-3 glasses, maybe read. Nobody bothers you here.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">5:30 PM</div><div class="dn-step-title">Bar Shoji at sunset</div><div class="dn-step-detail">The coffee shop transforms into a cocktail den as the light changes. Wagyu-fat-washed whisky, a small plate, and nowhere to be. This is your evening.</div></div></li>
+        </ul>
+      </div>
     </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Reset Day</span>
+        <span class="dn-tier-est">~$100–150</span>
+      </div>
+      <div class="dn-body">
+        <h3>Long Brunch, Live Music, No Phone</h3>
+        <p class="dn-tagline">Put your phone on DND. Today is about you.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:00 AM</div><div class="dn-step-title">Long brunch at Zuni Café</div><div class="dn-step-detail">Sit at the bar, order the Caesar and an oyster plate. Read the paper. Take an actual hour. You've earned this.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12:30 PM</div><div class="dn-step-title">Browse Green Apple Books</div><div class="dn-step-detail">The Clement Street location is a maze of used books. Get lost for an hour. Walk out with something you weren't looking for.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Suki Waterhouse at Stern Grove</div><div class="dn-step-detail">Free concert in the amphitheater. Bring a blanket, lie down, close your eyes if you want. Nobody knows you're here and that's the point.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">5:00 PM</div><div class="dn-step-title">Sunset at Lands End</div><div class="dn-step-detail">15-minute drive from Stern Grove. Walk the trail to the Sutro Baths ruins. Watch the Pacific. Go home when you're ready.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BIRTHDAY -->
+  <div class="occasion-view" id="oc-birthday">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Low-Key Birthday</span>
+        <span class="dn-tier-est">Free + dinner</span>
+      </div>
+      <div class="dn-body">
+        <h3>Park Hangout → Group Dinner</h3>
+        <p class="dn-tagline">No pressure, no velvet ropes. Just your favorite people in the sun.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Dolores Park takeover</div><div class="dn-step-detail">Text the group chat a pin drop. Bring a speaker, a cooler, and a cake from Tartine. Claim the spot with the downtown view. This is the party.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">5:00 PM</div><div class="dn-step-title">Golden hour photos</div><div class="dn-step-detail">Walk to the Dolores Park Painted Ladies view or the Mission murals on Balmy Alley. The light between 5-6 is unreal.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7:00 PM</div><div class="dn-step-title">Group dinner at Jilli</div><div class="dn-step-detail">Communal Korean drinking food — perfect for birthdays. Makgeolli in teapots, popcorn fried chicken, loud music. Tell them it's your birthday and see what happens.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">9:30 PM</div><div class="dn-step-title">Nightcap at Stray Dog</div><div class="dn-step-detail">Walk to Utah & 24th for one more round. Pan-Asian cocktails in a cozy room. Perfect last stop — small enough that the whole group stays together.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Night Out</span>
+        <span class="dn-tier-est">~$60–100/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Dinner → Live Music → Bars</h3>
+        <p class="dn-tagline">A proper birthday night that builds as it goes.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">7:00 PM</div><div class="dn-step-title">Dinner at Hayati</div><div class="dn-step-detail">New Middle Eastern spot in the Ferry Building. Shareable plates, buzzy energy, beautiful room. Book a table for the group — this is the kind of place that makes a birthday feel special.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">9:00 PM</div><div class="dn-step-title">Live jazz at The Deluxe</div><div class="dn-step-detail">$5–10 cover, live music every night on Haight. Friday has Angela LaFlamme, Saturday is Big Blu Soul Revue. Walk in as a group, grab the corner booth.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">11:00 PM</div><div class="dn-step-title">Late night at The Green Heron</div><div class="dn-step-detail">Around the corner on Haight. Miller Lites and shots for the birthday person. No pretense, just a good bar with a jukebox. Close it out here.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Main Character Birthday</span>
+        <span class="dn-tier-est">~$120–180/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Brunch → Show → Speakeasy</h3>
+        <p class="dn-tagline">Go all out. It's your birthday and you'll splurge if you want to.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">11:00 AM</div><div class="dn-step-title">Birthday brunch at Che Fico</div><div class="dn-step-detail">Italian brunch in NoPa. Wood-fired everything, killer cocktails, and enough space for a big group. Toast with Aperol Spritzes.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Beauty and the Beast at the Orpheum</div><div class="dn-step-detail">Broadway matinee on Market Street. Get a block of seats together. It's spectacle, it's fun, and it's the kind of thing you'd never do for yourself — which is why it's perfect for a birthday.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">5:30 PM</div><div class="dn-step-title">Champagne at Valley Club</div><div class="dn-step-detail">Hotel G mezzanine. Low lights, velvet seating, cocktails that look like they belong on Instagram. Order a bottle and toast properly.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">8:00 PM</div><div class="dn-step-title">Dinner at The Bank at Amador</div><div class="dn-step-detail">1908 bank turned social club. Marble walls, vault door, raw bar, DJ. This is the "I can't believe we're doing this" spot. End the night feeling like a million bucks.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FRIENDS VISITING -->
+  <div class="occasion-view" id="oc-friends">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Classic SF Day</span>
+        <span class="dn-tier-est">Free (+ food)</span>
+      </div>
+      <div class="dn-body">
+        <h3>Golden Gate to Chinatown</h3>
+        <p class="dn-tagline">The greatest hits — but done right, not touristy.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:00 AM</div><div class="dn-step-title">Coffee at Equator in the Presidio</div><div class="dn-step-detail">Start with good coffee in a setting that immediately says "this city is different." Walk the trails toward the bridge from here.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">11:00 AM</div><div class="dn-step-title">Walk the Golden Gate Bridge</div><div class="dn-step-detail">Go halfway and back. Yes it's windy. Yes it's worth it. Your friends will take 400 photos and you'll pretend to be over it.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">1:00 PM</div><div class="dn-step-title">Dim sum in the Richmond</div><div class="dn-step-detail">Cab to Clement Street. Good Luck Dim Sum for cheap and fast, or Hong Kong Lounge II if you want to sit. Order the har gow.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">3:00 PM</div><div class="dn-step-title">Golden Gate Park → de Young</div><div class="dn-step-detail">Last chance for Matisse's Jazz Unbound (closes this weekend). Or just wander the park — Japanese Tea Garden, bison paddock, Stow Lake.</div></div></li>
+          <li class="dn-step" data-step="5"><div><div class="dn-step-time">6:00 PM</div><div class="dn-step-title">Sunset drinks at Park Chalet</div><div class="dn-step-detail">Right at the west end of the park, overlooking Ocean Beach. Beer garden with heat lamps. Watch the fog roll in.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The "Show Them Your SF"</span>
+        <span class="dn-tier-est">~$50–80/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Mission → Dolores → Nightlife</h3>
+        <p class="dn-tagline">The neighborhood your friends will wish they lived in.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Dolores Park</div><div class="dn-step-detail">Grab Bi-Rite ice cream and a blanket spot with a skyline view. This is peak SF energy on a sunny day. Stay for an hour.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">4:00 PM</div><div class="dn-step-title">Walk Valencia Street</div><div class="dn-step-detail">Browse Paxton Gate (taxidermy and oddities), grab coffee at Sightglass, poke into bookstores. Let them soak it in.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">6:30 PM</div><div class="dn-step-title">Dinner at Jilli</div><div class="dn-step-detail">Korean communal drinking food — makgeolli poured from teapots, popcorn fried chicken, loud and fun. Perfect group energy.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">9:00 PM</div><div class="dn-step-title">Bar hop on 24th</div><div class="dn-step-detail">Start at Stray Dog for cocktails, end at Trick Dog or Latin American Club. Your friends will not want to leave this city.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Weekend Send</span>
+        <span class="dn-tier-est">~$100–150/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Concerts, Views & Late Nights</h3>
+        <p class="dn-tagline">For friends who came to have a big weekend.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">12:00 PM</div><div class="dn-step-title">Brunch at the Ferry Building</div><div class="dn-step-detail">Walk the market stalls, grab Hog Island oysters, Acme bread, Blue Bottle. Then sit outside on the water.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Suki Waterhouse at Stern Grove</div><div class="dn-step-detail">Free concert in an amphitheater tucked in the trees. Bring a blanket, share a bottle of wine, and enjoy the fact that this is somehow free.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">6:00 PM</div><div class="dn-step-title">Hayati at the Ferry Building</div><div class="dn-step-detail">New Middle Eastern spot in the old Boulettes Larder space. Book ahead — this is the buzzy opening right now.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">9:00 PM</div><div class="dn-step-title">The Bank at Amador</div><div class="dn-step-detail">1908 bank turned social club in FiDi. Marble walls, vault door, three kinds of martinis, DJ night. Walk in with confidence.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PARENTS IN TOWN -->
+  <div class="occasion-view" id="oc-parents">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Chill Day</span>
+        <span class="dn-tier-est">Free (+ lunch)</span>
+      </div>
+      <div class="dn-body">
+        <h3>Parks, Views & an Easy Lunch</h3>
+        <p class="dn-tagline">Nothing too rushed, nothing too loud. Just a beautiful day.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:00 AM</div><div class="dn-step-title">Ferry Building farmers market</div><div class="dn-step-detail">Saturday morning market along the Embarcadero. Sample olive oils, grab pastries, walk the waterfront. Parents love this.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12:00 PM</div><div class="dn-step-title">Lunch on the water</div><div class="dn-step-detail">Hog Island Oyster Co inside the Ferry Building, or grab takeaway and sit on the benches looking at the Bay Bridge.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Drive to Twin Peaks</div><div class="dn-step-detail">10-minute drive for a 360° view of the entire city. Bring a jacket. Your mom will say "wow" at least four times.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">4:00 PM</div><div class="dn-step-title">Coffee in Noe Valley</div><div class="dn-step-detail">Drive down to 24th Street in Noe. Bernie's or Martha & Bros. Quiet, charming, feels like a village. Easy walking.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Culture Day</span>
+        <span class="dn-tier-est">~$60–100/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Museums, Music & a Nice Dinner</h3>
+        <p class="dn-tagline">For parents who want to do something, not just see something.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:30 AM</div><div class="dn-step-title">SFMOMA or de Young</div><div class="dn-step-detail">SFMOMA if they like modern. De Young for Matisse (last chance — closes this weekend). Both have great museum cafes for a light bite.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">1:00 PM</div><div class="dn-step-title">Lunch in Hayes Valley</div><div class="dn-step-detail">Walk Hayes Street — Souvla for Greek, Rich Table for something special, or Chez Maman for a casual French crêpe. Browse the boutiques after.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">3:00 PM</div><div class="dn-step-title">Japanese Tea Garden</div><div class="dn-step-detail">In Golden Gate Park. Peaceful, beautiful, and the perfect speed for a post-lunch stroll. Green tea and cookies inside.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">6:30 PM</div><div class="dn-step-title">Dinner at Hayati</div><div class="dn-step-detail">New Middle Eastern restaurant in the Ferry Building. Elegant but not stuffy. The kind of place your parents will tell their friends about.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Big Night</span>
+        <span class="dn-tier-est">~$120–180/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Symphony & Supper Club</h3>
+        <p class="dn-tagline">The "I want to impress my parents" evening. Thursday only.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">5:30 PM</div><div class="dn-step-title">Drinks at Absinthe</div><div class="dn-step-detail">Classic Hayes Valley brasserie. Great cocktails, beautiful room. Perfect warm-up before the symphony — it's a 5-minute walk to Davies Hall.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30 PM</div><div class="dn-step-title">St. Vincent w/ SF Symphony</div><div class="dn-step-detail">Even if your parents don't know St. Vincent, a full orchestra in Davies Hall is universally impressive. The venue alone will get them.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">~10 PM</div><div class="dn-step-title">Late supper at Zuni Café</div><div class="dn-step-detail">The iconic SF restaurant. Roast chicken for two (order it when you sit down, 45-min wait), Caesar salad, and a bottle of something nice. Your parents will love this.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
@@ -595,6 +842,16 @@
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
+<div class="signup" style="max-width:700px;margin:0 auto 0;">
+  <h3>Get this in your inbox every week</h3>
+  <p>New edition every Tuesday morning. No spam, just plans.</p>
+  <div class="signup-form">
+    <input type="email" id="signup-email" placeholder="your@email.com" />
+    <button onclick="subscribe()">I'm in</button>
+  </div>
+  <div class="signup-note" id="signup-note">Join 0 friends already subscribed</div>
+</div>
+
 <div class="footer">
   <div class="sign-off">See you out there. — Sammy</div>
   <p>Sammy's SF · Issue 01 · July 2026</p>
@@ -656,6 +913,42 @@ function filterPicks() {
   document.getElementById('picks-empty').classList.toggle('show', any && vis === 0);
   const fc = document.getElementById('fcount');
   fc.textContent = any ? vis + ' match' + (vis !== 1 ? 'es' : '') : '';
+}
+
+// Occasion picker (Plans tab)
+function showOccasion(id) {
+  document.querySelectorAll('.occasion-view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.occasion-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('oc-' + id).classList.add('active');
+  document.querySelector('.occasion-btn[data-oc="' + id + '"]').classList.add('active');
+}
+
+// Subscribe
+function subscribe() {
+  const email = document.getElementById('signup-email').value;
+  const note = document.getElementById('signup-note');
+  if (!email || !email.includes('@')) { note.textContent = 'Enter a valid email!'; return; }
+
+  // Buttondown API
+  fetch('https://api.buttondown.com/v1/subscribers', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email_address: email, type: 'regular' })
+  })
+  .then(r => {
+    if (r.ok || r.status === 201) {
+      note.textContent = "You're in! See you Tuesday. 🎉";
+      document.getElementById('signup-email').value = '';
+    } else {
+      // Fallback: open Buttondown subscribe page
+      window.open('https://buttondown.com/sammyssf', '_blank');
+      note.textContent = "Almost there — confirm in the new tab!";
+    }
+  })
+  .catch(() => {
+    window.open('https://buttondown.com/sammyssf', '_blank');
+    note.textContent = "Almost there — confirm in the new tab!";
+  });
 }
 
 // Share

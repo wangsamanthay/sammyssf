@@ -110,3 +110,64 @@ fs.writeFileSync("index.html", html);
 console.log(`✅ Generated index.html for ${dateRange}`);
 console.log(`📊 Issue #${issueNum}`);
 console.log(`📦 File size: ${(Buffer.byteLength(html) / 1024).toFixed(1)} KB\n`);
+
+// Step 3: Send newsletter via Buttondown (if API key is set)
+const buttondownKey = process.env.BUTTONDOWN_API_KEY;
+if (buttondownKey) {
+  console.log("📧 Sending newsletter...\n");
+
+  // Generate an email-friendly version (plain text summary + link)
+  const emailResponse = await client.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 2000,
+    messages: [
+      {
+        role: "user",
+        content: `Convert this weekly events page into a short, fun email newsletter. Keep the same voice ("your bff Sammy"). 
+
+Include:
+- A quick intro (2 sentences)
+- Top 5-6 picks with name, when, price, and one-line description
+- The date night splurge pick
+- A sign-off linking to the full site
+
+Use simple HTML formatting (h2, p, ul/li, bold, links). Keep it scannable — people read emails fast. Link to the full site at sammyssf-1.vercel.app for the complete guide.
+
+Here's the page content:
+${html.substring(0, 8000)}
+
+Output ONLY the email HTML body, no markdown fences.`,
+      },
+    ],
+  });
+
+  const emailBody = emailResponse.content
+    .filter((b) => b.type === "text")
+    .map((b) => b.text)
+    .join("\n")
+    .replace(/^```html?\n?/, "")
+    .replace(/\n?```$/, "")
+    .trim();
+
+  const emailRes = await fetch("https://api.buttondown.com/v1/emails", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Token ${buttondownKey}`,
+    },
+    body: JSON.stringify({
+      subject: `Sammy's SF — ${dateRange}`,
+      body: emailBody,
+      status: "about_to_send",
+    }),
+  });
+
+  if (emailRes.ok) {
+    console.log("✅ Newsletter sent!\n");
+  } else {
+    const err = await emailRes.text();
+    console.error("❌ Newsletter failed:", err);
+  }
+} else {
+  console.log("⏭️  No BUTTONDOWN_API_KEY set, skipping newsletter.\n");
+}
