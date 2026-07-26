@@ -3,7 +3,7 @@ name: Generate Weekly Edition
 on:
   # Runs every Thursday at 6pm Pacific (Friday 1am UTC)
   schedule:
-    - cron: "0 16 * * 2"
+    - cron: "0 1 * * 5"
   # Also allow manual trigger
   workflow_dispatch:
 
