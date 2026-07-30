@@ -6,24 +6,19 @@ const client = new Anthropic();
 // Get current date info
 const now = new Date();
 const weekStart = new Date(now);
-weekStart.setDate(now.getDate() - now.getDay() + 5); // Friday
+weekStart.setDate(now.getDate() - now.getDay() + 5);
 const weekEnd = new Date(weekStart);
-weekEnd.setDate(weekStart.getDate() + 6); // Thursday next week
+weekEnd.setDate(weekStart.getDate() + 6);
 
-const fmt = (d) =>
-  d.toLocaleDateString("en-US", { month: "long", day: "numeric" });
-const fmtFull = (d) =>
-  d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
-
+const fmt = (d) => d.toLocaleDateString("en-US", { month: "long", day: "numeric" });
 const dateRange = `${fmt(weekStart)} – ${fmt(weekEnd)}, ${weekEnd.getFullYear()}`;
-const issueNum = Math.ceil(
-  (now - new Date("2026-07-25")) / (7 * 24 * 60 * 60 * 1000)
-) + 1;
+const issueNum = Math.ceil((now - new Date("2026-07-25")) / (7 * 24 * 60 * 60 * 1000)) + 1;
+const issueStr = String(issueNum).padStart(2, "0");
 
-console.log(`\n🎯 Generating Sammy's SF — ${dateRange} (Issue #${issueNum})\n`);
+console.log(`\n🎯 Generating Sammy's SF — ${dateRange} (Issue #${issueStr})\n`);
 
-// Read the current template for reference
-const currentTemplate = fs.readFileSync("index.html", "utf-8");
+// Read the template
+const template = fs.readFileSync("template.html", "utf-8");
 
 // Step 1: Research events
 console.log("🔍 Searching for SF events...\n");
@@ -32,150 +27,282 @@ const researchResponse = await client.messages.create({
   model: "claude-sonnet-4-6",
   max_tokens: 4000,
   tools: [{ type: "web_search_20250305", name: "web_search" }],
-  messages: [
-    {
-      role: "user",
-      content: `Search for things to do in San Francisco for the week of ${dateRange}. I need:
-
-1. Concerts and live music (check SeatGeek SF, Stern Grove schedule, Fillmore, The Independent, Chase Center, Davies Symphony Hall)
-2. New restaurant and bar openings
-3. Outdoor events, festivals, pop-ups, markets
-4. Art exhibitions, theater, film screenings
+  messages: [{
+    role: "user",
+    content: `Search for things to do in San Francisco for the week of ${dateRange}. I need:
+1. Concerts and live music (SeatGeek SF, Stern Grove, Fillmore, The Independent, Chase Center, Davies Symphony Hall, Greek Theatre Berkeley)
+2. New restaurant and bar openings (site:sf.eater.com, site:sfchronicle.com)
+3. Outdoor events, festivals, pop-ups, flea markets
+4. Art exhibitions, theater, comedy, film screenings, book readings
 5. Sports (Giants schedule, Valkyries, Oakland Ballers)
-6. Any notable free events
+6. Singles events and social sports (Eventbrite SF singles, Thursday app)
+7. Notable free events
+8. Nightlife, DJ events, day parties
 
-Do at least 8-10 searches to be thorough. For each event, include: name, venue, date/time, price range, and a brief description. Return everything as a structured list organized by category.`,
-    },
-  ],
+Do at least 10 searches to be thorough. For each event include: name, venue, date/time, price range, and a brief description.`
+  }]
 });
 
-// Extract the research text
-const researchText = researchResponse.content
-  .filter((b) => b.type === "text")
-  .map((b) => b.text)
-  .join("\n");
+const researchText = researchResponse.content.filter(b => b.type === "text").map(b => b.text).join("\n");
+console.log("📝 Research complete. Generating content...\n");
 
-console.log("📝 Research complete. Generating HTML...\n");
-
-// Step 2: Generate the HTML using the research and template
+// Step 2: Generate ONLY the content sections as JSON
 const generateResponse = await client.messages.create({
   model: "claude-sonnet-4-6",
-  max_tokens: 16000,
-  messages: [
-    {
-      role: "user",
-      content: `You are generating the weekly edition of "Sammy's SF" — a fun, curated guide to what's happening in San Francisco this week, shared among friends.
+  max_tokens: 12000,
+  messages: [{
+    role: "user",
+    content: `You are generating content for "Sammy's SF" — a fun weekly guide to SF. Based on the research below, generate content in JSON format.
 
-Here is the current site template for reference — keep the EXACT same HTML structure, CSS, tabs, and JavaScript. Only update the content (event cards, dates, descriptions):
-
-<template>
-${currentTemplate}
-</template>
-
-Here is this week's research:
-
-<research>
+RESEARCH:
 ${researchText}
-</research>
 
-Generate the complete updated HTML file for the week of ${dateRange} (Issue #${String(issueNum).padStart(2, "0")}). Rules:
+Return ONLY a valid JSON object (no markdown fences, no explanation) with these keys:
 
-1. Keep the EXACT same HTML structure, CSS styles, JavaScript, and tab system
-2. Update the header date to "${dateRange}"
-3. Update the footer to "Issue ${String(issueNum).padStart(2, "0")}"
-4. Replace all event cards with this week's events from the research
-5. THIS WEEK tab: Pick 12-15 best events across all categories. Include data-cats and data-price attributes for filtering.
-6. PLAYBOOKS tab: Create 3 itineraries per occasion (Date Night, Solo Date, Birthday, Friends Visiting, Parents in Town) at Free/$$/$$$ tiers using this week's actual events
-7. EATS & BARS tab: Update with any new openings. Keep bars that are still relevant from last week.
-8. SPORTS tab: Update all game schedules
-9. CONCERTS tab: Update all shows and concerts
-10. Keep the writing voice fun, warm, and friend-to-friend — like texting your group chat
-11. Price tiers: free, $ (under $20), $$ ($20-75), $$$ ($75+)
-12. Category definitions for data-cats:
-    - music: concerts, live music, DJs, music festivals
-    - shows: broadway, theater, comedy, drag shows, film screenings, museums, art exhibitions, book readings, poetry nights, open mics, immersive experiences
-    - food: restaurants, food fairs, new openings, cooking classes, tastings
-    - nightlife: DJ nights, club events, day parties, arcade bars, karaoke, trivia nights, late night events
-    - active: hikes, outdoor yoga, kayaking, bike rides, flea markets, pop-up experiences, farmers markets, vintage shopping, outdoor fitness
-    - sports: professional sports, amateur events, watch parties, fitness competitions
-    Cards can have multiple categories (e.g. data-cats="nightlife,music")
-
-Output ONLY the complete HTML file, no markdown fences or explanation.`,
-    },
+{
+  "dateRange": "${dateRange}",
+  "issueNum": "${issueStr}",
+  "heroTitle": "Best event of the week",
+  "heroWhen": "Day Date · Time",
+  "heroDesc": "2-3 sentence description, fun and friend-to-friend voice",
+  "heroCats": "music",
+  "heroPrice": "free",
+  "heroPriceBadge": "Free",
+  "heroTags": [{"label": "Free"}, {"label": "Music"}],
+  "picks": [
+    {
+      "title": "Event name",
+      "when": "Day Date · Time",
+      "desc": "1-2 sentences, fun voice",
+      "cats": "music,nightlife",
+      "price": "$$",
+      "priceBadge": "$$ · ~$40",
+      "tags": [{"label": "Concert", "type": "music"}]
+    }
   ],
+  "picksOngoing": [
+    {"title": "Name", "desc": "One line description"}
+  ],
+  "eatsNew": [
+    {"type": "Cuisine · Neighborhood", "name": "Restaurant", "desc": "One line", "price": "$$ · $25-50/pp"}
+  ],
+  "eatsClassic": [
+    {"type": "Cuisine · Neighborhood", "name": "Restaurant", "desc": "One line", "price": "$$ · $25-50/pp"}
+  ],
+  "bars": [
+    {"type": "Style · Neighborhood", "name": "Bar", "desc": "One line", "price": "$ · $12/drink"}
+  ],
+  "sports": [
+    {"section": "⚾ Giants · Oracle Park", "games": [{"teams": "Giants vs. Team", "detail": "Game info", "when": "Day Date\\nTime", "price": "From $25"}], "note": "Optional note"}
+  ],
+  "concerts": [
+    {"title": "Artist", "when": "Day Date · Time", "desc": "2-3 sentences", "venue": "Venue · Price info", "tags": [{"label": "Genre"}], "isHighlight": false}
+  ],
+  "concertsOngoing": [
+    {"title": "Name", "desc": "One line description"}
+  ],
+  "singles": [
+    {"title": "Event", "when": "Day · Time", "desc": "2-3 sentences", "tags": [{"label": "Type"}], "priceBadge": "$$ · ~$30", "link": "https://...", "linkText": "Get tickets"}
+  ],
+  "singlesOngoing": [
+    {"title": "Name", "desc": "One line description"}
+  ],
+  "dateNight": [
+    {"tier": "free", "badge": "The Free One", "est": "$0 + food", "title": "Plan Name", "tagline": "One line italic tagline", "steps": [{"time": "6:00 PM", "title": "Step name", "detail": "What to do"}]}
+  ],
+  "soloDate": [
+    {"tier": "free", "badge": "The Wander", "est": "Free + coffee", "title": "Plan Name", "tagline": "Tagline", "steps": [{"time": "10:00 AM", "title": "Step", "detail": "Detail"}]}
+  ],
+  "birthday": [
+    {"tier": "free", "badge": "Low-Key Birthday", "est": "Free + dinner", "title": "Plan Name", "tagline": "Tagline", "steps": [{"time": "2:00 PM", "title": "Step", "detail": "Detail"}]}
+  ],
+  "friendsVisiting": [
+    {"tier": "free", "badge": "The Classic SF Day", "est": "Free + food", "title": "Plan Name", "tagline": "Tagline", "steps": [{"time": "10:00 AM", "title": "Step", "detail": "Detail"}]}
+  ],
+  "parentsInTown": [
+    {"tier": "free", "badge": "The Chill Day", "est": "Free + lunch", "title": "Plan Name", "tagline": "Tagline", "steps": [{"time": "10:00 AM", "title": "Step", "detail": "Detail"}]}
+  ]
+}
+
+IMPORTANT RULES:
+- Each array should have 8-12 picks, 3-6 eatsNew, 3-4 eatsClassic, 6-8 bars, 4-6 concerts, 3-4 singles events
+- Each playbook occasion needs 3 plans: free/$$/$$$ tiers using THIS WEEK's actual events
+- cats must be from: music, shows, museums, food, nightlife, active, sports (can combine with commas)
+- price must be from: free, $, $$, $$$
+- Voice: fun, warm, friend-to-friend. Like texting your group chat
+- The hero should be the single most can't-miss event of the week
+- Output ONLY the JSON, no other text`
+  }]
 });
 
-const html = generateResponse.content
-  .filter((b) => b.type === "text")
-  .map((b) => b.text)
-  .join("\n")
-  .replace(/^```html?\n?/, "")
-  .replace(/\n?```$/, "")
-  .trim();
+let jsonText = generateResponse.content.filter(b => b.type === "text").map(b => b.text).join("\n");
+jsonText = jsonText.replace(/^```json?\n?/, "").replace(/\n?```$/, "").trim();
 
-// Write the output
+let data;
+try {
+  data = JSON.parse(jsonText);
+} catch (e) {
+  console.error("❌ Failed to parse JSON:", e.message);
+  console.error("Raw output:", jsonText.substring(0, 500));
+  process.exit(1);
+}
+
+console.log("✅ Content generated. Building HTML...\n");
+
+// Step 3: Inject content into template
+let html = template;
+
+// Replace date and issue
+html = html.replace(/<!--DATE_RANGE-->/g, data.dateRange || dateRange);
+html = html.replace(/<!--ISSUE_NUM-->/g, data.issueNum || issueStr);
+
+// Build hero card
+const heroHtml = `
+  <div class="highlight-card card" data-cats="${data.heroCats}" data-price="${data.heroPrice}">
+    <div class="card-top">
+      <h3>${data.heroTitle}</h3>
+      <div class="card-when">${data.heroWhen}</div>
+    </div>
+    <p>${data.heroDesc}</p>
+    <div class="tags">
+      ${(data.heroTags || []).map(t => `<span class="tag">${t.label}</span>`).join("\n      ")}
+      ${data.heroPriceBadge ? `<span class="price-badge">${data.heroPriceBadge}</span>` : ""}
+    </div>
+  </div>`;
+html = html.replace("<!--HERO_CARD-->", heroHtml);
+
+// Build picks
+const picksHtml = (data.picks || []).map(p => `
+  <div class="card" data-cats="${p.cats}" data-price="${p.price}">
+    <div class="card-top">
+      <h3>${p.title}</h3>
+      <div class="card-when">${p.when}</div>
+    </div>
+    <p>${p.desc}</p>
+    <div class="tags">
+      ${(p.tags || []).map(t => `<span class="tag tag-${t.type || ''}">${t.label}</span>`).join("\n      ")}
+      ${p.priceBadge ? `<span class="price-badge">${p.priceBadge}</span>` : ""}
+    </div>
+  </div>`).join("\n");
+html = html.replace("<!--PICKS_CARDS-->", picksHtml);
+
+// Build ongoing
+const ongoingHtml = (data.picksOngoing || []).map(o =>
+  `<div class="ongoing"><h4>${o.title}</h4><p>${o.desc}</p></div>`
+).join("\n  ");
+html = html.replace("<!--PICKS_ONGOING-->", ongoingHtml);
+
+// Build eats
+const eatsNewHtml = (data.eatsNew || []).map(e =>
+  `<div class="mini-card"><div class="mini-type">${e.type}</div><h4>${e.name}</h4><p>${e.desc}</p><div class="mini-price">${e.price}</div></div>`
+).join("\n    ");
+html = html.replace("<!--EATS_NEW-->", eatsNewHtml);
+
+const eatsClassicHtml = (data.eatsClassic || []).map(e =>
+  `<div class="mini-card"><div class="mini-type">${e.type}</div><h4>${e.name}</h4><p>${e.desc}</p><div class="mini-price">${e.price}</div></div>`
+).join("\n    ");
+html = html.replace("<!--EATS_CLASSIC-->", eatsClassicHtml);
+
+const barsHtml = (data.bars || []).map(b =>
+  `<div class="mini-card"><div class="mini-type">${b.type}</div><h4>${b.name}</h4><p>${b.desc}</p><div class="mini-price">${b.price}</div></div>`
+).join("\n    ");
+html = html.replace("<!--BARS-->", barsHtml);
+
+// Build sports
+const sportsHtml = (data.sports || []).map(s => {
+  const games = (s.games || []).map(g =>
+    `<div class="sport-row"><div class="sr-teams"><h4>${g.teams}</h4><p>${g.detail}</p></div><div class="sr-when">${g.when.replace(/\\n/g, "<br>")}</div><div class="sr-price">${g.price}</div></div>`
+  ).join("\n  ");
+  return `<div class="section-label">${s.section}</div>\n  ${games}\n  ${s.note ? `<p class="sport-note">${s.note}</p>` : ""}`;
+}).join("\n\n  ");
+html = html.replace("<!--SPORTS-->", sportsHtml);
+
+// Build concerts
+const concertsHtml = (data.concerts || []).map(c => {
+  if (c.isHighlight) {
+    return `<div class="highlight-card card">
+    <div class="card-top"><h3>${c.title}</h3><div class="card-when">${c.when}</div></div>
+    <p>${c.desc}</p>
+    <div class="tags">${(c.tags || []).map(t => `<span class="tag">${t.label}</span>`).join("")}<span class="price-badge">${c.venue}</span></div>
+  </div>`;
+  }
+  return `<div class="card">
+    <div class="card-top"><h3>${c.title}</h3><div class="card-when">${c.when}</div></div>
+    <p>${c.desc}</p>
+    <div class="tags">${(c.tags || []).map(t => `<span class="tag tag-music">${t.label}</span>`).join("")}<span class="price-badge">${c.venue}</span></div>
+  </div>`;
+}).join("\n\n  ");
+html = html.replace("<!--CONCERTS-->", concertsHtml);
+
+const concertsOngoingHtml = (data.concertsOngoing || []).map(o =>
+  `<div class="ongoing"><h4>${o.title}</h4><p>${o.desc}</p></div>`
+).join("\n  ");
+html = html.replace("<!--CONCERTS_ONGOING-->", concertsOngoingHtml);
+
+// Build singles
+const singlesHtml = (data.singles || []).map(s => `
+  <div class="card">
+    <div class="card-top"><h3>${s.title}</h3><div class="card-when">${s.when}</div></div>
+    <p>${s.desc}</p>
+    ${s.link ? `<a class="card-link" href="${s.link}" target="_blank">${s.linkText || 'Learn more'}</a>` : ""}
+    <div class="tags">${(s.tags || []).map(t => `<span class="tag tag-nightlife">${t.label}</span>`).join("")}<span class="price-badge">${s.priceBadge}</span></div>
+  </div>`).join("\n");
+html = html.replace("<!--SINGLES_EVENTS-->", singlesHtml);
+
+const singlesOngoingHtml = (data.singlesOngoing || []).map(o =>
+  `<div class="ongoing"><h4>${o.title}</h4><p>${o.desc}</p></div>`
+).join("\n  ");
+html = html.replace("<!--SINGLES_ONGOING-->", singlesOngoingHtml);
+
+// Build playbooks
+function buildOccasion(plans) {
+  return (plans || []).map(p => {
+    const tierClass = p.tier === "free" ? "dn-tier-free" : p.tier === "$$" ? "dn-tier-mid" : "dn-tier-splurge";
+    const steps = (p.steps || []).map((s, i) =>
+      `<li class="dn-step" data-step="${i + 1}"><div><div class="dn-step-time">${s.time}</div><div class="dn-step-title">${s.title}</div><div class="dn-step-detail">${s.detail}</div></div></li>`
+    ).join("\n          ");
+    return `<div class="dn-card ${tierClass}">
+      <div class="dn-tier"><span class="dn-tier-badge">${p.badge}</span><span class="dn-tier-est">${p.est}</span></div>
+      <div class="dn-body">
+        <h3>${p.title}</h3>
+        <p class="dn-tagline">${p.tagline}</p>
+        <ul class="dn-steps">${steps}</ul>
+      </div>
+    </div>`;
+  }).join("\n\n    ");
+}
+
+html = html.replace("<!--PLAYBOOK_DATE-->", buildOccasion(data.dateNight));
+html = html.replace("<!--PLAYBOOK_SOLO-->", buildOccasion(data.soloDate));
+html = html.replace("<!--PLAYBOOK_BIRTHDAY-->", buildOccasion(data.birthday));
+html = html.replace("<!--PLAYBOOK_FRIENDS-->", buildOccasion(data.friendsVisiting));
+html = html.replace("<!--PLAYBOOK_PARENTS-->", buildOccasion(data.parentsInTown));
+
+// Write output
 fs.writeFileSync("index.html", html);
 console.log(`✅ Generated index.html for ${dateRange}`);
-console.log(`📊 Issue #${issueNum}`);
+console.log(`📊 Issue #${issueStr}`);
 console.log(`📦 File size: ${(Buffer.byteLength(html) / 1024).toFixed(1)} KB\n`);
 
-// Step 3: Send newsletter via Buttondown (if API key is set)
+// Step 4: Newsletter (optional)
 const buttondownKey = process.env.BUTTONDOWN_API_KEY;
 if (buttondownKey) {
   console.log("📧 Sending newsletter...\n");
-
-  // Generate an email-friendly version (plain text summary + link)
   const emailResponse = await client.messages.create({
     model: "claude-sonnet-4-6",
     max_tokens: 2000,
-    messages: [
-      {
-        role: "user",
-        content: `Convert this weekly events page into a short, fun email newsletter. Keep the same voice ("your bff Sammy"). 
-
-Include:
-- A quick intro (2 sentences)
-- Top 5-6 picks with name, when, price, and one-line description
-- The date night splurge pick
-- A sign-off linking to the full site
-
-Use simple HTML formatting (h2, p, ul/li, bold, links). Keep it scannable — people read emails fast. Link to the full site at sammyssf-1.vercel.app for the complete guide.
-
-Here's the page content:
-${html.substring(0, 8000)}
-
-Output ONLY the email HTML body, no markdown fences.`,
-      },
-    ],
+    messages: [{
+      role: "user",
+      content: `Convert this event data into a short, fun email newsletter from "your bff Sammy." Include a quick intro, top 5-6 picks, the splurge date night pick, and a link to sammyssf-1.vercel.app. Use simple HTML (h2, p, ul/li, bold). Keep it scannable.\n\nData: ${JSON.stringify(data).substring(0, 4000)}\n\nOutput ONLY the email HTML body.`
+    }]
   });
-
-  const emailBody = emailResponse.content
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("\n")
-    .replace(/^```html?\n?/, "")
-    .replace(/\n?```$/, "")
-    .trim();
-
+  const emailBody = emailResponse.content.filter(b => b.type === "text").map(b => b.text).join("\n").replace(/^```html?\n?/, "").replace(/\n?```$/, "").trim();
   const emailRes = await fetch("https://api.buttondown.com/v1/emails", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Token ${buttondownKey}`,
-    },
-    body: JSON.stringify({
-      subject: `Sammy's SF — ${dateRange}`,
-      body: emailBody,
-      status: "about_to_send",
-    }),
+    headers: { "Content-Type": "application/json", Authorization: `Token ${buttondownKey}` },
+    body: JSON.stringify({ subject: `Sammy's SF — ${dateRange}`, body: emailBody, status: "about_to_send" })
   });
-
-  if (emailRes.ok) {
-    console.log("✅ Newsletter sent!\n");
-  } else {
-    const err = await emailRes.text();
-    console.error("❌ Newsletter failed:", err);
-  }
+  console.log(emailRes.ok ? "✅ Newsletter sent!\n" : `❌ Newsletter failed: ${await emailRes.text()}\n`);
 } else {
   console.log("⏭️  No BUTTONDOWN_API_KEY set, skipping newsletter.\n");
 }

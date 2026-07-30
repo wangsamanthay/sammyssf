@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SF This Week — July 25–31, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --fog: #F0F2F5; --night: #1A1D23; --bay: #2E6B8A; --sunset: #E8734A;
+    --golden: #D4A843; --mist: #C8CDD5; --white: #FFFFFF; --card-bg: #FFFFFF;
+    --rose: #AD1457; --rose-light: #FCE4EC;
+  }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--fog); color: var(--night); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* HEADER */
+  .header { background: var(--night); color: var(--white); padding: 2.5rem 1.5rem 0; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #E8734A 0%, #D4536B 50%, #2E6B8A 100%); opacity: 0.9; }
+  .header * { position: relative; z-index: 1; }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #FFD9C4; margin-bottom: 0.5rem; }
+  .header h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2.8rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.3rem; }
+  .header h1 em { font-style: italic; }
+  .header-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: rgba(255,255,255,0.55); margin-bottom: 0.75rem; }
+  .header-date { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+
+  /* TABS */
+  .tabs { display: flex; gap: 0; justify-content: center; padding: 0 1rem; }
+  .tab { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; padding: 0.7rem 1.2rem; color: rgba(255,255,255,0.5); background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; white-space: nowrap; letter-spacing: 0.01em; }
+  .tab:hover { color: rgba(255,255,255,0.8); }
+  .tab.active { color: var(--white); border-bottom-color: var(--sunset); }
+  @media (max-width: 520px) { .tab { font-size: 0.68rem; padding: 0.6rem 0.7rem; } }
+
+  /* VIEWS */
+  .view { display: none; max-width: 700px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .view.active { display: block; }
+
+  /* SHARED CARD STYLES */
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bay); margin-bottom: 1rem; padding-top: 2rem; border-top: 2px solid var(--night); }
+  .section-label:first-child { padding-top: 0; border-top: none; }
+
+  .card { background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem; }
+  .card h3 { font-family: 'Instrument Serif', serif; font-size: 1.3rem; font-weight: 400; line-height: 1.3; }
+  .card-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.05em; color: var(--sunset); white-space: nowrap; padding-top: 0.3rem; }
+  .card p { font-size: 0.88rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+  .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; }
+  .tag-free { background: #D4EDDA; color: #1B5E20; }
+  .tag-food { background: #FFF3E0; color: #BF360C; }
+  .tag-music { background: #E8DEF8; color: #4A148C; }
+  .tag-outdoors { background: #E0F2F1; color: #004D40; }
+  .tag-arts { background: #FCE4EC; color: #880E4F; }
+  .tag-nightlife { background: var(--night); color: var(--fog); }
+  .tag-bars { background: #EFEBE9; color: #5D4037; }
+  .tag-new { background: #FFF8E1; color: #F57F17; }
+  .price-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; color: var(--bay); margin-left: auto; padding-left: 0.5rem; }
+
+  .highlight-card { background: linear-gradient(135deg, var(--night) 0%, #2D2040 100%); color: var(--white); border-radius: 12px; padding: 2rem 1.5rem; margin-bottom: 1rem; }
+  .highlight-card .card-when { color: var(--golden); }
+  .highlight-card h3 { color: var(--white); font-size: 1.5rem; }
+  .highlight-card p { color: rgba(255,255,255,0.75); }
+  .highlight-card .tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
+  .highlight-card .price-badge { color: var(--golden); }
+
+  /* EATS/BARS GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  @media (max-width: 540px) { .grid-2 { grid-template-columns: 1fr; } }
+  .mini-card { background: var(--card-bg); border-radius: 10px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .mini-card h4 { font-family: 'Instrument Serif', serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 0.25rem; }
+  .mini-card .mini-type { font-size: 0.7rem; color: var(--sunset); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+  .mini-card p { font-size: 0.8rem; color: #666; line-height: 1.5; }
+  .mini-card .mini-price { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--bay); margin-top: 0.5rem; }
+
+  .ongoing { background: var(--fog); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 1.25rem; margin-bottom: 0.75rem; }
+  .ongoing h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .ongoing p { font-size: 0.8rem; color: #666; line-height: 1.5; }
+
+  /* ===== PLANS VIEW (itinerary cards) ===== */
+  .dn-intro { text-align: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .dn-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .dn-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
+
+  .dn-card { background: var(--card-bg); border-radius: 16px; padding: 0; margin-bottom: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; }
+  .dn-tier { padding: 1rem 1.75rem 0; display: flex; align-items: center; gap: 0.75rem; }
+  .dn-tier-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; }
+  .dn-tier-free .dn-tier-badge { background: #D4EDDA; color: #1B5E20; }
+  .dn-tier-mid .dn-tier-badge { background: #E3F2FD; color: #1565C0; }
+  .dn-tier-splurge .dn-tier-badge { background: var(--rose-light); color: var(--rose); }
+  .dn-tier-est { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #999; }
+
+  .dn-body { padding: 1rem 1.75rem 1.75rem; }
+  .dn-body h3 { font-family: 'Instrument Serif', serif; font-size: 1.6rem; font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; }
+  .dn-body .dn-tagline { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1rem; color: #888; margin-bottom: 1.25rem; }
+
+  .dn-steps { list-style: none; padding: 0; margin: 0; }
+  .dn-step { display: flex; gap: 1rem; margin-bottom: 1.25rem; position: relative; padding-left: 2.5rem; }
+  .dn-step:last-child { margin-bottom: 0; }
+  .dn-step::before { content: attr(data-step); position: absolute; left: 0; top: 0; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--fog); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; display: flex; align-items: center; justify-content: center; color: var(--night); }
+  .dn-tier-splurge .dn-step::before { background: var(--rose-light); color: var(--rose); }
+  .dn-tier-mid .dn-step::before { background: #E3F2FD; color: #1565C0; }
+  .dn-tier-free .dn-step::before { background: #D4EDDA; color: #1B5E20; }
+  .dn-step-title { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.15rem; }
+  .dn-step-detail { font-size: 0.82rem; color: #666; line-height: 1.55; }
+  .dn-step-time { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--sunset); margin-bottom: 0.15rem; }
+
+  /* SPORTS VIEW */
+  .sport-row { display: flex; align-items: center; background: var(--card-bg); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.6rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); gap: 1rem; }
+  .sport-row .sr-teams { flex: 1; }
+  .sport-row .sr-teams h4 { font-size: 0.9rem; font-weight: 600; }
+  .sport-row .sr-teams p { font-size: 0.78rem; color: #888; }
+  .sport-row .sr-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--sunset); text-align: right; white-space: nowrap; }
+  .sport-row .sr-price { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--bay); text-align: right; white-space: nowrap; }
+  .sport-note { font-size: 0.82rem; color: #888; font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem; }
+
+  /* FILTER BAR (This Week only) */
+  .filter-bar { margin-bottom: 1.5rem; }
+  .filter-row { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-bottom: 0.5rem; }
+  .filter-row:last-child { margin-bottom: 0; }
+  .filter-row-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); min-width: 36px; }
+  .fbtn { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 0.3rem 0.65rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.1); background: transparent; color: #777; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .fbtn:hover { border-color: var(--night); color: var(--night); }
+  .fbtn.on { background: var(--night); color: var(--white); border-color: var(--night); }
+  .fbtn.on[data-c="music"]    { background: #4A148C; border-color: #4A148C; }
+  .fbtn.on[data-c="shows"]    { background: #6A1B9A; border-color: #6A1B9A; }
+  .fbtn.on[data-c="food"]     { background: #BF360C; border-color: #BF360C; }
+  .fbtn.on[data-c="nightlife"]{ background: #311B92; border-color: #311B92; }
+  .fbtn.on[data-c="active"]   { background: #004D40; border-color: #004D40; }
+  .fbtn.on[data-c="sports"]   { background: #1565C0; border-color: #1565C0; }
+  .fbtn.on[data-p="free"]     { background: #1B5E20; border-color: #1B5E20; }
+  .fbtn.on[data-p="$"]        { background: var(--bay); border-color: var(--bay); }
+  .fbtn.on[data-p="$$"]       { background: var(--sunset); border-color: var(--sunset); }
+  .fbtn.on[data-p="$$$"]      { background: #8D6E63; border-color: #8D6E63; }
+  .filter-count { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--mist); margin-left: auto; }
+  .picks-empty { text-align: center; padding: 2.5rem 1rem; color: #999; font-size: 0.88rem; display: none; }
+  .picks-empty.show { display: block; }
+  .picks-empty a { color: var(--bay); cursor: pointer; text-decoration: underline; }
+  .card.filtered-out { display: none; }
+  .section-label.filtered-out { display: none; }
+  .ongoing.filtered-out { display: none; }
+
+  /* FOOTER */
+  .share-bar { text-align: center; margin: 2rem 0; }
+  .share-btn { display: inline-block; background: var(--night); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; padding: 0.7rem 1.8rem; border-radius: 100px; cursor: pointer; border: none; transition: background 0.15s; letter-spacing: 0.02em; }
+  .share-btn:hover { background: var(--bay); }
+  .footer { text-align: center; padding: 2rem 1.5rem 3rem; font-size: 0.8rem; color: var(--mist); }
+  .footer .sign-off { font-family: 'Instrument Serif', serif; font-size: 1.2rem; color: var(--night); margin-bottom: 0.5rem; }
+
+  /* ===== PLANS VIEW ===== */
+  .plans-intro { text-align: center; margin-bottom: 1.5rem; }
+  .plans-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .plans-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
+
+  .occasion-picker { display: flex; gap: 0.4rem; justify-content: center; margin-bottom: 2rem; flex-wrap: nowrap; }
+  .occasion-btn { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; padding: 0.5rem 0.9rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.12); background: transparent; color: #666; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  @media (max-width: 520px) { .occasion-picker { flex-wrap: wrap; } .occasion-btn { font-size: 0.68rem; padding: 0.45rem 0.7rem; } }
+  .occasion-btn:hover { border-color: var(--night); color: var(--night); }
+  .occasion-btn.active { background: var(--night); color: var(--white); border-color: var(--night); }
+  .occasion-btn.active[data-oc="date"] { background: var(--rose); border-color: var(--rose); }
+  .occasion-btn.active[data-oc="solo"] { background: #00838F; border-color: #00838F; }
+  .occasion-btn.active[data-oc="birthday"] { background: #E65100; border-color: #E65100; }
+  .occasion-btn.active[data-oc="friends"] { background: #1565C0; border-color: #1565C0; }
+  .occasion-btn.active[data-oc="parents"] { background: #2E7D32; border-color: #2E7D32; }
+
+  .occasion-view { display: none; }
+  .occasion-view.active { display: block; }
+
+  .card-link { display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--bay); text-decoration: none; margin-top: 0.25rem; transition: color 0.15s; }
+  .card-link:hover { color: var(--sunset); }
+  .card-link::after { content: ' →'; }
+
+  /* NEWSLETTER SIGNUP */
+  .signup { background: var(--night); border-radius: 14px; padding: 2.5rem 2rem; text-align: center; margin: 2.5rem 0; position: relative; overflow: hidden; }
+  .signup::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #E8734A 0%, #D4536B 50%, #2E6B8A 100%); opacity: 0.15; }
+  .signup * { position: relative; z-index: 1; }
+  .signup h3 { font-family: 'Instrument Serif', serif; font-size: 1.5rem; font-weight: 400; color: var(--white); margin-bottom: 0.4rem; }
+  .signup p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; }
+  .signup-form { display: flex; gap: 0.5rem; max-width: 380px; margin: 0 auto; }
+  .signup-form input { flex: 1; padding: 0.7rem 1rem; border-radius: 100px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.82rem; outline: none; transition: border-color 0.2s; }
+  .signup-form input::placeholder { color: rgba(255,255,255,0.3); }
+  .signup-form input:focus { border-color: var(--sunset); }
+  .signup-form button { padding: 0.7rem 1.4rem; border-radius: 100px; border: none; background: var(--sunset); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+  .signup-form button:hover { background: #D4633A; }
+  .signup-note { font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 0.75rem; }
+  @media (max-width: 420px) { .signup-form { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-eyebrow">Weekly picks from your bff Sammy</div>
+  <h1>Sammy's <em>SF</em></h1>
+  <div class="header-sub">the scene this week</div>
+  <div class="header-date"><!--DATE_RANGE--></div>
+  <div class="tabs">
+    <button class="tab active" onclick="showView('picks')">This Week</button>
+    <button class="tab" onclick="showView('eats')">Eats & Bars</button>
+    <button class="tab" onclick="showView('sports')">Sports</button>
+    <button class="tab" onclick="showView('concerts')">Concerts</button>
+    <button class="tab" onclick="showView('singles')">Singles</button>
+    <button class="tab" onclick="showView('plans')">Playbooks</button>
+  </div>
+</div>
+
+<!-- ==================== THIS WEEK ==================== -->
+<div class="view active" id="view-picks">
+
+  <div class="filter-bar">
+    <div class="filter-row">
+      <span class="filter-row-label">Vibe</span>
+      <button class="fbtn" data-c="music" onclick="tog(this,'c')">🎵 Music</button>
+      <button class="fbtn" data-c="shows" onclick="tog(this,'c')">🎭 Museums & Shows</button>
+      <button class="fbtn" data-c="food" onclick="tog(this,'c')">🍽 Food</button>
+      <button class="fbtn" data-c="nightlife" onclick="tog(this,'c')">🌙 Nightlife</button>
+      <button class="fbtn" data-c="active" onclick="tog(this,'c')">🏃 Outdoors</button>
+      <button class="fbtn" data-c="sports" onclick="tog(this,'c')">⚾ Sports</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-row-label">Price</span>
+      <button class="fbtn" data-p="free" onclick="tog(this,'p')">Free</button>
+      <button class="fbtn" data-p="$" onclick="tog(this,'p')">$</button>
+      <button class="fbtn" data-p="$$" onclick="tog(this,'p')">$$</button>
+      <button class="fbtn" data-p="$$$" onclick="tog(this,'p')">$$$</button>
+      <span class="filter-count" id="fcount"></span>
+    </div>
+  </div>
+
+  <div class="section-label" style="border-top:none;padding-top:0">Editor's Picks</div>
+
+  <!--HERO_CARD-->
+
+  <!--PICKS_CARDS-->
+
+  <div class="picks-empty" id="picks-empty">
+    Nothing matches those filters. <a onclick="resetFilters()">Clear all</a>
+  </div>
+
+  <div class="section-label" data-ongoing="true">Always On This Summer</div>
+  <!--PICKS_ONGOING-->
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== SINGLES ==================== -->
+<div class="view" id="view-singles">
+  <div class="plans-intro">
+    <h2>Meet people IRL</h2>
+    <p>Speed dating, mixers, social sports, and ways to actually talk to humans.</p>
+  </div>
+
+  <div class="section-label" style="border-top:none;padding-top:0">This Week</div>
+
+  <!--SINGLES_EVENTS-->
+
+  Low-Key Ways to Meet People</div>
+  <!--SINGLES_ONGOING-->
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== PLANS ==================== -->
+<div class="view" id="view-plans">
+
+  <div class="plans-intro">
+    <h2>Curated Playbooks</h2>
+    <p>Pick the occasion. We've got the whole night planned.</p>
+  </div>
+
+  <div class="occasion-picker">
+    <button class="occasion-btn active" data-oc="date" onclick="showOccasion('date')">💘 Date Night</button>
+    <button class="occasion-btn" data-oc="solo" onclick="showOccasion('solo')">✨ Solo Date</button>
+    <button class="occasion-btn" data-oc="birthday" onclick="showOccasion('birthday')">🎂 Birthday</button>
+    <button class="occasion-btn" data-oc="friends" onclick="showOccasion('friends')">🎉 Friends Visiting</button>
+    <button class="occasion-btn" data-oc="parents" onclick="showOccasion('parents')">👨‍👩‍👧 Parents in Town</button>
+  </div>
+
+  <!-- DATE NIGHT -->
+  <div class="occasion-view active" id="oc-date">
+
+    <!--PLAYBOOK_DATE-->
+
+    </div>
+
+  <!-- SOLO DAY -->
+  <div class="occasion-view" id="oc-solo">
+
+    <!--PLAYBOOK_SOLO-->
+
+    </div>
+
+  <!-- BIRTHDAY -->
+  <div class="occasion-view" id="oc-birthday">
+
+    <!--PLAYBOOK_BIRTHDAY-->
+
+    </div>
+
+  <!-- FRIENDS VISITING -->
+  <div class="occasion-view" id="oc-friends">
+
+    <!--PLAYBOOK_FRIENDS-->
+
+    </div>
+
+  <!-- PARENTS IN TOWN -->
+  <div class="occasion-view" id="oc-parents">
+
+    <!--PLAYBOOK_PARENTS-->
+
+    </div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== EATS & BARS ==================== -->
+<div class="view" id="view-eats">
+  <!--EATS_NEW-->
+
+  <div class="section-label">Bars Worth Hitting</div>
+
+  <div class="grid-2">
+    <!--BARS-->
+  </div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== SPORTS ==================== -->
+<div class="view" id="view-sports">
+  <!--SPORTS-->
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== CONCERTS ==================== -->
+<div class="view" id="view-concerts">
+  <!--CONCERTS-->
+
+  <!--CONCERTS_ONGOING-->
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<div class="signup" style="max-width:700px;margin:0 auto 0;">
+  <h3>Get this in your inbox every week</h3>
+  <p>New edition every Tuesday morning. No spam, just plans.</p>
+  <div class="signup-form">
+    <input type="email" id="signup-email" placeholder="your@email.com" />
+    <button onclick="subscribe()">I'm in</button>
+  </div>
+  <div class="signup-note" id="signup-note">Join 0 friends already subscribed</div>
+</div>
+
+<div class="footer">
+  <div class="sign-off">See you out there.</div>
+  <p>Sammy's SF · Issue <!--ISSUE_NUM--> · July 2026</p>
+</div>
+
+<script>
+// Tab switching
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Filters (This Week tab only)
+const ac = new Set(), ap = new Set();
+
+function tog(btn, type) {
+  btn.classList.toggle('on');
+  const val = type === 'c' ? btn.dataset.c : btn.dataset.p;
+  const set = type === 'c' ? ac : ap;
+  set.has(val) ? set.delete(val) : set.add(val);
+  filterPicks();
+}
+
+function resetFilters() {
+  ac.clear(); ap.clear();
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+  filterPicks();
+}
+
+function filterPicks() {
+  const view = document.getElementById('view-picks');
+  const items = view.querySelectorAll('.card, .ongoing');
+  let vis = 0;
+  const any = ac.size > 0 || ap.size > 0;
+
+  items.forEach(el => {
+    const cats = (el.dataset.cats || '').split(',').filter(Boolean);
+    const price = el.dataset.price || '';
+    const catOk = ac.size === 0 || cats.some(c => ac.has(c));
+    const priceOk = ap.size === 0 || ap.has(price);
+    if (catOk && priceOk) { el.classList.remove('filtered-out'); vis++; }
+    else { el.classList.add('filtered-out'); }
+  });
+
+  // Hide section labels if all their siblings are hidden
+  view.querySelectorAll('.section-label').forEach(label => {
+    let next = label.nextElementSibling;
+    let hasVis = false;
+    while (next && !next.classList.contains('section-label') && !next.classList.contains('filter-bar') && !next.classList.contains('share-bar') && !next.classList.contains('picks-empty')) {
+      if ((next.classList.contains('card') || next.classList.contains('ongoing')) && !next.classList.contains('filtered-out')) hasVis = true;
+      next = next.nextElementSibling;
+    }
+    label.classList.toggle('filtered-out', !hasVis);
+  });
+
+  document.getElementById('picks-empty').classList.toggle('show', any && vis === 0);
+  const fc = document.getElementById('fcount');
+  fc.textContent = any ? vis + ' match' + (vis !== 1 ? 'es' : '') : '';
+}
+
+// Occasion picker (Plans tab)
+function showOccasion(id) {
+  document.querySelectorAll('.occasion-view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.occasion-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('oc-' + id).classList.add('active');
+  document.querySelector('.occasion-btn[data-oc="' + id + '"]').classList.add('active');
+}
+
+// Subscribe
+function subscribe() {
+  const email = document.getElementById('signup-email').value;
+  const note = document.getElementById('signup-note');
+  if (!email || !email.includes('@')) { note.textContent = 'Enter a valid email!'; return; }
+
+  // Buttondown API
+  fetch('https://api.buttondown.com/v1/subscribers', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email_address: email, type: 'regular' })
+  })
+  .then(r => {
+    if (r.ok || r.status === 201) {
+      note.textContent = "You're in! See you Tuesday. 🎉";
+      document.getElementById('signup-email').value = '';
+    } else {
+      // Fallback: open Buttondown subscribe page
+      window.open('https://buttondown.com/sammyssf', '_blank');
+      note.textContent = "Almost there — confirm in the new tab!";
+    }
+  })
+  .catch(() => {
+    window.open('https://buttondown.com/sammyssf', '_blank');
+    note.textContent = "Almost there — confirm in the new tab!";
+  });
+}
+
+// Share
+function shareThis() {
+  if (navigator.share) {
+    navigator.share({ title: 'SF This Week — July 25–31', text: 'Fun stuff happening in SF this week.', url: window.location.href }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = event.target;
+      btn.textContent = 'Link copied!';
+      setTimeout(() => btn.textContent = 'Share with friends', 2000);
+    });
+  }
+}
+</script>
+
+</body>
+</html>
