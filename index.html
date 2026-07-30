@@ -77,7 +77,7 @@
   .ongoing h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
   .ongoing p { font-size: 0.8rem; color: #666; line-height: 1.5; }
 
-  /* ===== DATE NIGHT VIEW ===== */
+  /* ===== PLANS VIEW (itinerary cards) ===== */
   .dn-intro { text-align: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
   .dn-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
   .dn-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
@@ -122,11 +122,11 @@
   .fbtn { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 0.3rem 0.65rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.1); background: transparent; color: #777; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
   .fbtn:hover { border-color: var(--night); color: var(--night); }
   .fbtn.on { background: var(--night); color: var(--white); border-color: var(--night); }
-  .fbtn.on[data-c="food"]     { background: #BF360C; border-color: #BF360C; }
   .fbtn.on[data-c="music"]    { background: #4A148C; border-color: #4A148C; }
-  .fbtn.on[data-c="arts"]     { background: #880E4F; border-color: #880E4F; }
-  .fbtn.on[data-c="outdoors"] { background: #004D40; border-color: #004D40; }
   .fbtn.on[data-c="shows"]    { background: #6A1B9A; border-color: #6A1B9A; }
+  .fbtn.on[data-c="food"]     { background: #BF360C; border-color: #BF360C; }
+  .fbtn.on[data-c="nightlife"]{ background: #311B92; border-color: #311B92; }
+  .fbtn.on[data-c="active"]   { background: #004D40; border-color: #004D40; }
   .fbtn.on[data-c="sports"]   { background: #1565C0; border-color: #1565C0; }
   .fbtn.on[data-p="free"]     { background: #1B5E20; border-color: #1B5E20; }
   .fbtn.on[data-p="$"]        { background: var(--bay); border-color: var(--bay); }
@@ -146,6 +146,29 @@
   .share-btn:hover { background: var(--bay); }
   .footer { text-align: center; padding: 2rem 1.5rem 3rem; font-size: 0.8rem; color: var(--mist); }
   .footer .sign-off { font-family: 'Instrument Serif', serif; font-size: 1.2rem; color: var(--night); margin-bottom: 0.5rem; }
+
+  /* ===== PLANS VIEW ===== */
+  .plans-intro { text-align: center; margin-bottom: 1.5rem; }
+  .plans-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .plans-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
+
+  .occasion-picker { display: flex; gap: 0.4rem; justify-content: center; margin-bottom: 2rem; flex-wrap: nowrap; }
+  .occasion-btn { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; padding: 0.5rem 0.9rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.12); background: transparent; color: #666; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  @media (max-width: 520px) { .occasion-picker { flex-wrap: wrap; } .occasion-btn { font-size: 0.68rem; padding: 0.45rem 0.7rem; } }
+  .occasion-btn:hover { border-color: var(--night); color: var(--night); }
+  .occasion-btn.active { background: var(--night); color: var(--white); border-color: var(--night); }
+  .occasion-btn.active[data-oc="date"] { background: var(--rose); border-color: var(--rose); }
+  .occasion-btn.active[data-oc="solo"] { background: #00838F; border-color: #00838F; }
+  .occasion-btn.active[data-oc="birthday"] { background: #E65100; border-color: #E65100; }
+  .occasion-btn.active[data-oc="friends"] { background: #1565C0; border-color: #1565C0; }
+  .occasion-btn.active[data-oc="parents"] { background: #2E7D32; border-color: #2E7D32; }
+
+  .occasion-view { display: none; }
+  .occasion-view.active { display: block; }
+
+  .card-link { display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--bay); text-decoration: none; margin-top: 0.25rem; transition: color 0.15s; }
+  .card-link:hover { color: var(--sunset); }
+  .card-link::after { content: ' →'; }
 
   /* NEWSLETTER SIGNUP */
   .signup { background: var(--night); border-radius: 14px; padding: 2.5rem 2rem; text-align: center; margin: 2.5rem 0; position: relative; overflow: hidden; }
@@ -169,13 +192,14 @@
   <div class="header-eyebrow">Weekly picks from your bff Sammy</div>
   <h1>Sammy's <em>SF</em></h1>
   <div class="header-sub">the scene this week</div>
-  <div class="header-date">July 25 – 31, 2026</div>
+  <div class="header-date">July 31 – August 6, 2026</div>
   <div class="tabs">
     <button class="tab active" onclick="showView('picks')">This Week</button>
-    <button class="tab" onclick="showView('datenight')">Date Night</button>
     <button class="tab" onclick="showView('eats')">Eats & Bars</button>
     <button class="tab" onclick="showView('sports')">Sports</button>
     <button class="tab" onclick="showView('concerts')">Concerts</button>
+    <button class="tab" onclick="showView('singles')">Singles</button>
+    <button class="tab" onclick="showView('plans')">Playbooks</button>
   </div>
 </div>
 
@@ -186,10 +210,10 @@
     <div class="filter-row">
       <span class="filter-row-label">Vibe</span>
       <button class="fbtn" data-c="music" onclick="tog(this,'c')">🎵 Music</button>
-      <button class="fbtn" data-c="arts" onclick="tog(this,'c')">🎨 Arts</button>
+      <button class="fbtn" data-c="shows" onclick="tog(this,'c')">🎭 Museums & Shows</button>
       <button class="fbtn" data-c="food" onclick="tog(this,'c')">🍽 Food</button>
-      <button class="fbtn" data-c="outdoors" onclick="tog(this,'c')">🌿 Outdoors</button>
-      <button class="fbtn" data-c="shows" onclick="tog(this,'c')">🎭 Shows</button>
+      <button class="fbtn" data-c="nightlife" onclick="tog(this,'c')">🌙 Nightlife</button>
+      <button class="fbtn" data-c="active" onclick="tog(this,'c')">🏃 Outdoors</button>
       <button class="fbtn" data-c="sports" onclick="tog(this,'c')">⚾ Sports</button>
     </div>
     <div class="filter-row">
@@ -204,9 +228,9 @@
 
   <div class="section-label" style="border-top:none;padding-top:0">Editor's Picks</div>
 
-  <div class="highlight-card card" data-cats="music" data-price="free">
+  <div class="highlight-card card" data-cats="sports""""""""" data-price="free">
     <div class="card-top">
-      <h3>Suki Waterhouse at Stern Grove</h3>
+      <h3>Violent Femmes at Stern Grove</h3>
       <div class="card-when">Sun Jul 26 · 2pm</div>
     </div>
     <p>Free concert in the eucalyptus-lined amphitheater. Doors at noon, show at 2. Bring a jacket. Try the community box office for day-of passes.</p>
@@ -216,160 +240,149 @@
     </div>
   </div>
 
+  <div class="card" data-cats="music" data-price="free">
+    <div class="card-top">
+      <h3>Jerry Day — 24th Anniversary</h3>
+      <div class="card-when">Sat Aug 1 · 11:30am</div>
+    </div>
+    <p>Free all-day festival at Jerry Garcia Amphitheater in McLaren Park. Melvin Seals & JGB, Stu Allen and The Mars Hotel, The Jazz Mafia. After-parties send the crowd into Excelsior bars. A love letter to SF.</p>
+    <div class="tags">
+      <span class="tag tag-music">Festival</span>
+      <span class="tag tag-free">Free</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="food,active" data-price="free">
+    <div class="card-top">
+      <h3>52nd Nihonmachi Street Fair</h3>
+      <div class="card-when">Sat–Sun Aug 1–2 · 11am–6pm</div>
+    </div>
+    <p>Since 1974, Japantown's Peace Plaza becomes the best block party of the summer. AAPI food vendors, artisan stalls, live music on two stages. Free, family-friendly, and genuinely one of SF's great institutions.</p>
+    <div class="tags">
+      <span class="tag tag-food">Festival</span>
+      <span class="tag tag-free">Free</span>
+    </div>
+  </div>
+
   <div class="card" data-cats="music" data-price="$$$">
     <div class="card-top">
-      <h3>St. Vincent w/ SF Symphony</h3>
-      <div class="card-when">Thu Jul 30</div>
+      <h3>Andrew Bird w/ SF Symphony</h3>
+      <div class="card-when">Sat Aug 1 · 7:30pm</div>
     </div>
-    <p>First-ever orchestral tour at Davies Symphony Hall. Grammy-winning catalog backed by a full symphony. This is the show of the week.</p>
+    <p>The violinist, songwriter, and world-class whistler joins the full SF Symphony at Davies Hall. His looping, genre-jumping style was built for an orchestral setting. Don't sleep on this one.</p>
     <div class="tags">
       <span class="tag tag-music">Concert</span>
-      <span class="price-badge">$$$ · $75+</span>
+      <span class="price-badge">$$$ · From ~$183</span>
     </div>
   </div>
 
-  <div class="card" data-cats="arts" data-price="free">
+  <div class="card" data-cats="shows" data-price="$$">
     <div class="card-top">
-      <h3>Outdoor Movie: The Princess Diaries</h3>
-      <div class="card-when">Sat Jul 25 · 6pm</div>
+      <h3>Treasures of the Pharaohs Opens at de Young</h3>
+      <div class="card-when">Opens Fri Aug 1</div>
     </div>
-    <p>Union Square's free summer movie series. Pre-show at 6, film at sunset. Bring a blanket.</p>
+    <p>Artifacts from the tomb of Yuya and Thuya in the Valley of the Kings make their U.S. debut. It'll be packed all fall — going opening weekend is the smart call. Pair with a Golden Gate Park walk.</p>
     <div class="tags">
-      <span class="tag tag-free">Free</span>
-      <span class="tag tag-arts">Film</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="food" data-price="$">
-    <div class="card-top">
-      <h3>Jollibee Opens on Market Street</h3>
-      <div class="card-when">Fri Jul 31</div>
-    </div>
-    <p>The beloved Filipino chain opens at 934 Market near Powell BART — first SF location since 2011. Fried chicken, Peach Mango Pie. Expect lines.</p>
-    <div class="tags">
-      <span class="tag tag-new">New Opening</span>
-      <span class="tag tag-food">Food</span>
-      <span class="price-badge">$ · Under $15</span>
+      <span class="tag tag-arts">Exhibition</span>
+      <span class="tag tag-new">New</span>
+      <span class="price-badge">$$ · ~$30</span>
     </div>
   </div>
 
   <div class="card" data-cats="music" data-price="$$">
     <div class="card-top">
-      <h3>Chance Peña at The Fillmore</h3>
-      <div class="card-when">Sat Jul 25 · 8pm</div>
+      <h3>Dark Star Orchestra · Greek Theatre</h3>
+      <div class="card-when">Fri Jul 31 · Berkeley</div>
     </div>
-    <p>Pop and acoustic singer-songwriter tonight at one of the city's most iconic venues. Standing room, doors at 7.</p>
+    <p>Two nights of Grateful Dead music at the legendary outdoor amphitheater. Full show recreations down to the set lists. Go Friday, recover at Jerry Day on Saturday. That's a weekend.</p>
     <div class="tags">
       <span class="tag tag-music">Concert</span>
-      <span class="price-badge">$$ · ~$35–50</span>
+      <span class="price-badge">$$ · Check SeatGeek</span>
     </div>
   </div>
 
-  <div class="card" data-cats="sports,outdoors" data-price="$">
+  <div class="card" data-cats="music" data-price="$$">
     <div class="card-top">
-      <h3>Oakland Ballers: Halloween in July</h3>
-      <div class="card-when">Sun Jul 26 · 1:05pm</div>
+      <h3>Old 97's · The Fillmore</h3>
+      <div class="card-when">Wed Aug 5 · 8pm</div>
     </div>
-    <p>Indie baseball with weird theme nights at Raimondi Park. Tonight is "Night of the Living Possum." Friday is Grateful Dead Night. Tickets ~$24.</p>
+    <p>Alt-country Texan rockers at the Fillmore. Hook-laden and energetic — everyone ends up knowing more words than they thought. Doors at 7.</p>
     <div class="tags">
-      <span class="tag tag-outdoors">Baseball</span>
-      <span class="price-badge">$ · ~$24</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="arts" data-price="free">
-    <div class="card-top">
-      <h3>ChoreoFest + Free Museum Weekend</h3>
-      <div class="card-when">Sat–Sun Jul 25–26</div>
-    </div>
-    <p>Free outdoor dance festival at Yerba Buena Gardens (Sat 2–4pm), plus free admission all weekend at the Museum of Craft & Design.</p>
-    <div class="tags">
-      <span class="tag tag-free">Free</span>
-      <span class="tag tag-arts">Arts</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="arts" data-price="$$">
-    <div class="card-top">
-      <h3>Matisse's Jazz Unbound — Last Chance</h3>
-      <div class="card-when">Through Jul 26</div>
-    </div>
-    <p>Exhibition closes this weekend at the de Young in Golden Gate Park. Pair it with a post-marathon walk.</p>
-    <div class="tags">
-      <span class="tag tag-arts">Art</span>
-      <span class="price-badge">$$ · ~$30</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="outdoors" data-price="free">
-    <div class="card-top">
-      <h3>SF Marathon Weekend</h3>
-      <div class="card-when">Sat–Sun Jul 25–26</div>
-    </div>
-    <p>Thousands of runners cross the Golden Gate Bridge and wind through the city. Spectator energy is block-party level — grab coffee and a good corner.</p>
-    <div class="tags">
-      <span class="tag tag-outdoors">Outdoors</span>
-      <span class="tag tag-free">Free to watch</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="food" data-price="free">
-    <div class="card-top">
-      <h3>Tokyo Central Food Fair</h3>
-      <div class="card-when">Sat–Sun Jul 25–26 · 9am–9pm</div>
-    </div>
-    <p>Free food samples, giveaways, and deals on Japanese groceries at Bay Street Emeryville. Worth the trip across the bridge.</p>
-    <div class="tags">
-      <span class="tag tag-free">Free</span>
-      <span class="tag tag-food">Food</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="sports" data-price="$$">
-    <div class="card-top">
-      <h3>Giants vs. Brewers (4 home games)</h3>
-      <div class="card-when">Sun–Wed · Oracle Park</div>
-    </div>
-    <p>Angels series finale Sunday, then Brewers Mon–Wed. Wednesday's 12:45pm day game is a sneaky midweek outing.</p>
-    <div class="tags">
-      <span class="tag tag-outdoors">Baseball</span>
-      <span class="price-badge">$$ · From $15</span>
+      <span class="tag tag-music">Alt-Country</span>
+      <span class="price-badge">$$ · From ~$62</span>
     </div>
   </div>
 
   <div class="card" data-cats="shows" data-price="$$">
     <div class="card-top">
-      <h3>Beauty and the Beast · Orpheum Theatre</h3>
-      <div class="card-when">Multiple shows this week</div>
+      <h3>Dear San Francisco · Club Fugazi</h3>
+      <div class="card-when">Multiple shows · North Beach</div>
     </div>
-    <p>The Broadway touring production is in town on Market Street. Matinee and evening shows available.</p>
+    <p>Circus-theater love letter to SF's weird history. Aerial acrobatics, shadow play, live music, hoop diving, and Gold Rush lore. Use code 49FOR49 for $49 tickets.</p>
     <div class="tags">
-      <span class="tag tag-arts">Broadway</span>
-      <span class="price-badge">$$ · $50–130+</span>
+      <span class="tag tag-arts">Circus / Theater</span>
+      <span class="price-badge">$$ · From $49 w/ code</span>
     </div>
   </div>
 
-  <div class="card" data-cats="shows" data-price="$$$">
+  <div class="card" data-cats="shows" data-price="free">
     <div class="card-top">
-      <h3>Trevor Noah · The Mountain Winery</h3>
-      <div class="card-when">Sun–Tue Jul 26–28</div>
+      <h3>ChoreoFest at Yerba Buena Gardens</h3>
+      <div class="card-when">Sat Aug 1 · 2–4pm</div>
     </div>
-    <p>Three nights at the outdoor amphitheater in Saratoga. Bring a layer and arrive early to grab wine before the show.</p>
+    <p>Free outdoor contemporary dance showcase on the Great Lawn. Poetry workshop with Nia Pearl at noon if you want to start early. RSVP ahead.</p>
     <div class="tags">
-      <span class="tag tag-nightlife">Comedy</span>
+      <span class="tag tag-free">Free</span>
+      <span class="tag tag-arts">Dance</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="active" data-price="free">
+    <div class="card-top">
+      <h3>Renegade Craft Fair · Fort Mason</h3>
+      <div class="card-when">Sat–Sun Aug 1–2</div>
+    </div>
+    <p>Over 250 indie artists and makers at the Fort Mason Festival Pavilion. Free to browse. Great for gifts, one-of-a-kind finds, and getting inspired to quit your job and make candles.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="price-badge">Pop-Up Market</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="music" data-price="$$$">
+    <div class="card-top">
+      <h3>Lionel Richie + Earth Wind & Fire · Chase Center</h3>
+      <div class="card-when">Thu Aug 6 · 7pm</div>
+    </div>
+    <p>Two legends in one night at Chase Center. "All Night Long" meets "September." Your parents would love this. You would too.</p>
+    <div class="tags">
+      <span class="tag tag-music">Concert</span>
       <span class="price-badge">$$$ · $80+</span>
     </div>
   </div>
 
-  <div class="card" data-cats="shows" data-price="$$">
+  <div class="card" data-cats="food" data-price="$">
     <div class="card-top">
-      <h3>Hairspray · SF Playhouse</h3>
-      <div class="card-when">Through Sep 12</div>
+      <h3>Jollibee Now Open on Market Street</h3>
+      <div class="card-when">Open now · 934 Market St</div>
     </div>
-    <p>The musical is running all summer. Intimate theater — every seat is a good seat.</p>
+    <p>The beloved Filipino chain is officially open near Powell BART. Fried chicken, Jolly Spaghetti, Peach Mango Pie. Lines are still long but moving.</p>
     <div class="tags">
-      <span class="tag tag-arts">Theater</span>
-      <span class="price-badge">$$ · $35–75</span>
+      <span class="tag tag-food">Food</span>
+      <span class="tag tag-new">New</span>
+      <span class="price-badge">$ · Under $15</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="active" data-price="free">
+    <div class="card-top">
+      <h3>Living History Day at Fort Point</h3>
+      <div class="card-when">Sat Aug 1 · 10am–4:30pm</div>
+    </div>
+    <p>Free Civil War reenactments at Fort Point under the Golden Gate Bridge. Meet General Grant, watch cannon demonstrations, see the fort come alive. Surprisingly cool even if history isn't your thing.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="price-badge">Family-Friendly</span>
     </div>
   </div>
 
@@ -378,127 +391,394 @@
   </div>
 
   <div class="section-label" data-ongoing="true">Always On This Summer</div>
-  <div class="ongoing" data-cats="music" data-price="free"><h4>Stern Grove Sundays</h4><p>Free concerts every Sunday through Aug 16. Coming up: Violent Femmes (Aug 2), Patti LaBelle (Aug 9), Public Enemy (Aug 15), Al Green (Aug 16).</p></div>
+  <div class="ongoing" data-cats="music" data-price="free"><h4>Stern Grove Sundays</h4><p>Free concerts every Sunday through Aug 16. Coming up: Patti LaBelle (Aug 9), Public Enemy (Aug 15), Al Green (Aug 16). Reservations at sterngrove.org.</p></div>
   <div class="ongoing" data-cats="music" data-price="free"><h4>Lunch Break Concerts</h4><p>130+ free lunchtime concerts in public plazas near Market St, through late September.</p></div>
-  <div class="ongoing" data-cats="food" data-price="$"><h4>Fort Mason Night Market</h4><p>Monthly evening market with food vendors, DJs, makers, and pop-ups along the waterfront.</p></div>
+  <div class="ongoing" data-cats="food,nightlife" data-price="$"><h4>Fort Mason Night Market</h4><p>Monthly evening market with food vendors, DJs, makers, and pop-ups along the waterfront.</p></div>
+  <div class="ongoing" data-cats="nightlife" data-price="$"><h4>Emporium Arcade Bar</h4><p>Free classic arcade games, cheap drinks, DJ nights on weekends. Divisadero location has a massive back room.</p></div>
+  <div class="ongoing" data-cats="active" data-price="free"><h4>Outdoor Yoga at Dolores Park</h4><p>Free community yoga Saturdays at 10am on the south slope. Bring your own mat. All levels.</p></div>
+  <div class="ongoing" data-cats="shows,nightlife" data-price="$$"><h4>Oasis Drag Shows</h4><p>SF's premier drag venue in SoMa. Multiple shows weekly — brunches, late nights, themed revues. Check their calendar.</p></div>
+  <div class="ongoing" data-cats="shows" data-price="free"><h4>City Lights Bookstore Events</h4><p>Free readings, book launches, and poetry nights at the legendary North Beach bookstore. Check their calendar — something almost every week.</p></div>
+  <div class="ongoing" data-cats="active" data-price="$"><h4>Treasure Island Flea Market</h4><p>Last weekend of every month. Vintage finds, local makers, food trucks, and panoramic city views. $5 entry.</p></div>
+  <div class="ongoing" data-cats="active" data-price="free"><h4>Alemany Flea Market</h4><p>Every Sunday, 7am–3pm. SF's oldest flea market — junk, treasures, produce, and characters. Free to browse. Cash only for vendors.</p></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
-<!-- ==================== DATE NIGHT ==================== -->
-<div class="view" id="view-datenight">
-  <div class="dn-intro">
-    <h2>Three nights out, planned for you.</h2>
-    <p>Pick a budget. We'll tell you where to go, what to order, and when to show up.</p>
+<!-- ==================== SINGLES ==================== -->
+<div class="view" id="view-singles">
+  <div class="plans-intro">
+    <h2>Meet people IRL</h2>
+    <p>Speed dating, mixers, social sports, and ways to actually talk to humans.</p>
   </div>
 
-  <div class="dn-card dn-tier-free">
-    <div class="dn-tier">
-      <span class="dn-tier-badge">The Free One</span>
-      <span class="dn-tier-est">$0 + whatever you eat</span>
-    </div>
-    <div class="dn-body">
-      <h3>Movie Under the Stars</h3>
-      <p class="dn-tagline">Blankets, The Princess Diaries, and dumplings at midnight.</p>
-      <ul class="dn-steps">
-        <li class="dn-step" data-step="1">
-          <div>
-            <div class="dn-step-time">5:30 PM</div>
-            <div class="dn-step-title">Grab provisions</div>
-            <div class="dn-step-detail">Pick up snacks and a bottle of something at a corner store near Union Square. Or pack from home if you're organized like that.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="2">
-          <div>
-            <div class="dn-step-time">6:00 PM</div>
-            <div class="dn-step-title">Claim your spot at Union Square</div>
-            <div class="dn-step-detail">The free outdoor movie series has pre-show activities starting at 6. Lay out a blanket, settle in while the sky turns pink.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="3">
-          <div>
-            <div class="dn-step-time">Sunset</div>
-            <div class="dn-step-title">The Princess Diaries rolls</div>
-            <div class="dn-step-detail">A perfect crowd movie. Fun even if you've seen it. Especially if you've seen it.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="4">
-          <div>
-            <div class="dn-step-time">~10 PM</div>
-            <div class="dn-step-title">Late-night dumplings in Chinatown</div>
-            <div class="dn-step-detail">It's a 10-minute walk. Good Fortune Dumpling House or wherever looks good and open. End the night with soup dumplings and no bill over $25.</div>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="section-label" style="border-top:none;padding-top:0">This Weekend</div>
+
+  <div class="card">
+    <div class="card-top"><h3>Nihonmachi Street Fair — Come Solo</h3><div class="card-when">Sat–Sun Aug 1–2 · 11am–6pm</div></div>
+    <p>One of the best solo activities in SF this weekend. Wander 52 years of community tradition, talk to artists, eat everything. Two-stage music lineup keeps the energy up all day. Free, no plan required, easy to talk to strangers about the food.</p>
+    <div class="tags"><span class="tag tag-free">Free</span><span class="price-badge">Japantown</span></div>
   </div>
 
-  <div class="dn-card dn-tier-mid">
-    <div class="dn-tier">
-      <span class="dn-tier-badge">The Midrange Move</span>
-      <span class="dn-tier-est">~$80–120 for two</span>
-    </div>
-    <div class="dn-body">
-      <h3>Mission Cocktail Crawl</h3>
-      <p class="dn-tagline">New bars, good food, and a neighborhood that rewards wandering.</p>
-      <ul class="dn-steps">
-        <li class="dn-step" data-step="1">
-          <div>
-            <div class="dn-step-time">6:30 PM</div>
-            <div class="dn-step-title">Start at Stray Dog</div>
-            <div class="dn-step-detail">New cafe-bar on Utah & 24th. Pandan lattes during the day, pan-Asian cocktails at night. Shanghai-inspired, tiny, and just opened. Get an early drink while it's still mellow.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="2">
-          <div>
-            <div class="dn-step-time">7:30 PM</div>
-            <div class="dn-step-title">Dinner nearby</div>
-            <div class="dn-step-detail">Walk to your pick. Jilli for Korean drinking food and makgeolli (the popcorn fried chicken is mandatory). Or Big Finish for wine under $14/glass and cacio e pepe.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="3">
-          <div>
-            <div class="dn-step-time">9:30 PM</div>
-            <div class="dn-step-title">Nightcap at the Madrone parklet</div>
-            <div class="dn-step-detail">Madrone Art Bar on Haight is doing a book sale in their parklet Saturday, but any night the bar itself is a vibe — murals, DJs, and a crowd that's been coming for years.</div>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="card">
+    <div class="card-top"><h3>Jerry Day — Free Festival</h3><div class="card-when">Sat Aug 1 · 11:30am–5:45pm</div></div>
+    <p>Free all-day music festival in McLaren Park with after-parties in Excelsior bars. The communal energy here makes talking to strangers the whole point. Go alone, leave with plans for next weekend.</p>
+    <div class="tags"><span class="tag tag-free">Free</span><span class="tag tag-music">Festival</span></div>
   </div>
 
-  <div class="dn-card dn-tier-splurge">
-    <div class="dn-tier">
-      <span class="dn-tier-badge">The Splurge</span>
-      <span class="dn-tier-est">~$150–200 for two</span>
+  <div class="card">
+    <div class="card-top"><h3>Renegade Craft Fair · Fort Mason</h3><div class="card-when">Sat–Sun Aug 1–2</div></div>
+    <p>250+ indie artists and makers at Fort Mason. Browse, shop, and strike up conversations about what people are making. Low-key, creative crowd. Free to enter.</p>
+    <div class="tags"><span class="tag tag-free">Free</span><span class="price-badge">Pop-Up Market</span></div>
+  </div>
+
+  <div class="section-label">Speed Dating & Mixers</div>
+
+  <div class="card">
+    <div class="card-top"><h3>Speed Dating at Calicraft</h3><div class="card-when">Next: Sun Aug 9 · Ages 26–42</div></div>
+    <p>Classic speed dating at a brewery. 5-minute rounds, real faces, no swiping. Events sell out — grab a ticket early.</p>
+    <a class="card-link" href="https://speeddatingsanfrancisco.com/" target="_blank">See upcoming events</a>
+    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="price-badge">$$ · ~$35–55</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>DateFaster Singles Mixer</h3><div class="card-when">Next: Sat Aug 22</div></div>
+    <p>Low-pressure mixer with icebreakers and a free first drink. No timers, no speed dating rotations — mingle at your own pace. Come solo or bring a wingperson.</p>
+    <a class="card-link" href="https://www.eventbrite.com/d/ca--san-francisco/single/" target="_blank">Find next event</a>
+    <div class="tags"><span class="tag tag-nightlife">Mixer</span><span class="price-badge">$$ · ~$30–45</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Thursday Singles Events</h3><div class="card-when">Weekly · Various venues</div></div>
+    <p>Weekly in-person events — bar takeovers, rooftop parties, themed nights. Big crowds, good energy.</p>
+    <a class="card-link" href="https://events.getthursday.com/san-francisco/" target="_blank">See this week's event</a>
+    <div class="tags"><span class="tag tag-nightlife">Social</span><span class="price-badge">$ · $10–25</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Party Hotline · 50+ Mixer</h3><div class="card-when">Fri Aug 7 · 7–9pm</div></div>
+    <p>Singles mixer at a hotel venue with icebreaker games. Events for different age groups throughout August — 30s/40s, 40s/50s, 50+.</p>
+    <a class="card-link" href="https://thepartyhotline.com/calendar/" target="_blank">See all events</a>
+    <div class="tags"><span class="tag tag-nightlife">Mixer</span><span class="price-badge">$$ · $45–55</span></div>
+  </div>
+
+  <div class="section-label">Social Sports Leagues</div>
+
+  <div class="card">
+    <div class="card-top"><h3>Volo Sports Leagues</h3><div class="card-when">Sign up anytime</div></div>
+    <p>Kickball, soccer, volleyball, pickleball, dodgeball — join solo and get placed on a team. Huge chunk of players are free agents looking to meet people.</p>
+    <a class="card-link" href="https://www.volosports.com/san-francisco" target="_blank">Browse leagues</a>
+    <div class="tags"><span class="tag tag-outdoors">Social Sports</span><span class="price-badge">$$ · ~$60–80/season</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Silly Pickles · Pickleball</h3><div class="card-when">Weekly · Treasure Island</div></div>
+    <p>6–8 week league where you rotate partners. Join solo — you'll leave with friends. Beginner sessions included. Indoor courts, lounge with snack bar.</p>
+    <a class="card-link" href="https://sillypickles.com/collections/san-francisco-california" target="_blank">Join a league</a>
+    <div class="tags"><span class="tag tag-outdoors">Pickleball</span><span class="price-badge">$$ · ~$70/season</span></div>
+  </div>
+
+  <div class="section-label">Low-Key Ways to Meet People</div>
+
+  <div class="ongoing"><h4>Running Clubs</h4><p>November Project (free, Wed + Fri 6:30am). Midnight Runners (Thu nights). Show up, run, make friends.</p></div>
+  <div class="ongoing"><h4>SalsaCrazy Saturdays</h4><p>Salsa and bachata lessons + open dancing. No partner needed. Great low-pressure way to meet people through movement.</p></div>
+  <div class="ongoing"><h4>Book Clubs</h4><p>Green Apple Books and City Lights host regular reading groups. Check Meetup for genre-specific clubs.</p></div>
+  <div class="ongoing"><h4>Volunteer</h4><p>One Brick (drop-in, no commitment), SF Parks Alliance, Glide Memorial. Meet people while doing something good.</p></div>
+  <div class="ongoing"><h4>Classes</h4><p>Pottery at Claymakers, cooking at 18 Reasons, dance at ODC. Sign up solo — the format makes conversation natural.</p></div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- ==================== PLANS ==================== -->
+<div class="view" id="view-plans">
+
+  <div class="plans-intro">
+    <h2>Curated Playbooks</h2>
+    <p>Pick the occasion. We've got the whole night planned.</p>
+  </div>
+
+  <div class="occasion-picker">
+    <button class="occasion-btn active" data-oc="date" onclick="showOccasion('date')">💘 Date Night</button>
+    <button class="occasion-btn" data-oc="solo" onclick="showOccasion('solo')">✨ Solo Date</button>
+    <button class="occasion-btn" data-oc="birthday" onclick="showOccasion('birthday')">🎂 Birthday</button>
+    <button class="occasion-btn" data-oc="friends" onclick="showOccasion('friends')">🎉 Friends Visiting</button>
+    <button class="occasion-btn" data-oc="parents" onclick="showOccasion('parents')">👨‍👩‍👧 Parents in Town</button>
+  </div>
+
+  <!-- DATE NIGHT -->
+  <div class="occasion-view active" id="oc-date">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Free One</span>
+        <span class="dn-tier-est">$0 + whatever you eat</span>
+      </div>
+      <div class="dn-body">
+        <h3>Bridge, Fort & Japantown</h3>
+        <p class="dn-tagline">Golden hour at the bridge, history at the fort, ramen in Japantown.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">5:30 PM</div><div class="dn-step-title">Grab provisions</div><div class="dn-step-detail">Pick up snacks and a bottle of something at a corner store near Union Square. Or pack from home if you're organized like that.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">6:00 PM</div><div class="dn-step-title">Fort Point under the Golden Gate</div><div class="dn-step-detail">Free Civil War reenactments, cannon demonstrations, and incredible views under the bridge. Even if history isn't your thing, the setting is unbeatable.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">Sunset</div><div class="dn-step-title">Walk the bridge at sunset</div><div class="dn-step-detail">Head to Fort Point under the Golden Gate Bridge. If Living History Day is still going (Sat until 4:30), catch the tail end. Either way, the views from here at golden hour are unreal.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">~10 PM</div><div class="dn-step-title">Late-night ramen in Japantown</div><div class="dn-step-detail">Walk to Japantown after the Nihonmachi Street Fair wraps. Grab ramen at Marufuku or izakaya at Sozai. The neighborhood will still have festival energy.</div></div></li>
+        </ul>
+      </div>
     </div>
-    <div class="dn-body">
-      <h3>Symphony & Speakeasy</h3>
-      <p class="dn-tagline">St. Vincent with an orchestra, then cocktails in a hidden lounge. Thursday only.</p>
-      <ul class="dn-steps">
-        <li class="dn-step" data-step="1">
-          <div>
-            <div class="dn-step-time">6:00 PM</div>
-            <div class="dn-step-title">Early dinner at Hayes Valley</div>
-            <div class="dn-step-detail">Davies Symphony Hall is right by Hayes Valley. Grab dinner before the show — lots of walkable options. Keep it light, you want to be energized not sleepy.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="2">
-          <div>
-            <div class="dn-step-time">7:30 PM</div>
-            <div class="dn-step-title">St. Vincent w/ the SF Symphony</div>
-            <div class="dn-step-detail">Annie Clark's catalog — "Los Ageless," "Cruel," "Digital Witness" — performed with a full orchestra conducted by Jules Buckley. First-ever orchestral run. It's going to be extraordinary.</div>
-          </div>
-        </li>
-        <li class="dn-step" data-step="3">
-          <div>
-            <div class="dn-step-time">~10 PM</div>
-            <div class="dn-step-title">Cocktails at Valley Club</div>
-            <div class="dn-step-detail">Cab to Hotel G's mezzanine in Union Square. Low lights, velvet corners, and The Lovemaker — a Negroni riff with raspberry and cocoa butter. The kind of place where you stay longer than planned.</div>
-          </div>
-        </li>
-      </ul>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Midrange Move</span>
+        <span class="dn-tier-est">~$80–120 for two</span>
+      </div>
+      <div class="dn-body">
+        <h3>Mission Cocktail Crawl</h3>
+        <p class="dn-tagline">New bars, good food, and a neighborhood that rewards wandering.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">6:30 PM</div><div class="dn-step-title">Start at Stray Dog</div><div class="dn-step-detail">New cafe-bar on Utah & 24th. Pandan lattes by day, pan-Asian cocktails at night. Shanghai-inspired, tiny, just opened.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30 PM</div><div class="dn-step-title">Dinner nearby</div><div class="dn-step-detail">Jilli for Korean drinking food and makgeolli (popcorn fried chicken is mandatory). Or Big Finish for wine under $14/glass and cacio e pepe.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">9:30 PM</div><div class="dn-step-title">Nightcap at Madrone</div><div class="dn-step-detail">Madrone Art Bar on Haight — murals, DJs, and a crowd that's been coming for years. The parklet is perfect on warm nights.</div></div></li>
+        </ul>
+      </div>
     </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Splurge</span>
+        <span class="dn-tier-est">~$150–200 for two</span>
+      </div>
+      <div class="dn-body">
+        <h3>Symphony & Speakeasy</h3>
+        <p class="dn-tagline">Andrew Bird with an orchestra, then cocktails in a hidden lounge. Thursday only.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">6:00 PM</div><div class="dn-step-title">Early dinner at Hayes Valley</div><div class="dn-step-detail">Davies Symphony Hall is right by Hayes Valley. Lots of walkable options. Keep it light — you want to be energized, not sleepy.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30 PM</div><div class="dn-step-title">Andrew Bird w/ the SF Symphony</div><div class="dn-step-detail">Full catalog performed with a symphony orchestra conducted by Jules Buckley. First-ever orchestral run. It's going to be extraordinary.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">~10 PM</div><div class="dn-step-title">Cocktails at Valley Club</div><div class="dn-step-detail">Cab to Hotel G's mezzanine in Union Square. Low lights, velvet corners, and a Negroni riff with cocoa butter. The kind of place where you stay longer than planned.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SOLO DAY -->
+  <div class="occasion-view" id="oc-solo">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Wander</span>
+        <span class="dn-tier-est">Free (+ coffee)</span>
+      </div>
+      <div class="dn-body">
+        <h3>Slow Morning, Long Walk</h3>
+        <p class="dn-tagline">No plans, no people, no rush. Just you and the city.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">9:30 AM</div><div class="dn-step-title">Coffee and a book at Sightglass</div><div class="dn-step-detail">The SoMa location has high ceilings and long tables. Bring a book or just people-watch. No one's in a hurry here.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">11:00 AM</div><div class="dn-step-title">Walk the Embarcadero</div><div class="dn-step-detail">Ferry Building to Fisherman's Wharf along the water. Put on a podcast or go silent — either works. Stop at the wave organ if you've never been.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">1:00 PM</div><div class="dn-step-title">Solo lunch at the counter</div><div class="dn-step-detail">Cinderella Bakery's new Mission location for rye bread and borscht. Or grab a bench at Dolores Park with a burrito from La Taqueria. Main character lunch.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">3:00 PM</div><div class="dn-step-title">Museum of Craft & Design (free this weekend)</div><div class="dn-step-detail">Small enough to not be exhausting, interesting enough to feel like you did something. The Video Craft exhibition plus the weaving project.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Treat Yourself</span>
+        <span class="dn-tier-est">~$60–90</span>
+      </div>
+      <div class="dn-body">
+        <h3>Art, Wine & a Counter Seat</h3>
+        <p class="dn-tagline">A day that feels like a little vacation without leaving the city.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:30 AM</div><div class="dn-step-title">Treasures of the Pharaohs at de Young</div><div class="dn-step-detail">Ancient Egyptian artifacts from the Valley of the Kings just opened. Solo museum visits hit different — you go at your own pace, linger where you want, skip what you don't.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">1:00 PM</div><div class="dn-step-title">Lunch in the park</div><div class="dn-step-detail">Grab something from the de Young cafe or walk to Nopalito on 9th Ave for pozole. Eat slowly.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">3:00 PM</div><div class="dn-step-title">Wine at Big Finish</div><div class="dn-step-detail">48 wines on tap, organized by finish style so you don't need to know anything. Grab a seat at the bar, try 2-3 glasses, maybe read. Nobody bothers you here.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">5:30 PM</div><div class="dn-step-title">Bar Shoji at sunset</div><div class="dn-step-detail">The coffee shop transforms into a cocktail den as the light changes. Wagyu-fat-washed whisky, a small plate, and nowhere to be. This is your evening.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Reset Day</span>
+        <span class="dn-tier-est">~$100–150</span>
+      </div>
+      <div class="dn-body">
+        <h3>Long Brunch, Live Music, No Phone</h3>
+        <p class="dn-tagline">Put your phone on DND. Today is about you.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:00 AM</div><div class="dn-step-title">Long brunch at Zuni Café</div><div class="dn-step-detail">Sit at the bar, order the Caesar and an oyster plate. Read the paper. Take an actual hour. You've earned this.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12:30 PM</div><div class="dn-step-title">Browse Green Apple Books</div><div class="dn-step-detail">The Clement Street location is a maze of used books. Get lost for an hour. Walk out with something you weren't looking for.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Violent Femmes at Stern Grove</div><div class="dn-step-detail">Free concert in the amphitheater. Bring a blanket, lie down, close your eyes if you want. Nobody knows you're here and that's the point.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">5:00 PM</div><div class="dn-step-title">Sunset at Lands End</div><div class="dn-step-detail">15-minute drive from Stern Grove. Walk the trail to the Sutro Baths ruins. Watch the Pacific. Go home when you're ready.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BIRTHDAY -->
+  <div class="occasion-view" id="oc-birthday">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Low-Key Birthday</span>
+        <span class="dn-tier-est">Free + dinner</span>
+      </div>
+      <div class="dn-body">
+        <h3>Park Hangout → Group Dinner</h3>
+        <p class="dn-tagline">No pressure, no velvet ropes. Just your favorite people in the sun.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Dolores Park takeover</div><div class="dn-step-detail">Text the group chat a pin drop. Bring a speaker, a cooler, and a cake from Tartine. Claim the spot with the downtown view. This is the party.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">5:00 PM</div><div class="dn-step-title">Golden hour photos</div><div class="dn-step-detail">Walk to the Dolores Park Painted Ladies view or the Mission murals on Balmy Alley. The light between 5-6 is unreal.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7:00 PM</div><div class="dn-step-title">Group dinner at Jilli</div><div class="dn-step-detail">Communal Korean drinking food — perfect for birthdays. Makgeolli in teapots, popcorn fried chicken, loud music. Tell them it's your birthday and see what happens.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">9:30 PM</div><div class="dn-step-title">Nightcap at Stray Dog</div><div class="dn-step-detail">Walk to Utah & 24th for one more round. Pan-Asian cocktails in a cozy room. Perfect last stop — small enough that the whole group stays together.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Night Out</span>
+        <span class="dn-tier-est">~$60–100/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Dinner → Live Music → Bars</h3>
+        <p class="dn-tagline">A proper birthday night that builds as it goes.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">7:00 PM</div><div class="dn-step-title">Dinner at Hayati</div><div class="dn-step-detail">New Middle Eastern spot in the Ferry Building. Shareable plates, buzzy energy, beautiful room. Book a table for the group — this is the kind of place that makes a birthday feel special.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">9:00 PM</div><div class="dn-step-title">Live jazz at The Deluxe</div><div class="dn-step-detail">$5–10 cover, live music every night on Haight. Friday has Angela LaFlamme, Saturday is Big Blu Soul Revue. Walk in as a group, grab the corner booth.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">11:00 PM</div><div class="dn-step-title">Late night at The Green Heron</div><div class="dn-step-detail">Around the corner on Haight. Miller Lites and shots for the birthday person. No pretense, just a good bar with a jukebox. Close it out here.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Main Character Birthday</span>
+        <span class="dn-tier-est">~$120–180/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Brunch → Show → Speakeasy</h3>
+        <p class="dn-tagline">Go all out. It's your birthday and you'll splurge if you want to.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">11:00 AM</div><div class="dn-step-title">Birthday brunch at Che Fico</div><div class="dn-step-detail">Italian brunch in NoPa. Wood-fired everything, killer cocktails, and enough space for a big group. Toast with Aperol Spritzes.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Beauty and the Beast at the Orpheum</div><div class="dn-step-detail">Broadway matinee on Market Street. Get a block of seats together. It's spectacle, it's fun, and it's the kind of thing you'd never do for yourself — which is why it's perfect for a birthday.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">5:30 PM</div><div class="dn-step-title">Champagne at Valley Club</div><div class="dn-step-detail">Hotel G mezzanine. Low lights, velvet seating, cocktails that look like they belong on Instagram. Order a bottle and toast properly.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">8:00 PM</div><div class="dn-step-title">Dinner at The Bank at Amador</div><div class="dn-step-detail">1908 bank turned social club. Marble walls, vault door, raw bar, DJ. This is the "I can't believe we're doing this" spot. End the night feeling like a million bucks.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FRIENDS VISITING -->
+  <div class="occasion-view" id="oc-friends">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Classic SF Day</span>
+        <span class="dn-tier-est">Free (+ food)</span>
+      </div>
+      <div class="dn-body">
+        <h3>Golden Gate to Chinatown</h3>
+        <p class="dn-tagline">The greatest hits — but done right, not touristy.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:00 AM</div><div class="dn-step-title">Coffee at Equator in the Presidio</div><div class="dn-step-detail">Start with good coffee in a setting that immediately says "this city is different." Walk the trails toward the bridge from here.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">11:00 AM</div><div class="dn-step-title">Walk the Golden Gate Bridge</div><div class="dn-step-detail">Go halfway and back. Yes it's windy. Yes it's worth it. Your friends will take 400 photos and you'll pretend to be over it.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">1:00 PM</div><div class="dn-step-title">Dim sum in the Richmond</div><div class="dn-step-detail">Cab to Clement Street. Good Luck Dim Sum for cheap and fast, or Hong Kong Lounge II if you want to sit. Order the har gow.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">3:00 PM</div><div class="dn-step-title">Golden Gate Park → de Young</div><div class="dn-step-detail">Last chance for Treasures of the Pharaohs (closes this weekend). Or just wander the park — Japanese Tea Garden, bison paddock, Stow Lake.</div></div></li>
+          <li class="dn-step" data-step="5"><div><div class="dn-step-time">6:00 PM</div><div class="dn-step-title">Sunset drinks at Park Chalet</div><div class="dn-step-detail">Right at the west end of the park, overlooking Ocean Beach. Beer garden with heat lamps. Watch the fog roll in.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The "Show Them Your SF"</span>
+        <span class="dn-tier-est">~$50–80/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Mission → Dolores → Nightlife</h3>
+        <p class="dn-tagline">The neighborhood your friends will wish they lived in.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Dolores Park</div><div class="dn-step-detail">Grab Bi-Rite ice cream and a blanket spot with a skyline view. This is peak SF energy on a sunny day. Stay for an hour.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">4:00 PM</div><div class="dn-step-title">Walk Valencia Street</div><div class="dn-step-detail">Browse Paxton Gate (taxidermy and oddities), grab coffee at Sightglass, poke into bookstores. Let them soak it in.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">6:30 PM</div><div class="dn-step-title">Dinner at Jilli</div><div class="dn-step-detail">Korean communal drinking food — makgeolli poured from teapots, popcorn fried chicken, loud and fun. Perfect group energy.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">9:00 PM</div><div class="dn-step-title">Bar hop on 24th</div><div class="dn-step-detail">Start at Stray Dog for cocktails, end at Trick Dog or Latin American Club. Your friends will not want to leave this city.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Weekend Send</span>
+        <span class="dn-tier-est">~$100–150/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Concerts, Views & Late Nights</h3>
+        <p class="dn-tagline">For friends who came to have a big weekend.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">12:00 PM</div><div class="dn-step-title">Brunch at the Ferry Building</div><div class="dn-step-detail">Walk the market stalls, grab Hog Island oysters, Acme bread, Blue Bottle. Then sit outside on the water.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Violent Femmes at Stern Grove</div><div class="dn-step-detail">Violent Femmes play free in the eucalyptus amphitheater. Doors at noon, show at 2. Bring a blanket and enjoy the fact that this is somehow free.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">6:00 PM</div><div class="dn-step-title">Hayati at the Ferry Building</div><div class="dn-step-detail">New Middle Eastern spot in the old Boulettes Larder space. Book ahead — this is the buzzy opening right now.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">9:00 PM</div><div class="dn-step-title">The Bank at Amador</div><div class="dn-step-detail">1908 bank turned social club in FiDi. Marble walls, vault door, three kinds of martinis, DJ night. Walk in with confidence.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PARENTS IN TOWN -->
+  <div class="occasion-view" id="oc-parents">
+
+    <div class="dn-card dn-tier-free">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Chill Day</span>
+        <span class="dn-tier-est">Free (+ lunch)</span>
+      </div>
+      <div class="dn-body">
+        <h3>Parks, Views & an Easy Lunch</h3>
+        <p class="dn-tagline">Nothing too rushed, nothing too loud. Just a beautiful day.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:00 AM</div><div class="dn-step-title">Ferry Building farmers market</div><div class="dn-step-detail">Saturday morning market along the Embarcadero. Sample olive oils, grab pastries, walk the waterfront. Parents love this.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12:00 PM</div><div class="dn-step-title">Lunch on the water</div><div class="dn-step-detail">Hog Island Oyster Co inside the Ferry Building, or grab takeaway and sit on the benches looking at the Bay Bridge.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2:00 PM</div><div class="dn-step-title">Drive to Twin Peaks</div><div class="dn-step-detail">10-minute drive for a 360° view of the entire city. Bring a jacket. Your mom will say "wow" at least four times.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">4:00 PM</div><div class="dn-step-title">Coffee in Noe Valley</div><div class="dn-step-detail">Drive down to 24th Street in Noe. Bernie's or Martha & Bros. Quiet, charming, feels like a village. Easy walking.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Culture Day</span>
+        <span class="dn-tier-est">~$60–100/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Museums, Music & a Nice Dinner</h3>
+        <p class="dn-tagline">For parents who want to do something, not just see something.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">10:30 AM</div><div class="dn-step-title">SFMOMA or de Young</div><div class="dn-step-detail">SFMOMA if they like modern, de Young for the new Treasures of the Pharaohs exhibition (just opened, will be packed all fall). Both have great museum cafes.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">1:00 PM</div><div class="dn-step-title">Lunch in Hayes Valley</div><div class="dn-step-detail">Walk Hayes Street — Souvla for Greek, Rich Table for something special, or Chez Maman for a casual French crêpe. Browse the boutiques after.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">3:00 PM</div><div class="dn-step-title">Japanese Tea Garden</div><div class="dn-step-detail">In Golden Gate Park. Peaceful, beautiful, and the perfect speed for a post-lunch stroll. Green tea and cookies inside.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">6:30 PM</div><div class="dn-step-title">Dinner at Hayati</div><div class="dn-step-detail">New Middle Eastern restaurant in the Ferry Building. Elegant but not stuffy. The kind of place your parents will tell their friends about.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier">
+        <span class="dn-tier-badge">The Big Night</span>
+        <span class="dn-tier-est">~$120–180/person</span>
+      </div>
+      <div class="dn-body">
+        <h3>Symphony & Supper Club</h3>
+        <p class="dn-tagline">The "I want to impress my parents" evening. Thursday only.</p>
+        <ul class="dn-steps">
+          <li class="dn-step" data-step="1"><div><div class="dn-step-time">5:30 PM</div><div class="dn-step-title">Drinks at Absinthe</div><div class="dn-step-detail">Classic Hayes Valley brasserie. Great cocktails, beautiful room. Perfect warm-up before the symphony — it's a 5-minute walk to Davies Hall.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30 PM</div><div class="dn-step-title">Andrew Bird w/ SF Symphony</div><div class="dn-step-detail">Even if your parents don't know St. Vincent, a full orchestra in Davies Hall is universally impressive. The venue alone will get them.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">~10 PM</div><div class="dn-step-title">Late supper at Zuni Café</div><div class="dn-step-detail">The iconic SF restaurant. Roast chicken for two (order it when you sit down, 45-min wait), Caesar salad, and a bottle of something nice. Your parents will love this.</div></div></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
@@ -506,64 +786,76 @@
 
 <!-- ==================== EATS & BARS ==================== -->
 <div class="view" id="view-eats">
-  <div class="section-label" style="border-top:none;padding-top:0">New Restaurant Openings</div>
+  <div class="section-label" style="border-top:none;padding-top:0">New This Week</div>
 
   <div class="card">
-    <div class="card-top">
-      <h3>Jollibee</h3>
-      <div class="card-when">Opens Fri Jul 31</div>
-    </div>
-    <p>934 Market St near Powell BART. First SF location since 2011. Fried chicken, Jolly Spaghetti, Peach Mango Pie. The mayor announced it on X. Expect lines day one.</p>
-    <div class="tags"><span class="tag tag-new">New</span><span class="tag tag-food">Filipino</span><span class="price-badge">$ · Under $15</span></div>
+    <div class="card-top"><h3>Bar Coto · Jackson Square</h3><div class="card-when">Open now</div></div>
+    <p>From the A16 team — refined all-day Italian café. Espresso and pastries in the morning, sandwiches at lunch, low-ABV cocktails as the day winds down. Immediately feels like it's been there for years.</p>
+    <div class="tags"><span class="tag tag-new">New Opening</span><span class="tag tag-food">Italian Café</span><span class="price-badge">$ · Under $20</span></div>
   </div>
 
+  <div class="card">
+    <div class="card-top"><h3>Jollibee · 934 Market St</h3><div class="card-when">Now open</div></div>
+    <p>The beloved Filipino chain is officially open near Powell BART. Fried chicken, Jolly Spaghetti, Peach Mango Pie. Lines are still long but moving.</p>
+    <div class="tags"><span class="tag tag-new">New Opening</span><span class="tag tag-food">Filipino</span><span class="price-badge">$ · Under $15</span></div>
+  </div>
+
+  <div class="section-label">Worth Trying</div>
+
   <div class="grid-2">
-    <div class="mini-card"><div class="mini-type">Middle Eastern · Ferry Building</div><h4>Hayati</h4><p>Taking over the old Boulettes Larder space. From the team behind Sens.</p><div class="mini-price">$$ · $25–50/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Spanish Tapas · Berkeley</div><h4>Mesón</h4><p>Former César staff. Patatas bravas, bocadillos, cocktails in Westbrae.</p><div class="mini-price">$$ · $30–55/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Cafe & Cocktails · Mission</div><h4>Stray Dog</h4><p>Shanghai-inspired all-day cafe → pan-Asian cocktail bar at night. Utah & 24th.</p><div class="mini-price">$ · $8–20</div></div>
-    <div class="mini-card"><div class="mini-type">Russian Bakery · Mission</div><h4>Cinderella Bakery</h4><p>The Richmond favorite's long-awaited second location. Rye bread and honey cakes.</p><div class="mini-price">$ · $5–15</div></div>
+    <div class="mini-card"><div class="mini-type">French · NoPa</div><h4>Esme</h4><p>French restaurant in the old Ragazza space. Pastas, roast chicken, cheese plates, and a lush back patio. Book on Resy.</p><div class="mini-price">$$ · $30–55/pp</div></div>
+    <div class="mini-card"><div class="mini-type">French-California · Mission</div><h4>JouJou</h4><p>From the Lazy Bear team. French-leaning, seafood-heavy, multiple dining spaces. One of the most exciting openings of the year.</p><div class="mini-price">$$$ · $50–80/pp</div></div>
+    <div class="mini-card"><div class="mini-type">British · Hayes Valley</div><h4>Dingles Public House</h4><p>Fish and chips, sausage rolls, Sunday roast, Yorkshire pudding. British food done right on Fulton St.</p><div class="mini-price">$$ · $25–40/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Cafe · Parkside</div><h4>Jandii</h4><p>Scones, matcha, and coffee. Two-story space with communal tables. Butter and blackberry scones are the move.</p><div class="mini-price">$ · $8–15</div></div>
+    <div class="mini-card"><div class="mini-type">Mexican · Mission</div><h4>La Taqueria</h4><p>The taco that launched a thousand arguments. No rice, good beans, great carnitas. Cash only, line moves fast.</p><div class="mini-price">$ · Under $15</div></div>
+    <div class="mini-card"><div class="mini-type">American · Hayes Valley</div><h4>Zuni Café</h4><p>Caesar salad, roast chicken for two, the marble bar. SF's forever restaurant. Go for a long weekday lunch.</p><div class="mini-price">$$$ · $50–80/pp</div></div>
   </div>
 
   <div class="section-label">Bars Worth Hitting</div>
 
   <div class="grid-2">
-    <div class="mini-card"><div class="mini-type">Korean · Mission</div><h4>Jilli</h4><p>Makgeolli from teapots, popcorn fried chicken, kimchi vodka rigatoni. Communal and loud.</p><div class="mini-price">$$ · $15–20/drink + food</div></div>
-    <div class="mini-card"><div class="mini-type">Cocktail Lounge · Union Square</div><h4>Valley Club</h4><p>Hotel G mezzanine. Low lights, cocoa-butter Negroni. Date-night energy.</p><div class="mini-price">$$ · $18–22/cocktail</div></div>
-    <div class="mini-card"><div class="mini-type">Wine Tavern · Mission</div><h4>Big Finish</h4><p>48 wines on tap, most under $14. Buffalo wings and cacio e pepe.</p><div class="mini-price">$ · Under $14/glass</div></div>
-    <div class="mini-card"><div class="mini-type">Japanese · SoMa</div><h4>Bar Shoji</h4><p>Coffee by day, cocktail den by night. Wagyu-fat-washed whisky, fondue burger.</p><div class="mini-price">$$ · $18–24/cocktail</div></div>
-    <div class="mini-card"><div class="mini-type">Neighborhood · Upper Haight</div><h4>The Green Heron</h4><p>Took over Hobson's Choice. Martinis, old fashioneds, Miller Lite — no judgment.</p><div class="mini-price">$ · $8–15/drink</div></div>
-    <div class="mini-card"><div class="mini-type">Brewery · Dogpatch</div><h4>Standard Deviant at Pier 70</h4><p>Waterfront taproom. Barrel-aged rosé-saison wine-beer hybrid. Huge industrial space.</p><div class="mini-price">$ · $8–12/beer</div></div>
-    <div class="mini-card"><div class="mini-type">Sports Bar · Castro</div><h4>Rikki's</h4><p>First women-focused bar in the Castro in years. Valkyries watch parties, lavender cocktails.</p><div class="mini-price">$ · $10–16/drink</div></div>
-    <div class="mini-card"><div class="mini-type">Members Club · FiDi</div><h4>The Bank at Amador</h4><p>1908 bank turned social club. Marble walls, vault door, three kinds of martinis. $50/mo.</p><div class="mini-price">$$ · $50/mo + drinks</div></div>
+    <div class="mini-card"><div class="mini-type">Wine · Mission</div><h4>Big Finish Wine</h4><p>48 wines on tap, most under $14. Organized by finish style. Sit at the bar, read something. Nobody bothers you here.</p><div class="mini-price">$ · Under $14/glass</div></div>
+    <div class="mini-card"><div class="mini-type">Japanese · Japantown</div><h4>Bar Shoji</h4><p>Coffee by day, cocktail den at night. Wagyu-fat-washed whisky. The sunset transformation is seamless.</p><div class="mini-price">$$ · $18–24/cocktail</div></div>
+    <div class="mini-card"><div class="mini-type">Jazz · Haight</div><h4>The DeLuxe</h4><p>The legendary jazz bar is back with an upgraded sound system. Live music nightly, $5–15 cover. Go support this place.</p><div class="mini-price">$ · $5–15 cover</div></div>
+    <div class="mini-card"><div class="mini-type">Cocktail Lounge · Union Square</div><h4>Valley Club</h4><p>Hotel G mezzanine. Low lights, velvet corners, cocoa-butter Negroni. You'll stay longer than planned.</p><div class="mini-price">$$ · $18–22/cocktail</div></div>
+    <div class="mini-card"><div class="mini-type">Neighborhood · Haight</div><h4>The Green Heron</h4><p>Took over Hobson's Choice. Classic cocktails, Miller Lite, no judgment. The kind of bar every neighborhood needs.</p><div class="mini-price">$ · $8–15/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Korean · Mission</div><h4>Jilli</h4><p>Makgeolli from teapots, popcorn fried chicken, kimchi vodka rigatoni. Communal and loud in the best way.</p><div class="mini-price">$$ · $15–20/drink + food</div></div>
+    <div class="mini-card"><div class="mini-type">Brewery · Dogpatch</div><h4>Standard Deviant at Pier 70</h4><p>Waterfront taproom. Barrel-aged rosé-saison wine-beer hybrid. Huge industrial space, never empty.</p><div class="mini-price">$ · $8–12/beer</div></div>
+    <div class="mini-card"><div class="mini-type">Sports · Castro</div><h4>Rikki's</h4><p>Castro's first women-focused bar in years. Valkyries watch parties, lavender cocktails, beer-battered wings.</p><div class="mini-price">$ · $10–16/drink</div></div>
   </div>
+
+  <div class="section-label">This Weekend · Food Events</div>
+  <div class="ongoing"><h4>Nihonmachi Street Fair Food Stalls · Japantown</h4><p>Sat–Sun Aug 1–2, 11am–6pm. Best AAPI food vendor lineup of the year. Takoyaki, mochi, shave ice. Free to enter.</p></div>
+  <div class="ongoing"><h4>Renegade Craft Fair · Fort Mason</h4><p>Sat–Sun Aug 1–2. 250+ indie makers. Browse and shop, free entry.</p></div>
+  <div class="ongoing"><h4>Jerry Day Food Trucks · McLaren Park</h4><p>Sat Aug 1, all day. Local vendors at Jerry Garcia Amphitheater.</p></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
 <!-- ==================== SPORTS ==================== -->
 <div class="view" id="view-sports">
-  <div class="section-label" style="border-top:none;padding-top:0">⚾ Giants · Oracle Park</div>
+  <div class="section-label" style="border-top:none;padding-top:0">⚾ Giants · On the Road</div>
 
-  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Angels</h4><p>Series finale</p></div><div class="sr-when">Sun Jul 26<br>1:05 PM</div><div class="sr-price">From $15</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Brewers</h4><p>Game 1</p></div><div class="sr-when">Mon Jul 27<br>6:45 PM</div><div class="sr-price">From $15</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Brewers</h4><p>Game 2</p></div><div class="sr-when">Tue Jul 28<br>6:45 PM</div><div class="sr-price">From $15</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Brewers</h4><p>Day game — midweek gem</p></div><div class="sr-when">Wed Jul 29<br>12:45 PM</div><div class="sr-price">From $15</div></div>
-  <p class="sport-note">Giants head to San Diego Thu–Fri to close the week.</p>
+  <div class="sport-row"><div class="sr-teams"><h4>Giants @ Padres</h4><p>Series opener</p></div><div class="sr-when">Fri Jul 31<br>6:45 PM</div><div class="sr-price">Away</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Giants @ Padres</h4><p>Saturday game</p></div><div class="sr-when">Sat Aug 1<br>5:40 PM</div><div class="sr-price">Away</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Giants @ Padres</h4><p>Series finale</p></div><div class="sr-when">Sun Aug 2<br>1:10 PM</div><div class="sr-price">Away</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Giants @ Rangers</h4><p>Monday start</p></div><div class="sr-when">Mon Aug 3<br>5:05 PM</div><div class="sr-price">Away</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Giants @ Rangers</h4><p>Tuesday game</p></div><div class="sr-when">Tue Aug 4<br>5:05 PM</div><div class="sr-price">Away</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Giants @ Rangers</h4><p>Day game</p></div><div class="sr-when">Wed Aug 5<br>11:35 AM</div><div class="sr-price">Away</div></div>
+  <p class="sport-note">No home games this week — catch the Giants on TV or at a sports bar. Next homestand starts Aug 7 vs. Cardinals.</p>
 
-  <div class="section-label">⚾ Oakland Ballers · Raimondi Park</div>
-
-  <div class="sport-row"><div class="sr-teams"><h4>Ballers vs. Boise Hawks</h4><p>🦝 Night of the Living Possum</p></div><div class="sr-when">Sat Jul 25<br>4:35 PM</div><div class="sr-price">~$24</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Ballers vs. Boise Hawks</h4><p>🎃 Halloween in July</p></div><div class="sr-when">Sun Jul 26<br>1:05 PM</div><div class="sr-price">~$24</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Ballers vs. PBL Travel Team</h4><p>💀 Grateful Dead Night</p></div><div class="sr-when">Fri Jul 31<br>6:35 PM</div><div class="sr-price">~$28</div></div>
-  <p class="sport-note">Cheap indie baseball, wild theme nights. Raimondi Park, 1800 Wood St, Oakland.</p>
+  <div class="section-label">🎵 Chase Center · Not Just Basketball</div>
+  <div class="sport-row"><div class="sr-teams"><h4>Lionel Richie + Earth Wind & Fire</h4><p>Concert at Chase Center</p></div><div class="sr-when">Thu Aug 6<br>7:00 PM</div><div class="sr-price">$80+</div></div>
 
   <div class="section-label">🏀 Valkyries · WNBA</div>
+  <p class="sport-note">Check schedule — the Valkyries are in the thick of the playoff race. Next home game at Chase Center TBD.</p>
 
-  <div class="sport-row"><div class="sr-teams"><h4>Valkyries @ Phoenix Mercury</h4><p>Record: 13-8 · Favored (65.6%)</p></div><div class="sr-when">Wed Jul 29<br>7:00 PM</div><div class="sr-price">Away game</div></div>
-  <p class="sport-note">Watch at Rikki's in the Castro for packed watch parties. Next home game: Sun Aug 2 vs. Toronto at Chase Center.</p>
+  <div class="section-label">⚾ Oakland Ballers · Raimondi Park</div>
+  <div class="sport-row"><div class="sr-teams"><h4>Ballers home games</h4><p>Multiple this week</p></div><div class="sr-when">Aug 1, 2, 4, 5, 6</div><div class="sr-price">~$24</div></div>
+  <p class="sport-note">Indie baseball with theme nights. Raimondi Park, 1800 Wood St, Oakland. Check oaklandballers.com for the full schedule.</p>
 
-  <div class="section-label">💪 Also This Weekend</div>
-  <div class="sport-row"><div class="sr-teams"><h4>CrossFit Games</h4><p>SAP Center, San Jose</p></div><div class="sr-when">Sat–Sun<br>Jul 25–27</div><div class="sr-price">$75+</div></div>
+  <div class="section-label">🏈 Coming Soon</div>
+  <p class="sport-note">Outside Lands takes over Golden Gate Park Aug 7–9. Not sports, but it'll take over the city.</p>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
@@ -573,77 +865,79 @@
   <div class="section-label" style="border-top:none;padding-top:0">This Weekend</div>
 
   <div class="highlight-card card">
-    <div class="card-top">
-      <h3>Suki Waterhouse · Stern Grove</h3>
-      <div class="card-when">Sun Jul 26 · 2pm</div>
-    </div>
-    <p>Free concert in the amphitheater. Doors at noon, show at 2. Try the community box office for day-of passes. Bring a jacket — it's near the ocean.</p>
-    <div class="tags"><span class="tag">Free</span><span class="tag">Outdoors</span></div>
+    <div class="card-top"><h3>Violent Femmes + Tune-Yards · Stern Grove</h3><div class="card-when">Sun Aug 2 · 2pm</div></div>
+    <p>Free concert in the eucalyptus amphitheater. 89th season of the beloved series. "Blister in the Sun" outdoors is a core SF experience. Free tickets via lottery at sterngrove.org. Doors at noon.</p>
+    <div class="tags"><span class="tag">Free</span><span class="tag">Alt-Rock</span><span class="price-badge">Stern Grove · Free w/ reservation</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Chance Peña · The Fillmore</h3><div class="card-when">Sat Jul 25 · 8pm</div></div>
-    <p>Pop and acoustic singer-songwriter touring through SF. Standing room / open dance floor. Doors at 7.</p>
-    <div class="tags"><span class="tag tag-music">Pop / Acoustic</span><span class="price-badge">$$ · ~$35–50</span></div>
+    <div class="card-top"><h3>Andrew Bird w/ SF Symphony</h3><div class="card-when">Sat Aug 1 · 7:30pm</div></div>
+    <p>The violinist, songwriter, and world-class whistler joins the full orchestra at Davies Hall. Looping strings, chamber folk, indie rock — a genuinely special pairing.</p>
+    <div class="tags"><span class="tag tag-music">Orchestral / Indie</span><span class="price-badge">Davies Hall · From ~$183</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Party Pupils · The Midway</h3><div class="card-when">Sat Jul 25 · 2pm</div></div>
-    <p>Daytime dance party at The Midway in SoMa.</p>
-    <div class="tags"><span class="tag tag-music">DJ / Dance</span><span class="price-badge">$$ · ~$30–45</span></div>
+    <div class="card-top"><h3>Dark Star Orchestra · Greek Theatre</h3><div class="card-when">Fri Jul 31 · Berkeley</div></div>
+    <p>Night one of a two-night Grateful Dead celebration. Full show recreations down to the set lists at one of the best outdoor amphitheaters in the country.</p>
+    <div class="tags"><span class="tag tag-music">Grateful Dead</span><span class="price-badge">Greek Theatre · Check SeatGeek</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Andy Grammer + Walk Off The Earth</h3><div class="card-when">Sun Jul 26 · 7pm</div></div>
-    <p>Outdoor amphitheater at the Green Music Center in Rohnert Park. Worth the drive for a summer evening.</p>
-    <div class="tags"><span class="tag tag-music">Pop</span><span class="price-badge">$$ · $40–70</span></div>
+    <div class="card-top"><h3>Melvin Seals & JGB · Greek Theatre</h3><div class="card-when">Sat Aug 1 · Berkeley</div></div>
+    <p>Night two at the Greek. Melvin played keys with Jerry Garcia for 20 years — this isn't tribute music, it's the real thing. Then Jerry Day is the next morning in McLaren Park.</p>
+    <div class="tags"><span class="tag tag-music">Jerry Garcia</span><span class="price-badge">Greek Theatre · Check SeatGeek</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Jerry Day — Full Festival</h3><div class="card-when">Sat Aug 1 · 11:30am–5:45pm</div></div>
+    <p>Free all-day festival at Jerry Garcia Amphitheater in McLaren Park. Melvin Seals & JGB, Stu Allen and The Mars Hotel, The Jazz Mafia. After-parties in Excelsior bars.</p>
+    <div class="tags"><span class="tag tag-music">Festival</span><span class="price-badge">Jerry Garcia Amphitheater · Free</span></div>
   </div>
 
   <div class="section-label">This Week</div>
 
   <div class="card">
-    <div class="card-top"><h3>St. Vincent w/ SF Symphony</h3><div class="card-when">Thu Jul 30 · 7:30pm</div></div>
-    <p>First-ever orchestral tour. Full catalog performed with the San Francisco Symphony at Davies Symphony Hall. Conducted by Jules Buckley. The show of the week.</p>
-    <div class="tags"><span class="tag tag-music">Art Pop / Orchestral</span><span class="price-badge">$$$ · $75+</span></div>
+    <div class="card-top"><h3>Old 97's · The Fillmore</h3><div class="card-when">Wed Aug 5 · 8pm</div></div>
+    <p>Alt-country Texan rockers at the Fillmore. Hook-heavy, high-energy. Everyone ends up knowing more words than they thought. Doors at 7. River Shook opens.</p>
+    <div class="tags"><span class="tag tag-music">Alt-Country</span><span class="price-badge">The Fillmore · From ~$62</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Trevor Noah · The Mountain Winery</h3><div class="card-when">Sun–Tue Jul 26–28</div></div>
-    <p>Three nights at the outdoor amphitheater in Saratoga. Bring a layer and grab wine before the show.</p>
-    <div class="tags"><span class="tag tag-nightlife">Comedy</span><span class="price-badge">$$$ · $80+</span></div>
+    <div class="card-top"><h3>Lionel Richie + Earth Wind & Fire</h3><div class="card-when">Thu Aug 6 · 7pm</div></div>
+    <p>"All Night Long" meets "September" at Chase Center. Two legends in one night. Your parents would love this. You would too.</p>
+    <div class="tags"><span class="tag tag-music">Pop / R&B</span><span class="price-badge">Chase Center · $80+</span></div>
   </div>
 
-  <div class="section-label">Nightly Live Music</div>
-
   <div class="card">
-    <div class="card-top"><h3>The Deluxe · Haight St</h3><div class="card-when">Every night</div></div>
-    <p>Live jazz and soul nightly, $5–$10 cover. Mon: DeLuxe Jazz Collective. Thu: Tony Peebles. Fri: Angela LaFlamme. Sat: Hammond Cheese Combo + Big Blu Soul Revue ($15).</p>
-    <div class="tags"><span class="tag tag-music">Jazz / Soul</span><span class="price-badge">$ · $5–15</span></div>
+    <div class="card-top"><h3>SalsaCrazy Saturday</h3><div class="card-when">Sat Aug 1 · Evening</div></div>
+    <p>Salsa and bachata dance lessons followed by open dancing. No partner needed. Great way to spend a Saturday night — and you'll actually learn something.</p>
+    <div class="tags"><span class="tag tag-music">Dance</span><span class="price-badge">$$ · Check Eventbrite</span></div>
   </div>
 
-  <div class="section-label">Broadway & Theater</div>
+  <div class="section-label">Theater & Shows</div>
 
   <div class="card">
-    <div class="card-top"><h3>Beauty and the Beast · Orpheum Theatre</h3><div class="card-when">Multiple shows</div></div>
-    <p>Broadway touring production on Market Street. Matinee and evening shows available this week.</p>
-    <div class="tags"><span class="tag tag-arts">Broadway</span><span class="price-badge">$$ · $50–130+</span></div>
+    <div class="card-top"><h3>Dear San Francisco · Club Fugazi</h3><div class="card-when">Multiple shows · North Beach</div></div>
+    <p>Circus-theater love letter to SF. Aerial acrobatics, shadow play, live music, Gold Rush lore. Code 49FOR49 for $49 tickets.</p>
+    <div class="tags"><span class="tag tag-arts">Circus / Theater</span><span class="price-badge">$$ · From $49 w/ code</span></div>
   </div>
 
   <div class="card">
     <div class="card-top"><h3>Hairspray · SF Playhouse</h3><div class="card-when">Through Sep 12</div></div>
     <p>The musical is running all summer. Intimate theater — every seat is a good seat.</p>
-    <div class="tags"><span class="tag tag-arts">Theater</span><span class="price-badge">$$ · $35–75</span></div>
+    <div class="tags"><span class="tag tag-arts">Broadway</span><span class="price-badge">$$ · $35–75</span></div>
   </div>
+
+  <div class="section-label">Coming Up — Buy Now</div>
 
   <div class="card">
-    <div class="card-top"><h3>SF Symphony: Matilda (Live-to-Picture)</h3><div class="card-when">Sun Jul 26 · 2pm</div></div>
-    <p>The orchestra plays the score live while the film screens. At Davies Symphony Hall — fun for all ages.</p>
-    <div class="tags"><span class="tag tag-arts">Film + Orchestra</span><span class="price-badge">$$ · $30–60</span></div>
+    <div class="card-top"><h3>Outside Lands · Golden Gate Park</h3><div class="card-when">Fri–Sun Aug 7–9</div></div>
+    <p>Charli XCX, The Strokes, Rüfüs Du Sol headline. Death Cab for Cutie, The xx, GloRilla, Modest Mouse, Djo. 3-day sold out — single-day still available.</p>
+    <div class="tags"><span class="tag tag-music">Festival</span><span class="price-badge">$$$ · Single day from $249</span></div>
   </div>
 
-  <div class="section-label">Coming Up</div>
-  <div class="ongoing"><h4>Stern Grove · Remaining Lineup</h4><p>Violent Femmes (Aug 2) · Patti LaBelle (Aug 9) · Public Enemy (Aug 15) · Al Green (Aug 16). All free.</p></div>
-  <div class="ongoing"><h4>Outside Lands · Aug 7–9</h4><p>Charli XCX, Rufus Du Sol, The Strokes. Golden Gate Park. Tickets on sale now.</p></div>
+  <div class="ongoing"><h4>Stern Grove · Remaining Lineup</h4><p>Patti LaBelle (Aug 9) · Public Enemy (Aug 15) · Al Green (Aug 16). All free. Reservations at sterngrove.org.</p></div>
+  <div class="ongoing"><h4>The DeLuxe · Live Jazz Nightly</h4><p>The legendary Haight jazz bar is back. Jazz, soul, and funk nightly, $5–15 cover.</p></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
@@ -659,8 +953,8 @@
 </div>
 
 <div class="footer">
-  <div class="sign-off">See you out there. — Sammy</div>
-  <p>Sammy's SF · Issue 01 · July 2026</p>
+  <div class="sign-off">See you out there.</div>
+  <p>Sammy's SF · Issue 02 · July 2026</p>
 </div>
 
 <script>
@@ -719,6 +1013,14 @@ function filterPicks() {
   document.getElementById('picks-empty').classList.toggle('show', any && vis === 0);
   const fc = document.getElementById('fcount');
   fc.textContent = any ? vis + ' match' + (vis !== 1 ? 'es' : '') : '';
+}
+
+// Occasion picker (Plans tab)
+function showOccasion(id) {
+  document.querySelectorAll('.occasion-view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.occasion-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('oc-' + id).classList.add('active');
+  document.querySelector('.occasion-btn[data-oc="' + id + '"]').classList.add('active');
 }
 
 // Subscribe
