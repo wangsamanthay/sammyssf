@@ -1,11 +1,12 @@
 name: Generate Weekly Edition
 
 on:
-  # Runs every Thursday at 6pm Pacific (Friday 1am UTC)
   schedule:
-    - cron: "0 1 * * 5"
-  # Also allow manual trigger
+    - cron: "0 16 * * 2"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   generate:
@@ -17,20 +18,23 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Install dependencies
         run: npm install
 
-      - name: Generate this week's edition
+      - name: Generate this week's data
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
         run: npm run generate
 
-      - name: Commit and push updated site
+      - name: Build site from data
+        run: node build.mjs
+
+      - name: Commit and push
         run: |
           git config user.name "Sammy's SF Bot"
           git config user.email "wangsamanthay@users.noreply.github.com"
-          git add index.html
+          git add data.json index.html
           git diff --staged --quiet || (git commit -m "🎉 New edition: $(date +'%B %d, %Y')" && git push)

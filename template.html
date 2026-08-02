@@ -192,7 +192,7 @@
   <div class="header-eyebrow">Weekly picks from your bff Sammy</div>
   <h1>Sammy's <em>SF</em></h1>
   <div class="header-sub">the scene this week</div>
-  <div class="header-date"><!--DATE_RANGE--></div>
+  <div class="header-date"><!--DATE--></div>
   <div class="tabs">
     <button class="tab active" onclick="showView('picks')">This Week</button>
     <button class="tab" onclick="showView('eats')">Eats & Bars</button>
@@ -228,16 +228,16 @@
 
   <div class="section-label" style="border-top:none;padding-top:0">Editor's Picks</div>
 
-  <!--HERO_CARD-->
+  <!--HERO-->
 
-  <!--PICKS_CARDS-->
+  <!--PICKS-->
 
   <div class="picks-empty" id="picks-empty">
     Nothing matches those filters. <a onclick="resetFilters()">Clear all</a>
   </div>
 
   <div class="section-label" data-ongoing="true">Always On This Summer</div>
-  <!--PICKS_ONGOING-->
+  <!--ONGOING-->
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
@@ -250,10 +250,9 @@
   </div>
 
   <div class="section-label" style="border-top:none;padding-top:0">This Week</div>
+  <!--SINGLES-->
 
-  <!--SINGLES_EVENTS-->
-
-  Low-Key Ways to Meet People</div>
+  <div class="section-label">Low-Key Ways to Meet People</div>
   <!--SINGLES_ONGOING-->
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
@@ -277,48 +276,50 @@
 
   <!-- DATE NIGHT -->
   <div class="occasion-view active" id="oc-date">
+    <!--PB_DATE-->
 
-    <!--PLAYBOOK_DATE-->
-
-    </div>
+  </div>
 
   <!-- SOLO DAY -->
   <div class="occasion-view" id="oc-solo">
+    <!--PB_SOLO-->
 
-    <!--PLAYBOOK_SOLO-->
-
-    </div>
+  </div>
 
   <!-- BIRTHDAY -->
   <div class="occasion-view" id="oc-birthday">
+    <!--PB_BDAY-->
 
-    <!--PLAYBOOK_BIRTHDAY-->
-
-    </div>
+  </div>
 
   <!-- FRIENDS VISITING -->
   <div class="occasion-view" id="oc-friends">
+    <!--PB_FRIENDS-->
 
-    <!--PLAYBOOK_FRIENDS-->
-
-    </div>
+  </div>
 
   <!-- PARENTS IN TOWN -->
   <div class="occasion-view" id="oc-parents">
+    <!--PB_PARENTS-->
 
-    <!--PLAYBOOK_PARENTS-->
-
-    </div>
+  </div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
 <!-- ==================== EATS & BARS ==================== -->
 <div class="view" id="view-eats">
-  <!--EATS_NEW-->
+  <div class="section-label" style="border-top:none;padding-top:0">New This Week</div>
+  <div class="grid-2">
+    <!--EATS_NEW-->
+  </div>
+
+  <div class="section-label">Worth Going Back To</div>
+  <div class="grid-2">
+    <!--EATS_CLASSIC-->
+  </div>
 
   <div class="section-label">Bars Worth Hitting</div>
-
   <div class="grid-2">
     <!--BARS-->
   </div>
@@ -354,7 +355,7 @@
 
 <div class="footer">
   <div class="sign-off">See you out there.</div>
-  <p>Sammy's SF · Issue <!--ISSUE_NUM--> · July 2026</p>
+  <p>Sammy's SF · Issue <!--ISSUE--> · July 2026</p>
 </div>
 
 <script>

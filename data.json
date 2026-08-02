@@ -1,0 +1,953 @@
+{
+  "dateRange": "July 31 \u2013 August 6, 2026",
+  "issue": "02",
+  "picks": [
+    {
+      "t": "Violent Femmes + Tune-Yards at Stern Grove",
+      "w": "Sun Aug 2 \u00b7 2pm",
+      "d": "The 89th season of Stern Grove's free concert series. 'Blister in the Sun' in the eucalyptus amphitheater is a core SF memory. Free tickets via lottery at sterngrove.org.",
+      "cats": "music",
+      "price": "free",
+      "badge": "Free",
+      "tags": [
+        "Free",
+        "Music"
+      ],
+      "hero": true
+    },
+    {
+      "t": "Jerry Day \u2014 24th Anniversary",
+      "w": "Sat Aug 1 \u00b7 11:30am",
+      "d": "Free all-day festival at Jerry Garcia Amphitheater in McLaren Park. Melvin Seals & JGB, Stu Allen, The Jazz Mafia. After-parties in Excelsior bars. A love letter to SF.",
+      "cats": "music",
+      "price": "free",
+      "badge": "",
+      "tags": [
+        "Free",
+        "Festival"
+      ]
+    },
+    {
+      "t": "52nd Nihonmachi Street Fair",
+      "w": "Sat\u2013Sun Aug 1\u20132 \u00b7 11am\u20136pm",
+      "d": "Since 1974, Japantown's Peace Plaza becomes the best block party of the summer. AAPI food vendors, artisan stalls, live music on two stages. Free and genuinely one of SF's great institutions.",
+      "cats": "food,active",
+      "price": "free",
+      "badge": "",
+      "tags": [
+        "Free",
+        "Festival"
+      ]
+    },
+    {
+      "t": "Andrew Bird w/ SF Symphony",
+      "w": "Sat Aug 1 \u00b7 7:30pm",
+      "d": "The violinist, songwriter, and world-class whistler joins the full orchestra at Davies Hall. His looping, genre-jumping style was built for an orchestral setting. Don't sleep on this.",
+      "cats": "music",
+      "price": "$$$",
+      "badge": "$$$ \u00b7 From ~$183",
+      "tags": [
+        "Concert"
+      ]
+    },
+    {
+      "t": "Treasures of the Pharaohs at de Young",
+      "w": "Opens Fri Aug 1",
+      "d": "Artifacts from the Valley of the Kings make their U.S. debut. It'll be packed all fall \u2014 going opening weekend is the smart call. Pair with a Golden Gate Park walk.",
+      "cats": "shows",
+      "price": "$$",
+      "badge": "$$ \u00b7 ~$30",
+      "tags": [
+        "Exhibition",
+        "New"
+      ]
+    },
+    {
+      "t": "Dark Star Orchestra \u00b7 Greek Theatre",
+      "w": "Fri Jul 31 \u00b7 Berkeley",
+      "d": "Two nights of Grateful Dead music at the legendary outdoor amphitheater. Full show recreations down to the set lists. Go Friday, recover at Jerry Day Saturday.",
+      "cats": "music",
+      "price": "$$",
+      "badge": "$$ \u00b7 Check SeatGeek",
+      "tags": [
+        "Grateful Dead"
+      ]
+    },
+    {
+      "t": "Old 97's \u00b7 The Fillmore",
+      "w": "Wed Aug 5 \u00b7 8pm",
+      "d": "Alt-country Texan rockers at the Fillmore. Hook-laden and energetic \u2014 everyone ends up knowing more words than they thought. Doors at 7.",
+      "cats": "music",
+      "price": "$$",
+      "badge": "$$ \u00b7 From ~$62",
+      "tags": [
+        "Alt-Country"
+      ]
+    },
+    {
+      "t": "Dear San Francisco \u00b7 Club Fugazi",
+      "w": "Multiple shows \u00b7 North Beach",
+      "d": "Circus-theater love letter to SF's weird history. Aerial acrobatics, shadow play, live music. Use code 49FOR49 for $49 tickets.",
+      "cats": "shows",
+      "price": "$$",
+      "badge": "$$ \u00b7 From $49",
+      "tags": [
+        "Circus"
+      ]
+    },
+    {
+      "t": "ChoreoFest at Yerba Buena Gardens",
+      "w": "Sat Aug 1 \u00b7 2\u20134pm",
+      "d": "Free outdoor dance showcase on the Great Lawn. Poetry workshop with Nia Pearl at noon. RSVP ahead.",
+      "cats": "shows",
+      "price": "free",
+      "badge": "",
+      "tags": [
+        "Free",
+        "Dance"
+      ]
+    },
+    {
+      "t": "Renegade Craft Fair \u00b7 Fort Mason",
+      "w": "Sat\u2013Sun Aug 1\u20132",
+      "d": "Over 250 indie artists and makers at Fort Mason. Free to browse. Great for gifts and getting inspired to quit your job and make candles.",
+      "cats": "active",
+      "price": "free",
+      "badge": "",
+      "tags": [
+        "Free",
+        "Market"
+      ]
+    },
+    {
+      "t": "Lionel Richie + Earth Wind & Fire",
+      "w": "Thu Aug 6 \u00b7 7pm",
+      "d": "Two legends in one night at Chase Center. 'All Night Long' meets 'September.' Your parents would love this. You would too.",
+      "cats": "music",
+      "price": "$$$",
+      "badge": "$$$ \u00b7 $80+",
+      "tags": [
+        "Concert"
+      ]
+    },
+    {
+      "t": "Jollibee Now Open",
+      "w": "Open now \u00b7 934 Market St",
+      "d": "The beloved Filipino chain is officially open near Powell BART. Fried chicken, Jolly Spaghetti, Peach Mango Pie. Lines still long but moving.",
+      "cats": "food",
+      "price": "$",
+      "badge": "$ \u00b7 Under $15",
+      "tags": [
+        "New",
+        "Food"
+      ]
+    },
+    {
+      "t": "Living History Day at Fort Point",
+      "w": "Sat Aug 1 \u00b7 10am\u20134:30pm",
+      "d": "Free Civil War reenactments under the Golden Gate Bridge. Meet General Grant, watch cannon demos. Surprisingly cool even if history isn't your thing.",
+      "cats": "active",
+      "price": "free",
+      "badge": "",
+      "tags": [
+        "Free"
+      ]
+    },
+    {
+      "t": "Outside Lands \u2014 Buy Tickets Now",
+      "w": "Fri\u2013Sun Aug 7\u20139",
+      "d": "Charli XCX, The Strokes, R\u00fcf\u00fcs Du Sol in Golden Gate Park. 3-day sold out. Single-day still available from $249.",
+      "cats": "music",
+      "price": "$$$",
+      "badge": "$$$ \u00b7 From $249",
+      "tags": [
+        "Festival"
+      ]
+    }
+  ],
+  "ongoing": [
+    {
+      "t": "Stern Grove Sundays",
+      "d": "Free concerts through Aug 16. Patti LaBelle (Aug 9), Public Enemy (Aug 15), Al Green (Aug 16). Reservations at sterngrove.org."
+    },
+    {
+      "t": "Lunch Break Concerts",
+      "d": "130+ free lunchtime concerts near Market St through late September."
+    },
+    {
+      "t": "Fort Mason Night Market",
+      "d": "Monthly evening market with food vendors, DJs, and pop-ups along the waterfront."
+    },
+    {
+      "t": "Outdoor Yoga at Dolores Park",
+      "d": "Free community yoga Saturdays at 10am. Bring your own mat. All levels."
+    },
+    {
+      "t": "Emporium Arcade Bar",
+      "d": "Free classic arcade games, cheap drinks, DJ nights on weekends. Divisadero."
+    },
+    {
+      "t": "City Lights Bookstore Events",
+      "d": "Free readings, book launches, and poetry nights in North Beach almost every week."
+    },
+    {
+      "t": "Alemany Flea Market",
+      "d": "Every Sunday 7am\u20133pm. SF's oldest flea market. Free to browse, cash only."
+    }
+  ],
+  "eats": {
+    "new": [
+      {
+        "type": "Italian Caf\u00e9 \u00b7 Jackson Square",
+        "name": "Bar Coto",
+        "d": "From the A16 team. Espresso, pastries, sandwiches, low-ABV cocktails. Immediately feels like it's been here for years.",
+        "price": "$ \u00b7 Under $20"
+      },
+      {
+        "type": "Filipino \u00b7 Mid-Market",
+        "name": "Jollibee",
+        "d": "First SF location since 2011. Fried chicken, Jolly Spaghetti, Peach Mango Pie. Lines are long but moving.",
+        "price": "$ \u00b7 Under $15"
+      },
+      {
+        "type": "French \u00b7 NoPa",
+        "name": "Esme",
+        "d": "New French restaurant in the old Ragazza space. Pastas, roast chicken, cheese plates, lush back patio.",
+        "price": "$$ \u00b7 $30\u201355/pp"
+      },
+      {
+        "type": "French-California \u00b7 Mission",
+        "name": "JouJou",
+        "d": "From the Lazy Bear team. French-leaning, seafood-heavy. One of the most anticipated openings of the year.",
+        "price": "$$$ \u00b7 $50\u201380/pp"
+      }
+    ],
+    "classic": [
+      {
+        "type": "Mexican \u00b7 Mission",
+        "name": "La Taqueria",
+        "d": "The taco that launched a thousand arguments. No rice, good beans, great carnitas. Cash only.",
+        "price": "$ \u00b7 Under $15"
+      },
+      {
+        "type": "American \u00b7 Hayes Valley",
+        "name": "Zuni Caf\u00e9",
+        "d": "Caesar salad, roast chicken for two, the marble bar. SF's forever restaurant.",
+        "price": "$$$ \u00b7 $50\u201380/pp"
+      },
+      {
+        "type": "French \u00b7 Hayes Valley",
+        "name": "Absinthe",
+        "d": "Classic brasserie five minutes from Davies Hall. Great pre-symphony cocktails.",
+        "price": "$$$ \u00b7 $40\u201360/pp"
+      },
+      {
+        "type": "Mexican \u00b7 Inner Sunset",
+        "name": "Nopalito",
+        "d": "Thoughtful Mexican food with organic produce. Carnitas and horchata at the bar.",
+        "price": "$$ \u00b7 $25\u201340/pp"
+      }
+    ]
+  },
+  "bars": [
+    {
+      "type": "Wine \u00b7 Mission",
+      "name": "Big Finish Wine",
+      "d": "48 wines on tap, most under $14. Organized by finish. Nobody bothers you here.",
+      "price": "$ \u00b7 Under $14/glass"
+    },
+    {
+      "type": "Japanese \u00b7 SoMa",
+      "name": "Bar Shoji",
+      "d": "Coffee by day, cocktail den at night. Wagyu-fat-washed whisky. Seamless sunset transformation.",
+      "price": "$$ \u00b7 $18\u201324/cocktail"
+    },
+    {
+      "type": "Jazz \u00b7 Haight",
+      "name": "The DeLuxe",
+      "d": "Legendary jazz bar back with upgraded sound. Live music nightly, $5\u201315 cover.",
+      "price": "$ \u00b7 $5\u201315 cover"
+    },
+    {
+      "type": "Lounge \u00b7 Union Square",
+      "name": "Valley Club",
+      "d": "Hotel G mezzanine. Low lights, velvet, cocoa-butter Negroni. You'll stay longer than planned.",
+      "price": "$$ \u00b7 $18\u201322/cocktail"
+    },
+    {
+      "type": "Neighborhood \u00b7 Haight",
+      "name": "The Green Heron",
+      "d": "Took over Hobson's Choice. Classic cocktails, Miller Lite, no judgment.",
+      "price": "$ \u00b7 $8\u201315/drink"
+    },
+    {
+      "type": "Korean \u00b7 Mission",
+      "name": "Jilli",
+      "d": "Makgeolli from teapots, popcorn fried chicken, kimchi vodka rigatoni. Communal and loud.",
+      "price": "$$ \u00b7 $15\u201320 + food"
+    },
+    {
+      "type": "Brewery \u00b7 Dogpatch",
+      "name": "Standard Deviant",
+      "d": "Waterfront taproom at Pier 70. Barrel-aged ros\u00e9-saison. Huge industrial space.",
+      "price": "$ \u00b7 $8\u201312/beer"
+    },
+    {
+      "type": "Sports \u00b7 Castro",
+      "name": "Rikki's",
+      "d": "Women-focused bar. Valkyries watch parties, lavender cocktails, beer-battered wings.",
+      "price": "$ \u00b7 $10\u201316/drink"
+    }
+  ],
+  "sports": [
+    {
+      "section": "\u26be Giants \u00b7 Away This Week",
+      "games": [
+        {
+          "teams": "Giants @ Padres",
+          "detail": "Fri\u2013Sun series",
+          "when": "Jul 31 \u2013 Aug 2",
+          "price": "Away"
+        },
+        {
+          "teams": "Giants @ Rangers",
+          "detail": "Mon\u2013Wed series",
+          "when": "Aug 3\u20135",
+          "price": "Away"
+        }
+      ],
+      "note": "No home games this week. Next homestand starts Aug 7 vs. Cardinals. Watch at Rikki's or any sports bar."
+    },
+    {
+      "section": "\u26be Oakland Ballers \u00b7 Raimondi Park",
+      "games": [
+        {
+          "teams": "Ballers home games",
+          "detail": "Multiple this week",
+          "when": "Aug 1\u20136",
+          "price": "~$24"
+        }
+      ],
+      "note": "Indie baseball with theme nights. oaklandballers.com for schedule."
+    },
+    {
+      "section": "\ud83c\udfb5 Chase Center",
+      "games": [
+        {
+          "teams": "Lionel Richie + Earth Wind & Fire",
+          "detail": "Concert",
+          "when": "Thu Aug 6\n7:00 PM",
+          "price": "$80+"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "section": "\ud83c\udfc8 Coming Soon",
+      "games": [],
+      "note": "Outside Lands takes over Golden Gate Park Aug 7\u20139. Not sports, but it'll take over the city."
+    }
+  ],
+  "concerts": [
+    {
+      "t": "Violent Femmes + Tune-Yards",
+      "w": "Sun Aug 2 \u00b7 2pm",
+      "d": "Free at Stern Grove. 89th season. Reservations at sterngrove.org. Bring a blanket and layers.",
+      "venue": "Stern Grove \u00b7 Free",
+      "tags": [
+        "Alt-Rock"
+      ],
+      "hi": true
+    },
+    {
+      "t": "Andrew Bird w/ SF Symphony",
+      "w": "Sat Aug 1 \u00b7 7:30pm",
+      "d": "Violin, whistling, and indie-folk with a full orchestra at Davies Hall. Genuinely special.",
+      "venue": "Davies Hall \u00b7 From ~$183",
+      "tags": [
+        "Orchestral"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Dark Star Orchestra",
+      "w": "Fri Jul 31 \u00b7 Berkeley",
+      "d": "Night one of two Grateful Dead nights at the Greek Theatre.",
+      "venue": "Greek Theatre \u00b7 Check SeatGeek",
+      "tags": [
+        "Grateful Dead"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Melvin Seals & JGB",
+      "w": "Sat Aug 1 \u00b7 Berkeley",
+      "d": "Night two at the Greek. Melvin played keys with Jerry for 20 years. The real thing.",
+      "venue": "Greek Theatre \u00b7 Check SeatGeek",
+      "tags": [
+        "Jerry Garcia"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Jerry Day Festival",
+      "w": "Sat Aug 1 \u00b7 11:30am\u20135:45pm",
+      "d": "Free all-day festival at Jerry Garcia Amphitheater. After-parties in Excelsior bars.",
+      "venue": "McLaren Park \u00b7 Free",
+      "tags": [
+        "Festival"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Old 97's",
+      "w": "Wed Aug 5 \u00b7 8pm",
+      "d": "Alt-country Texan rockers at the Fillmore. Doors at 7.",
+      "venue": "The Fillmore \u00b7 From ~$62",
+      "tags": [
+        "Alt-Country"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Lionel Richie + Earth Wind & Fire",
+      "w": "Thu Aug 6 \u00b7 7pm",
+      "d": "Two legends at Chase Center. 'All Night Long' meets 'September.'",
+      "venue": "Chase Center \u00b7 $80+",
+      "tags": [
+        "Pop / R&B"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Dear San Francisco",
+      "w": "Multiple shows \u00b7 North Beach",
+      "d": "Circus-theater love letter to SF. Code 49FOR49 for $49 tickets.",
+      "venue": "Club Fugazi \u00b7 From $49",
+      "tags": [
+        "Circus"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Hairspray",
+      "w": "Through Sep 12",
+      "d": "Broadway musical running all summer. Intimate theater, every seat is good.",
+      "venue": "SF Playhouse \u00b7 $35\u201375",
+      "tags": [
+        "Broadway"
+      ],
+      "hi": false
+    }
+  ],
+  "concertsOngoing": [
+    {
+      "t": "Stern Grove Sundays",
+      "d": "Patti LaBelle (Aug 9), Public Enemy (Aug 15), Al Green (Aug 16). All free."
+    },
+    {
+      "t": "The DeLuxe \u00b7 Live Jazz Nightly",
+      "d": "Haight St jazz bar. Jazz, soul, funk nightly. $5\u201315 cover."
+    },
+    {
+      "t": "Outside Lands \u00b7 Aug 7\u20139",
+      "d": "Charli XCX, The Strokes, R\u00fcf\u00fcs Du Sol. Single-day from $249."
+    }
+  ],
+  "singles": [
+    {
+      "t": "Nihonmachi Street Fair \u2014 Go Solo",
+      "w": "Sat\u2013Sun Aug 1\u20132 \u00b7 11am\u20136pm",
+      "d": "One of the best solo activities this weekend. Wander, eat, talk to artists. Free, no plan needed.",
+      "tags": [
+        "Free"
+      ],
+      "badge": "Free \u00b7 Japantown",
+      "link": "",
+      "linkText": ""
+    },
+    {
+      "t": "Jerry Day Festival",
+      "w": "Sat Aug 1 \u00b7 11:30am",
+      "d": "Free festival in McLaren Park. Communal energy makes talking to strangers the whole point.",
+      "tags": [
+        "Free"
+      ],
+      "badge": "Free \u00b7 McLaren Park",
+      "link": "",
+      "linkText": ""
+    },
+    {
+      "t": "Speed Dating at Calicraft",
+      "w": "Next: Sun Aug 9",
+      "d": "Classic speed dating at a brewery. 5-minute rounds, real faces. Events sell out.",
+      "tags": [
+        "Speed Dating"
+      ],
+      "badge": "$$ \u00b7 ~$35\u201355",
+      "link": "https://speeddatingsanfrancisco.com/",
+      "linkText": "See upcoming events"
+    },
+    {
+      "t": "Thursday Singles Events",
+      "w": "Weekly \u00b7 Various venues",
+      "d": "Weekly bar takeovers, rooftop parties, themed nights. Big crowds.",
+      "tags": [
+        "Social"
+      ],
+      "badge": "$ \u00b7 $10\u201325",
+      "link": "https://events.getthursday.com/san-francisco/",
+      "linkText": "See this week's event"
+    },
+    {
+      "t": "Volo Sports Leagues",
+      "w": "Sign up anytime",
+      "d": "Kickball, soccer, volleyball, pickleball \u2014 join solo, get placed on a team.",
+      "tags": [
+        "Social Sports"
+      ],
+      "badge": "$$ \u00b7 ~$60\u201380/season",
+      "link": "https://www.volosports.com/san-francisco",
+      "linkText": "Browse leagues"
+    }
+  ],
+  "singlesOngoing": [
+    {
+      "t": "Running Clubs",
+      "d": "November Project (free, Wed+Fri 6:30am). Midnight Runners (Thu nights). Show up, run, make friends."
+    },
+    {
+      "t": "SalsaCrazy Saturdays",
+      "d": "Salsa and bachata lessons + open dancing. No partner needed."
+    },
+    {
+      "t": "Book Clubs",
+      "d": "Green Apple Books and City Lights host regular reading groups."
+    },
+    {
+      "t": "Volunteer",
+      "d": "One Brick (drop-in), SF Parks Alliance, Glide Memorial."
+    },
+    {
+      "t": "Classes",
+      "d": "Pottery at Claymakers, cooking at 18 Reasons, dance at ODC. Sign up solo."
+    }
+  ],
+  "playbooks": {
+    "date": [
+      {
+        "tier": "free",
+        "badge": "The Free One",
+        "est": "$0 + food",
+        "title": "Bridge, Fort & Japantown",
+        "tagline": "Golden hour at the bridge, history at the fort, ramen in Japantown.",
+        "steps": [
+          {
+            "time": "5:30 PM",
+            "title": "Fort Point under the Golden Gate",
+            "detail": "Free Civil War reenactments and incredible views under the bridge. Even if history isn't your thing, the setting is unbeatable."
+          },
+          {
+            "time": "7:00 PM",
+            "title": "Walk the bridge at sunset",
+            "detail": "Head up to the Golden Gate Bridge. The views at golden hour are unreal."
+          },
+          {
+            "time": "8:30 PM",
+            "title": "Ramen in Japantown",
+            "detail": "Walk to Japantown after the Nihonmachi Street Fair energy. Marufuku for ramen or Sozai for izakaya."
+          }
+        ]
+      },
+      {
+        "tier": "$$",
+        "badge": "The Midrange Move",
+        "est": "~$80\u2013120 for two",
+        "title": "Mission Cocktail Crawl",
+        "tagline": "New bars, good food, and a neighborhood that rewards wandering.",
+        "steps": [
+          {
+            "time": "6:30 PM",
+            "title": "Start at Big Finish Wine",
+            "detail": "48 wines on tap, most under $14. Sit at the bar, share a few glasses, ease into the evening."
+          },
+          {
+            "time": "7:30 PM",
+            "title": "Dinner at Jilli",
+            "detail": "Korean communal drinking food. Makgeolli from teapots, popcorn fried chicken. Loud and fun."
+          },
+          {
+            "time": "9:30 PM",
+            "title": "Nightcap at Bar Shoji",
+            "detail": "The coffee shop has transformed into a cocktail den. Wagyu-fat-washed whisky in a moody room."
+          }
+        ]
+      },
+      {
+        "tier": "$$$",
+        "badge": "The Splurge",
+        "est": "~$250+ for two",
+        "title": "Symphony & Speakeasy",
+        "tagline": "Andrew Bird with an orchestra, then cocktails in a hidden lounge. Saturday only.",
+        "steps": [
+          {
+            "time": "6:00 PM",
+            "title": "Early dinner in Hayes Valley",
+            "detail": "Absinthe for pre-symphony cocktails and light bites. Five minutes from Davies Hall."
+          },
+          {
+            "time": "7:30 PM",
+            "title": "Andrew Bird w/ the SF Symphony",
+            "detail": "Violin, whistling, and indie-folk performed with a full symphony. A genuinely special evening."
+          },
+          {
+            "time": "~10 PM",
+            "title": "Cocktails at Valley Club",
+            "detail": "Hotel G mezzanine. Low lights, velvet corners, cocoa-butter Negroni. The kind of place you stay longer than planned."
+          }
+        ]
+      }
+    ],
+    "solo": [
+      {
+        "tier": "free",
+        "badge": "The Wander",
+        "est": "Free + coffee",
+        "title": "Slow Morning, Big Festival",
+        "tagline": "Coffee, a walk, and a free all-day festival.",
+        "steps": [
+          {
+            "time": "9:30 AM",
+            "title": "Coffee at Sightglass",
+            "detail": "High ceilings, long tables. Bring a book or just sit. No one's in a hurry."
+          },
+          {
+            "time": "11:00 AM",
+            "title": "Nihonmachi Street Fair",
+            "detail": "Wander Japantown's 52-year-old street fair. Food, art, music. Easy to spend hours."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Jerry Day in McLaren Park",
+            "detail": "Free festival with live music all afternoon. Communal energy, great people-watching."
+          }
+        ]
+      },
+      {
+        "tier": "$$",
+        "badge": "Treat Yourself",
+        "est": "~$60\u201390",
+        "title": "Art, Wine & a Counter Seat",
+        "tagline": "A day that feels like a vacation without leaving the city.",
+        "steps": [
+          {
+            "time": "10:30 AM",
+            "title": "Treasures of the Pharaohs at de Young",
+            "detail": "Ancient Egyptian artifacts just opened. Go at your own pace, linger where you want."
+          },
+          {
+            "time": "1:00 PM",
+            "title": "Lunch in the park",
+            "detail": "De Young cafe or walk to Nopalito on 9th Ave for pozole."
+          },
+          {
+            "time": "3:00 PM",
+            "title": "Wine at Big Finish",
+            "detail": "48 wines on tap. Grab a seat at the bar, try a few glasses. Nobody bothers you."
+          },
+          {
+            "time": "5:30 PM",
+            "title": "Bar Shoji at sunset",
+            "detail": "Coffee shop transforms into cocktail den. Wagyu-fat-washed whisky and nowhere to be."
+          }
+        ]
+      },
+      {
+        "tier": "$$$",
+        "badge": "The Reset Day",
+        "est": "~$120\u2013150",
+        "title": "Long Brunch, Live Music, No Phone",
+        "tagline": "Put your phone on DND. Today is about you.",
+        "steps": [
+          {
+            "time": "10:00 AM",
+            "title": "Brunch at Zuni Caf\u00e9",
+            "detail": "Sit at the bar, order the Caesar and oysters. Read the paper. Take an actual hour."
+          },
+          {
+            "time": "12:30 PM",
+            "title": "Browse Green Apple Books",
+            "detail": "The Clement St location is a maze of used books. Get lost for an hour."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Violent Femmes at Stern Grove",
+            "detail": "Free concert in the amphitheater. Bring a blanket, close your eyes. Nobody knows you're here."
+          },
+          {
+            "time": "5:00 PM",
+            "title": "Sunset at Lands End",
+            "detail": "Walk the trail to the Sutro Baths ruins. Watch the Pacific. Go home when you're ready."
+          }
+        ]
+      }
+    ],
+    "birthday": [
+      {
+        "tier": "free",
+        "badge": "Low-Key Birthday",
+        "est": "Free + dinner",
+        "title": "Park Hangout \u2192 Group Dinner",
+        "tagline": "No pressure, no velvet ropes. Just your favorite people.",
+        "steps": [
+          {
+            "time": "12:00 PM",
+            "title": "Nihonmachi Street Fair with the crew",
+            "detail": "Meet everyone at Japantown. Wander, eat, listen to music. Low-effort, high-fun birthday activity."
+          },
+          {
+            "time": "3:00 PM",
+            "title": "Dolores Park",
+            "detail": "Grab Bi-Rite ice cream and a blanket spot. This is the party."
+          },
+          {
+            "time": "7:00 PM",
+            "title": "Birthday dinner at Jilli",
+            "detail": "Korean communal food. Makgeolli in teapots, popcorn fried chicken. Tell them it's your birthday."
+          }
+        ]
+      },
+      {
+        "tier": "$$",
+        "badge": "The Night Out",
+        "est": "~$60\u2013100/person",
+        "title": "Dinner \u2192 Live Music \u2192 Bars",
+        "tagline": "A proper birthday night that builds as it goes.",
+        "steps": [
+          {
+            "time": "7:00 PM",
+            "title": "Dinner at Esme",
+            "detail": "New French spot in NoPa. Shareable plates, back patio, great group energy."
+          },
+          {
+            "time": "9:00 PM",
+            "title": "Jerry Day after-party",
+            "detail": "If it's Saturday \u2014 the Excelsior bars will be going off after the festival. Join the energy."
+          },
+          {
+            "time": "11:00 PM",
+            "title": "Late night at The Green Heron",
+            "detail": "Miller Lites and shots for the birthday person. Good bar, jukebox. Close it out."
+          }
+        ]
+      },
+      {
+        "tier": "$$$",
+        "badge": "Main Character Birthday",
+        "est": "~$150+/person",
+        "title": "Brunch \u2192 Show \u2192 Speakeasy",
+        "tagline": "Go all out. It's your birthday.",
+        "steps": [
+          {
+            "time": "11:00 AM",
+            "title": "Birthday brunch at Zuni Caf\u00e9",
+            "detail": "Roast chicken for two, Caesar salad, Aperol Spritzes. Toast properly."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Dear San Francisco at Club Fugazi",
+            "detail": "Circus-theater in North Beach. Aerial acrobatics, live music. Get a block of seats together."
+          },
+          {
+            "time": "5:00 PM",
+            "title": "Champagne at Valley Club",
+            "detail": "Hotel G mezzanine. Order a bottle, toast the birthday person."
+          },
+          {
+            "time": "8:00 PM",
+            "title": "Andrew Bird w/ SF Symphony",
+            "detail": "End the night with a full orchestra at Davies Hall. Unforgettable."
+          }
+        ]
+      }
+    ],
+    "friends": [
+      {
+        "tier": "free",
+        "badge": "The Classic SF Day",
+        "est": "Free + food",
+        "title": "Golden Gate to Japantown",
+        "tagline": "The greatest hits \u2014 done right, not touristy.",
+        "steps": [
+          {
+            "time": "10:00 AM",
+            "title": "Coffee at Equator in the Presidio",
+            "detail": "Good coffee in a setting that immediately says 'this city is different.'"
+          },
+          {
+            "time": "11:00 AM",
+            "title": "Walk the Golden Gate Bridge",
+            "detail": "Halfway and back. Yes it's windy. Your friends will take 400 photos."
+          },
+          {
+            "time": "1:00 PM",
+            "title": "Nihonmachi Street Fair",
+            "detail": "Japantown's 52-year-old street fair is happening this weekend. Best AAPI food vendors, live music, art."
+          },
+          {
+            "time": "4:00 PM",
+            "title": "Treasures of the Pharaohs at de Young",
+            "detail": "Egyptian artifacts just opened. Walk through Golden Gate Park to get there."
+          },
+          {
+            "time": "6:00 PM",
+            "title": "Sunset drinks at Park Chalet",
+            "detail": "West end of the park, overlooking Ocean Beach. Beer garden with heat lamps."
+          }
+        ]
+      },
+      {
+        "tier": "$$",
+        "badge": "Show Them Your SF",
+        "est": "~$50\u201380/person",
+        "title": "Mission \u2192 Dolores \u2192 Nightlife",
+        "tagline": "The neighborhood your friends will wish they lived in.",
+        "steps": [
+          {
+            "time": "2:00 PM",
+            "title": "Dolores Park",
+            "detail": "Bi-Rite ice cream, blanket spot with skyline view. Peak SF energy on a sunny day."
+          },
+          {
+            "time": "4:00 PM",
+            "title": "Walk Valencia Street",
+            "detail": "Browse Paxton Gate, grab coffee at Sightglass, poke into bookstores."
+          },
+          {
+            "time": "6:30 PM",
+            "title": "Dinner at Jilli",
+            "detail": "Korean communal food. Makgeolli, popcorn fried chicken. Perfect group energy."
+          },
+          {
+            "time": "9:00 PM",
+            "title": "Bar hop on 24th",
+            "detail": "Big Finish for wine, then The Green Heron for nightcaps."
+          }
+        ]
+      },
+      {
+        "tier": "$$$",
+        "badge": "The Weekend Send",
+        "est": "~$100\u2013150/person",
+        "title": "Concerts, Views & Late Nights",
+        "tagline": "For friends who came to have a big weekend.",
+        "steps": [
+          {
+            "time": "12:00 PM",
+            "title": "Brunch at the Ferry Building",
+            "detail": "Walk the market stalls, grab oysters, Acme bread, Blue Bottle. Sit outside on the water."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Violent Femmes at Stern Grove",
+            "detail": "Free concert in the amphitheater. Bring a blanket, share wine, enjoy the fact that this is free."
+          },
+          {
+            "time": "6:00 PM",
+            "title": "Dinner at JouJou",
+            "detail": "New French-California spot from the Lazy Bear team. The buzzy opening right now."
+          },
+          {
+            "time": "9:00 PM",
+            "title": "Late night at The DeLuxe",
+            "detail": "Legendary jazz bar on Haight. Live music, good drinks, real SF energy."
+          }
+        ]
+      }
+    ],
+    "parents": [
+      {
+        "tier": "free",
+        "badge": "The Chill Day",
+        "est": "Free + lunch",
+        "title": "Parks, Views & Easy Lunch",
+        "tagline": "Nothing too rushed, nothing too loud. Just a beautiful day.",
+        "steps": [
+          {
+            "time": "10:00 AM",
+            "title": "Ferry Building farmers market",
+            "detail": "Saturday morning market. Sample olive oils, grab pastries, walk the waterfront. Parents love this."
+          },
+          {
+            "time": "12:00 PM",
+            "title": "Lunch on the water",
+            "detail": "Hog Island oysters or takeaway on the benches looking at the Bay Bridge."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Drive to Twin Peaks",
+            "detail": "360\u00b0 view of the entire city. Your mom will say 'wow' at least four times."
+          },
+          {
+            "time": "4:00 PM",
+            "title": "Coffee in Noe Valley",
+            "detail": "24th Street. Bernie's or Martha & Bros. Quiet, charming, easy walking."
+          }
+        ]
+      },
+      {
+        "tier": "$$",
+        "badge": "The Culture Day",
+        "est": "~$60\u2013100/person",
+        "title": "Museums, Music & Nice Dinner",
+        "tagline": "For parents who want to do something, not just see something.",
+        "steps": [
+          {
+            "time": "10:30 AM",
+            "title": "Treasures of the Pharaohs at de Young",
+            "detail": "Ancient Egyptian artifacts just opened. Both impressive and easy to navigate."
+          },
+          {
+            "time": "1:00 PM",
+            "title": "Lunch in Hayes Valley",
+            "detail": "Absinthe for French brasserie, or walk Hayes Street for something lighter."
+          },
+          {
+            "time": "3:00 PM",
+            "title": "Japanese Tea Garden",
+            "detail": "Golden Gate Park. Peaceful, beautiful. Green tea and cookies inside."
+          },
+          {
+            "time": "7:00 PM",
+            "title": "Andrew Bird w/ SF Symphony",
+            "detail": "Even if your parents don't know Andrew Bird, a full orchestra in Davies Hall is universally impressive."
+          }
+        ]
+      },
+      {
+        "tier": "$$$",
+        "badge": "The Big Night",
+        "est": "~$120\u2013180/person",
+        "title": "Symphony & Supper Club",
+        "tagline": "The 'impress your parents' evening. Saturday only.",
+        "steps": [
+          {
+            "time": "5:30 PM",
+            "title": "Drinks at Absinthe",
+            "detail": "Classic Hayes Valley brasserie. Great cocktails, five-minute walk to Davies Hall."
+          },
+          {
+            "time": "7:30 PM",
+            "title": "Andrew Bird w/ SF Symphony",
+            "detail": "Full orchestra at Davies Hall. The venue alone will get them."
+          },
+          {
+            "time": "~10 PM",
+            "title": "Late supper at Zuni Caf\u00e9",
+            "detail": "Roast chicken for two, Caesar salad, a bottle of something nice. Your parents will love this."
+          }
+        ]
+      }
+    ]
+  }
+}
