@@ -656,11 +656,11 @@
 <div class="signup" style="max-width:700px;margin:0 auto 0;">
   <h3>Get this in your inbox every week</h3>
   <p>New edition every Tuesday morning. No spam, just plans.</p>
-  <div class="signup-form">
-    <input type="email" id="signup-email" placeholder="your@email.com" />
-    <button onclick="subscribe()">I'm in</button>
-  </div>
-  <div class="signup-note" id="signup-note">Join 0 friends already subscribed</div>
+  <form class="signup-form" action="https://buttondown.com/api/emails/embed-subscribe/sammyssf" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/sammyssf', 'popupwindow')">
+    <input type="email" name="email" placeholder="your@email.com" required />
+    <button type="submit">I'm in</button>
+  </form>
+  <div class="signup-note" id="signup-note">Free, every Tuesday morning. No spam.</div>
 </div>
 
 <div class="footer">
@@ -732,34 +732,6 @@ function showOccasion(id) {
   document.querySelectorAll('.occasion-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('oc-' + id).classList.add('active');
   document.querySelector('.occasion-btn[data-oc="' + id + '"]').classList.add('active');
-}
-
-// Subscribe
-function subscribe() {
-  const email = document.getElementById('signup-email').value;
-  const note = document.getElementById('signup-note');
-  if (!email || !email.includes('@')) { note.textContent = 'Enter a valid email!'; return; }
-
-  // Buttondown API
-  fetch('https://api.buttondown.com/v1/subscribers', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email_address: email, type: 'regular' })
-  })
-  .then(r => {
-    if (r.ok || r.status === 201) {
-      note.textContent = "You're in! See you Tuesday. 🎉";
-      document.getElementById('signup-email').value = '';
-    } else {
-      // Fallback: open Buttondown subscribe page
-      window.open('https://buttondown.com/sammyssf', '_blank');
-      note.textContent = "Almost there — confirm in the new tab!";
-    }
-  })
-  .catch(() => {
-    window.open('https://buttondown.com/sammyssf', '_blank');
-    note.textContent = "Almost there — confirm in the new tab!";
-  });
 }
 
 // Share
