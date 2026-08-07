@@ -18,8 +18,8 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --coral: #C4724A; --night: #1A1D23; --mist: #B8B0B4;
-    --card: rgba(255,255,255,0.65); --card-border: rgba(255,255,255,0.8);
-    --card-shadow: 0 1px 6px rgba(0,0,0,0.03);
+    --card: rgba(255,255,255,0.85); --card-border: rgba(0,0,0,0.08);
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
   body {
     font-family: 'Inter', -apple-system, sans-serif;
@@ -37,11 +37,11 @@
   .header h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2.5rem, 6vw, 3.2rem); font-weight: 400; color: var(--night); line-height: 1.1; margin-bottom: 2px; }
   .header h1 em { font-style: italic; color: var(--coral); }
   .header-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1rem; color: #B8A0B0; margin-bottom: 6px; }
-  .header-date { font-size: 0.75rem; color: #C0B8BC; margin-bottom: 18px; }
+  .header-date { font-size: 0.75rem; color: #999; margin-bottom: 18px; }
 
   /* TABS */
   .tabs { display: flex; gap: 0; justify-content: center; border-bottom: 0.5px solid rgba(0,0,0,0.06); margin: 0 -1.5rem; padding: 0 1.5rem; }
-  .tab { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 0.6rem 0.85rem; color: var(--mist); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .tab { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 0.6rem 0.85rem; color: #999; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
   .tab:hover { color: #777; }
   .tab.active { color: var(--coral); border-bottom-color: var(--coral); }
   @media (max-width: 520px) { .tab { font-size: 0.65rem; padding: 0.55rem 0.55rem; } }
@@ -52,7 +52,7 @@
 
   /* FILTER PILLS */
   .filter-pills { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
-  .fpill { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 5px 12px; border-radius: 100px; background: rgba(255,255,255,0.55); border: 0.5px solid rgba(0,0,0,0.05); color: #777; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .fpill { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 5px 12px; border-radius: 100px; background: rgba(255,255,255,0.75); border: 1px solid rgba(0,0,0,0.1); color: #555; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
   .fpill:hover { border-color: rgba(0,0,0,0.15); color: #555; }
   .fpill.on { background: var(--coral); border-color: var(--coral); color: #fff; }
 
@@ -61,18 +61,18 @@
   .slider-label { font-size: 0.7rem; font-weight: 600; min-width: 28px; }
   .slider-label-left { color: #1B5E20; }
   .slider-label-right { color: #999; text-align: right; }
-  .price-slider { flex: 1; -webkit-appearance: none; appearance: none; height: 4px; background: rgba(0,0,0,0.06); border-radius: 2px; outline: none; }
+  .price-slider { flex: 1; -webkit-appearance: none; appearance: none; height: 4px; border-radius: 2px; outline: none; background: linear-gradient(90deg, #1B5E20 0%, #C4724A 100%); }
   .price-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; background: #fff; border: 2px solid var(--coral); border-radius: 50%; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
   .price-slider::-moz-range-thumb { width: 16px; height: 16px; background: #fff; border: 2px solid var(--coral); border-radius: 50%; cursor: pointer; }
   .slider-ticks { display: flex; justify-content: space-between; margin-top: -14px; padding: 0 6px; margin-bottom: 8px; }
-  .slider-ticks span { font-size: 0.6rem; color: #ccc; }
-  .filter-status { font-size: 0.75rem; color: var(--mist); margin-bottom: 14px; }
+  .slider-ticks span { font-size: 0.6rem; color: #999; }
+  .filter-status { font-size: 0.75rem; color: #888; margin-bottom: 14px; }
   .filter-status strong { color: #777; font-weight: 500; }
 
   /* SECTION LABELS */
   .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); margin-bottom: 12px; margin-top: 24px; }
   .section-label:first-child { margin-top: 0; }
-  .section-label-muted { color: #998; }
+  .section-label-muted { color: #777; }
 
   /* CARDS */
   .card { background: var(--card); backdrop-filter: blur(12px); border: 0.5px solid var(--card-border); border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 10px; box-shadow: var(--card-shadow); transition: transform 0.15s, box-shadow 0.15s; }
@@ -81,7 +81,7 @@
   .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px; }
   .card h3 { font-family: 'Instrument Serif', serif; font-size: 1.1rem; font-weight: 400; line-height: 1.3; color: var(--night); }
   .card-when { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--coral); white-space: nowrap; padding-top: 3px; }
-  .card p { font-size: 0.82rem; color: #777; line-height: 1.6; margin-bottom: 8px; }
+  .card p { font-size: 0.82rem; color: #555; line-height: 1.6; margin-bottom: 8px; }
   .tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
   .tag { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; }
   .tag-free { background: #D4EDDA; color: #1B5E20; }
@@ -92,7 +92,7 @@
   .tag-outdoors { background: #E0F2F1; color: #004D40; }
   .tag-sports { background: #E3F2FD; color: #1565C0; }
   .tag-new { background: #FFF8E1; color: #F57F17; }
-  .price-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--mist); margin-left: auto; }
+  .price-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: #999; margin-left: auto; }
 
   /* HERO CARD */
   .hero-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); margin-bottom: 12px; }
@@ -114,11 +114,11 @@
   .mini-card { background: var(--card); backdrop-filter: blur(12px); border: 0.5px solid var(--card-border); border-radius: 12px; padding: 1.1rem 1.25rem; box-shadow: var(--card-shadow); }
   .mini-card h4 { font-family: 'Instrument Serif', serif; font-size: 1rem; font-weight: 400; margin-bottom: 3px; }
   .mini-type { font-size: 0.65rem; color: var(--coral); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
-  .mini-card p { font-size: 0.78rem; color: #888; line-height: 1.5; }
-  .mini-price { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--mist); margin-top: 6px; }
+  .mini-card p { font-size: 0.78rem; color: #666; line-height: 1.5; }
+  .mini-price { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #888; margin-top: 6px; }
 
   /* SPORT ROWS */
-  .sport-row { display: flex; align-items: center; background: var(--card); backdrop-filter: blur(12px); border: 0.5px solid var(--card-border); border-radius: 10px; padding: 0.9rem 1.25rem; margin-bottom: 6px; box-shadow: var(--card-shadow); gap: 1rem; }
+  .sport-row { display: flex; align-items: center; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 0.5px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 0.9rem 1.25rem; margin-bottom: 6px; box-shadow: var(--card-shadow); gap: 1rem; }
   .sr-teams { flex: 1; }
   .sr-teams h4 { font-size: 0.85rem; font-weight: 600; }
   .sr-teams p { font-size: 0.75rem; color: #999; }
@@ -127,17 +127,17 @@
   .sport-note { font-size: 0.78rem; color: #999; font-style: italic; margin-top: 6px; margin-bottom: 18px; }
 
   /* ONGOING */
-  .ongoing { background: rgba(255,255,255,0.4); border: 0.5px solid rgba(0,0,0,0.04); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 8px; }
+  .ongoing { background: rgba(255,255,255,0.7); border: 0.5px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 8px; }
   .ongoing.filtered-out { display: none; }
   .ongoing h4 { font-size: 0.82rem; font-weight: 600; margin-bottom: 2px; }
-  .ongoing p { font-size: 0.78rem; color: #888; line-height: 1.5; }
+  .ongoing p { font-size: 0.78rem; color: #666; line-height: 1.5; }
 
   /* PLAYBOOKS */
   .plans-intro { text-align: center; margin-bottom: 1.5rem; }
   .plans-intro h2 { font-family: 'Instrument Serif', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 4px; }
   .plans-intro p { font-size: 0.85rem; color: #999; }
   .occasion-picker { display: flex; gap: 4px; justify-content: center; margin-bottom: 2rem; flex-wrap: nowrap; }
-  .occasion-btn { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; padding: 6px 10px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.08); background: rgba(255,255,255,0.5); color: #888; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .occasion-btn { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; padding: 6px 10px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.12); background: rgba(255,255,255,0.75); color: #666; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
   .occasion-btn:hover { border-color: rgba(0,0,0,0.2); color: #555; }
   .occasion-btn.active { background: var(--night); color: #fff; border-color: var(--night); }
   .occasion-btn.active[data-oc="date"] { background: #AD1457; border-color: #AD1457; }
@@ -370,6 +370,9 @@ function tog(btn) {
 }
 
 function sliderChange() {
+  const slider = document.getElementById('priceSlider');
+  const pct = (slider.value / 3) * 100;
+  slider.style.background = 'linear-gradient(90deg, #1B5E20 0%, #C4724A ' + pct + '%, rgba(0,0,0,0.08) ' + pct + '%)';
   applyFilters();
 }
 
@@ -391,7 +394,8 @@ function applyFilters() {
     const cats = (el.dataset.cats || '').split(',').filter(Boolean);
     const price = el.dataset.price || 'free';
     const catOk = ac.size === 0 || cats.some(c => ac.has(c));
-    const priceOk = (priceOrder[price] || 0) <= maxPrice;
+    const priceLevel = priceOrder.hasOwnProperty(price) ? priceOrder[price] : 0;
+    const priceOk = priceLevel <= maxPrice;
     if (catOk && priceOk) { el.classList.remove('filtered-out'); vis++; }
     else { el.classList.add('filtered-out'); }
   });
@@ -418,6 +422,11 @@ function applyFilters() {
     st.innerHTML = '';
   }
 }
+
+// Init slider gradient on load
+document.addEventListener('DOMContentLoaded', function() {
+  sliderChange();
+});
 
 // Share
 function shareThis() {
