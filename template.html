@@ -12,187 +12,189 @@
 <meta name="twitter:title" content="Sammy's SF — the scene this week">
 <meta name="twitter:description" content="Weekly picks from your bff Sammy. Concerts, bars, eats, date nights, sports, and singles events in SF.">
 <meta name="twitter:image" content="https://sammyssf-1.vercel.app/og-image.png">
-<title>SF This Week — July 25–31, 2026</title>
+<title>Sammy's SF — <!--DATE--></title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --fog: #F0F2F5; --night: #1A1D23; --bay: #2E6B8A; --sunset: #E8734A;
-    --golden: #D4A843; --mist: #C8CDD5; --white: #FFFFFF; --card-bg: #FFFFFF;
-    --rose: #AD1457; --rose-light: #FCE4EC;
+    --coral: #C4724A; --night: #1A1D23; --mist: #B8B0B4;
+    --card: rgba(255,255,255,0.65); --card-border: rgba(255,255,255,0.8);
+    --card-shadow: 0 1px 6px rgba(0,0,0,0.03);
   }
-  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--fog); color: var(--night); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: linear-gradient(170deg, #FDF0EA 0%, #F8ECF3 30%, #F0EEF8 60%, #EBF1F7 100%);
+    background-attachment: fixed;
+    color: var(--night);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
 
   /* HEADER */
-  .header { background: var(--night); color: var(--white); padding: 2.5rem 1.5rem 0; text-align: center; position: relative; overflow: hidden; }
-  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #E8734A 0%, #D4536B 50%, #2E6B8A 100%); opacity: 0.9; }
-  .header * { position: relative; z-index: 1; }
-  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #FFD9C4; margin-bottom: 0.5rem; }
-  .header h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2.8rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.3rem; }
-  .header h1 em { font-style: italic; }
-  .header-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: rgba(255,255,255,0.55); margin-bottom: 0.75rem; }
-  .header-date { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+  .header { padding: 2.25rem 1.5rem 0; text-align: center; }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--coral); margin-bottom: 10px; }
+  .header h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2.5rem, 6vw, 3.2rem); font-weight: 400; color: var(--night); line-height: 1.1; margin-bottom: 2px; }
+  .header h1 em { font-style: italic; color: var(--coral); }
+  .header-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1rem; color: #B8A0B0; margin-bottom: 6px; }
+  .header-date { font-size: 0.75rem; color: #C0B8BC; margin-bottom: 18px; }
 
   /* TABS */
-  .tabs { display: flex; gap: 0; justify-content: center; padding: 0 1rem; }
-  .tab { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; padding: 0.7rem 1.2rem; color: rgba(255,255,255,0.5); background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; white-space: nowrap; letter-spacing: 0.01em; }
-  .tab:hover { color: rgba(255,255,255,0.8); }
-  .tab.active { color: var(--white); border-bottom-color: var(--sunset); }
-  @media (max-width: 520px) { .tab { font-size: 0.68rem; padding: 0.6rem 0.7rem; } }
+  .tabs { display: flex; gap: 0; justify-content: center; border-bottom: 0.5px solid rgba(0,0,0,0.06); margin: 0 -1.5rem; padding: 0 1.5rem; }
+  .tab { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 0.6rem 0.85rem; color: var(--mist); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .tab:hover { color: #777; }
+  .tab.active { color: var(--coral); border-bottom-color: var(--coral); }
+  @media (max-width: 520px) { .tab { font-size: 0.65rem; padding: 0.55rem 0.55rem; } }
 
   /* VIEWS */
-  .view { display: none; max-width: 700px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .view { display: none; max-width: 660px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
   .view.active { display: block; }
 
-  /* SHARED CARD STYLES */
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bay); margin-bottom: 1rem; padding-top: 2rem; border-top: 2px solid var(--night); }
-  .section-label:first-child { padding-top: 0; border-top: none; }
+  /* FILTER PILLS */
+  .filter-pills { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
+  .fpill { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 5px 12px; border-radius: 100px; background: rgba(255,255,255,0.55); border: 0.5px solid rgba(0,0,0,0.05); color: #777; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .fpill:hover { border-color: rgba(0,0,0,0.15); color: #555; }
+  .fpill.on { background: var(--coral); border-color: var(--coral); color: #fff; }
 
-  .card { background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: transform 0.15s ease, box-shadow 0.15s ease; }
-  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem; }
-  .card h3 { font-family: 'Instrument Serif', serif; font-size: 1.3rem; font-weight: 400; line-height: 1.3; }
-  .card-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.05em; color: var(--sunset); white-space: nowrap; padding-top: 0.3rem; }
-  .card p { font-size: 0.88rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem; }
-  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
-  .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; }
-  .tag-free { background: #D4EDDA; color: #1B5E20; }
-  .tag-food { background: #FFF3E0; color: #BF360C; }
-  .tag-music { background: #E8DEF8; color: #4A148C; }
-  .tag-outdoors { background: #E0F2F1; color: #004D40; }
-  .tag-arts { background: #FCE4EC; color: #880E4F; }
-  .tag-nightlife { background: var(--night); color: var(--fog); }
-  .tag-bars { background: #EFEBE9; color: #5D4037; }
-  .tag-new { background: #FFF8E1; color: #F57F17; }
-  .price-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; color: var(--bay); margin-left: auto; padding-left: 0.5rem; }
+  /* PRICE SLIDER */
+  .slider-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding: 0 2px; }
+  .slider-label { font-size: 0.7rem; font-weight: 600; min-width: 28px; }
+  .slider-label-left { color: #1B5E20; }
+  .slider-label-right { color: #999; text-align: right; }
+  .price-slider { flex: 1; -webkit-appearance: none; appearance: none; height: 4px; background: rgba(0,0,0,0.06); border-radius: 2px; outline: none; }
+  .price-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; background: #fff; border: 2px solid var(--coral); border-radius: 50%; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .price-slider::-moz-range-thumb { width: 16px; height: 16px; background: #fff; border: 2px solid var(--coral); border-radius: 50%; cursor: pointer; }
+  .slider-ticks { display: flex; justify-content: space-between; margin-top: -14px; padding: 0 6px; margin-bottom: 8px; }
+  .slider-ticks span { font-size: 0.6rem; color: #ccc; }
+  .filter-status { font-size: 0.75rem; color: var(--mist); margin-bottom: 14px; }
+  .filter-status strong { color: #777; font-weight: 500; }
 
-  .highlight-card { background: linear-gradient(135deg, var(--night) 0%, #2D2040 100%); color: var(--white); border-radius: 12px; padding: 2rem 1.5rem; margin-bottom: 1rem; }
-  .highlight-card .card-when { color: var(--golden); }
-  .highlight-card h3 { color: var(--white); font-size: 1.5rem; }
-  .highlight-card p { color: rgba(255,255,255,0.75); }
-  .highlight-card .tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
-  .highlight-card .price-badge { color: var(--golden); }
+  /* SECTION LABELS */
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); margin-bottom: 12px; margin-top: 24px; }
+  .section-label:first-child { margin-top: 0; }
+  .section-label-muted { color: #998; }
 
-  /* EATS/BARS GRID */
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-  @media (max-width: 540px) { .grid-2 { grid-template-columns: 1fr; } }
-  .mini-card { background: var(--card-bg); border-radius: 10px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .mini-card h4 { font-family: 'Instrument Serif', serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 0.25rem; }
-  .mini-card .mini-type { font-size: 0.7rem; color: var(--sunset); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
-  .mini-card p { font-size: 0.8rem; color: #666; line-height: 1.5; }
-  .mini-card .mini-price { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--bay); margin-top: 0.5rem; }
-
-  .ongoing { background: var(--fog); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 1.25rem; margin-bottom: 0.75rem; }
-  .ongoing h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
-  .ongoing p { font-size: 0.8rem; color: #666; line-height: 1.5; }
-
-  /* ===== PLANS VIEW (itinerary cards) ===== */
-  .dn-intro { text-align: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
-  .dn-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
-  .dn-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
-
-  .dn-card { background: var(--card-bg); border-radius: 16px; padding: 0; margin-bottom: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; }
-  .dn-tier { padding: 1rem 1.75rem 0; display: flex; align-items: center; gap: 0.75rem; }
-  .dn-tier-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; }
-  .dn-tier-free .dn-tier-badge { background: #D4EDDA; color: #1B5E20; }
-  .dn-tier-mid .dn-tier-badge { background: #E3F2FD; color: #1565C0; }
-  .dn-tier-splurge .dn-tier-badge { background: var(--rose-light); color: var(--rose); }
-  .dn-tier-est { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #999; }
-
-  .dn-body { padding: 1rem 1.75rem 1.75rem; }
-  .dn-body h3 { font-family: 'Instrument Serif', serif; font-size: 1.6rem; font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; }
-  .dn-body .dn-tagline { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1rem; color: #888; margin-bottom: 1.25rem; }
-
-  .dn-steps { list-style: none; padding: 0; margin: 0; }
-  .dn-step { display: flex; gap: 1rem; margin-bottom: 1.25rem; position: relative; padding-left: 2.5rem; }
-  .dn-step:last-child { margin-bottom: 0; }
-  .dn-step::before { content: attr(data-step); position: absolute; left: 0; top: 0; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--fog); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; display: flex; align-items: center; justify-content: center; color: var(--night); }
-  .dn-tier-splurge .dn-step::before { background: var(--rose-light); color: var(--rose); }
-  .dn-tier-mid .dn-step::before { background: #E3F2FD; color: #1565C0; }
-  .dn-tier-free .dn-step::before { background: #D4EDDA; color: #1B5E20; }
-  .dn-step-title { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.15rem; }
-  .dn-step-detail { font-size: 0.82rem; color: #666; line-height: 1.55; }
-  .dn-step-time { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--sunset); margin-bottom: 0.15rem; }
-
-  /* SPORTS VIEW */
-  .sport-row { display: flex; align-items: center; background: var(--card-bg); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.6rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); gap: 1rem; }
-  .sport-row .sr-teams { flex: 1; }
-  .sport-row .sr-teams h4 { font-size: 0.9rem; font-weight: 600; }
-  .sport-row .sr-teams p { font-size: 0.78rem; color: #888; }
-  .sport-row .sr-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--sunset); text-align: right; white-space: nowrap; }
-  .sport-row .sr-price { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--bay); text-align: right; white-space: nowrap; }
-  .sport-note { font-size: 0.82rem; color: #888; font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem; }
-
-  /* FILTER BAR (This Week only) */
-  .filter-bar { margin-bottom: 1.5rem; }
-  .filter-row { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-bottom: 0.5rem; }
-  .filter-row:last-child { margin-bottom: 0; }
-  .filter-row-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); min-width: 36px; }
-  .fbtn { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 0.3rem 0.65rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.1); background: transparent; color: #777; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
-  .fbtn:hover { border-color: var(--night); color: var(--night); }
-  .fbtn.on { background: var(--night); color: var(--white); border-color: var(--night); }
-  .fbtn.on[data-c="music"]    { background: #4A148C; border-color: #4A148C; }
-  .fbtn.on[data-c="shows"]    { background: #6A1B9A; border-color: #6A1B9A; }
-  .fbtn.on[data-c="food"]     { background: #BF360C; border-color: #BF360C; }
-  .fbtn.on[data-c="nightlife"]{ background: #311B92; border-color: #311B92; }
-  .fbtn.on[data-c="active"]   { background: #004D40; border-color: #004D40; }
-  .fbtn.on[data-c="sports"]   { background: #1565C0; border-color: #1565C0; }
-  .fbtn.on[data-p="free"]     { background: #1B5E20; border-color: #1B5E20; }
-  .fbtn.on[data-p="$"]        { background: var(--bay); border-color: var(--bay); }
-  .fbtn.on[data-p="$$"]       { background: var(--sunset); border-color: var(--sunset); }
-  .fbtn.on[data-p="$$$"]      { background: #8D6E63; border-color: #8D6E63; }
-  .filter-count { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--mist); margin-left: auto; }
-  .picks-empty { text-align: center; padding: 2.5rem 1rem; color: #999; font-size: 0.88rem; display: none; }
-  .picks-empty.show { display: block; }
-  .picks-empty a { color: var(--bay); cursor: pointer; text-decoration: underline; }
+  /* CARDS */
+  .card { background: var(--card); backdrop-filter: blur(12px); border: 0.5px solid var(--card-border); border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 10px; box-shadow: var(--card-shadow); transition: transform 0.15s, box-shadow 0.15s; }
+  .card:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
   .card.filtered-out { display: none; }
-  .section-label.filtered-out { display: none; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px; }
+  .card h3 { font-family: 'Instrument Serif', serif; font-size: 1.1rem; font-weight: 400; line-height: 1.3; color: var(--night); }
+  .card-when { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--coral); white-space: nowrap; padding-top: 3px; }
+  .card p { font-size: 0.82rem; color: #777; line-height: 1.6; margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .tag { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; }
+  .tag-free { background: #D4EDDA; color: #1B5E20; }
+  .tag-music { background: #E8DEF8; color: #4A148C; }
+  .tag-food { background: #FFF3E0; color: #BF360C; }
+  .tag-arts { background: #FCE4EC; color: #880E4F; }
+  .tag-nightlife { background: #EDE7F6; color: #311B92; }
+  .tag-outdoors { background: #E0F2F1; color: #004D40; }
+  .tag-sports { background: #E3F2FD; color: #1565C0; }
+  .tag-new { background: #FFF8E1; color: #F57F17; }
+  .price-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--mist); margin-left: auto; }
+
+  /* HERO CARD */
+  .hero-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); margin-bottom: 12px; }
+  .highlight-card { background: linear-gradient(135deg, #C4724A 0%, #B85A6A 40%, #7B6B9A 100%); border: none; box-shadow: 0 4px 20px rgba(196,114,74,0.12); }
+  .highlight-card h3 { color: #fff; font-size: 1.25rem; }
+  .highlight-card .card-when { color: rgba(255,255,255,0.5); }
+  .highlight-card p { color: rgba(255,255,255,0.7); }
+  .highlight-card .tag { background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.85); }
+  .highlight-card .price-badge { color: rgba(255,255,255,0.5); }
+
+  /* CARD LINK */
+  .card-link { display: inline-block; font-size: 0.72rem; font-weight: 600; color: var(--coral); text-decoration: none; margin-top: 4px; transition: color 0.15s; }
+  .card-link:hover { color: #A0583A; }
+  .card-link::after { content: ' →'; }
+
+  /* MINI CARDS (eats/bars grid) */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  @media (max-width: 540px) { .grid-2 { grid-template-columns: 1fr; } }
+  .mini-card { background: var(--card); backdrop-filter: blur(12px); border: 0.5px solid var(--card-border); border-radius: 12px; padding: 1.1rem 1.25rem; box-shadow: var(--card-shadow); }
+  .mini-card h4 { font-family: 'Instrument Serif', serif; font-size: 1rem; font-weight: 400; margin-bottom: 3px; }
+  .mini-type { font-size: 0.65rem; color: var(--coral); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .mini-card p { font-size: 0.78rem; color: #888; line-height: 1.5; }
+  .mini-price { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--mist); margin-top: 6px; }
+
+  /* SPORT ROWS */
+  .sport-row { display: flex; align-items: center; background: var(--card); backdrop-filter: blur(12px); border: 0.5px solid var(--card-border); border-radius: 10px; padding: 0.9rem 1.25rem; margin-bottom: 6px; box-shadow: var(--card-shadow); gap: 1rem; }
+  .sr-teams { flex: 1; }
+  .sr-teams h4 { font-size: 0.85rem; font-weight: 600; }
+  .sr-teams p { font-size: 0.75rem; color: #999; }
+  .sr-when { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--coral); text-align: right; white-space: nowrap; }
+  .sr-price { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--mist); text-align: right; white-space: nowrap; }
+  .sport-note { font-size: 0.78rem; color: #999; font-style: italic; margin-top: 6px; margin-bottom: 18px; }
+
+  /* ONGOING */
+  .ongoing { background: rgba(255,255,255,0.4); border: 0.5px solid rgba(0,0,0,0.04); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 8px; }
   .ongoing.filtered-out { display: none; }
+  .ongoing h4 { font-size: 0.82rem; font-weight: 600; margin-bottom: 2px; }
+  .ongoing p { font-size: 0.78rem; color: #888; line-height: 1.5; }
 
-  /* FOOTER */
-  .share-bar { text-align: center; margin: 2rem 0; }
-  .share-btn { display: inline-block; background: var(--night); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; padding: 0.7rem 1.8rem; border-radius: 100px; cursor: pointer; border: none; transition: background 0.15s; letter-spacing: 0.02em; }
-  .share-btn:hover { background: var(--bay); }
-  .footer { text-align: center; padding: 2rem 1.5rem 3rem; font-size: 0.8rem; color: var(--mist); }
-  .footer .sign-off { font-family: 'Instrument Serif', serif; font-size: 1.2rem; color: var(--night); margin-bottom: 0.5rem; }
-
-  /* ===== PLANS VIEW ===== */
+  /* PLAYBOOKS */
   .plans-intro { text-align: center; margin-bottom: 1.5rem; }
-  .plans-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
-  .plans-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
-
-  .occasion-picker { display: flex; gap: 0.4rem; justify-content: center; margin-bottom: 2rem; flex-wrap: nowrap; }
-  .occasion-btn { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; padding: 0.5rem 0.9rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.12); background: transparent; color: #666; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
-  @media (max-width: 520px) { .occasion-picker { flex-wrap: wrap; } .occasion-btn { font-size: 0.68rem; padding: 0.45rem 0.7rem; } }
-  .occasion-btn:hover { border-color: var(--night); color: var(--night); }
-  .occasion-btn.active { background: var(--night); color: var(--white); border-color: var(--night); }
-  .occasion-btn.active[data-oc="date"] { background: var(--rose); border-color: var(--rose); }
+  .plans-intro h2 { font-family: 'Instrument Serif', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 4px; }
+  .plans-intro p { font-size: 0.85rem; color: #999; }
+  .occasion-picker { display: flex; gap: 4px; justify-content: center; margin-bottom: 2rem; flex-wrap: nowrap; }
+  .occasion-btn { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; padding: 6px 10px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.08); background: rgba(255,255,255,0.5); color: #888; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .occasion-btn:hover { border-color: rgba(0,0,0,0.2); color: #555; }
+  .occasion-btn.active { background: var(--night); color: #fff; border-color: var(--night); }
+  .occasion-btn.active[data-oc="date"] { background: #AD1457; border-color: #AD1457; }
   .occasion-btn.active[data-oc="solo"] { background: #00838F; border-color: #00838F; }
   .occasion-btn.active[data-oc="birthday"] { background: #E65100; border-color: #E65100; }
   .occasion-btn.active[data-oc="friends"] { background: #1565C0; border-color: #1565C0; }
   .occasion-btn.active[data-oc="parents"] { background: #2E7D32; border-color: #2E7D32; }
-
+  @media (max-width: 520px) { .occasion-picker { flex-wrap: wrap; } }
   .occasion-view { display: none; }
   .occasion-view.active { display: block; }
 
-  .card-link { display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--bay); text-decoration: none; margin-top: 0.25rem; transition: color 0.15s; }
-  .card-link:hover { color: var(--sunset); }
-  .card-link::after { content: ' →'; }
+  .dn-card { background: var(--card); backdrop-filter: blur(12px); border: 0.5px solid var(--card-border); border-radius: 16px; padding: 0; margin-bottom: 1.5rem; box-shadow: var(--card-shadow); overflow: hidden; }
+  .dn-tier { padding: 1rem 1.5rem 0; display: flex; align-items: center; gap: 0.75rem; }
+  .dn-tier-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; }
+  .dn-tier-free .dn-tier-badge { background: #D4EDDA; color: #1B5E20; }
+  .dn-tier-mid .dn-tier-badge { background: #E3F2FD; color: #1565C0; }
+  .dn-tier-splurge .dn-tier-badge { background: #FCE4EC; color: #AD1457; }
+  .dn-tier-est { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #999; }
+  .dn-body { padding: 0.75rem 1.5rem 1.5rem; }
+  .dn-body h3 { font-family: 'Instrument Serif', serif; font-size: 1.4rem; font-weight: 400; line-height: 1.25; margin-bottom: 4px; }
+  .dn-tagline { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 0.9rem; color: #999; margin-bottom: 1rem; }
+  .dn-steps { list-style: none; padding: 0; margin: 0; }
+  .dn-step { display: flex; gap: 1rem; margin-bottom: 1rem; position: relative; padding-left: 2.5rem; }
+  .dn-step:last-child { margin-bottom: 0; }
+  .dn-step::before { content: attr(data-step); position: absolute; left: 0; top: 0; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: rgba(0,0,0,0.04); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 600; display: flex; align-items: center; justify-content: center; color: var(--night); }
+  .dn-tier-splurge .dn-step::before { background: #FCE4EC; color: #AD1457; }
+  .dn-tier-mid .dn-step::before { background: #E3F2FD; color: #1565C0; }
+  .dn-tier-free .dn-step::before { background: #D4EDDA; color: #1B5E20; }
+  .dn-step-time { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--coral); margin-bottom: 2px; }
+  .dn-step-title { font-weight: 600; font-size: 0.82rem; margin-bottom: 2px; }
+  .dn-step-detail { font-size: 0.78rem; color: #777; line-height: 1.55; }
 
   /* NEWSLETTER SIGNUP */
-  .signup { background: var(--night); border-radius: 14px; padding: 2.5rem 2rem; text-align: center; margin: 2.5rem 0; position: relative; overflow: hidden; }
-  .signup::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #E8734A 0%, #D4536B 50%, #2E6B8A 100%); opacity: 0.15; }
+  .signup { background: var(--night); border-radius: 14px; padding: 2rem 1.75rem; text-align: center; margin: 2rem 0; position: relative; overflow: hidden; }
+  .signup::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #C4724A 0%, #B85A6A 50%, #7B6B9A 100%); opacity: 0.12; }
   .signup * { position: relative; z-index: 1; }
-  .signup h3 { font-family: 'Instrument Serif', serif; font-size: 1.5rem; font-weight: 400; color: var(--white); margin-bottom: 0.4rem; }
-  .signup p { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; }
-  .signup-form { display: flex; gap: 0.5rem; max-width: 380px; margin: 0 auto; }
-  .signup-form input { flex: 1; padding: 0.7rem 1rem; border-radius: 100px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.82rem; outline: none; transition: border-color 0.2s; }
-  .signup-form input::placeholder { color: rgba(255,255,255,0.3); }
-  .signup-form input:focus { border-color: var(--sunset); }
-  .signup-form button { padding: 0.7rem 1.4rem; border-radius: 100px; border: none; background: var(--sunset); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
-  .signup-form button:hover { background: #D4633A; }
-  .signup-note { font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 0.75rem; }
+  .signup h3 { font-family: 'Instrument Serif', serif; font-size: 1.3rem; font-weight: 400; color: #fff; margin-bottom: 4px; }
+  .signup p { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-bottom: 1rem; }
+  .signup-form { display: flex; gap: 6px; max-width: 360px; margin: 0 auto; }
+  .signup-form input { flex: 1; padding: 0.6rem 1rem; border-radius: 100px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.08); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.8rem; outline: none; }
+  .signup-form input::placeholder { color: rgba(255,255,255,0.25); }
+  .signup-form input:focus { border-color: var(--coral); }
+  .signup-form button { padding: 0.6rem 1.2rem; border-radius: 100px; border: none; background: var(--coral); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; cursor: pointer; }
+  .signup-note { font-size: 0.65rem; color: rgba(255,255,255,0.25); margin-top: 8px; }
   @media (max-width: 420px) { .signup-form { flex-direction: column; } }
+
+  /* SHARE & FOOTER */
+  .share-bar { text-align: center; margin: 1.5rem 0; }
+  .share-btn { display: inline-block; background: var(--night); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; padding: 0.6rem 1.5rem; border-radius: 100px; cursor: pointer; border: none; transition: background 0.15s; }
+  .share-btn:hover { background: #333; }
+  .footer { text-align: center; padding: 1.5rem; font-size: 0.75rem; color: #C0B8BC; }
+  .footer .sign-off { font-family: 'Instrument Serif', serif; font-size: 1.1rem; color: var(--night); margin-bottom: 4px; }
+
+  .section-label.filtered-out { display: none; }
+  .picks-empty { text-align: center; padding: 2rem 1rem; color: #999; font-size: 0.85rem; display: none; }
+  .picks-empty.show { display: block; }
+  .picks-empty a { color: var(--coral); cursor: pointer; text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -212,64 +214,94 @@
   </div>
 </div>
 
-<!-- ==================== THIS WEEK ==================== -->
+<!-- THIS WEEK -->
 <div class="view active" id="view-picks">
-
-  <div class="filter-bar">
-    <div class="filter-row">
-      <span class="filter-row-label">Vibe</span>
-      <button class="fbtn" data-c="music" onclick="tog(this,'c')">🎵 Music</button>
-      <button class="fbtn" data-c="shows" onclick="tog(this,'c')">🎭 Museums & Shows</button>
-      <button class="fbtn" data-c="food" onclick="tog(this,'c')">🍽 Food</button>
-      <button class="fbtn" data-c="nightlife" onclick="tog(this,'c')">🌙 Nightlife</button>
-      <button class="fbtn" data-c="active" onclick="tog(this,'c')">🏃 Outdoors</button>
-      <button class="fbtn" data-c="sports" onclick="tog(this,'c')">⚾ Sports</button>
-    </div>
-    <div class="filter-row">
-      <span class="filter-row-label">Price</span>
-      <button class="fbtn" data-p="free" onclick="tog(this,'p')">Free</button>
-      <button class="fbtn" data-p="$" onclick="tog(this,'p')">$</button>
-      <button class="fbtn" data-p="$$" onclick="tog(this,'p')">$$</button>
-      <button class="fbtn" data-p="$$$" onclick="tog(this,'p')">$$$</button>
-      <span class="filter-count" id="fcount"></span>
-    </div>
+  <div class="filter-pills">
+    <button class="fpill" data-c="music" onclick="tog(this)">🎵 Music</button>
+    <button class="fpill" data-c="shows" onclick="tog(this)">🎭 Museums & Shows</button>
+    <button class="fpill" data-c="food" onclick="tog(this)">🍽 Food</button>
+    <button class="fpill" data-c="nightlife" onclick="tog(this)">🌙 Nightlife</button>
+    <button class="fpill" data-c="active" onclick="tog(this)">🏃 Outdoors</button>
+    <button class="fpill" data-c="sports" onclick="tog(this)">⚾ Sports</button>
   </div>
+  <div class="slider-row">
+    <span class="slider-label slider-label-left">Free</span>
+    <input type="range" class="price-slider" id="priceSlider" min="0" max="3" step="1" value="3" oninput="sliderChange()">
+    <span class="slider-label slider-label-right">$$$</span>
+  </div>
+  <div class="slider-ticks"><span>Free</span><span>$</span><span>$$</span><span>$$$</span></div>
+  <div class="filter-status" id="filterStatus"></div>
 
-  <div class="section-label" style="border-top:none;padding-top:0">Editor's Picks</div>
-
+  <div class="hero-label">Sammy's pick of the week</div>
   <!--HERO-->
 
+  <div class="section-label section-label-muted" style="margin-top:20px">More this week</div>
   <!--PICKS-->
 
   <div class="picks-empty" id="picks-empty">
     Nothing matches those filters. <a onclick="resetFilters()">Clear all</a>
   </div>
 
-  <div class="section-label" data-ongoing="true">Always On This Summer</div>
+  <div class="section-label section-label-muted" style="margin-top:28px" data-ongoing="true">Always on this summer</div>
   <!--ONGOING-->
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
-<!-- ==================== SINGLES ==================== -->
+<!-- EATS & BARS -->
+<div class="view" id="view-eats">
+  <div class="section-label" style="margin-top:0">New this week</div>
+  <div class="grid-2">
+    <!--EATS_NEW-->
+  </div>
+
+  <div class="section-label">Worth going back to</div>
+  <div class="grid-2">
+    <!--EATS_CLASSIC-->
+  </div>
+
+  <div class="section-label">Bars worth hitting</div>
+  <div class="grid-2">
+    <!--BARS-->
+  </div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- SPORTS -->
+<div class="view" id="view-sports">
+  <!--SPORTS-->
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- CONCERTS -->
+<div class="view" id="view-concerts">
+  <!--CONCERTS-->
+
+  <!--CONCERTS_ONGOING-->
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- SINGLES -->
 <div class="view" id="view-singles">
   <div class="plans-intro">
     <h2>Meet people IRL</h2>
     <p>Speed dating, mixers, social sports, and ways to actually talk to humans.</p>
   </div>
 
-  <div class="section-label" style="border-top:none;padding-top:0">This Week</div>
+  <div class="section-label" style="margin-top:0">This week</div>
   <!--SINGLES-->
 
-  <div class="section-label">Low-Key Ways to Meet People</div>
+  <div class="section-label">Low-key ways to meet people</div>
   <!--SINGLES_ONGOING-->
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
-<!-- ==================== PLANS ==================== -->
+<!-- PLAYBOOKS -->
 <div class="view" id="view-plans">
-
   <div class="plans-intro">
     <h2>Curated Playbooks</h2>
     <p>Pick the occasion. We've got the whole night planned.</p>
@@ -283,88 +315,28 @@
     <button class="occasion-btn" data-oc="parents" onclick="showOccasion('parents')">👨‍👩‍👧 Parents in Town</button>
   </div>
 
-  <!-- DATE NIGHT -->
-  <div class="occasion-view active" id="oc-date">
-    <!--PB_DATE-->
-
-  </div>
-
-  <!-- SOLO DAY -->
-  <div class="occasion-view" id="oc-solo">
-    <!--PB_SOLO-->
-
-  </div>
-
-  <!-- BIRTHDAY -->
-  <div class="occasion-view" id="oc-birthday">
-    <!--PB_BDAY-->
-
-  </div>
-
-  <!-- FRIENDS VISITING -->
-  <div class="occasion-view" id="oc-friends">
-    <!--PB_FRIENDS-->
-
-  </div>
-
-  <!-- PARENTS IN TOWN -->
-  <div class="occasion-view" id="oc-parents">
-    <!--PB_PARENTS-->
-
-  </div>
+  <div class="occasion-view active" id="oc-date"><!--PB_DATE--></div>
+  <div class="occasion-view" id="oc-solo"><!--PB_SOLO--></div>
+  <div class="occasion-view" id="oc-birthday"><!--PB_BDAY--></div>
+  <div class="occasion-view" id="oc-friends"><!--PB_FRIENDS--></div>
+  <div class="occasion-view" id="oc-parents"><!--PB_PARENTS--></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
-<!-- ==================== EATS & BARS ==================== -->
-<div class="view" id="view-eats">
-  <div class="section-label" style="border-top:none;padding-top:0">New This Week</div>
-  <div class="grid-2">
-    <!--EATS_NEW-->
-  </div>
-
-  <div class="section-label">Worth Going Back To</div>
-  <div class="grid-2">
-    <!--EATS_CLASSIC-->
-  </div>
-
-  <div class="section-label">Bars Worth Hitting</div>
-  <div class="grid-2">
-    <!--BARS-->
-  </div>
-
-  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
-</div>
-
-<!-- ==================== SPORTS ==================== -->
-<div class="view" id="view-sports">
-  <!--SPORTS-->
-
-  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
-</div>
-
-<!-- ==================== CONCERTS ==================== -->
-<div class="view" id="view-concerts">
-  <!--CONCERTS-->
-
-  <!--CONCERTS_ONGOING-->
-
-  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
-</div>
-
-<div class="signup" style="max-width:700px;margin:0 auto 0;">
+<div class="signup">
   <h3>Get this in your inbox every week</h3>
   <p>New edition every Tuesday morning. No spam, just plans.</p>
   <form class="signup-form" action="https://buttondown.com/api/emails/embed-subscribe/sammyssf" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/sammyssf', 'popupwindow')">
     <input type="email" name="email" placeholder="your@email.com" required />
     <button type="submit">I'm in</button>
   </form>
-  <div class="signup-note" id="signup-note">Free, every Tuesday morning. No spam.</div>
+  <div class="signup-note">Free, every Tuesday morning. No spam.</div>
 </div>
 
 <div class="footer">
   <div class="sign-off">See you out there.</div>
-  <p>Sammy's SF · Issue <!--ISSUE--> · July 2026</p>
+  <p>Sammy's SF · Issue <!--ISSUE--> · 2026</p>
 </div>
 
 <script>
@@ -377,55 +349,7 @@ function showView(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Filters (This Week tab only)
-const ac = new Set(), ap = new Set();
-
-function tog(btn, type) {
-  btn.classList.toggle('on');
-  const val = type === 'c' ? btn.dataset.c : btn.dataset.p;
-  const set = type === 'c' ? ac : ap;
-  set.has(val) ? set.delete(val) : set.add(val);
-  filterPicks();
-}
-
-function resetFilters() {
-  ac.clear(); ap.clear();
-  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
-  filterPicks();
-}
-
-function filterPicks() {
-  const view = document.getElementById('view-picks');
-  const items = view.querySelectorAll('.card, .ongoing');
-  let vis = 0;
-  const any = ac.size > 0 || ap.size > 0;
-
-  items.forEach(el => {
-    const cats = (el.dataset.cats || '').split(',').filter(Boolean);
-    const price = el.dataset.price || '';
-    const catOk = ac.size === 0 || cats.some(c => ac.has(c));
-    const priceOk = ap.size === 0 || ap.has(price);
-    if (catOk && priceOk) { el.classList.remove('filtered-out'); vis++; }
-    else { el.classList.add('filtered-out'); }
-  });
-
-  // Hide section labels if all their siblings are hidden
-  view.querySelectorAll('.section-label').forEach(label => {
-    let next = label.nextElementSibling;
-    let hasVis = false;
-    while (next && !next.classList.contains('section-label') && !next.classList.contains('filter-bar') && !next.classList.contains('share-bar') && !next.classList.contains('picks-empty')) {
-      if ((next.classList.contains('card') || next.classList.contains('ongoing')) && !next.classList.contains('filtered-out')) hasVis = true;
-      next = next.nextElementSibling;
-    }
-    label.classList.toggle('filtered-out', !hasVis);
-  });
-
-  document.getElementById('picks-empty').classList.toggle('show', any && vis === 0);
-  const fc = document.getElementById('fcount');
-  fc.textContent = any ? vis + ' match' + (vis !== 1 ? 'es' : '') : '';
-}
-
-// Occasion picker (Plans tab)
+// Occasion picker
 function showOccasion(id) {
   document.querySelectorAll('.occasion-view').forEach(v => v.classList.remove('active'));
   document.querySelectorAll('.occasion-btn').forEach(b => b.classList.remove('active'));
@@ -433,10 +357,72 @@ function showOccasion(id) {
   document.querySelector('.occasion-btn[data-oc="' + id + '"]').classList.add('active');
 }
 
+// Filters
+const ac = new Set();
+const priceMap = ['free', '$', '$$', '$$$'];
+const priceOrder = { 'free': 0, '$': 1, '$$': 2, '$$$': 3 };
+
+function tog(btn) {
+  btn.classList.toggle('on');
+  const v = btn.dataset.c;
+  ac.has(v) ? ac.delete(v) : ac.add(v);
+  applyFilters();
+}
+
+function sliderChange() {
+  applyFilters();
+}
+
+function resetFilters() {
+  ac.clear();
+  document.querySelectorAll('.fpill').forEach(b => b.classList.remove('on'));
+  document.getElementById('priceSlider').value = 3;
+  applyFilters();
+}
+
+function applyFilters() {
+  const maxPrice = parseInt(document.getElementById('priceSlider').value);
+  const view = document.getElementById('view-picks');
+  const items = view.querySelectorAll('.card, .ongoing');
+  let vis = 0;
+  const anyFilter = ac.size > 0 || maxPrice < 3;
+
+  items.forEach(el => {
+    const cats = (el.dataset.cats || '').split(',').filter(Boolean);
+    const price = el.dataset.price || 'free';
+    const catOk = ac.size === 0 || cats.some(c => ac.has(c));
+    const priceOk = (priceOrder[price] || 0) <= maxPrice;
+    if (catOk && priceOk) { el.classList.remove('filtered-out'); vis++; }
+    else { el.classList.add('filtered-out'); }
+  });
+
+  // Section labels
+  view.querySelectorAll('.section-label').forEach(label => {
+    let next = label.nextElementSibling;
+    let hasVis = false;
+    while (next && !next.classList.contains('section-label') && !next.classList.contains('filter-pills') && !next.classList.contains('share-bar') && !next.classList.contains('picks-empty') && !next.classList.contains('signup')) {
+      if ((next.classList.contains('card') || next.classList.contains('ongoing')) && !next.classList.contains('filtered-out')) hasVis = true;
+      next = next.nextElementSibling;
+    }
+    label.classList.toggle('filtered-out', !hasVis);
+  });
+
+  document.getElementById('picks-empty').classList.toggle('show', anyFilter && vis === 0);
+  const st = document.getElementById('filterStatus');
+  if (anyFilter) {
+    const parts = [];
+    if (ac.size > 0) parts.push([...ac].join(', '));
+    if (maxPrice < 3) parts.push('up to ' + priceMap[maxPrice]);
+    st.innerHTML = 'Showing <strong>' + (parts.join(' · ') || 'all') + '</strong> · ' + vis + ' event' + (vis !== 1 ? 's' : '');
+  } else {
+    st.innerHTML = '';
+  }
+}
+
 // Share
 function shareThis() {
   if (navigator.share) {
-    navigator.share({ title: 'SF This Week — July 25–31', text: 'Fun stuff happening in SF this week.', url: window.location.href }).catch(() => {});
+    navigator.share({ title: "Sammy's SF", text: "Fun stuff happening in SF this week", url: window.location.href }).catch(() => {});
   } else {
     navigator.clipboard.writeText(window.location.href).then(() => {
       const btn = event.target;
