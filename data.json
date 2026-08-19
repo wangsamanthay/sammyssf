@@ -4,420 +4,428 @@
   "picks": [
     {
       "t": "Noah Kahan – The Great Divide Tour",
-      "w": "Fri Aug 21 · 6:30 PM",
-      "d": "Oracle Park is going to be absolutely electric this Friday — Noah Kahan is bringing his massive folk-pop anthems to the ballpark, with support from Gigi Perez and Annabelle Dinda. This show is sold out on the primary market, so check StubHub or Vivid Seats fast. One of the biggest nights of the summer, full stop.",
-      "cats": "music",
-      "price": "$$$",
-      "badge": "Sold Out",
-      "tags": [
-        "Sold Out",
-        "Stadium",
-        "Folk"
-      ],
-      "hero": true,
-      "score": 13
-    },
-    {
-      "t": "Daniel Caesar – Son of Spergy Tour",
-      "w": "Fri Aug 21 · 7:30 PM",
-      "d": "Daniel Caesar closes out a two-night Chase Center run on Friday, and honestly this is one of the smoothest, most emotionally alive R&B shows you'll catch all year. His new album debuted at #1 on the Billboard R&B chart — his best yet — and 070 Shake is opening. Go.",
-      "cats": "music",
-      "price": "$$$",
-      "badge": "🔥 Hot",
-      "tags": [
-        "R&B",
-        "Arena",
-        "070 Shake"
-      ],
-      "hero": false,
-      "score": 11
-    },
-    {
-      "t": "Off the Grid: Fort Mason Night Market",
-      "w": "Fri Aug 21 · 5–10 PM",
-      "d": "Free entry, waterfront views, food trucks as far as the eye can see, craft vendors, and live music — this is the perfect warm-up to a big Friday night. Fort Mason's monthly night market is a genuine SF tradition and one of the best free hangs in the city.",
-      "cats": "food",
-      "price": "free",
-      "badge": "Free",
-      "tags": [
-        "Free",
-        "Outdoors",
-        "Food Trucks",
-        "Waterfront"
-      ],
-      "hero": false,
-      "score": 11
-    },
-    {
-      "t": "Fillmore After Dark: Hot August Night Block Party",
-      "w": "Fri Aug 21 · 4–9 PM",
-      "d": "The Lower Fillmore shuts down for a classic car show, food trucks, local vendors, and live entertainment — all completely free. It's a neighborhood block party with serious SF soul, and it's happening right outside one of the most legendary music venues in America.",
-      "cats": "music",
-      "price": "free",
-      "badge": "Free",
-      "tags": [
-        "Free",
-        "Block Party",
-        "Neighborhood"
-      ],
-      "hero": false,
-      "score": 10
-    },
-    {
-      "t": "Courtney Barnett – Creature of Habit Tour (2 Nights!)",
-      "w": "Wed Aug 26 & Thu Aug 27 · 8 PM",
-      "d": "Two nights at the Fillmore from one of indie rock's sharpest wits — Courtney Barnett's deadpan storytelling and sprawling guitar work are a perfect match for this storied room. Wednesday from $76, Thursday from $81. If you can only do one night, go Wednesday.",
+      "w": "Friday Aug 21 · 6:30 PM",
+      "d": "Noah Kahan brings his folk-indie heartbreak anthems to Oracle Park for one massive night — expect 'Dial Drunk,' 'Northern Attitude,' and a crowd that knows every single word. Support comes from Gigi Perez and Annabelle Dinda, so get there early. Tickets are face-value protected via Ticketmaster's Exchange, so what you see is what you pay.",
       "cats": "music",
       "price": "$$",
-      "badge": "2 Nights",
+      "badge": "One Night Only",
       "tags": [
-        "Indie Rock",
-        "Fillmore",
-        "Must-See"
+        "One Night Only",
+        "Outdoor",
+        "Folk-Indie"
       ],
-      "hero": false,
-      "score": 10
+      "hero": true,
+      "score": 11
     },
     {
-      "t": "Jacob Hashimoto: Giant Arc Opens at SFMOMA",
-      "w": "Opens Sat Aug 22",
-      "d": "A massive new site-specific installation opens this Saturday in SFMOMA's Roberts Family Gallery — and here's the best part: it's completely free, no ticket required. Hashimoto's large-scale kite-and-screen constructions are genuinely jaw-dropping in person.",
+      "t": "Jacob Hashimoto: Giant Arc — SFMOMA Opening",
+      "w": "Saturday Aug 22 · Opens this week",
+      "d": "SFMOMA debuts a monumental site-specific installation weaving painting, video projection, and sound into an immersive meditation on time and nature — and the best part? It's in the admission-free gallery on Floor 1. This is a genuine opening-week moment at one of the city's best museums. Walk in, look up, and be transported.",
       "cats": "shows",
       "price": "free",
       "badge": "Free · Opens This Week",
       "tags": [
         "Free",
         "Art",
-        "New Opening"
+        "Opening Week"
       ],
       "hero": false,
       "score": 10
     },
     {
-      "t": "TRAIN – Drops of Jupiter: 25 Years in the Atmosphere",
-      "w": "Wed Aug 26 · 6:45 PM",
-      "d": "SF's own Train is celebrating the 25th anniversary of Drops of Jupiter at Shoreline Amphitheatre — a genuine homecoming moment for one of the Bay's best-loved rock bands. Outdoor summer show, nostalgia cranked to eleven. Great date-night pick.",
+      "t": "Muse – The Wow! Signal Tour",
+      "w": "Thursday Aug 27 · 7:00 PM",
+      "d": "Muse is one of the greatest live bands on the planet, full stop — lasers, pyro, Matthew Bellamy hitting notes no human should hit, and a concept album about alien radio signals to tie it all together. Shoreline is the perfect outdoor amphitheater for this kind of cinematic rock spectacle. One-night-only, so don't sleep on it.",
       "cats": "music",
       "price": "$$",
-      "badge": "Homecoming",
+      "badge": "One Night Only",
       "tags": [
-        "Rock",
-        "Nostalgia",
+        "One Night Only",
         "Outdoor",
-        "Shoreline"
+        "Rock"
       ],
       "hero": false,
-      "score": 9
+      "score": 10
     },
     {
-      "t": "Sunset Speed Dating – Ages 30–45 at Blackbird",
-      "w": "Sat Aug 22 · 7–9 PM",
-      "d": "Jigsaw Dating takes over Blackbird for a proper evening of speed dating followed by a relaxed social hour — meet everyone in the room, then follow up with your favorites over drinks. Low pressure, well-run, and actually fun.",
-      "cats": "nightlife",
-      "price": "$$",
-      "badge": "Singles",
-      "tags": [
-        "Singles",
-        "Speed Dating",
-        "Social"
-      ],
-      "hero": false,
-      "score": 9
-    },
-    {
-      "t": "Sundown Cinema: The Parent Trap",
-      "w": "Fri Aug 21 · Dusk",
-      "d": "The SF Standard's free outdoor movie series is screening The Parent Trap this Friday — bring a blanket, bring snacks, bring someone cute. It's a San Francisco summer evening at its most charming.",
-      "cats": "shows",
+      "t": "Fillmore Hot August Night",
+      "w": "Friday Aug 21 · 4–9 PM",
+      "d": "Classic cars, food trucks, live entertainment, and local vendors take over the Lower Fillmore for one of summer's most feel-good free street events. It runs right into prime Friday-night energy, so grab a bite from the trucks and then drift into whatever evening you've planned. Zero dollars in, maximum vibes out.",
+      "cats": "active",
       "price": "free",
       "badge": "Free",
       "tags": [
         "Free",
-        "Outdoor Film",
+        "Outdoor",
+        "Street Festival"
+      ],
+      "hero": false,
+      "score": 9
+    },
+    {
+      "t": "Daniel Caesar – Son of Spergy Tour",
+      "w": "Friday Aug 21 · 7:30 PM",
+      "d": "Daniel Caesar's silky R&B hits Chase Center on Friday for night two of his SF run, with 070 Shake along for the ride — his new album debuted at #4 on the Billboard 200 and #1 on the R&B chart, so this setlist is going to be stacked. 'Get You,' 'Best Part,' and a whole lot of new heat. One night left to catch him.",
+      "cats": "music",
+      "price": "$$",
+      "badge": "One Night Only",
+      "tags": [
+        "One Night Only",
+        "R&B",
+        "Arena"
+      ],
+      "hero": false,
+      "score": 9
+    },
+    {
+      "t": "Rooftop Rhythms at Salesforce Park",
+      "w": "Friday–Sunday Aug 21–23",
+      "d": "Salesforce Park turns eight and celebrates with a three-day rooftop music and food festival in the heart of downtown — live music, DJs, drinks, and some of the best people-watching in the city, all suspended above the Embarcadero. It's a rare multi-day outdoor hang that's genuinely easy to drop into on any of the three days.",
+      "cats": "nightlife",
+      "price": "$",
+      "badge": "Weekend",
+      "tags": [
+        "Weekend",
+        "Outdoor",
+        "Rooftop",
+        "Festival"
+      ],
+      "hero": false,
+      "score": 9
+    },
+    {
+      "t": "Courtney Barnett – Creature of Habit Tour (3 Nights!)",
+      "w": "Wed Aug 26 & Thu Aug 27 · 8:00 PM",
+      "d": "Courtney Barnett takes over the Fillmore for three nights with a genuinely special format: first set is instrumental music with collaborator Stella Mozgawa, second set is a deep dive through her full catalog from Sometimes I Sit and Think onward. This is the kind of intimate run that people talk about for years. Grab whichever night you can.",
+      "cats": "music",
+      "price": "$$",
+      "badge": "Limited Run",
+      "tags": [
+        "Intimate",
+        "Indie Rock",
+        "The Fillmore"
+      ],
+      "hero": false,
+      "score": 9
+    },
+    {
+      "t": "Treasures of the Pharaohs — de Young Museum",
+      "w": "Open daily through Jan 2027",
+      "d": "San Francisco is the ONLY U.S. city hosting this international blockbuster — 130 royal Egyptian treasures spanning 3,000 years, including gold jewelry and monumental granite statues that have never been seen in North America before. Timed entry means it's never overwhelming, and the de Young in Golden Gate Park is always a gorgeous day out.",
+      "cats": "shows",
+      "price": "$$",
+      "badge": "U.S. Exclusive",
+      "tags": [
+        "Cultural",
+        "Museum",
+        "Golden Gate Park"
+      ],
+      "hero": false,
+      "score": 8
+    },
+    {
+      "t": "Train – Drops of Jupiter: 25 Years in the Atmosphere",
+      "w": "Wednesday Aug 26 · 6:45 PM",
+      "d": "San Francisco's own Train celebrates 25 years of their iconic album with a full night of diamond-certified hits — 'Hey Soul Sister,' 'Drops of Jupiter,' 'Drive By' — all at Shoreline under the summer sky. Barenaked Ladies and Matt Nathanson open, so the whole evening is basically a nostalgia time machine with excellent acoustics.",
+      "cats": "music",
+      "price": "$$",
+      "badge": "One Night Only",
+      "tags": [
+        "One Night Only",
+        "Outdoor",
+        "Rock",
+        "Nostalgia"
+      ],
+      "hero": false,
+      "score": 8
+    },
+    {
+      "t": "SOMA Nights Street Party",
+      "w": "Thursday Aug 27 · 5–9 PM",
+      "d": "Folsom Street transforms into a free block party with local food, pop-up vendors, art, DJs, live performances, and drag — the whole creative soul of SoMa in one stretch of pavement. It runs every fourth Thursday through September, but this week's is a great excuse to make a full Thursday night of it before heading to a show. Completely free.",
+      "cats": "nightlife",
+      "price": "free",
+      "badge": "Free",
+      "tags": [
+        "Free",
+        "Street Party",
+        "SoMa",
+        "LGBTQ+"
+      ],
+      "hero": false,
+      "score": 8
+    },
+    {
+      "t": "Damon Wayans at Punch Line Comedy Club",
+      "w": "Wednesday Aug 27 · 8:00 PM",
+      "d": "A comedy legend at one of SF's legendary comedy rooms — Damon Wayans is bringing his stand-up to Punch Line and only 27 tickets remain, so this is very much a grab-them-now situation. Intimate venue, legendary performer, the kind of night you'll be referencing for years. Don't wait on this one.",
+      "cats": "shows",
+      "price": "$$",
+      "badge": "Selling Fast",
+      "tags": [
+        "Comedy",
+        "Selling Out",
+        "One Night Only"
+      ],
+      "hero": false,
+      "score": 8
+    },
+    {
+      "t": "Sundown Cinema: The Parent Trap",
+      "w": "Friday Aug 21 · Sunset",
+      "d": "The SF Standard is screening The Parent Trap outdoors and for free — bring a blanket, grab snacks, and enjoy peak late-summer vibes as the sun goes down over a park full of people who all know every line of this movie. It's the quintessential low-key Friday night and it costs exactly nothing.",
+      "cats": "active",
+      "price": "free",
+      "badge": "Free · Outdoors",
+      "tags": [
+        "Free",
+        "Outdoor",
+        "Film",
         "Family"
       ],
       "hero": false,
-      "score": 9
+      "score": 7
     },
     {
-      "t": "Muse – The Wow! Signal Tour",
-      "w": "Thu Aug 27 · 7 PM",
-      "d": "Muse closes the week at Shoreline Amphitheatre with their signature sci-fi spectacle and catalog of stadium anthems. Tickets from $42 make this one of the best value big-show moments of the week — and Muse live is genuinely something to see.",
-      "cats": "music",
-      "price": "$$",
-      "badge": "Deal",
-      "tags": [
-        "Rock",
-        "Arena",
-        "Outdoor"
-      ],
-      "hero": false,
-      "score": 9
-    },
-    {
-      "t": "THROTTLE: OGUZ, NEUX, softchaos at 1015 Folsom",
-      "w": "Fri Aug 21 · Doors 10 PM",
-      "d": "Two rooms of heavy Berlin-inspired techno at SF's most iconic club night venue — NEUX and softchaos are both making their SF debuts, which means you get to tell people you saw them before everyone else did. Prepare for serious BPMs.",
-      "cats": "nightlife",
-      "price": "$$",
-      "badge": "SF Debut Acts",
-      "tags": [
-        "Techno",
-        "Club",
-        "21+"
-      ],
-      "hero": false,
-      "score": 9
-    },
-    {
-      "t": "Treasures of the Pharaohs at the de Young",
-      "w": "Open Daily · 9:30 AM",
-      "d": "The de Young's blockbuster season show spans 3,000 years of ancient Egyptian civilization and runs through January — but this week is a great time to go before the summer crowds ease. Bay Area residents get free general admission every Saturday with valid ID.",
+      "t": "Hairspray — SF Playhouse",
+      "w": "Tue–Sun Aug 21–27 · Multiple Shows",
+      "d": "SF Playhouse is putting on Hairspray all week with multiple showtimes — matinees, evening shows, the works — so there's genuinely no excuse not to fit it in. Big songs, big hair, big heart, and the kind of professional local theater that reminds you why the Playhouse has been a Union Square staple for years.",
       "cats": "shows",
-      "price": "$",
-      "badge": "Blockbuster",
+      "price": "$$",
+      "badge": "Opening Week",
       "tags": [
-        "Museum",
-        "Cultural",
-        "Free Saturdays"
+        "Theater",
+        "Musical",
+        "Union Square"
       ],
       "hero": false,
-      "score": 8
+      "score": 7
     },
     {
-      "t": "Mess Hall Food Hall Opens – The Presidio",
-      "w": "Open Now",
-      "d": "The Presidio's big new food hall brings a cafe, full bar, and three all-day restaurants under one roof — seafood, burgers, Korean, and tons of grab-and-go for a Tunnel Tops picnic. It's the coolest new lunch spot in the city right now.",
+      "t": "Off the Grid Fort Mason: Friday Night Market",
+      "w": "Friday Aug 21 · 5–10 PM",
+      "d": "The waterfront night market returns with food trucks, craft vendors, and live music as the sun sets over the bay — Fort Mason is one of those SF settings that never gets old, and on a clear August evening it's basically perfect. Free to enter, so you're only spending on the food, which is the right kind of math.",
       "cats": "food",
-      "price": "$",
-      "badge": "New Opening",
+      "price": "free",
+      "badge": "Free Entry",
       "tags": [
-        "New",
-        "Food Hall",
-        "Presidio"
+        "Free",
+        "Outdoor",
+        "Food Trucks",
+        "Waterfront"
       ],
       "hero": false,
-      "score": 8
+      "score": 7
     }
   ],
   "ongoing": [
     {
-      "t": "Graciela Iturbide: Between Two Worlds",
-      "d": "Sweeping career retrospective at SFMOMA for one of Latin America's most celebrated photographers — open now."
+      "t": "Graciela Iturbide: Between Two Worlds — SFMOMA",
+      "d": "A stunning retrospective from the Mexico-based photographer, open daily through late fall at SFMOMA."
     },
     {
-      "t": "Nengi Omuku: The Gathering – de Young",
-      "d": "Vibrant figurative paintings from the Nigerian-British artist, running through May 2028."
+      "t": "The Etruscans: From the Heart of Ancient Italy — Legion of Honor",
+      "d": "Ancient Italian artifacts and treasures on view at the Legion of Honor through September 20."
     },
     {
-      "t": "The Etruscans – Legion of Honor",
-      "d": "World-class exhibition of ancient Italian civilization, open through September 20."
+      "t": "Civic Center Soundtrack — Free Lunchtime Concerts",
+      "d": "Live music at Fulton Plaza every Tuesday and Thursday noon–3 PM through October, totally free."
     },
     {
-      "t": "Rize Up Café – SoMa",
-      "d": "SF's beloved sourdough baker finally has a brick-and-mortar — ube toast and sesame-scallion slices with morning coffee."
-    },
-    {
-      "t": "Fisherman's Wharf Pier Party",
-      "d": "Free 2nd and 4th Saturday waterfront hangout with vendors and entertainment, through September."
+      "t": "This Asian American Life — Asian Art Museum",
+      "d": "Public art series exploring Chinatown life through the eyes of its mothers, workers, and children."
     }
   ],
   "eats": {
     "new": [
       {
-        "type": "French Seafood · SoMa",
+        "type": "Food Hall · The Presidio",
+        "name": "Mess Hall Food Hall",
+        "d": "Three all-day concepts covering seafood, burgers, and Korean food, plus a full bar and grab-and-go picnic supplies for Tunnel Tops.",
+        "price": "$$ · ~$20/pp"
+      },
+      {
+        "type": "French Seafood · SoMa Design District",
         "name": "JouJou",
-        "d": "Oysters, caviar, champagne, and serious buzz from the True Laurel and Lazy Bear team — SF's splurgiest new opening.",
-        "price": "$$$$ · $90+/pp"
+        "d": "Oysters, caviar, and champagne from the True Laurel and Lazy Bear team — this is the swanky splurge of the season.",
+        "price": "$$$$ · ~$90/pp"
       },
       {
         "type": "Southern Italian · Embarcadero",
         "name": "Lucania",
-        "d": "From the A16 team, with roasted sardines, mussels, pizza, pasta, and a killer Embarcadero patio at the old MarketBar space.",
-        "price": "$$$ · $55/pp"
+        "d": "The A16 team brings Neapolitan pizza, house-made pasta, and stellar seafood to the Ferry Building's former MarketBar patio space.",
+        "price": "$$$$ · ~$70/pp"
       },
       {
-        "type": "Sourdough Café · SoMa",
-        "name": "Rize Up Café",
-        "d": "The farmers market legend goes brick-and-mortar with ube toast, sesame-scallion slices, and great coffee.",
-        "price": "$ · $15/pp"
-      },
-      {
-        "type": "Food Hall · Presidio",
-        "name": "Mess Hall",
-        "d": "Three all-day restaurants, a full bar, and grab-and-go for Tunnel Tops picnics — the Presidio's best new lunch move.",
-        "price": "$$ · $25/pp"
+        "type": "Café & Bakery · SoMa",
+        "name": "Rize Up Bakery Café",
+        "d": "Your favorite farmers market sourdough finally has a storefront — ube and sesame-scallion toasts plus great coffee in SoMa.",
+        "price": "$ · ~$12/pp"
       },
       {
         "type": "All-Day Bar & Café · Jackson Square",
         "name": "Bar Coto",
-        "d": "Walk-in coffee, sandwiches, and summer gelato from the Cotogna crew — ideal for a Jackson Square afternoon.",
-        "price": "$ · $18/pp"
+        "d": "Walk-in coffee, sandwiches, and some of the best summer gelato in the city from the beloved Cotogna team.",
+        "price": "$$ · ~$18/pp"
       }
     ],
     "classic": [
       {
-        "type": "Californian · Ferry Building",
+        "type": "California Cuisine · SoMa",
         "name": "Bix",
-        "d": "Supper club glamour in a Gold Rush–era alley — the martinis and duck confit never miss.",
-        "price": "$$$ · $65/pp"
+        "d": "SF's most glamorous supper club — cocktails and duck confit in a Gold Rush-era alley, still impossibly cool after 35 years.",
+        "price": "$$$ · ~$65/pp"
       },
       {
-        "type": "Dim Sum · Richmond",
-        "name": "Dragon Beaux",
-        "d": "Elevated dim sum with beautiful presentations and killer shrimp dumplings — go for weekend brunch.",
-        "price": "$$ · $40/pp"
+        "type": "Dim Sum · Chinatown",
+        "name": "City View Restaurant",
+        "d": "The best downtown dim sum, served from carts in a light-filled room above the Financial District — go early on weekends.",
+        "price": "$$ · ~$25/pp"
       },
       {
-        "type": "Italian · North Beach",
-        "name": "Tony's Pizza Napoletana",
-        "d": "Award-winning, multiple-style pizza from Tony Gemignani — still the neighborhood anchor worth the wait.",
-        "price": "$$ · $30/pp"
-      },
-      {
-        "type": "Tacos · Mission",
+        "type": "Mission Burrito · The Mission",
         "name": "La Taqueria",
-        "d": "James Beard America's Classic, no rice in the burritos, and a Mission institution since 1973.",
-        "price": "$ · $15/pp"
+        "d": "The James Beard Award-winning burrito joint on Mission Street — no rice, just beans, meat, salsa, and decades of doing it right.",
+        "price": "$ · ~$12/pp"
       },
       {
         "type": "Seafood · Fisherman's Wharf",
-        "name": "Anchor Oyster Bar",
-        "d": "Old-school Castro institution for clam chowder, cold oysters, and a Dungeness crab louie.",
-        "price": "$$$ · $60/pp"
+        "name": "Hog Island Oyster Co.",
+        "d": "Tomales Bay oysters shucked fresh at the Ferry Building or Wharf location — the Sweetwaters with mignonette are non-negotiable.",
+        "price": "$$$ · ~$55/pp"
       },
       {
-        "type": "Ramen · Japantown",
-        "name": "Marufuku Ramen",
-        "d": "Hakata-style tonkotsu with a rich broth that's earned a permanent line out the door — worth every minute.",
-        "price": "$ · $20/pp"
+        "type": "Italian · North Beach",
+        "name": "Cotogna",
+        "d": "Wood-fired rustic Italian in the heart of North Beach — the roast chicken and house-made pasta are SF institutions.",
+        "price": "$$$ · ~$60/pp"
       }
     ]
   },
   "bars": [
     {
-      "type": "Jazz Bar · Haight",
+      "type": "Jazz Bar · Haight-Ashbury",
       "name": "The DeLuxe",
-      "d": "Just resurrected from Club Deluxe's 2023 closure — improved sound system, classic cocktails, and nightly live music spanning genres.",
-      "price": "$ · $14/drink"
+      "d": "The legendary Club Deluxe reborn with a better sound system, classic cocktails, and daily live music — the Haight's coolest new-old spot.",
+      "price": "$$ · ~$14/drink"
     },
     {
-      "type": "Cocktail Lounge · SoMa",
+      "type": "Craft Cocktails · Mission",
       "name": "True Laurel",
-      "d": "The Lazy Bear bar spin-off with inventive seasonal cocktails and a low-key cool vibe — one of the best bars in the city, full stop.",
-      "price": "$$$ · $22/drink"
+      "d": "Produce-driven cocktails from the team behind Lazy Bear in a relaxed, beautiful Mission room — the menu changes constantly and it's always great.",
+      "price": "$$$ · ~$18/drink"
     },
     {
-      "type": "Dive Bar · Mission",
-      "name": "Zeitgeist",
-      "d": "Massive beer garden, cold pints, sausages, and zero pretension — the Mission's beloved outdoor hang.",
-      "price": "$ · $8/drink"
+      "type": "Dive Bar · Lower Haight",
+      "name": "Toronado",
+      "d": "One of the great American beer bars — 50+ taps of serious craft and Belgian ales, zero pretension, perfect every time.",
+      "price": "$ · ~$8/drink"
+    },
+    {
+      "type": "Rooftop Bar · Downtown",
+      "name": "Charmaine's (Proper Hotel)",
+      "d": "Sweeping rooftop views of the city skyline over well-made cocktails — the move for a warm August evening when you want to feel fancy without being stuffy.",
+      "price": "$$$ · ~$20/drink"
     },
     {
       "type": "Wine Bar · Jackson Square",
-      "name": "Bar Coto",
-      "d": "The Cotogna team's walk-in all-day bar — excellent wine list, gelato in summer, and a civilized afternoon vibe.",
-      "price": "$$ · $16/drink"
+      "name": "Quince Wine Room",
+      "d": "An intimate, encyclopedic wine list in one of SF's most beautiful historic neighborhoods — ideal for a slow, excellent Tuesday.",
+      "price": "$$$ · ~$20/drink"
     },
     {
-      "type": "Rooftop Bar · SoMa",
-      "name": "Charmaine's at the Proper",
-      "d": "Rooftop views of the city skyline, strong cocktails, and that golden-hour SF light that makes everyone look good.",
-      "price": "$$$ · $22/drink"
+      "type": "Tiki Bar · Tenderloin",
+      "name": "Tonga Room & Hurricane Bar",
+      "d": "The Fairmont's legendary tiki bar with a floating bandstand on an indoor lagoon and mai tais strong enough to make you believe in magic.",
+      "price": "$$ · ~$16/drink"
     },
     {
-      "type": "Dive Bar · North Beach",
-      "name": "Vesuvio Café",
-      "d": "Beat Generation legend next to City Lights bookstore — cheap drinks, great people-watching, and serious literary history.",
-      "price": "$ · $10/drink"
+      "type": "Neighborhood Bar · Castro",
+      "name": "The Bearded Lady",
+      "d": "A welcoming, queer-friendly dive with cheap drinks, good company, and a Castro soul that feels like home in about 10 minutes.",
+      "price": "$ · ~$8/drink"
     },
     {
-      "type": "Craft Beer · Inner Sunset",
-      "name": "Andytown Coffee & Beer (Irving)",
-      "d": "Andytown's chill neighborhood outpost does excellent craft pints in the evening when the fog rolls in off the ocean.",
-      "price": "$ · $9/drink"
-    },
-    {
-      "type": "Cocktail Bar · Hayes Valley",
-      "name": "Brass Tacks",
-      "d": "Neighborhood cocktail bar with a relaxed vibe, strong drinks, and a crowd that's actually fun to talk to.",
-      "price": "$$ · $16/drink"
+      "type": "Club · SoMa",
+      "name": "F8",
+      "d": "Two rooms of serious electronic music on Folsom Street — this week it's Matt Jereza's birthday takeover on Friday night, 10 PM to 3 AM.",
+      "price": "$$ · ~$15/drink"
     }
   ],
   "sports": [
     {
-      "section": "⚾ SF Giants · Fenway Park (Boston)",
+      "section": "⚾ SF Giants · Oracle Park",
       "games": [
         {
-          "teams": "Giants @ Red Sox",
-          "detail": "Devers returns to Fenway — the storyline of the week",
-          "when": "Fri Aug 21\n7:10 PM ET",
-          "price": "From $79"
+          "teams": "vs Cincinnati Reds",
+          "detail": "Giants return home after the Boston road series featuring new acquisition Rafael Devers",
+          "when": "Mon Aug 24\nGame time TBD",
+          "price": "From $21"
         },
         {
-          "teams": "Giants @ Red Sox",
-          "detail": "Night two of the must-watch Fenway series",
-          "when": "Sat Aug 22\n7:15 PM ET",
-          "price": "From $58"
+          "teams": "vs Cincinnati Reds",
+          "detail": "Middle of the homestand — great mid-week game night at the ballpark",
+          "when": "Tue Aug 25\nGame time TBD",
+          "price": "From $21"
         },
         {
-          "teams": "Giants @ Red Sox",
-          "detail": "Sunday matinee to close out Boston",
-          "when": "Sun Aug 23\n1:35 PM ET",
-          "price": "From $91"
+          "teams": "vs Cincinnati Reds",
+          "detail": "Final Reds game before Arizona comes to town",
+          "when": "Wed Aug 26\nGame time TBD",
+          "price": "From $21"
+        },
+        {
+          "teams": "vs Arizona Diamondbacks",
+          "detail": "New homestand kicks off against the D-backs — late-season Oracle Park at its best",
+          "when": "Thu Aug 27\nGame time TBD",
+          "price": "From $21"
         }
       ],
-      "note": "Giants return home Thursday Aug 27 vs. Arizona Diamondbacks — Oracle Park tickets from ~$21!"
+      "note": "Giants sitting 4th in NL West — great late-summer games with Oracle Park's legendary bay views and zero playoff stress."
     },
     {
-      "section": "🏀 Golden State Valkyries · Road Trip Week",
+      "section": "🏀 Golden State Valkyries · Away Games",
       "games": [
         {
-          "teams": "Valkyries @ Chicago Sky",
-          "detail": "Watch on ION — they're 24-9 and hunting a playoff spot",
-          "when": "Fri Aug 21\n7 PM CT",
-          "price": "Stream on ION"
+          "teams": "@ Chicago Sky",
+          "detail": "Valkyries (25–9) on the road — watch on ION",
+          "when": "Fri Aug 21\n7:00 PM PT",
+          "price": "TV: ION"
         },
         {
-          "teams": "Valkyries @ Minnesota Lynx",
-          "detail": "Watch on USA Network",
-          "when": "Mon Aug 24",
-          "price": "Stream on USA"
+          "teams": "@ Minnesota Lynx",
+          "detail": "Playoff-clinched Valkyries seek first-ever win vs. top-seeded Lynx — watch on USA Network",
+          "when": "Mon Aug 24\n7:30 PM PT",
+          "price": "TV: USA Network"
         },
         {
-          "teams": "Valkyries @ Connecticut Sun",
-          "detail": "Watch on NBC Sports",
-          "when": "Wed Aug 26",
-          "price": "Stream on NBCS"
-        },
-        {
-          "teams": "Valkyries @ New York Liberty",
-          "detail": "Big road test at Barclays Center",
-          "when": "Thu Aug 27",
-          "price": "TBD"
+          "teams": "@ Connecticut Sun",
+          "detail": "Third road game of the week for the hot Valkyries — watch on NBCS",
+          "when": "Wed Aug 26\nEvening PT",
+          "price": "TV: NBCS"
         }
       ],
-      "note": "Second in the Western Conference — a strong week and they clinch a playoff berth. Worth following closely."
+      "note": "No home games this week but the Valkyries (2nd in West, 25–9) are must-watch TV with the playoffs locked in. Host a watch party!"
     }
   ],
   "concerts": [
     {
-      "t": "Noah Kahan – The Great Divide Tour",
-      "w": "Friday · 6:30 PM",
-      "d": "Billions of streams, a reputation for one of the most electric live shows in music right now, and Oracle Park as his stage — Kahan brings support acts Gigi Perez and Annabelle Dinda along for the ride. This one sold out primary and it's not hard to see why. Check resale.",
-      "venue": "Oracle Park · From ~$401 resale",
+      "t": "Noah Kahan",
+      "w": "Friday Aug 21 · 6:30 PM",
+      "d": "The Great Divide Tour lands at Oracle Park with support from Gigi Perez and Annabelle Dinda. Kahan's folk-indie songwriting has turned him into one of the defining artists of his generation, and this is a proper stadium moment for him. Face-value tickets only via Ticketmaster Exchange.",
+      "venue": "Oracle Park, SF · From ~$50",
       "tags": [
-        "Folk-Pop",
-        "Stadium",
-        "Sold Out"
+        "Folk-Indie",
+        "Outdoor",
+        "Stadium"
       ],
       "hi": true
     },
     {
-      "t": "Daniel Caesar – Son of Spergy Tour",
-      "w": "Friday · 7:30 PM",
-      "d": "Night two of Caesar's Chase Center run — his new album hit #1 on the R&B charts and this is the smoothest, most soulful room you'll be in all week. Support from 070 Shake. Dress nice.",
-      "venue": "Chase Center · From ~$88",
+      "t": "Daniel Caesar",
+      "w": "Friday Aug 21 · 7:30 PM",
+      "d": "Night two of Daniel Caesar's Chase Center run with 070 Shake in support. His new album Son of Spergy hit #1 on the R&B chart, so expect a setlist that balances deep cuts with the hits that made him a household name. Smooth, soulful, and genuinely moving live.",
+      "venue": "Chase Center, SF · From ~$82",
       "tags": [
         "R&B",
         "Soul",
@@ -427,184 +435,165 @@
     },
     {
       "t": "Nine Vicious",
-      "w": "Friday · 8 PM",
-      "d": "Hip-hop night at the Fillmore — an intimate setting for a genre that usually lives in bigger rooms. The Fillmore's sound system was basically built for exactly this, and the energy in that room on a Friday night is always something special.",
-      "venue": "The Fillmore · From ~$142",
+      "w": "Friday Aug 21 · 8:00 PM",
+      "d": "The former YSL Records rapper plays the Fillmore in support of his 2026 album Emotions, riding the buzz from his appearances on Kanye's Bully earlier this year. The Fillmore is one of the best rooms in the country for hip-hop — expect an intense, electric set.",
+      "venue": "The Fillmore, SF · From ~$147",
       "tags": [
         "Hip-Hop",
-        "Rap",
-        "Fillmore"
+        "Rap"
       ],
       "hi": false
     },
     {
-      "t": "Little Stranger + Tropidelic",
-      "w": "Saturday · 7:30 PM",
-      "d": "A cross-genre double bill at the Fillmore — alternative indie from Little Stranger and reggae vibes from Tropidelic. Two distinct sounds, one legendary room, and tickets from $66 make this one of the best-value nights of the week.",
-      "venue": "The Fillmore · From ~$66",
+      "t": "Little Stranger, Tropidelic & Jarv",
+      "w": "Saturday Aug 22 · 7:30 PM",
+      "d": "A diverse multi-act bill at the Fillmore pairing Tropidelic's reggae-rock-funk fusion with hip-hop and alt sounds from Little Stranger and Jarv. This is the kind of eclectic Fillmore night that SF does better than anywhere else — show up not knowing everything and leave a fan.",
+      "venue": "The Fillmore, SF · TBD",
       "tags": [
-        "Alternative",
         "Reggae",
-        "Fillmore"
+        "Rock",
+        "Funk",
+        "Hip-Hop"
       ],
       "hi": false
     },
     {
-      "t": "TRAIN – Drops of Jupiter: 25 Years in the Atmosphere",
-      "w": "Wednesday · 6:45 PM",
-      "d": "SF's own Train celebrates 25 years of their landmark album at Shoreline — playing the hits for their hometown crowd at one of the Bay's best outdoor venues. Pure nostalgia, summer air, and a setlist you'll know every word to.",
-      "venue": "Shoreline Amphitheatre, Mountain View · TBD",
+      "t": "Train",
+      "w": "Wednesday Aug 26 · 6:45 PM",
+      "d": "San Francisco's hometown heroes celebrate the 25th anniversary of Drops of Jupiter with a full outdoor show at Shoreline, joined by Barenaked Ladies and Matt Nathanson. Three platinum-certified bands on one bill under the summer sky — this is a legitimately great value evening.",
+      "venue": "Shoreline Amphitheatre, Mountain View · From ~$42",
       "tags": [
         "Rock",
-        "Nostalgia",
+        "Pop-Rock",
         "Outdoor",
-        "Homecoming"
+        "Nostalgia"
       ],
       "hi": false
     },
     {
-      "t": "Courtney Barnett – Creature of Habit Tour",
-      "w": "Wed Aug 26 & Thu Aug 27 · 8 PM",
-      "d": "Two nights of deadpan wit, shaggy storytelling, and sprawling guitar jams from one of indie rock's best live acts. The Fillmore is genuinely the perfect room for her — intimate enough to catch every lyric, big enough to feel the energy.",
-      "venue": "The Fillmore · From ~$76 (Wed) / ~$81 (Thu)",
+      "t": "Courtney Barnett",
+      "w": "Wed Aug 26 & Thu Aug 27 · 8:00 PM",
+      "d": "Three-night Fillmore run with a beautifully structured show: an instrumental first set with Stella Mozgawa, then a deep catalog dive through four albums of essential indie rock. This format is rare and the room is intimate — exactly the kind of experience that doesn't come around often.",
+      "venue": "The Fillmore, SF · TBD",
       "tags": [
         "Indie Rock",
-        "Fillmore",
-        "Two Nights"
+        "Intimate",
+        "Limited Run"
       ],
       "hi": true
     },
     {
-      "t": "Muse – The Wow! Signal Tour",
-      "w": "Thursday · 7 PM",
-      "d": "Sci-fi stage production, orchestral epics, and stadium anthems under the open sky at Shoreline — Muse puts on one of the most visually ambitious live shows in rock, and tickets from $42 make this a genuinely great deal to close the week.",
+      "t": "Muse",
+      "w": "Thursday Aug 27 · 7:00 PM",
+      "d": "The Wow! Signal Tour is built around an album inspired by a 1977 alien radio signal — which is exactly the level of ambition you want from a Muse concept tour. Spectacular production, massive sound, and a setlist that will absolutely wreck you in the best way. One night only at Shoreline.",
       "venue": "Shoreline Amphitheatre, Mountain View · From ~$42",
       "tags": [
-        "Rock",
-        "Arena Rock",
-        "Outdoor"
+        "Alt-Rock",
+        "Prog",
+        "Outdoor",
+        "Spectacle"
       ],
-      "hi": false
+      "hi": true
     }
   ],
   "concertsOngoing": [
     {
-      "t": "Roast Battle Bay Area – Cobb's Comedy Club",
-      "d": "Friday Aug 21 at 9:30 PM — verbal sparring at SF's top comedy room, from $28."
-    },
-    {
-      "t": "Monét X Change – Cobb's & Punch Line",
-      "d": "Saturday Aug 22 at both venues — double your drag comedy options this weekend."
-    },
-    {
-      "t": "Dark and Darker: A Dark Comedy Show – Cobb's",
-      "d": "Sunday Aug 23 at 7:30 PM, from $26 — exactly what it sounds like, and better for it."
-    },
-    {
-      "t": "Jack Grady – Cobb's Comedy Club",
-      "d": "Wednesday Aug 26 at 7:30 PM — limited seats from $190, book fast."
-    },
-    {
-      "t": "Josh Johnson – Punch Line SF",
-      "d": "Thursday Aug 27 at 8 PM — sharp stand-up at the Financial District room, from $34."
-    },
-    {
-      "t": "Gromkie – SF Playhouse",
-      "d": "Running through this week at Union Square's premier mid-size stage, from ~$112."
+      "t": "San Francisco Symphony – Rachmaninoff Piano Concerto No. 2",
+      "d": "Davies Symphony Hall presents Rachmaninoff's beloved concerto — check sfsymphony.org for exact Aug 21–27 dates and remaining seats."
     }
   ],
   "singles": [
     {
-      "t": "Sunset Speed Dating – Ages 30–45",
-      "w": "Saturday · 7–9 PM",
-      "d": "Jigsaw Dating takes over Blackbird for a proper speed dating evening — you meet every single in the room one conversation at a time, then a relaxed social hour lets you circle back to your favorites. Well-organized, low-pressure, actually fun.",
+      "t": "Matt Jereza's Birthday Takeover at F8",
+      "w": "Friday Aug 21 · 10 PM–3 AM",
+      "d": "Two rooms, two very different dancefloors — front room brings global club, hip-hop, baile funk, and Miami bass, while the back room goes deep into house, techno, and hyperpop. It's a stacked guest lineup curated by one of SF's best DJs, and the birthday energy means the crowd is going to be there to have a genuinely great time. 21+.",
       "tags": [
-        "Speed Dating",
-        "30–45",
-        "Social"
-      ],
-      "badge": "$$ · Ticketed",
-      "link": "https://www.eventbrite.com/e/san-francisco-singles-event-sunset-speed-dating-ages-3045-tickets-1995449727852",
-      "linkText": "Get Tickets"
-    },
-    {
-      "t": "SF Singles Mixer 2026",
-      "w": "Saturday · 7–9 PM",
-      "d": "DateFaster runs a mingle-at-your-own-pace mixer with icebreakers, conversation starters, and a complimentary drink on arrival. Relaxed atmosphere, no awkwardness required. Good option if speed dating feels like too much structure.",
-      "tags": [
-        "Mixer",
-        "Mingle",
-        "Social"
-      ],
-      "badge": "$$ · Ticketed",
-      "link": "https://www.eventbrite.com/e/san-francisco-singles-mixer-2026-tickets-1988853392034",
-      "linkText": "Get Tickets"
-    },
-    {
-      "t": "THROTTLE: OGUZ, NEUX, softchaos – 1015 Folsom",
-      "w": "Friday · Doors 10 PM",
-      "d": "Two rooms of hard-hitting Berlin techno at 1015 Folsom — NEUX and softchaos are both making their SF debuts, which gives the night a genuine energy. This is the move if your idea of meeting people involves dancing hard first and talking later.",
-      "tags": [
-        "Techno",
+        "Electronic",
         "Club Night",
+        "Two Rooms",
         "21+"
       ],
-      "badge": "$$ · Ticketed",
-      "link": "https://ra.co/events/2470814",
-      "linkText": "RA Listing"
+      "badge": "$$ · Cover TBD",
+      "link": "https://ra.co/events/us/sanfrancisco",
+      "linkText": "Get Tickets on RA"
     },
     {
-      "t": "DSE Runners Weekend Race",
-      "w": "Sat or Sun · Morning",
-      "d": "DSE Runners puts on a $10 timed race nearly every weekend of the year — Golden Gate Park, Lands End, the beach. All levels welcome, runners of all ages, and the post-race hangs tend to be genuinely social. Best kept secret in SF fitness.",
+      "t": "SpeedSanFrancisco Dating – Ages 36–48",
+      "w": "Week of Aug 21–27 · 7:00–9:00 PM",
+      "d": "Meet 8–12 local singles in one structured, low-pressure evening at Blackbird — the format means you're never stuck in an awkward conversation for more than a few minutes, and the energy in these rooms is genuinely fun. SF's most popular speed dating series runs multiple age brackets weekly, so there's a slot for everyone.",
       "tags": [
-        "Running",
-        "Active",
-        "Social"
+        "Speed Dating",
+        "Singles Mixer",
+        "30s-40s"
       ],
-      "badge": "$ · $10 drop-in",
-      "link": "https://dserunners.com",
-      "linkText": "DSE Runners"
+      "badge": "$$ · Check Eventbrite",
+      "link": "https://www.eventbrite.com/d/ca--san-francisco/speed-dating-events/",
+      "linkText": "Find Your Date on Eventbrite"
     },
     {
-      "t": "Volo Coed Sports Leagues",
-      "w": "Weeknights this week",
-      "d": "Volo runs coed soccer, volleyball, kickball, and basketball across 14 SF neighborhoods — free agents get placed on teams, and post-game bar hangs are basically built into the format. If you're new to the city or just want a weekly crew, this is the move.",
+      "t": "SpeedSanFrancisco Dating – Ages 24–38",
+      "w": "Week of Aug 21–27 · 5:00–7:00 PM",
+      "d": "The younger-skewing bracket at Blackbird is a great early-evening event that frees you up for a full night afterward — meet 8–12 singles, see who you click with, and then make plans accordingly. The format is genuinely low-stakes and the venue is comfortable and unpretentious.",
       "tags": [
-        "Sports League",
-        "Social",
-        "Recurring"
+        "Speed Dating",
+        "Singles Mixer",
+        "20s-30s"
       ],
-      "badge": "$$ · ~$100–165/season",
-      "link": "https://www.volosports.com/san-francisco",
-      "linkText": "Join a League"
+      "badge": "$$ · Check Eventbrite",
+      "link": "https://www.eventbrite.com/d/ca--san-francisco/speed-dating-events/",
+      "linkText": "Find Your Date on Eventbrite"
     },
     {
       "t": "SOMA Nights Street Party",
-      "w": "Thursday · 5–9 PM",
-      "d": "SoMa's monthly free block party closes the week on Folsom Street — local food vendors, pop-ups, art, and the kind of easy outdoor hang where conversations start naturally. Zero cover, great energy, and the neighborhood's creative crowd comes out.",
+      "w": "Thursday Aug 27 · 5–9 PM",
+      "d": "A free outdoor block party on Folsom Street with DJs, drag performances, local vendors, food, and a crowd that's there to have a good time — this is genuinely one of the best free ways to meet people in the city right now. The SoMa creative community shows up in force, the vibe is welcoming and festive, and it costs absolutely nothing to walk in.",
       "tags": [
-        "Street Party",
         "Free",
-        "Social"
+        "Street Party",
+        "LGBTQ+ Friendly",
+        "Outdoor"
       ],
       "badge": "Free",
-      "link": "https://sf.funcheap.com",
+      "link": "https://www.sf.gov/soma-nights",
       "linkText": "More Info"
+    },
+    {
+      "t": "Rooftop Rhythms at Salesforce Park",
+      "w": "Friday–Sunday Aug 21–23",
+      "d": "A three-day rooftop festival celebrating Salesforce Park's 8th birthday — music, DJs, food, and drinks above downtown SF with a crowd that's naturally social and in a good mood. Drop in on any day or all three, and the open rooftop setting makes it easy and natural to strike up a conversation. One of the best low-pressure socializing settings of the week.",
+      "tags": [
+        "Outdoor",
+        "Festival",
+        "Rooftop",
+        "Weekend"
+      ],
+      "badge": "$ · Check Salesforce Park",
+      "link": "https://salesforcetransitcenter.com/park",
+      "linkText": "More Info"
+    },
+    {
+      "t": "Monet X Change at Cobb's Comedy Club",
+      "w": "Friday Aug 21 · 7:00 PM & 9:15 PM",
+      "d": "The RuPaul's Drag Race star brings her sharp, theatrical stand-up to Cobb's for a double-header Friday night — comedy shows are genuinely one of the best date or meetup formats because the shared laughs do all the social heavy lifting for you. Two show times means you can plan around dinner either before or after. 18+.",
+      "tags": [
+        "Comedy",
+        "Date Night",
+        "18+",
+        "Drag"
+      ],
+      "badge": "$$ · From ~$30",
+      "link": "https://www.cobbscomedy.com",
+      "linkText": "Get Tickets at Cobb's"
     }
   ],
   "singlesOngoing": [
     {
-      "t": "19hz.info Bay Area Electronic Listings",
-      "d": "The most complete nightly club and electronic music calendar for SF — check it before any weekend night out."
+      "t": "Volo Sports SF — Recreational Leagues",
+      "d": "Coed volleyball, pickleball, kickball, and more — great recurring leagues for meeting people through activity rather than awkward small talk."
     },
     {
-      "t": "SF Mission Fun Runs",
-      "d": "Casual social runs in the Mission and beyond, multiple days weekly, always free to join."
-    },
-    {
-      "t": "Wayward at F8 – Thu Aug 20",
-      "d": "Kicks off the week Thursday night with deep playa-inspired house and techno, $10 cover, 21+."
+      "t": "Run Club SF & SF Front Runners — Weekly Group Runs",
+      "d": "Free weekly group runs through Golden Gate Park and the Presidio — the social club with a running problem, open to all levels."
     }
   ],
   "playbooks": {
@@ -612,72 +601,87 @@
       {
         "tier": "free",
         "badge": "The Free One",
-        "est": "$0–$15",
-        "title": "Golden Hour to Block Party",
-        "tagline": "Waterfront sunset, neighborhood block party, outdoor movie — all free.",
+        "est": "$0–$20",
+        "title": "Sunset, Stars & No Cover",
+        "tagline": "The perfect Friday night that costs basically nothing",
         "steps": [
           {
-            "time": "5 PM",
-            "title": "Fort Mason Night Market",
-            "detail": "Start at the Off the Grid waterfront market — grab food truck bites and walk along the water while the light is perfect."
+            "time": "4:00 PM",
+            "title": "Fillmore Hot August Night",
+            "detail": "Start at the Lower Fillmore street festival — classic cars, live music, food trucks, and a golden-hour energy that's genuinely hard to beat. It's free and it's festive."
           },
           {
-            "time": "6:30 PM",
-            "title": "Stroll to the Fillmore",
-            "detail": "Head over to the Lower Fillmore for the Hot August Night block party: classic cars, live entertainment, and local vendors on a closed-off street."
+            "time": "5:30 PM",
+            "title": "Food Truck Dinner",
+            "detail": "Grab dinner together from the food trucks at the street festival — walk around, share bites, and pick your favorites. This is the low-pressure version of a dinner date."
           },
           {
-            "time": "8:30 PM",
-            "title": "Sundown Cinema: The Parent Trap",
-            "detail": "Catch the SF Standard's free outdoor screening — bring a blanket, let the classic movie do the work."
+            "time": "7:30 PM",
+            "title": "Stroll to Off the Grid, Fort Mason",
+            "detail": "Head up to Fort Mason for the Friday Night Market — waterfront views, more vendors, live music, and that perfect late-summer SF evening light. Free entry, no agenda."
+          },
+          {
+            "time": "9:00 PM",
+            "title": "Golden Gate Park Sunset Walk",
+            "detail": "End the night with a walk — or find a park bench with a view and just talk. August evenings in SF are rare and warm. Make the most of it."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$80–$130/couple",
-        "title": "Dinner + Courtney Barnett",
-        "tagline": "A great meal in Hayes Valley, then indie rock royalty at the Fillmore.",
+        "est": "$80–$140/person",
+        "title": "Art, Oysters & Courtney Barnett",
+        "tagline": "Culture, great food, and an unforgettable show",
         "steps": [
           {
-            "time": "6 PM",
-            "title": "Drinks at Brass Tacks",
-            "detail": "Warm up in Hayes Valley with cocktails at this relaxed neighborhood bar — good vibe, strong drinks, easy conversation."
+            "time": "5:00 PM",
+            "title": "Jacob Hashimoto: Giant Arc at SFMOMA",
+            "detail": "Start the evening at SFMOMA's admission-free ground floor gallery for the brand-new Jacob Hashimoto installation — immersive, beautiful, and free. This is the kind of thing that sparks real conversation."
           },
           {
-            "time": "7 PM",
-            "title": "Dinner near the Fillmore",
-            "detail": "Grab dinner in the neighborhood — Nopa is a classic for a reason, or keep it casual with something quick on Divisadero."
+            "time": "6:30 PM",
+            "title": "Oysters at Hog Island, Ferry Building",
+            "detail": "Walk to the Ferry Building for Tomales Bay oysters and whatever wine you're feeling. Keep it light and save room — Embarcadero views included."
           },
           {
-            "time": "8 PM",
-            "title": "Courtney Barnett at the Fillmore",
-            "detail": "Two nights running, from $76 — her deadpan wit and shaggy guitar jams in one of SF's most storied rooms. This is a great date show."
+            "time": "7:45 PM",
+            "title": "Drinks at Bar Coto",
+            "detail": "A quick stop at the Cotogna team's new walk-in Jackson Square bar for gelato or a pre-show drink — it's a beautiful new space and genuinely delightful."
+          },
+          {
+            "time": "8:00 PM",
+            "title": "Courtney Barnett at The Fillmore",
+            "detail": "Head to the Fillmore for the Creature of Habit Tour — instrumental first set, deep catalog second set. One of the most thoughtfully constructed shows of the year in one of the world's greatest rooms."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$300–$500/couple",
-        "title": "JouJou + Daniel Caesar",
-        "tagline": "Caviar and champagne, then the smoothest R&B show of the summer.",
+        "est": "$200–$350/person",
+        "title": "JouJou, Pharaohs & Muse",
+        "tagline": "A full sensory blowout from champagne to pyro",
         "steps": [
           {
-            "time": "5:30 PM",
-            "title": "Pre-dinner drinks at True Laurel",
-            "detail": "Start at one of SF's best cocktail bars in SoMa — inventive seasonal drinks and a low-key cool vibe before the main event."
+            "time": "4:00 PM",
+            "title": "Treasures of the Pharaohs — de Young Museum",
+            "detail": "Start your afternoon at the de Young with the U.S.-exclusive Egyptian exhibition — 130 royal treasures spanning 3,000 years, including gold jewelry and granite statues never before seen in North America. Timed entry, so book ahead."
           },
           {
             "time": "6:30 PM",
-            "title": "Dinner at JouJou",
-            "detail": "Oysters, caviar, champagne, and serious buzz from the True Laurel and Lazy Bear team. This is the hottest new table in the city — book ahead."
+            "title": "JouJou for Dinner",
+            "detail": "The splurge dinner of the season — oysters, caviar, champagne, and impeccable French seafood from the True Laurel and Lazy Bear team at their new Design District restaurant. Dress up a little."
           },
           {
-            "time": "7:30 PM",
-            "title": "Daniel Caesar at Chase Center",
-            "detail": "Uber to Chase Center for night two of the Son of Spergy Tour — 070 Shake opens, Caesar closes it out beautifully. From $88 but buy up for better seats."
+            "time": "8:30 PM",
+            "title": "Charmaine's Rooftop for a Nightcap",
+            "detail": "Head to the Proper Hotel rooftop for a cocktail with city skyline views — the perfect transition from dinner to the drive down to Shoreline."
+          },
+          {
+            "time": "7:00 PM",
+            "title": "Muse – The Wow! Signal Tour at Shoreline",
+            "detail": "One of the greatest live rock spectacles on earth, performing a concept album about alien intelligence under the open Shoreline sky. Lasers, pyro, anthems. This is why you come to shows."
           }
         ]
       }
@@ -687,71 +691,76 @@
         "tier": "free",
         "badge": "The Free One",
         "est": "$0",
-        "title": "Museum Morning",
-        "tagline": "Free art, new installation, no plans required.",
+        "title": "Museum Morning, Free Beats",
+        "tagline": "Fill your brain and your ears without spending a dime",
         "steps": [
           {
-            "time": "9:30 AM",
-            "title": "de Young Museum – Pharaohs",
-            "detail": "Bay Area residents get free general admission on Saturdays — walk straight into Treasures of the Pharaohs and take your time with 3,000 years of Egyptian history."
+            "time": "10:00 AM",
+            "title": "Jacob Hashimoto: Giant Arc — SFMOMA",
+            "detail": "The admission-free ground floor gallery just opened its newest major installation this week — give yourself a full hour to sit with it. Immersive solo museum time hits differently than going with a crowd."
           },
           {
-            "time": "11:30 AM",
-            "title": "Picnic at Tunnel Tops",
-            "detail": "Grab grab-and-go from the new Mess Hall at the Presidio and find a spot at Tunnel Tops with Golden Gate Bridge views."
+            "time": "12:00 PM",
+            "title": "Civic Center Soundtrack Free Concert",
+            "detail": "Walk to Fulton Plaza for the free lunchtime concert series — live music, fresh air, and people-watching from noon to 3 PM every Tuesday and Thursday. Bring lunch from a nearby spot."
           },
           {
-            "time": "2 PM",
-            "title": "SFMOMA – Jacob Hashimoto: Giant Arc",
-            "detail": "Head to SFMOMA's Roberts Family Gallery for the brand-new Hashimoto installation — it's free, no ticket needed, and genuinely stunning."
+            "time": "2:00 PM",
+            "title": "Asian Art Museum: This Asian American Life",
+            "detail": "The Asian Art Museum is free on the first Sunday of the month, but worth full admission any day — especially for the current public art series exploring Chinatown life through a child's perspective."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$50–$80",
-        "title": "Run, Brunch, Indie Rock",
-        "tagline": "Earn your weekend with a race, fuel up, then catch a great show.",
+        "est": "$60–$100",
+        "title": "Ballpark, Beers & Baseball",
+        "tagline": "The classic SF solo Monday done right",
         "steps": [
           {
-            "time": "8 AM",
-            "title": "DSE Runners Weekend Race",
-            "detail": "$10 drop-in race at Golden Gate Park or Lands End — all levels welcome, great post-race energy from a genuinely welcoming community."
+            "time": "5:00 PM",
+            "title": "Bar Coto for Pre-Game Gelato",
+            "detail": "The Cotogna team's new Jackson Square all-day café is walk-in only and perfect for a quick solo stop — coffee or a drink and excellent gelato before heading south."
           },
           {
-            "time": "10:30 AM",
-            "title": "Bar Coto for coffee and a sandwich",
-            "detail": "Walk-in only at the Cotogna team's Jackson Square café — grab coffee, a great sandwich, and summer gelato while you're at it."
+            "time": "6:30 PM",
+            "title": "Giants vs. Cincinnati Reds — Oracle Park",
+            "detail": "Grab a single seat and settle in for the homestand opener on Monday, August 24. Late-season games have a relaxed energy — great views of the bay, garlic fries in hand, no pressure."
           },
           {
-            "time": "8 PM",
-            "title": "Courtney Barnett at the Fillmore",
-            "detail": "Solo shows at the Fillmore hit differently — you can move around, get close to the stage, and just lose yourself in the music. From $76."
+            "time": "After the Game",
+            "title": "Toronado for a Nightcap",
+            "detail": "Lower Haight is a short ride from the park — Toronado's 50+ taps and zero pretension make it the ideal solo wind-down. Pick something Belgian and call it a perfect evening."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$150–$250",
-        "title": "Stadium Solo Mission",
-        "tagline": "Oracle Park, Noah Kahan, and the best view in baseball.",
+        "est": "$150–$200",
+        "title": "Pharaohs, Lucania & Muse",
+        "tagline": "A full solo culture day ending in a rock spectacle",
         "steps": [
           {
-            "time": "4 PM",
-            "title": "Lucania at the Ferry Building",
-            "detail": "Pre-show dinner at the A16 team's new southern Italian spot — roasted sardines, pasta, and patio people-watching along the Embarcadero."
+            "time": "10:00 AM",
+            "title": "Treasures of the Pharaohs — de Young",
+            "detail": "Book your timed entry and spend the morning with 3,000 years of Egyptian royal history. San Francisco is the only U.S. city hosting this — take your time, read the panels, let it land."
           },
           {
-            "time": "5:30 PM",
-            "title": "Walk to Oracle Park",
-            "detail": "It's a short walk from the Ferry Building to Oracle Park along the waterfront — one of the best pre-show strolls in any city."
+            "time": "1:00 PM",
+            "title": "Lunch at Lucania — Ferry Building",
+            "detail": "Roasted sardines, house pasta, and a glass of Sicilian white on the Embarcadero patio at the A16 team's new Ferry Building restaurant. Solo lunch at a beautiful waterfront spot is deeply underrated."
           },
           {
-            "time": "6:30 PM",
-            "title": "Noah Kahan – The Great Divide Tour",
-            "detail": "Resale from ~$401 but this is a once-a-summer kind of night. Grab a beer, find your spot, and let the folk anthems do the rest."
+            "time": "3:00 PM",
+            "title": "Wander the Ferry Building Marketplace",
+            "detail": "Walk off lunch through the Ferry Building's artisan stalls — local cheese, olive oil, craft chocolate. Pick up a snack for the show later."
+          },
+          {
+            "time": "7:00 PM",
+            "title": "Muse at Shoreline Amphitheatre",
+            "detail": "Drive down to Mountain View for The Wow! Signal Tour. Solo shows at Shoreline are underrated — you can find the perfect spot on the lawn, no one's waiting on you, and Muse will absolutely take care of the rest."
           }
         ]
       }
@@ -760,72 +769,72 @@
       {
         "tier": "free",
         "badge": "The Free One",
-        "est": "$0–$20/person",
-        "title": "Block Party Birthday",
-        "tagline": "Classic cars, street food, and outdoor movies — the free birthday that actually feels special.",
+        "est": "$20–$40/person",
+        "title": "Rooftop Birthday Kickoff",
+        "tagline": "Start the birthday weekend high above the city — free to enter",
         "steps": [
           {
-            "time": "4 PM",
-            "title": "Hot August Night Block Party – Lower Fillmore",
-            "detail": "Start the birthday at the neighborhood block party — free entry, classic cars, live entertainment, and food trucks for the whole crew."
+            "time": "5:00 PM",
+            "title": "Off the Grid Fort Mason Friday Night Market",
+            "detail": "Kick off the birthday weekend at Fort Mason's waterfront night market — free entry, great food trucks, live music, and bay views as a built-in backdrop. Let the birthday person pick what they're eating."
           },
           {
-            "time": "6:30 PM",
-            "title": "Zeitgeist Beer Garden",
-            "detail": "March the group to the Mission's legendary outdoor dive bar for cold pints, sausages, and zero pretension. Classic SF move."
+            "time": "7:00 PM",
+            "title": "Rooftop Rhythms at Salesforce Park",
+            "detail": "Head downtown for the multi-day rooftop festival celebrating Salesforce Park's 8th birthday — there's something poetic about crashing a park's birthday party for your own. DJs, drinks, city views."
           },
           {
-            "time": "8:30 PM",
-            "title": "Sundown Cinema: The Parent Trap",
-            "detail": "End the night with the free outdoor movie — bring blankets, bring snacks, and let the birthday person pick the spot."
+            "time": "9:00 PM",
+            "title": "Fillmore After Dark — Walk the Neighborhood",
+            "detail": "End the night in the Fillmore with the group's choice of bar — the strip is buzzing on Fridays. If the birthday person wants dancing, F8 on Folsom has Matt Jereza's takeover running until 3 AM."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$60–$100/person",
-        "title": "Fillmore Birthday Weekend",
-        "tagline": "A great dinner, the city's best live music room, and a crew that will talk about this one.",
+        "est": "$100–$160/person",
+        "title": "Train, The Fillmore & Fort Mason",
+        "tagline": "A classic SF birthday with a nostalgic soundtrack",
         "steps": [
           {
-            "time": "6 PM",
-            "title": "Group dinner at Tony's Pizza Napoletana",
-            "detail": "North Beach institution, multiple styles of award-winning pizza, and a festive vibe that works perfectly for a birthday group."
+            "time": "5:00 PM",
+            "title": "Off the Grid Fort Mason — Friday Dinner",
+            "detail": "Start the evening at the waterfront night market for dinner — everyone gets what they want, no reservation stress, and the setting is beautiful. Fort Mason is a birthday crowd pleaser."
           },
           {
             "time": "7:30 PM",
-            "title": "Little Stranger + Tropidelic – The Fillmore",
-            "detail": "Saturday night at the Fillmore — alternative and reggae on the same bill, from $66. The Fillmore's classic concert poster makes a great birthday keepsake (grab one at the box office)."
+            "title": "Drinks at Charmaine's Rooftop",
+            "detail": "Pre-show rooftop birthday drinks at the Proper Hotel with skyline views — toast to the birthday person properly before heading south."
           },
           {
-            "time": "10:30 PM",
-            "title": "After at Vesuvio Café",
-            "detail": "Close the night at the legendary North Beach dive — Beat Generation history, cheap drinks, and a crowd that loves a good time."
+            "time": "6:45 PM",
+            "title": "Train at Shoreline Amphitheatre",
+            "detail": "If the birthday is Wednesday, August 26 — or you can shift the plan — Train's 25th anniversary Drops of Jupiter show with Barenaked Ladies at Shoreline is a legitimately joyful, sing-along-all-night birthday show. From $42 per person."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$200–$350/person",
-        "title": "Stadium Birthday",
-        "tagline": "Noah Kahan at Oracle Park — hard to top as a birthday night.",
+        "est": "$250–$400/person",
+        "title": "Daniel Caesar, JouJou & Bottle Service",
+        "tagline": "A full luxury birthday night the birthday person will not forget",
         "steps": [
           {
-            "time": "5 PM",
-            "title": "Pre-show at Charmaine's rooftop",
-            "detail": "Start with skyline views and strong cocktails at the Proper Hotel rooftop bar — golden hour SF hits different from up here."
+            "time": "6:00 PM",
+            "title": "JouJou — Birthday Dinner",
+            "detail": "Reserve the whole experience — oysters, caviar, champagne flowing — at the hottest new restaurant of 2026. The True Laurel and Lazy Bear team do not miss. This is the dinner the birthday person deserves."
           },
           {
-            "time": "6 PM",
-            "title": "Dinner at Lucania",
-            "detail": "Southern Italian at the Ferry Building from the A16 team — great pastas, seafood, and Embarcadero patio energy before walking to the park."
+            "time": "7:30 PM",
+            "title": "Daniel Caesar at Chase Center",
+            "detail": "Head to Chase Center for Daniel Caesar's Friday night show — smooth R&B for a room full of people who love every song. Floor tickets or club-level for the birthday group."
           },
           {
-            "time": "6:30 PM",
-            "title": "Noah Kahan at Oracle Park",
-            "detail": "The Great Divide Tour at a baseball stadium with the Bay behind it — this is the kind of birthday night people screenshot and remember. Resale from ~$401."
+            "time": "10:30 PM",
+            "title": "Matt Jereza's Birthday Takeover at F8",
+            "detail": "After the show, head to F8 for the birthday takeover — two rooms, stacked lineup, runs until 3 AM. It's someone else's birthday party and now it's yours too. The symmetry is perfect."
           }
         ]
       }
@@ -835,71 +844,76 @@
         "tier": "free",
         "badge": "The Free One",
         "est": "$0–$30/person",
-        "title": "Neighborhood Crawl",
-        "tagline": "Block party, beer garden, then SOMA Nights to close it out.",
+        "title": "Street Fest Friday Crawl",
+        "tagline": "Hit three free events in one Friday night without spending a dime on entry",
         "steps": [
           {
-            "time": "4 PM",
-            "title": "Hot August Night – Lower Fillmore",
-            "detail": "Kick things off at the free neighborhood block party — classic cars, live entertainment, and street food. Great starting energy for a group."
+            "time": "4:00 PM",
+            "title": "Fillmore Hot August Night",
+            "detail": "The crew meets at the Lower Fillmore street fest — classic cars, food trucks, free live entertainment. Get everyone fed and in the mood."
           },
           {
-            "time": "6 PM",
-            "title": "Zeitgeist Beer Garden",
-            "detail": "The Mission's massive outdoor dive bar is perfect for a group — cold pitchers, communal picnic tables, and no dress code required."
+            "time": "6:30 PM",
+            "title": "Off the Grid Fort Mason Night Market",
+            "detail": "Walk or rideshare up to Fort Mason for the waterfront market. More food trucks, craft vendors, live music, and some of the best bay views in the city. Free entry."
           },
           {
-            "time": "5 PM",
-            "title": "SOMA Nights Street Party – Thursday",
-            "detail": "If you're doing Thursday instead, end the night at the free SoMa block party on Folsom Street — vendors, art, food, and a genuinely fun neighborhood crowd."
+            "time": "9:00 PM",
+            "title": "Sundown Cinema: The Parent Trap",
+            "detail": "Find the park screening for The Parent Trap — blankets out, someone brings snacks, everyone knows every line. The perfect end to a free-roaming Friday night with the group."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$60–$90/person",
-        "title": "Muse at Shoreline",
-        "tagline": "Sci-fi spectacle, outdoor amphitheater, your whole crew — perfect Thursday closer.",
+        "est": "$80–$130/person",
+        "title": "Baseball, Beers & Comedy",
+        "tagline": "The ultimate SF squad Tuesday or Wednesday",
         "steps": [
           {
-            "time": "4 PM",
-            "title": "SOMA Nights Street Party",
-            "detail": "Start Thursday with the free SoMa block party — grab street food, browse vendors, and use it as the pre-game."
+            "time": "5:00 PM",
+            "title": "Pre-Game at Rize Up Bakery Café",
+            "detail": "Swing by the new Rize Up café in SoMa for coffee or a snack before the game — ube toast and sesame-scallion options for the adventurous ones in the group."
           },
           {
-            "time": "5 PM",
-            "title": "Drive south to Shoreline",
-            "detail": "Carpool down to Mountain View — Shoreline has great tailgate energy and it's worth arriving before the openers."
+            "time": "6:30 PM",
+            "title": "Giants vs. Reds at Oracle Park",
+            "detail": "Grab a section of seats together for the homestand — Oracle Park garlic fries are non-negotiable. The Reds series runs Monday through Wednesday, so pick your night."
           },
           {
-            "time": "7 PM",
-            "title": "Muse – The Wow! Signal Tour",
-            "detail": "From $42 — one of rock's most visually ambitious live shows under the open sky at one of the Bay's best outdoor venues. This is a great group show."
+            "time": "9:30 PM",
+            "title": "Damon Wayans at Punch Line Comedy Club",
+            "detail": "After the game on Wednesday, head to the Punch Line for Damon Wayans — only 27 tickets left, so book NOW. The Financial District location is easy from the ballpark. End the night laughing."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$150–$250/person",
-        "title": "Techno Night + Late Dinner",
-        "tagline": "JouJou for dinner, then THROTTLE at 1015 Folsom until sunrise.",
+        "est": "$180–$280/person",
+        "title": "Muse, Mess Hall & Rooftop Views",
+        "tagline": "A full-day squad adventure ending in a rock spectacle",
         "steps": [
           {
-            "time": "7 PM",
-            "title": "Dinner at JouJou",
-            "detail": "Oysters, caviar, and champagne at SoMa's hottest new French seafood restaurant — the perfect pre-club dinner for a group that wants to do the night right."
+            "time": "12:00 PM",
+            "title": "Mess Hall Food Hall — The Presidio",
+            "detail": "The new Presidio food hall is perfect for a group lunch — everyone gets what they want, from seafood to Korean to burgers, with a full bar. Grab picnic supplies and spread out at Tunnel Tops afterward."
           },
           {
-            "time": "9:30 PM",
-            "title": "Drinks at True Laurel",
-            "detail": "The best cocktail bar in SoMa is a five-minute walk from JouJou — creative seasonal drinks and a vibe that transitions perfectly into a late night."
+            "time": "2:00 PM",
+            "title": "Tunnel Tops Picnic — The Presidio",
+            "detail": "Golden Gate Bridge views, grass, and the best afternoon hang in the city. The Presidio is genuinely one of SF's greatest assets and August is the perfect time to be there."
           },
           {
-            "time": "10:30 PM",
-            "title": "THROTTLE at 1015 Folsom",
-            "detail": "OGUZ, NEUX, and softchaos across two rooms of Berlin-inspired techno. NEUX and softchaos are both making their SF debuts tonight. Go hard."
+            "time": "5:00 PM",
+            "title": "Charmaine's Rooftop Pre-Show Drinks",
+            "detail": "Head downtown for cocktails with city views before the drive south — get everyone in the right headspace for what's coming."
+          },
+          {
+            "time": "7:00 PM",
+            "title": "Muse at Shoreline Amphitheatre",
+            "detail": "The Wow! Signal Tour at Shoreline — lawn tickets are affordable, the sound is enormous, and Muse is one of the best live bands you can see. A crew at a rock show on a warm August night. That's the whole thing."
           }
         ]
       }
@@ -908,72 +922,92 @@
       {
         "tier": "free",
         "badge": "The Free One",
-        "est": "$0–$20",
-        "title": "Golden Gate Park & Free Art",
-        "tagline": "World-class museums, no admission, gorgeous park — the ideal parent itinerary.",
+        "est": "$20–$40/person",
+        "title": "Park Picnic & A Movie",
+        "tagline": "Low-key, beautiful, and genuinely fun for all ages",
         "steps": [
           {
-            "time": "9:30 AM",
-            "title": "de Young Museum – Free Saturday",
-            "detail": "Bay Area residents get free general admission every Saturday — bring a valid ID and walk straight into Treasures of the Pharaohs and Nengi Omuku: The Gathering."
+            "time": "11:00 AM",
+            "title": "Mess Hall Food Hall — The Presidio",
+            "detail": "Easy, comfortable food hall lunch with something for everyone — the Presidio setting does half the work. Grab extra to-go for a picnic afterward."
           },
           {
-            "time": "12 PM",
-            "title": "Lunch at the Japanese Tea Garden",
-            "detail": "A short walk through Golden Gate Park to the serene Tea Garden — tea, snacks, and a beautiful setting that parents will genuinely love."
+            "time": "1:00 PM",
+            "title": "Treasures of the Pharaohs — de Young Museum",
+            "detail": "The de Young's blockbuster Egyptian exhibition is the kind of thing that impresses visiting parents effortlessly — monumental artifacts, gorgeous museum, Golden Gate Park setting. Book timed entry in advance."
           },
           {
-            "time": "2 PM",
-            "title": "SFMOMA – Jacob Hashimoto: Giant Arc (Free)",
-            "detail": "Head downtown for the brand-new free installation in SFMOMA's Roberts Family Gallery — no ticket required, and it's a genuinely impressive piece to walk through together."
+            "time": "4:00 PM",
+            "title": "Japanese Tea Garden Stroll",
+            "detail": "Right next door to the de Young — a slow, beautiful walk through the oldest public Japanese garden in the U.S., with tea and fortune cookies at the tea house."
+          },
+          {
+            "time": "Sunset",
+            "title": "Sundown Cinema: The Parent Trap",
+            "detail": "End the day at the free outdoor screening of The Parent Trap — blankets, snacks, and a movie the whole family actually loves. A genuinely lovely way to close out an SF day."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$80–$120/couple",
-        "title": "Waterfront Day & The Etruscans",
-        "tagline": "Ferry Building lunch, Legion of Honor exhibit, and a sunset view to send them home happy.",
+        "est": "$100–$160/person",
+        "title": "Etruscans, Lucania & The Fillmore",
+        "tagline": "Culture, great Italian food, and a bit of rock and roll history",
         "steps": [
           {
-            "time": "11 AM",
-            "title": "Brunch at Lucania – Ferry Building",
-            "detail": "Southern Italian right at the Ferry Building from the A16 team — great pasta and seafood, plus the iconic Embarcadero patio for people-watching."
+            "time": "10:00 AM",
+            "title": "The Etruscans — Legion of Honor",
+            "detail": "The Legion of Honor's Etruscan exhibition is a quieter, less-crowded alternative to the de Young blockbuster — equally fascinating and in one of SF's most beautiful museum buildings overlooking the Golden Gate."
           },
           {
-            "time": "1 PM",
-            "title": "Legion of Honor – The Etruscans",
-            "detail": "Drive up to the Legion of Honor for this world-class exhibit on ancient Italian civilization — open through September 20, and the museum's location at Land's End has unbeatable views."
+            "time": "1:00 PM",
+            "title": "Lunch at Lucania — Ferry Building",
+            "detail": "The A16 team's new southern Italian restaurant at the Ferry Building is accessible and excellent — roasted sardines, pasta, and a patio with Embarcadero people-watching. Perfect for a leisurely parent lunch."
           },
           {
-            "time": "4 PM",
-            "title": "Sunset at Lands End Lookout",
-            "detail": "Walk the short trail to the Lands End Lookout after the exhibit — Golden Gate Bridge views at golden hour. This is the SF moment parents tell everyone about."
+            "time": "3:00 PM",
+            "title": "Ferry Building Marketplace Walk",
+            "detail": "Let the parents browse the artisan stalls — Cowgirl Creamery cheese, Blue Bottle coffee, local olive oil. Easy, no-rush afternoon exploring."
+          },
+          {
+            "time": "8:00 PM",
+            "title": "Courtney Barnett at The Fillmore",
+            "detail": "Take the parents to the Fillmore — it's a historic room with an incredible story, and Courtney Barnett's two-set format is genuinely sophisticated and impressive. This is the kind of show parents leave talking about."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$200–$300/couple",
-        "title": "TRAIN Homecoming at Shoreline",
-        "tagline": "A classic SF band, an outdoor amphitheater, and a setlist everyone knows every word to.",
+        "est": "$250–$380/person",
+        "title": "Pharaohs, JouJou & Train",
+        "tagline": "A proper SF blowout with something truly special at every turn",
         "steps": [
           {
-            "time": "4 PM",
-            "title": "Afternoon at the Asian Art Museum",
-            "detail": "Over 18,000 works spanning the full breadth of Asian art history — a genuinely world-class collection at Civic Center, perfect for a leisurely afternoon visit."
+            "time": "10:00 AM",
+            "title": "Treasures of the Pharaohs — de Young Museum",
+            "detail": "Start the day at the de Young with the U.S.-exclusive Egyptian blockbuster — 130 royal artifacts, timed entry, Golden Gate Park. This is the cultural highlight of the SF year and worth anchoring the whole visit around."
           },
           {
-            "time": "5:30 PM",
-            "title": "Early dinner at Bix",
-            "detail": "Supper club glamour in a Gold Rush–era alley in Jackson Square — martinis, duck confit, and the kind of warm, grown-up atmosphere that parents absolutely love."
+            "time": "1:00 PM",
+            "title": "Lunch at Hog Island — Ferry Building",
+            "detail": "Tomales Bay oysters and a seafood lunch on the Embarcadero — fresh, local, and a genuinely quintessential SF experience that out-of-town parents always love."
+          },
+          {
+            "time": "4:00 PM",
+            "title": "Charmaine's Rooftop Cocktails",
+            "detail": "Pre-dinner drinks with the best skyline views in the city at the Proper Hotel. Give them the full panoramic SF moment before dinner."
+          },
+          {
+            "time": "6:00 PM",
+            "title": "JouJou — Dinner",
+            "detail": "The splurge dinner of the season — oysters, champagne, impeccable French seafood from one of SF's most exciting new restaurant teams. This is the dinner worth flying in for."
           },
           {
             "time": "6:45 PM",
-            "title": "TRAIN at Shoreline Amphitheatre",
-            "detail": "SF's hometown band celebrates 25 years of Drops of Jupiter in Mountain View — a nostalgic, feel-good night at one of the Bay's best outdoor venues. They will sing every word."
+            "title": "Train at Shoreline Amphitheatre (Wednesday only)",
+            "detail": "If the visit falls on Wednesday, August 26 — take the parents to see SF's own Train celebrate 25 years of Drops of Jupiter with Barenaked Ladies at Shoreline. Nostalgia, great sound, summer air. A perfect ending."
           }
         ]
       }
