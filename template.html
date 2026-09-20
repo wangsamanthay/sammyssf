@@ -99,7 +99,8 @@
 
   /* HERO CARD */
   .hero-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #E8734A; margin-bottom: 12px; }
-  .highlight-card { background: linear-gradient(135deg, #C4724A 0%, #B85A6A 40%, #7B6B9A 100%); border: none; box-shadow: 0 4px 20px rgba(196,114,74,0.12); }
+  .highlight-card { background: linear-gradient(135deg, #1A1D23 0%, #2A1828 30%, #1E2940 70%, #1A1D23 100%); border: none; box-shadow: 0 4px 24px rgba(0,0,0,0.25); position: relative; overflow: hidden; }
+  .highlight-card::before { content: ''; position: absolute; top: -20px; right: -20px; width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle, rgba(200,150,62,0.06) 0%, transparent 70%); pointer-events: none; }
   .highlight-card h3 { color: #fff; font-size: 1.25rem; }
   .highlight-card .card-when { color: rgba(255,255,255,0.5); }
   .highlight-card p { color: rgba(255,255,255,0.7); }
