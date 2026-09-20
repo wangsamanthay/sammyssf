@@ -69,7 +69,7 @@ console.log(`📝 Total research: ${allResearch.length} chars. Generating JSON..
 // GENERATE JSON
 const gen = await client.messages.create({
   model: "claude-sonnet-4-6",
-  max_tokens: 14000,
+  max_tokens: 16000,
   messages: [{
     role: "user",
     content: `Generate content for "Sammy's SF" weekly guide. Voice: fun, warm, friend-to-friend.
@@ -123,11 +123,23 @@ try { data = JSON.parse(raw); }
 catch(e) {
   console.error("❌ JSON parse failed:", e.message);
   try {
+    // Fix common JSON issues from truncated responses
+    raw = raw.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
+    // Close any unterminated string
+    const openQuotes = (raw.match(/"/g) || []).length;
+    if (openQuotes % 2 !== 0) raw += '"';
+    // Close any open arrays/objects
+    const openBrackets = (raw.match(/\[/g) || []).length - (raw.match(/\]/g) || []).length;
+    const openBraces = (raw.match(/\{/g) || []).length - (raw.match(/\}/g) || []).length;
+    for (let i = 0; i < openBrackets; i++) raw += ']';
+    for (let i = 0; i < openBraces; i++) raw += '}';
+    // Remove trailing commas again after closing
     raw = raw.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
     data = JSON.parse(raw);
-    console.log("✅ Fixed and parsed JSON");
+    console.log("✅ Fixed truncated JSON and parsed successfully");
   } catch(e2) {
-    console.error("❌ Still failed. Keeping existing data.json");
+    console.error("❌ Still failed:", e2.message);
+    console.error("❌ Keeping existing data.json");
     process.exit(1);
   }
 }
