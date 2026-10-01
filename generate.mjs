@@ -194,11 +194,46 @@ Use this structure:
     <div style="font-size:13px;color:rgba(255,255,255,0.5);">${dateRange}</div>
   </div>
   <div style="background:#fff;padding:24px;border:1px solid #eee;border-radius:0 0 12px 12px;">
-    Brief fun intro, top 5-6 picks with prices, one date night plan, link to sammyssf-1.vercel.app, sign-off.
+    STRUCTURE (follow this exactly):
+
+    1. INTRO: 2 fun sentences about this week.
+
+    2. THIS WEEK'S PICKS: Top 5-6 events. For each:
+    <div style="margin-bottom:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <strong style="font-size:14px;color:#333;">Event Name</strong>
+        <span style="font-size:10px;color:#C4724A;">PRICE</span>
+      </div>
+      <div style="font-size:13px;color:#666;margin-top:2px;">Day Date · Time — One line description.</div>
+      <div style="margin-top:4px;"><a href="TICKET_URL" style="font-size:12px;color:#C4724A;text-decoration:none;font-weight:bold;">Get tickets →</a></div>
+    </div>
+    Include real ticket links from the data (Eventbrite, venue sites, etc). If no link, use "sammyssf-1.vercel.app" as the link.
+
+    3. PLAYBOOK OF THE WEEK: Pick the best date night or solo date plan from the playbooks data. Format:
+    <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#999;border-bottom:1px solid #eee;padding-bottom:6px;margin:20px 0 12px;">PLAYBOOK OF THE WEEK</div>
+    <div style="background:#f8f6f4;border-radius:8px;padding:12px 14px;">
+      <strong style="font-size:14px;color:#333;">Plan Title · ~$X for two</strong>
+      <div style="font-size:13px;color:#666;line-height:1.6;margin-top:4px;">
+        Time: Step one<br>Time: Step two<br>Time: Step three
+      </div>
+      <div style="margin-top:8px;"><a href="https://sammyssf-1.vercel.app" style="font-size:12px;color:#C4724A;text-decoration:none;font-weight:bold;">See all 5 playbooks on the site →</a></div>
+    </div>
+
+    4. CTA BUTTON:
+    <div style="text-align:center;margin:24px 0 8px;">
+      <a href="https://sammyssf-1.vercel.app" style="display:inline-block;background:linear-gradient(135deg,#C4724A,#B85A6A);color:#fff;font-size:13px;font-weight:bold;padding:10px 28px;border-radius:100px;text-decoration:none;">See the full guide →</a>
+    </div>
+
+    5. FORWARD NUDGE + SIGN-OFF:
+    <div style="text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid #eee;">
+      <div style="font-size:13px;color:#666;margin-bottom:12px;">Know someone who needs plans this weekend? <a href="mailto:?subject=Check out Sammy's SF&body=Weekly SF event guide: https://sammyssf-1.vercel.app" style="color:#C4724A;font-weight:bold;text-decoration:none;">Forward this →</a></div>
+      <div style="font-family:Georgia,serif;font-size:15px;color:#333;">See you out there.</div>
+      <div style="font-size:11px;color:#999;margin-top:4px;">Sammy's SF · ${dateRange}</div>
+    </div>
   </div>
 </div>
 
-Data: ${JSON.stringify(data).substring(0,4000)}` }]
+Data: ${JSON.stringify(data).substring(0,5000)}` }]
   });
   const body = nr.content.filter(b=>b.type==="text").map(b=>b.text).join("\n").replace(/^```html?\n?/,"").replace(/\n?```$/,"").trim();
   const r = await fetch("https://api.buttondown.com/v1/emails", {
