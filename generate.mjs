@@ -239,7 +239,7 @@ Data: ${JSON.stringify(data).substring(0,5000)}` }]
   const r = await fetch("https://api.buttondown.com/v1/emails", {
     method:"POST",
     headers:{"Content-Type":"application/json",Authorization:`Token ${bk}`,"X-Buttondown-Live-Dangerously":"true"},
-    body: JSON.stringify({subject:`Sammy's SF — ${dateRange}`,body,status:"about_to_send"})
+    body: JSON.stringify({subject:`Sammy's SF — ${dateRange}`,body,status:"draft"})
   });
   if (r.ok) { console.log("✅ Newsletter sent!\n"); }
   else { const errText = await r.text(); console.log("❌ Newsletter failed:", r.status, errText); }
