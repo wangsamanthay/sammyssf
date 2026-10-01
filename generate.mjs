@@ -32,7 +32,7 @@ const r1 = await searchBatch("Concerts & music",
   `Search for San Francisco concerts and live music for the week of ${dateRange}. Do 4-5 searches:
   - General SF concerts this week
   - Stern Grove concert schedule
-  - Fillmore, Independent, Warfield, Great American Music Hall shows
+  - Fillmore, Independent, Warfield, Great American Music Hall, Bottom of the Hill, Rickshaw Stop, The Chapel, August Hall shows
   - Chase Center and Davies Symphony Hall events
   - Greek Theatre Berkeley
   For each: name, venue, date/time, price, 2-sentence description.`);
@@ -41,26 +41,26 @@ const r2 = await searchBatch("Food, bars & events",
   `Search for San Francisco food, restaurants, bars, and events for the week of ${dateRange}. Do 4-5 searches:
   - site:sf.eater.com new restaurant openings
   - site:theinfatuation.com san-francisco restaurants
-  - site:dothebay.com events this week
-  - SF festivals pop-ups markets this week
-  - San Francisco free events this week
+  - site:sfchronicle.com new restaurant bar San Francisco
+  - San Francisco newly opened restaurants Yelp Google Maps
+  - site:dothebay.com events this week OR site:sf.funcheap.com free events OR site:lu.ma San Francisco events
   For each: name, location, date, price, 1-2 sentences.`);
 
 const r3 = await searchBatch("Sports & arts",
   `Search for San Francisco sports and arts for the week of ${dateRange}. Do 4-5 searches:
-  - SF Giants schedule this week (home games at Oracle Park)
-  - Golden State Warriors or Valkyries schedule
-  - SFMOMA, de Young, Asian Art Museum exhibitions
-  - San Francisco comedy shows Cobb's Punch Line
-  - San Francisco theater shows this week
+  - SF Giants schedule this week (home games at Oracle Park) + Golden State Warriors NBA + Golden State Valkyries WNBA + Oakland Ballers
+  - SFMOMA, de Young, Asian Art Museum, Minnesota Street Project, Southern Exposure, Exploratorium After Dark exhibitions
+  - San Francisco comedy shows Cobb's Comedy Club Punch Line Doc's Lab
+  - San Francisco theater shows SF Playhouse ACT Club Fugazi + immersive art pop-up installations
+  - City Lights Booksmith Green Apple book readings poetry this week
   For each: name, venue, date/time, price, 1-2 sentences.`);
 
 const r4 = await searchBatch("Singles & nightlife",
   `Search for San Francisco singles events and nightlife for the week of ${dateRange}. Do 4-5 searches:
   - site:eventbrite.com San Francisco singles mixer speed dating
-  - San Francisco social sports leagues running clubs
-  - site:ra.co San Francisco DJ events
-  - San Francisco EDM events 19hz.info
+  - San Francisco social sports leagues running clubs meetups
+  - site:ra.co San Francisco DJ events electronic music
+  - San Francisco EDM events 19hz.info The Midway Public Works Audio SF 1015 Folsom Halcyon Temple Nightclub
   For each: name, venue, date/time, price, 1-2 sentences.`);
 
 const allResearch = `CONCERTS & MUSIC:\n${r1}\n\nFOOD & EVENTS:\n${r2}\n\nSPORTS & ARTS:\n${r3}\n\nSINGLES & NIGHTLIFE:\n${r4}`;
