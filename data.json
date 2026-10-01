@@ -1,522 +1,637 @@
 {
-  "dateRange": "August 7 \u2013 13, 2026",
-  "issue": "03",
+  "dateRange": "October 2 – October 8, 2026",
+  "issue": "11",
   "picks": [
     {
-      "t": "Outside Lands \u00b7 Golden Gate Park",
-      "w": "Fri\u2013Sun Aug 7\u20139",
-      "d": "THE weekend. Charli XCX, The Strokes, R\u00fcf\u00fcs Du Sol headline. The xx, GloRilla, Death Cab for Cutie, PinkPantheress, Djo, Lucy Dacus, Ethel Cain, Modest Mouse. Three days of music, food, wine, and beer in Golden Gate Park.",
+      "t": "Hardly Strictly Bluegrass 2026",
+      "w": "Fri–Sun Oct 2–4 · All Day",
+      "d": "One of the best free music festivals in the entire country takes over Golden Gate Park for three glorious days. Rilo Kiley, Alison Krauss, Robert Plant, Gillian Welch, Mavis Staples, Los Lobos — the lineup is genuinely absurd for a free event. Pack a blanket, pack snacks, and just go.",
       "cats": "music",
-      "price": "$$$",
-      "badge": "$$$ \u00b7 From $249/day",
+      "price": "free",
+      "badge": "Free",
       "tags": [
-        "Festival",
-        "Music"
+        "Free",
+        "Music",
+        "Outdoors",
+        "Festival"
       ],
       "hero": true,
       "score": 13
     },
     {
-      "t": "Patti LaBelle at Stern Grove",
-      "w": "Sun Aug 9 \u00b7 2pm",
-      "d": "One of the greatest voices alive, for free, in the eucalyptus amphitheater. Free tickets via lottery at sterngrove.org. Destani Wolf opens. Doors at noon.",
-      "cats": "music",
-      "price": "free",
-      "badge": "Free",
+      "t": "Golden State Valkyries WNBA Playoffs — Game 3",
+      "w": "Fri Oct 2 · Evening",
+      "d": "Series tied 1–1, winner takes all — this is the kind of game you'll be telling people you were at. The No. 2 seed Valkyries host the Dallas Wings in a win-or-go-home Game 3 at Chase Center. High-stakes, electric atmosphere, and women's basketball at its absolute best.",
+      "cats": "sports",
+      "price": "$$",
+      "badge": "Playoffs",
       "tags": [
-        "Free",
-        "R&B"
+        "Sports",
+        "WNBA",
+        "Playoffs",
+        "Chase Center"
       ],
+      "hero": false,
+      "score": 12
+    },
+    {
+      "t": "RM x SFMOMA: Between You and Me — Opening",
+      "w": "Opens Sat Oct 3",
+      "d": "BTS's RM co-curates an exhibition with SFMOMA bringing together 200 works including Korean art never before shown in the US — it's a genuinely fascinating collision of pop culture and fine art. Member previews run Oct 1–3, then it opens to the public. This one's going to be a moment.",
+      "cats": "shows",
+      "price": "$$",
+      "badge": "New This Week",
+      "tags": [
+        "Art",
+        "Culture",
+        "Museum",
+        "Opening"
+      ],
+      "hero": false,
       "score": 11
     },
     {
-      "t": "Giants vs. Tigers (3 home games)",
-      "w": "Fri\u2013Sun Aug 7\u20139 \u00b7 Oracle Park",
-      "d": "The homestand is back! Friday 7:15pm, Saturday 4:15pm (Wall of Fame Ceremony), Sunday 1:05pm (Corduroy Hat giveaway). Waterfront baseball is back.",
-      "cats": "sports",
-      "price": "$$",
-      "badge": "$$ \u00b7 From $23",
+      "t": "Parameter × SQUISH Weekender",
+      "w": "Fri Oct 2 – Sun Oct 4",
+      "d": "The #1 RA Pick for the Bay Area this week is a massive three-day weekender in Oakland with SHERELLE, Skee Mask, Objekt, Mala, Zenker Brothers, and a whole lot more. Indoor and outdoor programming, day into night — this is the dance music event of the season. Buy tickets now; it will sell out.",
+      "cats": "nightlife",
+      "price": "$$$",
+      "badge": "RA Pick",
       "tags": [
-        "Baseball"
+        "Electronic",
+        "Nightlife",
+        "Dance",
+        "Selling Out"
       ],
-      "score": 9
+      "hero": false,
+      "score": 11
     },
     {
-      "t": "Pistahan: Filipino Cultural Festival",
-      "w": "Sat\u2013Sun Aug 8\u20139",
-      "d": "San Francisco's annual celebration of Filipino culture. Live performances, art, food vendors, and community. One of the city's most vibrant cultural festivals.",
-      "cats": "food,active",
+      "t": "My Morning Jacket — Seven-Night Fillmore Residency",
+      "w": "Sat Oct 3 – Sun Oct 11 · 8 PM",
+      "d": "The Louisville rock legends kick off a seven-show residency at the Fillmore this Saturday and it is a big deal. MMJ is famous for marathon sets that wander through psychedelia, country, indie rock, and back again — and the Fillmore is the perfect room for it. Catch any night you can grab a ticket.",
+      "cats": "music",
+      "price": "$$",
+      "badge": "Residency",
+      "tags": [
+        "Music",
+        "Rock",
+        "Fillmore",
+        "Residency"
+      ],
+      "hero": false,
+      "score": 10
+    },
+    {
+      "t": "Castro Street Fair — 52nd Annual",
+      "w": "Sun Oct 4 · 11 AM–6 PM",
+      "d": "The 52nd annual Castro Street Fair is one of SF's most beloved community institutions — live performances, dancing, vendors, food, and the whole neighborhood out in full force around Castro and Market. Free, all-ages, and genuinely joyful. Show up and soak it in.",
+      "cats": "shows",
       "price": "free",
       "badge": "Free",
       "tags": [
         "Free",
-        "Festival"
+        "Community",
+        "Culture",
+        "Outdoors"
       ],
+      "hero": false,
+      "score": 10
+    },
+    {
+      "t": "Lucania — Grand Opening at the Ferry Building",
+      "w": "Opening Early October",
+      "d": "The Ferry Building's biggest vacant space has finally found its tenant: Lucania, from the team behind A16, focused on southern Italian cooking with a serious little-fish moment — anchovies, sardines, mussels. The 140-seat dog-friendly patio off Embarcadero Plaza is back, baby. This is the most anticipated restaurant opening of the fall.",
+      "cats": "food",
+      "price": "$$$",
+      "badge": "New Opening",
+      "tags": [
+        "Food",
+        "Italian",
+        "New Opening",
+        "Ferry Building"
+      ],
+      "hero": false,
+      "score": 10
+    },
+    {
+      "t": "Terror vault: SLASHED — Return to Hellville",
+      "w": "Nightly Oct 2–Nov 1 · From 6 PM",
+      "d": "Peaches Christ's theatrical haunted experience returns to the San Francisco Mint and it's bigger and more terrifying than ever. This is SF's premier haunted attraction — not your average jump-scare warehouse, but a full immersive theatrical production. Use code FUNCHEAP for $10 off tickets.",
+      "cats": "shows",
+      "price": "$$",
+      "badge": "October Special",
+      "tags": [
+        "Halloween",
+        "Immersive",
+        "Theater",
+        "SF Mint"
+      ],
+      "hero": false,
       "score": 9
     },
     {
-      "t": "Treasures of the Pharaohs \u00b7 de Young",
-      "w": "Now open \u00b7 Golden Gate Park",
-      "d": "Ancient Egyptian artifacts from the Valley of the Kings making their U.S. debut. 130 rare objects from the tomb of Yuya and Thuya. This will be packed all fall \u2014 go now.",
-      "cats": "shows",
-      "price": "$$",
-      "badge": "$$ \u00b7 ~$30",
+      "t": "Robert Plant at the Orpheum",
+      "w": "Fri Oct 2",
+      "d": "The Led Zeppelin frontman, one of the greatest rock vocalists to ever walk the earth, plays one of SF's most gorgeous historic theaters. This is a bucket-list show in a bucket-list room — the kind of night you replay in your head for years. One night only.",
+      "cats": "music",
+      "price": "$$$",
+      "badge": "One Night Only",
       "tags": [
-        "Exhibition",
-        "New"
+        "Music",
+        "Rock",
+        "Legend",
+        "One Night Only"
       ],
+      "hero": false,
+      "score": 9
+    },
+    {
+      "t": "The Menzingers + Hot Water Music + Weakened Friends",
+      "w": "Tue Oct 6 · Doors 6 PM",
+      "d": "This is a punk dream bill — three of the most emotionally resonant bands in the genre, all on one stage at the Great American Music Hall. The Menzingers are touring behind their new record and Hot Water Music are veterans in the best possible sense. If you have any emo or punk DNA in your body, do not skip this one.",
+      "cats": "music",
+      "price": "$$",
+      "badge": "Must-See Bill",
+      "tags": [
+        "Music",
+        "Punk",
+        "Emo",
+        "GAMH"
+      ],
+      "hero": false,
       "score": 8
     },
     {
-      "t": "Giants vs. Astros (3 home games)",
-      "w": "Mon\u2013Wed Aug 10\u201312 \u00b7 Oracle Park",
-      "d": "Six home games in one week. Monday, Tuesday, Wednesday against Houston. Midweek baseball is underrated \u2014 smaller crowds, better seats, same garlic fries.",
-      "cats": "sports",
-      "price": "$$",
-      "badge": "$$ \u00b7 From $20",
-      "tags": [
-        "Baseball"
-      ],
-      "score": 7
-    },
-    {
-      "t": "The Etruscans \u00b7 Legion of Honor",
-      "w": "Through Sep 20",
-      "d": "Nearly 200 pieces of ancient Italian art, gold jewelry, and ceramics from a civilization that thrived before Rome. The Legion of Honor is worth the trip just for the building.",
+      "t": "Exploratorium After Dark — Unplug and Play",
+      "w": "Thu Oct 8 · 6–10 PM",
+      "d": "Adults-only evening at the Exploratorium on Pier 15 with interactive exhibits, live music, and a cash bar — it's like a science museum but make it a night out. Every After Dark has a different theme and this one is Unplug and Play. Perfect for a Thursday that feels like more than a Thursday.",
       "cats": "shows",
-      "price": "$$",
-      "badge": "$$ \u00b7 ~$20",
+      "price": "$",
+      "badge": "Adults Only",
       "tags": [
-        "Exhibition"
+        "Culture",
+        "Science",
+        "Nightlife",
+        "Pier 15"
       ],
-      "score": 7
+      "hero": false,
+      "score": 8
     },
     {
-      "t": "Los Lobos \u00b7 Mountain Winery",
-      "w": "Fri Aug 7 \u00b7 7:30pm",
-      "d": "East LA legends at the outdoor amphitheater in Saratoga. Bring a layer, grab wine before the show. If you're not at Outside Lands, this is your Friday night.",
+      "t": "Night Garden on Third — Jazz Mafia Series",
+      "w": "Fri–Sun Oct 2–4",
+      "d": "While everyone migrates to Golden Gate Park, the People's Garden in Bayview is hosting three nights of intimate free music: Afrobeat Sunset Friday, Jazz Night Saturday, Soulful Sunset Sunday — all with Jazz Mafia. This is the hidden gem of the weekend, more neighborhood block party than festival.",
+      "cats": "music",
+      "price": "free",
+      "badge": "Free",
+      "tags": [
+        "Free",
+        "Jazz",
+        "Afrobeat",
+        "Bayview",
+        "Community"
+      ],
+      "hero": false,
+      "score": 8
+    },
+    {
+      "t": "Gillian Welch & David Rawlings at the Fillmore",
+      "w": "Fri Oct 2 · 8 PM",
+      "d": "One of Americana's most beloved duos — haunting harmonies, sparse guitar, timeless songs — at one of the best music venues on the planet. If you're not going to Hardly Strictly, this is where you go instead on Friday night. Deeply special.",
       "cats": "music",
       "price": "$$",
-      "badge": "$$ \u00b7 Check tickets",
+      "badge": "One Night Only",
       "tags": [
-        "Concert"
+        "Music",
+        "Americana",
+        "Folk",
+        "Fillmore"
       ],
-      "score": 7
+      "hero": false,
+      "score": 8
     },
     {
-      "t": "Perseids Meteor Shower",
-      "w": "Wed\u2013Thu Aug 12\u201313",
-      "d": "Peak viewing nights for the year's best meteor shower. Get out of the city \u2014 Mt. Tam, Pacifica, or anywhere with dark skies. Free, spectacular, and worth staying up for.",
+      "t": "SF Fleet Week 2026 — Kickoff Weekend",
+      "w": "Sun Oct 4 – Mon Oct 12 · Mostly Free",
+      "d": "Fleet Week officially gets rolling this Sunday — the biggest event of its kind in the US — with ship tours starting Oct 6, the Parade of Ships on Oct 9, and the Air Show Oct 9–11. Free to watch from the waterfront, absolutely spectacular, and a true SF tradition. Block off next weekend too.",
       "cats": "active",
       "price": "free",
       "badge": "Free",
       "tags": [
         "Free",
-        "Outdoors"
+        "Outdoors",
+        "Military",
+        "Waterfront",
+        "Families"
       ],
-      "score": 8
-    },
-    {
-      "t": "Dear San Francisco \u00b7 Club Fugazi",
-      "w": "Multiple shows \u00b7 North Beach",
-      "d": "Circus-theater love letter to SF's weird history. Aerial acrobatics, shadow play, live music. Use code 49FOR49 for $49 tickets.",
-      "cats": "shows",
-      "price": "$$",
-      "badge": "$$ \u00b7 From $49 w/ code",
-      "tags": [
-        "Circus"
-      ],
-      "score": 6
-    },
-    {
-      "t": "Free Museum Day \u00b7 Asian Art Museum",
-      "w": "First Sun of month",
-      "d": "Free admission to explore the permanent collection. Also check Conservatory of Flowers and de Young for free days this month.",
-      "cats": "shows",
-      "price": "free",
-      "badge": "Free",
-      "tags": [
-        "Free",
-        "Museum"
-      ],
-      "score": 6
-    },
-    {
-      "t": "Michael Feinstein \u00b7 Golden Gate Theatre",
-      "w": "Wed Aug 12",
-      "d": "Two-time Emmy and five-time Grammy nominee performing the Great American Songbook. One night only. Intimate and classy.",
-      "cats": "shows",
-      "price": "$$$",
-      "badge": "$$$ \u00b7 Check tickets",
-      "tags": [
-        "Concert"
-      ],
-      "score": 6
+      "hero": false,
+      "score": 7
     }
   ],
   "ongoing": [
     {
-      "t": "Stern Grove Sundays",
-      "d": "Public Enemy (Sat Aug 15 \u2014 special Saturday show), Al Green (Aug 16). Final two shows of the season. All free."
+      "t": "Peter Pan Goes Wrong — SF Playhouse",
+      "d": "Hilarious physical comedy chaos running Tue–Sun through Nov 28 at 450 Post St."
     },
     {
-      "t": "Lunch Break Concerts",
-      "d": "130+ free lunchtime concerts near Market St through late September."
+      "t": "Ha Chong-Hyun Retrospective — Asian Art Museum",
+      "d": "Major Korean abstract painter, through January 25 — free first Sunday Oct 4."
     },
     {
-      "t": "Fort Mason Night Market",
-      "d": "Monthly evening market with food vendors, DJs, and pop-ups along the waterfront."
+      "t": "Minnesota Street Project — Multiple Shows",
+      "d": "Character Development, Alex Weinstein, and Flora + Fauna all running through October in Dogpatch."
     },
     {
-      "t": "Outdoor Yoga at Dolores Park",
-      "d": "Free community yoga Saturdays at 10am. Bring your own mat."
-    },
-    {
-      "t": "Emporium Arcade Bar",
-      "d": "Free classic arcade games, cheap drinks, DJ nights on weekends. Divisadero."
-    },
-    {
-      "t": "City Lights Events",
-      "d": "Free readings, book launches, and poetry nights in North Beach almost every week."
-    },
-    {
-      "t": "Alemany Flea Market",
-      "d": "Every Sunday 7am\u20133pm. SF's oldest flea market. Free to browse, cash only."
+      "t": "Stern Grove Festival 2027",
+      "d": "Season wrapped in August — mark your calendar for next summer's free Sunday concerts."
     }
   ],
   "eats": {
     "new": [
       {
-        "type": "Italian Caf\u00e9 \u00b7 Jackson Square",
-        "name": "Bar Coto",
-        "d": "From the A16 team. Espresso and pastries morning, sandwiches at lunch, low-ABV cocktails at night.",
-        "price": "$ \u00b7 Under $20"
+        "type": "Southern Italian · Embarcadero",
+        "name": "Lucania",
+        "d": "From the A16 team, focused on southern Italy with a beautiful little-fish section and a 140-seat dog-friendly patio finally bringing the Ferry Building's vacant space back to life.",
+        "price": "$$$ · ~$55/pp"
       },
       {
-        "type": "French \u00b7 NoPa",
-        "name": "Esme",
-        "d": "New French restaurant in the old Ragazza space. Pastas, roast chicken, lush back patio.",
-        "price": "$$ \u00b7 $30\u201355/pp"
+        "type": "Café & Salads · NoPa",
+        "name": "Olive Juice",
+        "d": "Warm neighborhood café in a converted paint store doing Mediterranean sandwiches, smoothies, yogurt, bread, and coffee — the anti-austerity wellness spot SF needed.",
+        "price": "$ · ~$18/pp"
       },
       {
-        "type": "French-California \u00b7 Mission",
-        "name": "JouJou",
-        "d": "From the Lazy Bear team. French-leaning, seafood-heavy. One of the most exciting openings of the year.",
-        "price": "$$$ \u00b7 $50\u201380/pp"
+        "type": "Japanese-California · Financial District",
+        "name": "Shinka",
+        "d": "Chef Fumio Yonezawa brings a modern Japanese-California concept to The Jay hotel with seasonal cocktails and omakase-influenced cooking.",
+        "price": "$$$$ · ~$90/pp"
       },
       {
-        "type": "British \u00b7 Hayes Valley",
-        "name": "Dingles Public House",
-        "d": "Fish and chips, sausage rolls, Sunday roast. British food done right on Fulton St.",
-        "price": "$$ \u00b7 $25\u201340/pp"
+        "type": "New Orleans Seafood · Bayview",
+        "name": "Bayview Oyster Bar",
+        "d": "Grilled and raw oysters, clam chowder, and Dungeness crab with garlic noodles from the chef behind the beloved Auntie April's — part of a great wave of new Bayview openings.",
+        "price": "$$ · ~$40/pp"
+      },
+      {
+        "type": "Korean Steakhouse · Pacific Heights",
+        "name": "Monami",
+        "d": "Upscale grill-it-yourself premium beef cuts in the old Noosh space on Fillmore, with both à la carte and tasting menus from the Ssal team.",
+        "price": "$$$$ · ~$100/pp"
+      },
+      {
+        "type": "Mexican Tasting Menu · Bernal Heights",
+        "name": "Chicano Nuevo",
+        "d": "The Infatuation called this $95 tasting menu one of the best things they ate in September — absolutely no skips on the menu.",
+        "price": "$$$ · ~$95/pp tasting"
       }
     ],
     "classic": [
       {
-        "type": "Filipino \u00b7 Mid-Market",
-        "name": "Jollibee",
-        "d": "Now open at 934 Market. Fried chicken, Jolly Spaghetti, Peach Mango Pie. Lines still long.",
-        "price": "$ \u00b7 Under $15"
+        "type": "All-Day Bar & Café · Jackson Square",
+        "name": "Bar Coto",
+        "d": "The Cotogna team's walk-in-only spot for coffee and sandwiches by day, cocktails and small plates by night — one of the best new additions to the neighborhood.",
+        "price": "$$ · ~$25/pp"
       },
       {
-        "type": "American \u00b7 Hayes Valley",
-        "name": "Zuni Caf\u00e9",
-        "d": "Caesar salad, roast chicken for two, the marble bar. SF's forever restaurant.",
-        "price": "$$$ \u00b7 $50\u201380/pp"
+        "type": "Bakery & Café · Russian Hill",
+        "name": "Lorella Bakery & Café",
+        "d": "From the Octavia and Saturbake teams, so expect exceptional pastries alongside very good coffee on Polk Street.",
+        "price": "$ · ~$15/pp"
       },
       {
-        "type": "Mexican \u00b7 Mission",
-        "name": "La Taqueria",
-        "d": "The taco that launched a thousand arguments. No rice, good beans, great carnitas.",
-        "price": "$ \u00b7 Under $15"
+        "type": "Italian · Marina",
+        "name": "A16",
+        "d": "The OG that spawned Lucania — Neapolitan pizza, seasonal salads, and fresh pasta that have been making this neighborhood happy for years.",
+        "price": "$$$ · ~$50/pp"
       },
       {
-        "type": "Italian \u00b7 North Beach",
-        "name": "Tony's Pizza Napoletana",
-        "d": "13-time world pizza champion. Try the Margherita or the Cal Italia. Worth the wait.",
-        "price": "$$ \u00b7 $20\u201335/pp"
+        "type": "Natural Wine Bar · Mission",
+        "name": "Bar Part Time",
+        "d": "Late-night natural wine and dancing from the team behind the forthcoming Downtime — the Mission's best secret for a Tuesday that turns into a Friday.",
+        "price": "$$ · ~$20/pp"
+      },
+      {
+        "type": "Pizza · Berkeley",
+        "name": "Rose Pizzeria",
+        "d": "Chronicle Top 100 #13 — nationally acclaimed Berkeley pizza that will soon be fueling the food menu at the Mission's Downtime bar.",
+        "price": "$$ · ~$30/pp"
+      },
+      {
+        "type": "Cocktail Bar & Tapas · North Beach",
+        "name": "15 Romolo",
+        "d": "The 115-year-old pseudo-speakeasy tucked down a North Beach alley reopens mid-October after a two-year renovation — get in before the crowds rediscover it.",
+        "price": "$$ · ~$25/pp"
       }
     ]
   },
   "bars": [
     {
-      "type": "Wine \u00b7 Mission",
-      "name": "Big Finish Wine",
-      "d": "48 wines on tap, most under $14. Organized by finish. Nobody bothers you here.",
-      "price": "$ \u00b7 Under $14/glass"
+      "type": "Cocktail Bar · North Beach",
+      "name": "Paris 75",
+      "d": "French-inflected North Beach cocktail bar hosting the Singles Speed Dating + DJ Party this Friday — great atmosphere even on a regular night.",
+      "price": "$$ · ~$16/drink"
     },
     {
-      "type": "Japanese \u00b7 SoMa",
-      "name": "Bar Shoji",
-      "d": "Coffee by day, cocktail den at night. Wagyu-fat-washed whisky.",
-      "price": "$$ \u00b7 $18\u201324/cocktail"
+      "type": "Industrial Nightclub · Mission",
+      "name": "Public Works SF",
+      "d": "Community-minded Mission club with a Funktion-One sound system hosting Mind Against all night long this Friday — one of SF's best dance rooms.",
+      "price": "$$ · $31 cover"
     },
     {
-      "type": "Jazz \u00b7 Haight",
-      "name": "The DeLuxe",
-      "d": "Legendary jazz bar. Live music nightly, $5\u201315 cover.",
-      "price": "$ \u00b7 $5\u201315 cover"
+      "type": "Dance Club · SoMa",
+      "name": "1015 Folsom",
+      "d": "40 years as the center of SF nightlife — inclusive, diverse, forward-minded — with DJ Smokey and ilykimchi this Friday.",
+      "price": "$$ · ~$22–31 cover"
     },
     {
-      "type": "Lounge \u00b7 Union Square",
-      "name": "Valley Club",
-      "d": "Hotel G mezzanine. Low lights, velvet, cocoa-butter Negroni.",
-      "price": "$$ \u00b7 $18\u201322/cocktail"
+      "type": "Intimate Club · SoMa",
+      "name": "Audio SF",
+      "d": "250-capacity SoMa club with an eye to the future hosting Madota this Friday — one of the city's best rooms for discovering new electronic music.",
+      "price": "$ · varies"
     },
     {
-      "type": "Neighborhood \u00b7 Haight",
-      "name": "The Green Heron",
-      "d": "Classic cocktails, Miller Lite, no judgment.",
-      "price": "$ \u00b7 $8\u201315/drink"
+      "type": "Multi-Room Club · Dogpatch",
+      "name": "The Midway",
+      "d": "Massive Dogpatch event space and club hosting Elephante Saturday night — great for groups who want big-room energy with room to breathe.",
+      "price": "$$ · ~$23–32 cover"
     },
     {
-      "type": "Korean \u00b7 Mission",
-      "name": "Jilli",
-      "d": "Makgeolli from teapots, popcorn fried chicken. Communal and loud.",
-      "price": "$$ \u00b7 $15\u201320 + food"
+      "type": "Indie Night · SoMa",
+      "name": "Rickshaw Stop",
+      "d": "Beloved neighborhood venue with Ecca Vandal Saturday and Stephen Dawes Wednesday — cozy, unpretentious, and reliably good.",
+      "price": "$ · varies"
     },
     {
-      "type": "Brewery \u00b7 Dogpatch",
-      "name": "Standard Deviant",
-      "d": "Waterfront taproom at Pier 70. Barrel-aged ros\u00e9-saison.",
-      "price": "$ \u00b7 $8\u201312/beer"
+      "type": "Cocktail Bar · SoMa",
+      "name": "F8 / 1192 Folsom",
+      "d": "Home to NO BIAS × Trekkie Trax this Friday — a cross-cultural dance floor mixing Japanese hyper-pop and club sounds with SF underground energy.",
+      "price": "$ · varies"
     },
     {
-      "type": "Sports \u00b7 Castro",
-      "name": "Rikki's",
-      "d": "Women-focused bar. Watch parties, lavender cocktails, wings.",
-      "price": "$ \u00b7 $10\u201316/drink"
+      "type": "Natural Wine & Dance · Mission",
+      "name": "Bar Part Time",
+      "d": "The Mission's best late-night natural wine bar with a side of dancing — the team behind the forthcoming Downtime keeps this place electric.",
+      "price": "$$ · ~$15/drink"
     }
   ],
   "sports": [
     {
-      "section": "\u26be Giants \u00b7 Oracle Park",
+      "section": "🏀 Golden State Valkyries · Chase Center",
       "games": [
         {
-          "teams": "Giants vs. Tigers",
-          "detail": "Friday night",
-          "when": "Fri Aug 7\n7:15 PM",
-          "price": "From $23"
-        },
-        {
-          "teams": "Giants vs. Tigers",
-          "detail": "Wall of Fame Ceremony",
-          "when": "Sat Aug 8\n4:15 PM",
-          "price": "From $23"
-        },
-        {
-          "teams": "Giants vs. Tigers",
-          "detail": "Corduroy Hat giveaway",
-          "when": "Sun Aug 9\n1:05 PM",
-          "price": "From $23"
-        },
-        {
-          "teams": "Giants vs. Astros",
-          "detail": "Monday start",
-          "when": "Mon Aug 10",
-          "price": "From $20"
-        },
-        {
-          "teams": "Giants vs. Astros",
-          "detail": "Tuesday game",
-          "when": "Tue Aug 11",
-          "price": "From $20"
-        },
-        {
-          "teams": "Giants vs. Astros",
-          "detail": "Wednesday game",
-          "when": "Wed Aug 12",
-          "price": "From $20"
+          "teams": "Valkyries vs. Dallas Wings — WNBA Playoffs Game 3",
+          "detail": "Win-or-go-home Game 3 with the series tied 1–1. Must-see women's basketball.",
+          "when": "Friday Oct 2\nTBD",
+          "price": "$60+"
         }
       ],
-      "note": "Six home games this week! Best homestand of the month."
+      "note": "This is the highest-stakes game in SF this week — don't sleep on it."
     },
     {
-      "section": "\ud83c\udfb5 Outside Lands",
+      "section": "🏀 Golden State Warriors · Chase Center",
       "games": [
         {
-          "teams": "Friday: Charli XCX, Turnstile, GRiZ",
-          "detail": "Golden Gate Park",
-          "when": "Fri Aug 7",
-          "price": "$249+"
-        },
-        {
-          "teams": "Saturday: The Strokes, The xx, Djo",
-          "detail": "Golden Gate Park",
-          "when": "Sat Aug 8",
-          "price": "$249+"
-        },
-        {
-          "teams": "Sunday: R\u00fcf\u00fcs Du Sol, Death Cab",
-          "detail": "Golden Gate Park",
-          "when": "Sun Aug 9",
-          "price": "$249+"
+          "teams": "Warriors vs. LA Lakers — NBA Preseason",
+          "detail": "Last home action before the regular season opens Oct 21. Great chance to see the squad without playoff pressure.",
+          "when": "Tuesday Oct 6\n7:00 PM",
+          "price": "$50+"
         }
       ],
-      "note": "3-day passes sold out. Single-day still available."
+      "note": "Regular season home opener is Oct 23 vs. Memphis — mark it."
     },
     {
-      "section": "\u26be Oakland Ballers",
-      "games": [
-        {
-          "teams": "Ballers home games",
-          "detail": "Multiple this week",
-          "when": "Aug 11\u201313",
-          "price": "~$24"
-        }
-      ],
-      "note": "Indie baseball at Raimondi Park. oaklandballers.com for schedule."
+      "section": "⚾ SF Giants · MLB",
+      "games": [],
+      "note": "Regular season wrapped Sept 27. Check MLB.com to see if the Giants are in the postseason — World Series starts Oct 23."
     }
   ],
   "concerts": [
     {
-      "t": "Outside Lands",
-      "w": "Fri\u2013Sun Aug 7\u20139",
-      "d": "Charli XCX, The Strokes, R\u00fcf\u00fcs Du Sol headline. 60+ acts across Golden Gate Park.",
-      "venue": "Golden Gate Park \u00b7 From $249/day",
+      "t": "Robert Plant",
+      "w": "Fri Oct 2",
+      "d": "The Led Zeppelin icon plays the grand and historic Orpheum Theatre for one night only. This is a genuine once-in-a-generation voice in a room that deserves it — if you're on the fence, get off the fence.",
+      "venue": "Orpheum Theatre · TBD",
       "tags": [
-        "Festival"
+        "Rock",
+        "Legend"
       ],
       "hi": true
     },
     {
-      "t": "Patti LaBelle + Destani Wolf",
-      "w": "Sun Aug 9 \u00b7 2pm",
-      "d": "Free at Stern Grove. One of the greatest voices alive. Reserve at sterngrove.org.",
-      "venue": "Stern Grove \u00b7 Free",
+      "t": "Gillian Welch & David Rawlings",
+      "w": "Fri Oct 2 · 8 PM",
+      "d": "Two of Americana's finest — spare, haunting, and utterly transportive — at the Fillmore. A perfect counterpoint to the festival energy outside this weekend. Deeply special show.",
+      "venue": "The Fillmore · TBD",
       "tags": [
-        "R&B"
+        "Americana",
+        "Folk"
+      ],
+      "hi": true
+    },
+    {
+      "t": "John Craigie (with Anna Moss)",
+      "w": "Fri Oct 2 · Show 8 PM",
+      "d": "West Coast storyteller-songwriter John Craigie brings his sharp wit and personal folk-rock to GAMH as part of the Hardly Strictly & GAMH 'Out of the Park' series. Tickets $40–$79.50 and worth every penny for fans of literate, funny, heartfelt songwriting.",
+      "venue": "Great American Music Hall · $40–$79.50",
+      "tags": [
+        "Folk",
+        "Singer-Songwriter"
       ],
       "hi": false
     },
     {
-      "t": "Los Lobos",
-      "w": "Fri Aug 7 \u00b7 7:30pm",
-      "d": "East LA legends at the outdoor amphitheater. The non-Outside Lands Friday option.",
-      "venue": "Mountain Winery \u00b7 Check tickets",
+      "t": "Lyrics Born",
+      "w": "Fri Oct 2 · 9 PM",
+      "d": "Bay Area hip-hop and funk veteran and cornerstone of the local scene for decades. If you want to dance and feel deeply at home in SF on a Friday night, The Chapel is the move.",
+      "venue": "The Chapel · TBD",
       "tags": [
+        "Hip-Hop",
+        "Funk",
+        "Bay Area"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Igorrr with Secret Chiefs 3 & Violent Magic Orchestra",
+      "w": "Sat Oct 3 · Show 7:30 PM",
+      "d": "French avant-garde project blending baroque classical, black metal, breakcore, and operatic vocals — this is genuinely unlike anything else you'll see this year. Secret Chiefs 3 open. For the adventurous listener only, and absolutely worth it.",
+      "venue": "Great American Music Hall · TBD",
+      "tags": [
+        "Avant-Garde",
+        "Metal",
+        "Experimental"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Groundation with The Quasi Kings",
+      "w": "Sun Oct 4 · Show 8 PM",
+      "d": "Sonoma County roots reggae with a jazz-infused, spiritual, conscious sound — the perfect Sunday wind-down after a big festival weekend. Tickets $30–$35.",
+      "venue": "Great American Music Hall · $30–$35",
+      "tags": [
+        "Reggae",
+        "Jazz"
+      ],
+      "hi": false
+    },
+    {
+      "t": "The Menzingers with Hot Water Music & Weakened Friends",
+      "w": "Tue Oct 6 · Doors 6 PM",
+      "d": "A punk dream bill: three of the most beloved bands in the genre, all anthemic and emotionally loaded. The Menzingers are touring behind 'Everything I Ever Saw' and this triple bill at GAMH is the kind of show you'll hear about for months if you miss it.",
+      "venue": "Great American Music Hall · TBD",
+      "tags": [
+        "Punk",
+        "Emo",
         "Rock"
       ],
-      "hi": false
+      "hi": true
     },
     {
-      "t": "Michael Feinstein",
-      "w": "Wed Aug 12",
-      "d": "Great American Songbook. Two-time Emmy nominee. One night only.",
-      "venue": "Golden Gate Theatre",
+      "t": "Lloyd Cole — Solo Electric",
+      "w": "Wed Oct 7",
+      "d": "The British singer-songwriter behind the classic Rattlesnakes album does a rare solo electric set at The Chapel — literate, introspective, and intimate in the best way. A very special evening for anyone who knows his work.",
+      "venue": "The Chapel · TBD",
       "tags": [
-        "Cabaret"
+        "Indie",
+        "Singer-Songwriter"
       ],
       "hi": false
     },
     {
-      "t": "Dear San Francisco",
-      "w": "Multiple shows",
-      "d": "Circus-theater in North Beach. Code 49FOR49 for $49 tickets.",
-      "venue": "Club Fugazi \u00b7 From $49",
+      "t": "JO1",
+      "w": "Thu Oct 8 · 7:30 PM",
+      "d": "One of Japan's biggest pop groups — formed on PRODUCE 101 Japan — brings polished choreography and a devoted global fanbase to the Warfield. If you know, you know; if you don't, prepare to be converted.",
+      "venue": "The Warfield · TBD",
       "tags": [
-        "Circus"
+        "K-Pop",
+        "J-Pop",
+        "Pop"
       ],
       "hi": false
     },
     {
-      "t": "Hairspray",
-      "w": "Through Sep 12",
-      "d": "Broadway musical all summer. Intimate theater, every seat is good.",
-      "venue": "SF Playhouse \u00b7 $35\u201375",
+      "t": "Thinking Fellers Union Local 282 with Bill Orcutt & Famous Mammals",
+      "w": "Thu Oct 8",
+      "d": "SF experimental rock legends reuniting for rare performances alongside avant-guitar hero Bill Orcutt — a night of genuinely adventurous, left-field sound at GAMH. If you care about the deep history of SF's underground music scene, this is unmissable.",
+      "venue": "Great American Music Hall · TBD",
       "tags": [
-        "Broadway"
+        "Experimental",
+        "Rock",
+        "Avant-Garde"
       ],
       "hi": false
     }
   ],
   "concertsOngoing": [
     {
-      "t": "Stern Grove \u2014 Final Shows",
-      "d": "Public Enemy (Sat Aug 15), Al Green (Aug 16). Last two shows of the season. All free."
+      "t": "My Morning Jacket — Fillmore Residency (Oct 3–11)",
+      "d": "Seven-night residency with marathon sets — grab any night you can find a ticket."
     },
     {
-      "t": "The DeLuxe \u00b7 Live Jazz Nightly",
-      "d": "Haight St jazz bar. Jazz, soul, funk nightly. $5\u201315 cover."
+      "t": "Valencia LIVE! — Valencia Street, Mission",
+      "d": "Free monthly block party with live music curated by Carnaval SF lands Thursday Oct 8."
     },
     {
-      "t": "Filoli: Fleetwood Mask",
-      "d": "Aug 14 & 16. Time travel back to the 70s at the Filoli estate in Woodside."
+      "t": "The Bends at Rickshaw Stop — Popscene Soundcheck",
+      "d": "Popscene's reliable indie showcase with rising talent, Friday Oct 2."
+    },
+    {
+      "t": "Ecca Vandal with Speed of Light — Rickshaw Stop",
+      "d": "Australian alt-pop mixing hip-hop, punk, and electro, Saturday Oct 3."
     }
   ],
   "singles": [
     {
-      "t": "Outside Lands \u2014 Go Solo",
-      "w": "Fri\u2013Sun Aug 7\u20139",
-      "d": "60,000 people in one park. Easiest place to talk to strangers all year. Go alone, meet everyone.",
+      "t": "Singles Speed Dating + DJ Party",
+      "w": "Fri Oct 3 · 8 PM",
+      "d": "Speed dating meets DJ night at Paris 75 in North Beach — one of the better cocktail bars in the city, which makes the whole thing feel a lot less awkward than a community center setup. Quick-fire dates, good drinks, and if nothing sparks, you're already at a great bar on a Friday night.",
       "tags": [
-        "Festival"
+        "Speed Dating",
+        "Singles",
+        "North Beach"
       ],
-      "badge": "$$$ \u00b7 From $249",
-      "link": "https://sfoutsidelands.com",
-      "linkText": "Get tickets"
+      "badge": "TBD",
+      "link": "https://www.eventbrite.com",
+      "linkText": "Check Eventbrite"
     },
     {
-      "t": "Pistahan Filipino Festival",
-      "w": "Sat\u2013Sun Aug 8\u20139",
-      "d": "Cultural festival with amazing food, performances, and community energy. Great solo activity.",
+      "t": "Marina Singles Speed Dating — Ages 22–35",
+      "w": "Wed Oct 7",
+      "d": "Fast-paced format designed for younger SF singles at Campus in the Marina — midweek dating that breaks up the grind in the best way. If you're in that age bracket and looking to actually meet people (not just swipe), this is worth the experiment.",
       "tags": [
+        "Speed Dating",
+        "22–35",
+        "Marina"
+      ],
+      "badge": "TBD",
+      "link": "https://www.eventbrite.com",
+      "linkText": "Check Eventbrite"
+    },
+    {
+      "t": "Serious Relationship In-Person Mixer",
+      "w": "Fri Oct 2",
+      "d": "For the SF singles who are done with situationships and actually want to meet someone with the same intent — this mixer at 316 Mason targets professionals looking for something real. Earnest, organized, and a genuinely refreshing alternative to bar-hop mingling.",
+      "tags": [
+        "Mixer",
+        "Serious Dating",
+        "Union Square"
+      ],
+      "badge": "TBD",
+      "link": "https://www.eventbrite.com",
+      "linkText": "Check Eventbrite"
+    },
+    {
+      "t": "Slow Runners Club — Sunday Morning Run",
+      "w": "Sun Oct 4 · 10 AM",
+      "d": "2,300+ member run club that welcomes all paces, meets at the Panhandle, runs through Golden Gate Park, and ends with optional coffee. Post-HSB Sunday run through the park while the festival breaks down around you? Actually kind of perfect. You'll make actual friends here.",
+      "tags": [
+        "Running",
+        "Active",
+        "Social",
         "Free"
       ],
       "badge": "Free",
-      "link": "",
-      "linkText": ""
+      "link": "https://www.meetup.com",
+      "linkText": "Find on Meetup"
     },
     {
-      "t": "Perseids Meteor Shower Group Viewing",
-      "w": "Wed\u2013Thu Aug 12\u201313",
-      "d": "Join astronomy meetup groups heading to dark sky spots. Shared blankets, shared wonder.",
+      "t": "Volo Glow Kickball + Flip Cup — Registration Open",
+      "w": "Register by Thu Oct 9 · League Starts Oct 15",
+      "d": "Thursday-night coed kickball under glow lights at Dolores Park with post-game bar meetups — Volo is genuinely one of the best ways to meet people in SF as a transplant or remote worker. Registration closes Oct 9 so this is your week to pull the trigger.",
       "tags": [
-        "Outdoors"
+        "Sports League",
+        "Social",
+        "Dolores Park",
+        "Coed"
       ],
-      "badge": "Free",
-      "link": "",
-      "linkText": ""
+      "badge": "Seasonal Fee",
+      "link": "https://www.volosports.com",
+      "linkText": "Register at Volo"
     },
     {
-      "t": "Speed Dating at Calicraft",
-      "w": "Check schedule",
-      "d": "Classic speed dating at a brewery. 5-minute rounds, real faces.",
+      "t": "SET: Mind Against — All Night Long at Public Works",
+      "w": "Fri Oct 2 · 9 PM–3 AM",
+      "d": "Not technically a singles event but honestly one of the best places to meet interesting people in SF — dancing at Public Works with a Funktion-One sound system and Mind Against playing the whole night. Show up alone, leave with a group. That's just how this venue works.",
       "tags": [
-        "Speed Dating"
+        "Nightlife",
+        "Electronic",
+        "Dance",
+        "Mission"
       ],
-      "badge": "$$ \u00b7 ~$35\u201355",
-      "link": "https://speeddatingsanfrancisco.com/",
-      "linkText": "See events"
-    },
-    {
-      "t": "Volo Sports Leagues",
-      "w": "Sign up anytime",
-      "d": "Kickball, soccer, volleyball, pickleball \u2014 join solo, get placed on a team.",
-      "tags": [
-        "Social Sports"
-      ],
-      "badge": "$$ \u00b7 ~$60\u201380/season",
-      "link": "https://www.volosports.com/san-francisco",
-      "linkText": "Browse leagues"
+      "badge": "$31+",
+      "link": "https://www.residentadvisor.net",
+      "linkText": "Tickets on RA"
     }
   ],
   "singlesOngoing": [
     {
-      "t": "Running Clubs",
-      "d": "November Project (free, Wed+Fri 6:30am). Midnight Runners (Thu nights)."
+      "t": "Run Club SF — Tue/Thu evenings at Kezar Stadium",
+      "d": "Speedwork Thursdays and wildcard Tuesday runs with post-run social hangouts built in."
     },
     {
-      "t": "SalsaCrazy Saturdays",
-      "d": "Salsa and bachata lessons + open dancing. No partner needed."
-    },
-    {
-      "t": "Book Clubs",
-      "d": "Green Apple Books and City Lights host regular reading groups."
-    },
-    {
-      "t": "Classes",
-      "d": "Pottery at Claymakers, cooking at 18 Reasons, dance at ODC."
+      "t": "Popscene at Rickshaw Stop",
+      "d": "SF's longest-running indie dance night — still one of the best places to meet music people in the city."
     }
   ],
   "playbooks": {
@@ -524,72 +639,72 @@
       {
         "tier": "free",
         "badge": "The Free One",
-        "est": "$0 + food",
-        "title": "Stern Grove & Sunset",
-        "tagline": "Patti LaBelle for free, then sunset at Ocean Beach.",
+        "est": "$0",
+        "title": "Festival Love Story",
+        "tagline": "Blanket, music, park — the classic SF first date.",
         "steps": [
           {
-            "time": "1:00 PM",
-            "title": "Arrive at Stern Grove",
-            "detail": "Get there early for a good spot. Bring a blanket, snacks, and layers. Doors at noon, show at 2."
+            "time": "2 PM",
+            "title": "Hardly Strictly Bluegrass",
+            "detail": "Head to Golden Gate Park and find a good blanket spot near one of the stages. Bring snacks, share them — instant intimacy points. Alison Krauss, Gillian Welch, or Robert Plant depending on the day."
           },
           {
-            "time": "2:00 PM",
-            "title": "Patti LaBelle live",
-            "detail": "One of the greatest voices in music, surrounded by eucalyptus trees. This is a core SF memory."
+            "time": "5 PM",
+            "title": "Golden Gate Park Wander",
+            "detail": "After a few sets, take a walk through the park — Stow Lake, the Conservatory of Flowers, whatever direction feels right. Low pressure, gorgeous, free."
           },
           {
-            "time": "4:30 PM",
-            "title": "Walk to Ocean Beach",
-            "detail": "15-minute drive or 30-minute bus. Watch the sunset, grab tacos at Outerlands or burritos at Underdogs."
+            "time": "7 PM",
+            "title": "Night Garden on Third (Fri–Sun)",
+            "detail": "Swing by the People's Garden in Bayview for Afrobeat, Jazz, or Soul with Jazz Mafia — intimate, local, and completely free. A side of SF most people never see."
           }
         ]
       },
       {
         "tier": "$$",
-        "badge": "The Midrange Move",
-        "est": "~$80\u2013120 for two",
-        "title": "Baseball & Cocktails",
-        "tagline": "Giants game, garlic fries, waterfront drinks.",
+        "badge": "The Good One",
+        "est": "~$80/person",
+        "title": "Art + Oysters",
+        "tagline": "Museums in the afternoon, little fish at dinner.",
         "steps": [
           {
-            "time": "5:30 PM",
-            "title": "Pre-game at Anchor Brewing taproom",
-            "detail": "Grab a beer before the game. Short walk to Oracle Park."
+            "time": "2 PM",
+            "title": "RM x SFMOMA — Between You and Me",
+            "detail": "The new exhibition opened this week and it's a genuine conversation starter — 200 works, Korean art never shown in the US, co-curated by BTS's RM. Tickets ~$25."
           },
           {
-            "time": "7:15 PM",
-            "title": "Giants vs. Tigers",
-            "detail": "Friday night baseball at Oracle Park. Garlic fries, crab sandwich, and the bay behind the outfield."
+            "time": "4:30 PM",
+            "title": "Walk the Embarcadero",
+            "detail": "From SFMOMA to the Ferry Building is a beautiful 15-minute walk along the water. Golden hour, Bay Bridge, the whole thing."
           },
           {
-            "time": "10:00 PM",
-            "title": "Nightcap at Bar Shoji",
-            "detail": "The coffee shop has transformed into a cocktail den. Wagyu-fat-washed whisky in a moody room."
+            "time": "6 PM",
+            "title": "Lucania at the Ferry Building",
+            "detail": "The brand-new restaurant from the A16 team just opened — southern Italian cooking with marinated anchovies, sardines, and mussels on the dog-friendly patio. Reserve early, this one's already buzzing."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "~$300+ for two",
-        "title": "Outside Lands Date",
-        "tagline": "Music festival by day, nice dinner by night.",
+        "est": "~$200/person",
+        "title": "Rock Royalty Night",
+        "tagline": "Dress up, go out, see a legend.",
         "steps": [
           {
-            "time": "12:00 PM",
-            "title": "Outside Lands \u2014 afternoon set",
-            "detail": "Pick a day pass. Saturday has The Strokes and The xx. Wander between stages, eat at the food stalls."
+            "time": "6 PM",
+            "title": "Dinner at Shinka",
+            "detail": "Japanese-California concept at The Jay hotel from Chef Fumio Yonezawa — seasonal cocktails and omakase-inspired cooking to set the tone for the evening."
           },
           {
-            "time": "6:00 PM",
-            "title": "Slip out for dinner",
-            "detail": "Leave before the headliner. Cab to JouJou in the Mission \u2014 new French-California from the Lazy Bear team."
+            "time": "8:30 PM",
+            "title": "Robert Plant at the Orpheum",
+            "detail": "Friday Oct 2 — the Led Zeppelin frontman at one of SF's most beautiful historic theaters. One night only. This is the centerpiece of the evening and worth the splurge entirely on its own."
           },
           {
-            "time": "9:00 PM",
-            "title": "Back for the headliner",
-            "detail": "Return for The Strokes or whoever's closing. The park at night is magic."
+            "time": "After",
+            "title": "Nightcap at 15 Romolo",
+            "detail": "The 115-year-old North Beach pseudo-speakeasy just reopened after two years of renovation. Down a small alley, great cocktails, very good energy. End the night right."
           }
         ]
       }
@@ -597,78 +712,73 @@
     "solo": [
       {
         "tier": "free",
-        "badge": "The Wander",
-        "est": "Free + coffee",
-        "title": "Park, Music & Stars",
-        "tagline": "Golden Gate Park, free music, meteor shower.",
+        "badge": "The Free One",
+        "est": "$0",
+        "title": "Solo Festival Saturday",
+        "tagline": "Lose yourself in the crowd — in the best way.",
         "steps": [
           {
-            "time": "10:00 AM",
-            "title": "Coffee and the park",
-            "detail": "Walk through Golden Gate Park. Japanese Tea Garden, bison paddock, botanical garden."
+            "time": "11 AM",
+            "title": "Hardly Strictly Bluegrass",
+            "detail": "Show up solo to Hardly Strictly and just wander between stages. No coordination required, no one to compromise with — this is the ideal solo festival experience."
           },
           {
-            "time": "2:00 PM",
-            "title": "Patti LaBelle at Stern Grove",
-            "detail": "Free concert. Bring a blanket, close your eyes. Nobody knows you're here."
+            "time": "3 PM",
+            "title": "Golden Gate Park Stroll",
+            "detail": "Duck out of the crowds and take yourself on a quiet walk through the park. Recharge before round two."
           },
           {
-            "time": "10:00 PM",
-            "title": "Perseids Meteor Shower",
-            "detail": "Drive to Mt. Tam or Pacifica. Bring a blanket. The sky puts on a show."
+            "time": "6 PM",
+            "title": "Free Rooftop Stargazing — SF State",
+            "detail": "Friday Oct 2 at 7 PM, SF State's free public stargazing with a giant telescope. Check weather-dependent updates before heading over. A surprisingly peaceful solo close to the day."
           }
         ]
       },
       {
         "tier": "$$",
-        "badge": "Treat Yourself",
-        "est": "~$60\u201390",
-        "title": "Museum, Wine & Jazz",
-        "tagline": "A day that feels like a vacation.",
+        "badge": "The Good One",
+        "est": "~$60",
+        "title": "Museum + Midweek Show",
+        "tagline": "Culture in the afternoon, punk rock at night.",
         "steps": [
           {
-            "time": "10:30 AM",
-            "title": "Treasures of the Pharaohs",
-            "detail": "De Young museum. Ancient Egyptian artifacts. Go at your own pace."
+            "time": "2 PM",
+            "title": "de Young Museum — Free Tuesday",
+            "detail": "First Tuesday of the month means free admission to the permanent galleries. American art, Pacific collections, and more — take your time, no agenda."
           },
           {
-            "time": "1:00 PM",
-            "title": "Lunch in the park",
-            "detail": "De Young cafe or walk to Nopalito on 9th Ave."
+            "time": "5 PM",
+            "title": "Bar Coto for a Pre-Show Drink",
+            "detail": "Walk-in only bar and café from the Cotogna team in Jackson Square — great cocktails, good gelato, and the right vibe for solo pre-show time."
           },
           {
-            "time": "3:00 PM",
-            "title": "Wine at Big Finish",
-            "detail": "48 wines on tap. Grab a seat at the bar, try a few glasses."
-          },
-          {
-            "time": "8:00 PM",
-            "title": "Jazz at The DeLuxe",
-            "detail": "Live music on Haight. $5\u201310 cover. Perfect solo evening."
+            "time": "7 PM",
+            "title": "The Menzingers + Hot Water Music at GAMH",
+            "detail": "Tuesday Oct 6 — solo show-going is underrated and GAMH is the perfect room for it. Doors at 6, lose yourself in the set, feel very alive."
           }
         ]
       },
       {
         "tier": "$$$",
-        "badge": "The Reset Day",
-        "est": "~$250+",
-        "title": "Outside Lands Solo",
-        "tagline": "Go alone. Leave with stories.",
+        "badge": "The Splurge",
+        "est": "~$130",
+        "title": "Adults-Only Thursday",
+        "tagline": "Science, cocktails, and a dance floor — treat yourself.",
         "steps": [
           {
-            "time": "12:00 PM",
-            "title": "Outside Lands",
-            "detail": "Solo festival days are underrated. You go where you want, see who you want, eat what you want."
+            "time": "5:30 PM",
+            "title": "Dinner at Lorella Bakery & Café",
+            "detail": "Early dinner at the new Russian Hill bakery-café from the Octavia and Saturbake teams. Exceptional pastries, great coffee, relaxed pre-evening energy."
           },
           {
-            "time": "5:00 PM",
-            "title": "Find the food stalls",
-            "detail": "Outside Lands has some of SF's best restaurants doing festival menus. Eat your way through."
+            "time": "6 PM",
+            "title": "Exploratorium After Dark — Unplug and Play",
+            "detail": "Adults-only evening at Pier 15 with interactive exhibits, live music, and a cash bar. One of SF's most uniquely fun nights out. ~$20, 18+ only."
           },
           {
-            "time": "8:00 PM",
-            "title": "Close out with the headliner",
-            "detail": "Dance alone in the crowd. Nobody cares. Everyone's having the same experience."
+            "time": "10 PM",
+            "title": "JO1 at the Warfield",
+            "detail": "Thursday Oct 8 at 7:30 PM — catch the end of the night with one of Japan's biggest pop acts at one of SF's best mid-size venues. Polished, high-energy, genuinely fun."
           }
         ]
       }
@@ -676,73 +786,73 @@
     "birthday": [
       {
         "tier": "free",
-        "badge": "Low-Key Birthday",
-        "est": "Free + dinner",
-        "title": "Festival & Group Dinner",
-        "tagline": "No planning required. Just show up.",
+        "badge": "The Free One",
+        "est": "$0",
+        "title": "Festival Birthday",
+        "tagline": "The whole park is your party.",
         "steps": [
           {
-            "time": "2:00 PM",
-            "title": "Stern Grove \u2014 Patti LaBelle",
-            "detail": "Meet everyone at the amphitheater. Free, outdoors, legendary performer. Easy birthday activity."
+            "time": "12 PM",
+            "title": "Golden Gate Park Picnic Setup",
+            "detail": "Claim your spot at Hardly Strictly Bluegrass — assign someone to blanket duty, bring the birthday snacks and drinks, make it a proper setup."
           },
           {
-            "time": "5:00 PM",
-            "title": "Dolores Park",
-            "detail": "Grab Bi-Rite ice cream. Sunset on the hill. Bring a speaker."
+            "time": "2 PM",
+            "title": "Hardly Strictly Bluegrass — Full Day",
+            "detail": "Rotate through stages, discover a new artist, watch an icon. The birthday person picks the sets. Alison Krauss, Mavis Staples, Los Lobos — take your pick."
           },
           {
-            "time": "7:00 PM",
-            "title": "Dinner at Jilli",
-            "detail": "Korean communal food. Makgeolli, fried chicken. Tell them it's your birthday."
+            "time": "6 PM",
+            "title": "Castro Street Fair Wind-Down (Sunday)",
+            "detail": "If it's a Sunday birthday, pivot from the park to the Castro Street Fair for the last couple hours — dancing, vendors, and the whole neighborhood celebrating alongside you."
           }
         ]
       },
       {
         "tier": "$$",
-        "badge": "The Night Out",
-        "est": "~$80/person",
-        "title": "Giants Game Birthday",
-        "tagline": "Garlic fries and a scoreboard birthday message.",
+        "badge": "The Good One",
+        "est": "~$75/person",
+        "title": "Haunted Birthday",
+        "tagline": "October birthdays deserve a spooky night out.",
         "steps": [
           {
-            "time": "5:00 PM",
-            "title": "Pre-game drinks",
-            "detail": "Meet the crew at the Yard at Mission Rock, right next to the ballpark."
+            "time": "6 PM",
+            "title": "Dinner at Bayview Oyster Bar",
+            "detail": "New Orleans-style seafood in Bayview — grilled and raw oysters, clam chowder, Dungeness crab with garlic noodles. Festive, delicious, and supports a great new neighborhood spot."
           },
           {
-            "time": "7:15 PM",
-            "title": "Giants vs. Tigers",
-            "detail": "Friday night baseball. You can get a birthday message on the scoreboard if you call ahead."
+            "time": "8 PM",
+            "title": "Terror Vault: SLASHED at the SF Mint",
+            "detail": "Peaches Christ's theatrical haunted experience is the perfect October birthday activity. Running nightly from 6 PM — use code FUNCHEAP for $10 off. Groups love this one."
           },
           {
-            "time": "10:00 PM",
-            "title": "Bars in the Mission",
-            "detail": "Big Finish for wine, then Green Heron for shots. Birthday person drinks free (morally, not legally)."
+            "time": "After",
+            "title": "Nightcap at 1015 Folsom",
+            "detail": "DJ Smokey and ilykimchi on Friday Oct 2, or whatever's on when you finish. Forty years of SF nightlife history and the city's most inclusive dance floor. Happy birthday."
           }
         ]
       },
       {
         "tier": "$$$",
-        "badge": "Main Character Birthday",
-        "est": "~$300+/person",
-        "title": "Outside Lands Birthday",
-        "tagline": "Three days. Your whole crew. Golden Gate Park.",
+        "badge": "The Splurge",
+        "est": "~$200/person",
+        "title": "Legendary Birthday",
+        "tagline": "Go big. You only turn this age once.",
         "steps": [
           {
-            "time": "12:00 PM",
-            "title": "Outside Lands \u2014 full day",
-            "detail": "Get 3-day passes for the group. This IS the birthday party."
+            "time": "6 PM",
+            "title": "Dinner at Monami",
+            "detail": "The new upscale Korean steakhouse on Fillmore — grill-it-yourself premium beef cuts, tasting menus, scallion pancakes. Perfect for a birthday group who wants an experience, not just a meal."
           },
           {
-            "time": "6:00 PM",
-            "title": "Group dinner break",
-            "detail": "Sneak out to Esme in NoPa. New French spot with a back patio. Toast properly."
+            "time": "8:30 PM",
+            "title": "My Morning Jacket at the Fillmore",
+            "detail": "Seven-night residency, Oct 3–11 — grab the birthday night and let MMJ play your soundtrack. Marathon sets, the Fillmore's legendary room, and a band at the absolute top of their game."
           },
           {
-            "time": "9:00 PM",
-            "title": "Back for the headliner",
-            "detail": "Charli XCX on Friday, The Strokes on Saturday, R\u00fcf\u00fcs on Sunday. Pick your night."
+            "time": "After",
+            "title": "The Midway — Elephante (Sat Oct 3)",
+            "detail": "If the birthday falls on Saturday, close out at The Midway in Dogpatch for Elephante's melodic house set. Multi-room, big sound, great for a group that wants to keep going."
           }
         ]
       }
@@ -750,78 +860,73 @@
     "friends": [
       {
         "tier": "free",
-        "badge": "The Classic SF Day",
-        "est": "Free + food",
-        "title": "Park, Bridge & Music",
-        "tagline": "Greatest hits, done right.",
+        "badge": "The Free One",
+        "est": "$0",
+        "title": "Classic SF Friend Day",
+        "tagline": "The kind of Saturday people move to SF for.",
         "steps": [
           {
-            "time": "10:00 AM",
-            "title": "Coffee at Equator in the Presidio",
-            "detail": "Good coffee, incredible setting. Walk toward the bridge from here."
+            "time": "10 AM",
+            "title": "Slow Runners Club — Panhandle",
+            "detail": "Sunday Oct 4 at 10 AM — meet at Baker & Oak and run through Golden Gate Park together. End with coffee nearby. All paces welcome, totally social."
           },
           {
-            "time": "11:00 AM",
-            "title": "Walk the Golden Gate Bridge",
-            "detail": "Halfway and back. Your friends will take 400 photos."
+            "time": "12 PM",
+            "title": "Hardly Strictly Bluegrass — Afternoon Sets",
+            "detail": "Walk straight from your run into the festival. Find a stage, find a spot, let the afternoon happen. This is peak SF."
           },
           {
-            "time": "1:00 PM",
-            "title": "Lunch in Japantown",
-            "detail": "If Pistahan is happening this weekend, even better. Otherwise, Marufuku for ramen."
-          },
-          {
-            "time": "2:00 PM",
-            "title": "Patti LaBelle at Stern Grove",
-            "detail": "Free concert. Bring a blanket. Your friends won't believe this is free."
+            "time": "5 PM",
+            "title": "Castro Street Fair",
+            "detail": "Sunday Oct 4, 11 AM–6 PM — catch the last hour of the fair before it wraps. Dancing, vendors, live performances, and the whole neighborhood out. Free and joyful."
           }
         ]
       },
       {
         "tier": "$$",
-        "badge": "Show Them Your SF",
-        "est": "~$50\u201380/person",
-        "title": "Mission Day \u2192 Giants Night",
-        "tagline": "Neighborhoods by day, baseball by night.",
+        "badge": "The Good One",
+        "est": "~$60/person",
+        "title": "Art Crawl + Drinks",
+        "tagline": "Culture, conversation, and cocktails.",
         "steps": [
           {
-            "time": "2:00 PM",
-            "title": "Dolores Park",
-            "detail": "Bi-Rite ice cream, blanket, skyline view. Peak SF."
+            "time": "1 PM",
+            "title": "Minnesota Street Project — Dogpatch",
+            "detail": "Multiple shows running: Character Development, Alex Weinstein, Flora + Fauna. Free galleries across multiple spaces — spend an hour wandering and letting people have opinions."
           },
           {
-            "time": "4:00 PM",
-            "title": "Walk Valencia Street",
-            "detail": "Paxton Gate, Sightglass coffee, bookstores."
+            "time": "3 PM",
+            "title": "RM x SFMOMA — Opens Oct 3",
+            "detail": "Head to SFMOMA for the big new exhibition — BTS's RM co-curating 200 works including never-before-shown Korean art. Great friend group conversation fodder."
           },
           {
-            "time": "7:15 PM",
-            "title": "Giants vs. Tigers",
-            "detail": "Friday night Oracle Park. Waterfront baseball, garlic fries."
+            "time": "6 PM",
+            "title": "Bar Coto — Jackson Square",
+            "detail": "Walk-in-only bar from the Cotogna team for cocktails, small plates, and excellent gelato. The right place to debrief everything you just saw."
           }
         ]
       },
       {
         "tier": "$$$",
-        "badge": "The Weekend Send",
-        "est": "~$300+/person",
-        "title": "Outside Lands Weekend",
-        "tagline": "The big one. Plan nothing else.",
+        "badge": "The Splurge",
+        "est": "~$150/person",
+        "title": "Punk Rock Friend Night",
+        "tagline": "Dinner, then the most cathartic show of the week.",
         "steps": [
           {
-            "time": "12:00 PM",
-            "title": "Outside Lands",
-            "detail": "Get the 3-day pass. This is the weekend."
+            "time": "5:30 PM",
+            "title": "Dinner at Chicano Nuevo — Bernal Heights",
+            "detail": "The $95 tasting menu with absolutely no skips — the Infatuation called it one of the best things they ate in September. Book the table, let the kitchen do the work."
           },
           {
-            "time": "6:00 PM",
-            "title": "Dinner at JouJou",
-            "detail": "New French-California from the Lazy Bear team. The buzzy opening."
+            "time": "7 PM",
+            "title": "The Menzingers + Hot Water Music at GAMH",
+            "detail": "Tuesday Oct 6, doors at 6 — the punk dream bill of the year. Three beloved bands, one stage, one room that's built for exactly this kind of show. Sing every word."
           },
           {
-            "time": "9:00 PM",
-            "title": "Back for headliners",
-            "detail": "The Strokes, Charli XCX, R\u00fcf\u00fcs Du Sol. Every night is different."
+            "time": "After",
+            "title": "Bar Part Time — Mission",
+            "detail": "The late-night natural wine bar from the Downtime team for one last drink and maybe some dancing. The right way to close a very good Tuesday."
           }
         ]
       }
@@ -829,83 +934,73 @@
     "parents": [
       {
         "tier": "free",
-        "badge": "The Chill Day",
-        "est": "Free + lunch",
-        "title": "Market, Views & Easy Lunch",
-        "tagline": "Nothing rushed, nothing loud.",
+        "badge": "The Free One",
+        "est": "$0",
+        "title": "Festival Family Day",
+        "tagline": "The kids will talk about this one.",
         "steps": [
           {
-            "time": "10:00 AM",
-            "title": "Ferry Building farmers market",
-            "detail": "Saturday morning market. Pastries, olive oils, waterfront walk. Parents love this."
+            "time": "11 AM",
+            "title": "Hardly Strictly Bluegrass — Golden Gate Park",
+            "detail": "All-ages, free, and completely massive — set up the blanket early, let the kids roam, and enjoy music you actually want to listen to. Oct 2–4."
           },
           {
-            "time": "12:00 PM",
-            "title": "Lunch on the water",
-            "detail": "Hog Island oysters or takeaway on the benches with Bay Bridge views."
+            "time": "2 PM",
+            "title": "Golden Gate Park Exploration",
+            "detail": "Between sets, take a family wander — Stow Lake, the buffalo paddock, the Dutch Windmill, the Conservatory of Flowers. There's genuinely no better free afternoon in SF."
           },
           {
-            "time": "2:00 PM",
-            "title": "Twin Peaks",
-            "detail": "360\u00b0 view of the city. Your mom will say 'wow' at least four times."
-          },
-          {
-            "time": "4:00 PM",
-            "title": "Coffee in Noe Valley",
-            "detail": "24th Street. Quiet, charming, easy walking."
+            "time": "4 PM",
+            "title": "Castro Street Fair (Sunday Oct 4)",
+            "detail": "All-ages, 11 AM–6 PM — live performances, vendors, community organizations, and a joyful neighborhood energy that's great for families. A gentle, welcoming end to the day."
           }
         ]
       },
       {
         "tier": "$$",
-        "badge": "The Culture Day",
-        "est": "~$60\u2013100/person",
-        "title": "Museums & Nice Dinner",
-        "tagline": "Art, history, and somewhere impressive for dinner.",
+        "badge": "The Good One",
+        "est": "~$50/adult, kids free or reduced",
+        "title": "Museum Day with the Fam",
+        "tagline": "Curious kids + curious parents = perfect Sunday.",
         "steps": [
           {
-            "time": "10:30 AM",
-            "title": "Treasures of the Pharaohs",
-            "detail": "Ancient Egyptian artifacts just opened at the de Young. Impressive and easy to navigate."
+            "time": "10 AM",
+            "title": "Asian Art Museum — Free First Sunday",
+            "detail": "Sunday Oct 4 is free first Sunday — Garuda in Bali and the Ha Chong-Hyun retrospective are both running. Kids love the objects and the scale; parents love the free part."
           },
           {
-            "time": "1:00 PM",
-            "title": "Lunch in Hayes Valley",
-            "detail": "Absinthe for French brasserie, or walk Hayes Street."
+            "time": "1 PM",
+            "title": "Lunch at Lorella Bakery & Café — Russian Hill",
+            "detail": "New bakery from the Octavia and Saturbake teams — great pastries, good sandwiches, coffee, and a relaxed pace that works well with kids in tow."
           },
           {
-            "time": "3:00 PM",
-            "title": "Japanese Tea Garden",
-            "detail": "Golden Gate Park. Peaceful, beautiful. Green tea and cookies."
-          },
-          {
-            "time": "6:30 PM",
-            "title": "Dinner at Esme",
-            "detail": "New French restaurant in NoPa. The kind of place your parents will tell their friends about."
+            "time": "3 PM",
+            "title": "Disney Descendants & Zombies — Chase Center",
+            "detail": "Saturday Oct 3 at 7 PM — if you've got tweens or teens, this is the ticket. Live concert tour with the cast of Descendants and Zombies at Chase Center. They will lose their minds."
           }
         ]
       },
       {
         "tier": "$$$",
-        "badge": "The Big Night",
-        "est": "~$120\u2013180/person",
-        "title": "The Etruscans & Supper",
-        "tagline": "World-class art, world-class dinner.",
+        "badge": "The Splurge",
+        "est": "~$120/adult",
+        "title": "Waterfront & Warfront",
+        "tagline": "Food, ships, and the kind of afternoon kids remember forever.",
         "steps": [
           {
-            "time": "11:00 AM",
-            "title": "The Etruscans at Legion of Honor",
-            "detail": "Nearly 200 pieces of ancient Italian art and gold jewelry. The building alone is worth the trip."
+            "time": "11 AM",
+            "title": "Lucania — Lunch at the Ferry Building",
+            "detail": "The brand-new southern Italian restaurant from the A16 team just opened — dog-friendly patio, beautiful waterfront setting, great food. A genuinely special family lunch."
           },
           {
-            "time": "1:00 PM",
-            "title": "Lunch at Cliff House area",
-            "detail": "Views of the Pacific. Easy drive from Legion of Honor."
+            "time": "1 PM",
+            "title": "Embarcadero Waterfront Walk",
+            "detail": "Walk the waterfront toward Pier 15 — the views, the water, the general magic of the Embarcadero on a sunny October afternoon. Stop at the Giant Sculpture Farewell Party if it's Friday Oct 2."
           },
           {
-            "time": "7:00 PM",
-            "title": "Dinner at Zuni Caf\u00e9",
-            "detail": "Roast chicken for two, Caesar salad, a bottle of wine. Your parents will love this."
+            "time": "3 PM",
+            "title": "Fleet Week Ship Tours Preview",
+            "detail": "Fleet Week runs Oct 4–12 with ship tours starting Oct 6 — plan ahead and book tours at the waterfront. Kids on a Navy vessel is an afternoon they will talk about for years. Mostly free."
           }
         ]
       }
