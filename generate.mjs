@@ -69,7 +69,7 @@ console.log(`📝 Total research: ${allResearch.length} chars. Generating JSON..
 // GENERATE JSON
 const gen = await client.messages.create({
   model: "claude-sonnet-4-6",
-  max_tokens: 16000,
+  max_tokens: 14000,
   messages: [{
     role: "user",
     content: `Generate content for "Sammy's SF" weekly guide. Voice: fun, warm, friend-to-friend.
@@ -119,26 +119,49 @@ let raw = gen.content.filter(b => b.type === "text").map(b => b.text).join("\n")
   .replace(/^```json?\n?/, "").replace(/\n?```$/, "").trim();
 
 let data;
-try { data = JSON.parse(raw); }
-catch(e) {
+
+function cleanJson(str) {
+  str = str.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
+  str = str.replace(/\t/g, ' ');
+  const openQuotes = (str.match(/"/g) || []).length;
+  if (openQuotes % 2 !== 0) str += '"';
+  const openBrackets = (str.match(/\[/g) || []).length - (str.match(/\]/g) || []).length;
+  const openBraces = (str.match(/\{/g) || []).length - (str.match(/\}/g) || []).length;
+  for (let i = 0; i < openBrackets; i++) str += ']';
+  for (let i = 0; i < openBraces; i++) str += '}';
+  str = str.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
+  return str;
+}
+
+try {
+  data = JSON.parse(cleanJson(raw));
+  console.log("✅ JSON parsed successfully");
+} catch(e) {
   console.error("❌ JSON parse failed:", e.message);
-  try {
-    // Fix common JSON issues from truncated responses
-    raw = raw.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
-    // Close any unterminated string
-    const openQuotes = (raw.match(/"/g) || []).length;
-    if (openQuotes % 2 !== 0) raw += '"';
-    // Close any open arrays/objects
-    const openBrackets = (raw.match(/\[/g) || []).length - (raw.match(/\]/g) || []).length;
-    const openBraces = (raw.match(/\{/g) || []).length - (raw.match(/\}/g) || []).length;
-    for (let i = 0; i < openBrackets; i++) raw += ']';
-    for (let i = 0; i < openBraces; i++) raw += '}';
-    // Remove trailing commas again after closing
-    raw = raw.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
-    data = JSON.parse(raw);
-    console.log("✅ Fixed truncated JSON and parsed successfully");
-  } catch(e2) {
-    console.error("❌ Still failed:", e2.message);
+  const posMatch = e.message.match(/position (\d+)/);
+  if (posMatch) {
+    const pos = parseInt(posMatch[1]);
+    console.log("🔧 Problem near:", raw.substring(Math.max(0, pos - 40), pos + 40));
+    // Try removing bad character
+    let fixed = raw.substring(0, pos) + raw.substring(pos + 1);
+    try {
+      data = JSON.parse(cleanJson(fixed));
+      console.log("✅ Fixed by removing bad character");
+    } catch(e2) {
+      // Try cutting at last complete section
+      try {
+        let lastGood = raw.lastIndexOf('}]', pos);
+        if (lastGood < 0) lastGood = raw.lastIndexOf('},', pos);
+        if (lastGood > 0) {
+          data = JSON.parse(cleanJson(raw.substring(0, lastGood + 2)));
+          console.log("✅ Parsed truncated JSON");
+        } else { throw e2; }
+      } catch(e3) {
+        console.error("❌ All fixes failed. Keeping existing data.json");
+        process.exit(1);
+      }
+    }
+  } else {
     console.error("❌ Keeping existing data.json");
     process.exit(1);
   }
