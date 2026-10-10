@@ -9,10 +9,10 @@ weekStart.setDate(now.getDate() - now.getDay() + 5);
 const weekEnd = new Date(weekStart);
 weekEnd.setDate(weekStart.getDate() + 6);
 const fmt = (d) => d.toLocaleDateString("en-US", { month: "long", day: "numeric" });
-const dateRange = `${fmt(weekStart)} – ${fmt(weekEnd)}, ${weekEnd.getFullYear()}`;
+const dateRange = `${fmt(weekStart)} - ${fmt(weekEnd)}, ${weekEnd.getFullYear()}`;
 const issueNum = Math.ceil((now - new Date("2026-07-25")) / (7 * 24 * 60 * 60 * 1000)) + 1;
 
-console.log(`\n🎯 Generating data for Sammy's SF — ${dateRange} (Issue #${issueNum})\n`);
+console.log(`\n🎯 Generating data for Sammy's SF - ${dateRange} (Issue #${issueNum})\n`);
 
 // SPLIT INTO 4 FOCUSED RESEARCH CALLS
 async function searchBatch(label, prompt) {
@@ -184,7 +184,15 @@ if (bk) {
   console.log("📧 Sending newsletter...\n");
   const nr = await client.messages.create({
     model: "claude-sonnet-4-6", max_tokens: 3000,
-    messages: [{ role: "user", content: `Generate an email newsletter for "Sammy's SF" using this event data. Output ONLY the HTML body — no markdown fences.
+    messages: [{ role: "user", content: `Generate an email newsletter for "Sammy's SF" using this event data. Output ONLY the HTML body, no markdown fences.
+
+VOICE & STYLE (match this exactly, this is critical):
+- You are Sammy, writing to a friend. Casual, enthusiastic, hype but genuine.
+- Start with "Hey friend!" and a punchy 2-sentence hook about why this week is special.
+- Use phrases like: "honestly this might be...", "absolutely unhinged", "do not sleep on this one", "this is legitimately...", "let's get into it", "this is the mid-week treat you absolutely deserve", "this is a tell-your-grandkids situation", "peak [X] energy", "I mean that in the best possible way"
+- Short punchy sentences mixed with longer ones. Use <em> tags for emphasis.
+- End event descriptions with a strong closer: "This is SF at its absolute finest." or "Do not miss this energy."
+- CRITICAL: NEVER use em dashes anywhere in the output. Not a single one. Use periods, commas, semicolons, or "and" instead. Use hyphens only in date ranges like "Oct 2-4".
 
 Use this structure:
 <div style="max-width:520px;margin:0 auto;font-family:Arial,sans-serif;">
@@ -196,7 +204,7 @@ Use this structure:
   <div style="background:#fff;padding:24px;border:1px solid #eee;border-radius:0 0 12px 12px;">
     STRUCTURE (follow this exactly):
 
-    1. INTRO: 2 fun sentences about this week.
+    1. INTRO: 2 fun sentences about this week. No em dashes.
 
     2. THIS WEEK'S PICKS: Top 5-6 events. For each:
     <div style="margin-bottom:14px;">
@@ -204,7 +212,7 @@ Use this structure:
         <strong style="font-size:14px;color:#333;">Event Name</strong>
         <span style="font-size:10px;color:#C4724A;">PRICE</span>
       </div>
-      <div style="font-size:13px;color:#666;margin-top:2px;">Day Date · Time — One line description.</div>
+      <div style="font-size:13px;color:#666;margin-top:2px;">Day Date · Time. One line description.</div>
       <div style="margin-top:4px;"><a href="TICKET_URL" style="font-size:12px;color:#C4724A;text-decoration:none;font-weight:bold;">Get tickets →</a></div>
     </div>
     Include real ticket links from the data (Eventbrite, venue sites, etc). If no link, use "sammyssf-1.vercel.app" as the link.
@@ -233,13 +241,17 @@ Use this structure:
   </div>
 </div>
 
+REMEMBER: Zero em dashes anywhere in the output. Not a single one.
+
 Data: ${JSON.stringify(data).substring(0,5000)}` }]
   });
-  const body = nr.content.filter(b=>b.type==="text").map(b=>b.text).join("\n").replace(/^```html?\n?/,"").replace(/\n?```$/,"").trim();
+  let body = nr.content.filter(b=>b.type==="text").map(b=>b.text).join("\n").replace(/^```html?\n?/,"").replace(/\n?```$/,"").trim();
+  // Strip any em dashes or en dashes that slipped through
+  body = body.replace(/—/g, ', ').replace(/–/g, '-');
   const r = await fetch("https://api.buttondown.com/v1/emails", {
     method:"POST",
     headers:{"Content-Type":"application/json",Authorization:`Token ${bk}`,"X-Buttondown-Live-Dangerously":"true"},
-    body: JSON.stringify({subject:`Sammy's SF — ${dateRange}`,body,status:"about_to_send"})
+    body: JSON.stringify({subject:`Sammy's SF - ${dateRange}`,body,status:"about_to_send"})
   });
   if (r.ok) { console.log("✅ Newsletter sent!\n"); }
   else { const errText = await r.text(); console.log("❌ Newsletter failed:", r.status, errText); }
