@@ -1,40 +1,87 @@
-name: Generate Weekly Edition
+name: Weekly Update
 
 on:
   schedule:
-    - cron: "0 16 * * 2"
+    - cron: '0 17 * * 2'  # Tuesday 5pm UTC = Tuesday 9am PT
   workflow_dispatch:
+    inputs:
+      hero_pick:
+        description: 'Hero pick number (1-5, default 1)'
+        required: false
+        default: '1'
 
 permissions:
   contents: write
+  issues: read
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: '20'
 
-      - name: Install dependencies
-        run: npm install
+      - run: npm ci
 
-      - name: Generate this week's data
+      # Check latest scout issue for Sammy's pick
+      - name: Get hero pick from scout issue
+        id: pick
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Manual override takes priority
+          if [ -n "${{ github.event.inputs.hero_pick }}" ] && [ "${{ github.event.inputs.hero_pick }}" != "1" ]; then
+            echo "pick=${{ github.event.inputs.hero_pick }}" >> $GITHUB_OUTPUT
+            echo "🏆 Manual override: pick #${{ github.event.inputs.hero_pick }}"
+            exit 0
+          fi
+
+          # Find the latest open scout-pick issue
+          ISSUE_NUM=$(gh issue list --label "scout-pick" --state open --json number -q '.[0].number' 2>/dev/null || echo "")
+
+          if [ -z "$ISSUE_NUM" ]; then
+            echo "pick=1" >> $GITHUB_OUTPUT
+            echo "📋 No scout issue found, defaulting to #1"
+            exit 0
+          fi
+
+          # Get comments on the issue (look for a number 1-5 from the repo owner)
+          PICK=$(gh issue view "$ISSUE_NUM" --json comments -q '.comments[].body' | grep -oE '^[1-5]$' | tail -1 || echo "")
+
+          if [ -n "$PICK" ]; then
+            echo "pick=$PICK" >> $GITHUB_OUTPUT
+            echo "🏆 Sammy picked #$PICK"
+          else
+            echo "pick=1" >> $GITHUB_OUTPUT
+            echo "📋 No pick comment found, defaulting to #1"
+          fi
+
+      # Generate the site
+      - name: Generate
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
-        run: npm run generate
+          HERO_PICK: ${{ steps.pick.outputs.pick }}
+        run: node generate.mjs
 
-      - name: Build site from data
-        run: node build.mjs
-
-      - name: Commit and push
+      # Commit and push
+      - name: Commit
         run: |
-          git config user.name "Sammy's SF Bot"
-          git config user.email "wangsamanthay@users.noreply.github.com"
-          git add data.json index.html
-          git diff --staged --quiet || (git commit -m "🎉 New edition: $(date +'%B %d, %Y')" && git push)
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "Update data for $(date +%Y-%m-%d)" || echo "No changes"
+          git push
+
+      # Close the scout issue
+      - name: Close scout issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUM=$(gh issue list --label "scout-pick" --state open --json number -q '.[0].number' 2>/dev/null || echo "")
+          if [ -n "$ISSUE_NUM" ]; then
+            gh issue close "$ISSUE_NUM" --comment "✅ Generated Issue with pick #${{ steps.pick.outputs.pick }}"
+          fi

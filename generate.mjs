@@ -14,57 +14,83 @@ const issueNum = Math.ceil((now - new Date("2026-07-25")) / (7 * 24 * 60 * 60 * 
 
 console.log(`\n🎯 Generating data for Sammy's SF - ${dateRange} (Issue #${issueNum})\n`);
 
-// SPLIT INTO 4 FOCUSED RESEARCH CALLS
-async function searchBatch(label, prompt) {
-  console.log(`🔍 ${label}...`);
-  const r = await client.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 3000,
-    tools: [{ type: "web_search_20250305", name: "web_search" }],
-    messages: [{ role: "user", content: prompt }]
-  });
-  const text = r.content.filter(b => b.type === "text").map(b => b.text).join("\n");
-  console.log(`  ✅ Got ${text.length} chars\n`);
-  return text;
+// CHECK FOR SCOUT DATA (from Monday night scout)
+let allResearch;
+let heroPick = parseInt(process.env.HERO_PICK || "1", 10);
+let heroEventName = null;
+
+if (fs.existsSync("scout.json")) {
+  console.log("📋 Found scout.json from Monday scout\n");
+  const scout = JSON.parse(fs.readFileSync("scout.json", "utf-8"));
+  allResearch = scout.research;
+
+  if (scout.top5 && scout.top5.length > 0) {
+    const pickIndex = Math.min(Math.max(heroPick, 1), scout.top5.length) - 1;
+    heroEventName = scout.top5[pickIndex].name;
+    console.log(`🏆 Hero pick #${heroPick}: ${heroEventName}\n`);
+  }
+} else {
+  console.log("🔍 No scout.json found, doing fresh research...\n");
+
+  // FRESH RESEARCH (same as scout.mjs)
+  async function searchBatch(label, prompt) {
+    console.log(`🔍 ${label}...`);
+    const r = await client.messages.create({
+      model: "claude-sonnet-4-6",
+      max_tokens: 3000,
+      tools: [{ type: "web_search_20250305", name: "web_search" }],
+      messages: [{ role: "user", content: prompt }]
+    });
+    const text = r.content.filter(b => b.type === "text").map(b => b.text).join("\n");
+    console.log(`  ✅ Got ${text.length} chars\n`);
+    return text;
+  }
+
+  const r1 = await searchBatch("Concerts & music",
+    `Search for San Francisco concerts and live music for the week of ${dateRange}. Do 4-5 searches:
+    - General SF concerts this week
+    - Stern Grove concert schedule
+    - Fillmore, Independent, Warfield, Great American Music Hall, Bottom of the Hill, Rickshaw Stop, The Chapel, August Hall shows
+    - Chase Center and Davies Symphony Hall events
+    - Greek Theatre Berkeley
+    For each: name, venue, date/time, price, 2-sentence description.`);
+
+  const r2 = await searchBatch("Food, bars & events",
+    `Search for San Francisco food, restaurants, bars, and events for the week of ${dateRange}. Do 4-5 searches:
+    - site:sf.eater.com new restaurant openings
+    - site:theinfatuation.com san-francisco restaurants
+    - site:sfchronicle.com new restaurant bar San Francisco
+    - San Francisco newly opened restaurants Yelp Google Maps
+    - site:dothebay.com events this week OR site:sf.funcheap.com free events OR site:lu.ma San Francisco events
+    Also search for major San Francisco festivals and citywide events happening this week (Fleet Week, Outside Lands, Hardly Strictly Bluegrass, Bay to Breakers, Pride, Carnaval, Folsom, Litquake, etc.)
+    For each: name, location, date, price, 1-2 sentences.`);
+
+  const r3 = await searchBatch("Sports & arts",
+    `Search for San Francisco sports and arts for the week of ${dateRange}. Do 4-5 searches:
+    - SF Giants schedule this week (home games at Oracle Park) + Golden State Warriors NBA + Golden State Valkyries WNBA + Oakland Ballers
+    - SFMOMA, de Young, Asian Art Museum, Minnesota Street Project, Southern Exposure, Exploratorium After Dark exhibitions
+    - San Francisco comedy shows Cobb's Comedy Club Punch Line Doc's Lab
+    - San Francisco theater shows SF Playhouse ACT Club Fugazi + immersive art pop-up installations
+    - City Lights Booksmith Green Apple book readings poetry this week
+    For each: name, venue, date/time, price, 1-2 sentences.`);
+
+  const r4 = await searchBatch("Singles & nightlife",
+    `Search for San Francisco singles events and nightlife for the week of ${dateRange}. Do 4-5 searches:
+    - site:eventbrite.com San Francisco singles mixer speed dating
+    - San Francisco social sports leagues running clubs meetups
+    - site:ra.co San Francisco DJ events electronic music
+    - San Francisco EDM events 19hz.info The Midway Public Works Audio SF 1015 Folsom Halcyon Temple Nightclub
+    For each: name, venue, date/time, price, 1-2 sentences.`);
+
+  allResearch = `CONCERTS & MUSIC:\n${r1}\n\nFOOD & EVENTS:\n${r2}\n\nSPORTS & ARTS:\n${r3}\n\nSINGLES & NIGHTLIFE:\n${r4}`;
 }
 
-const r1 = await searchBatch("Concerts & music",
-  `Search for San Francisco concerts and live music for the week of ${dateRange}. Do 4-5 searches:
-  - General SF concerts this week
-  - Stern Grove concert schedule
-  - Fillmore, Independent, Warfield, Great American Music Hall, Bottom of the Hill, Rickshaw Stop, The Chapel, August Hall shows
-  - Chase Center and Davies Symphony Hall events
-  - Greek Theatre Berkeley
-  For each: name, venue, date/time, price, 2-sentence description.`);
-
-const r2 = await searchBatch("Food, bars & events",
-  `Search for San Francisco food, restaurants, bars, and events for the week of ${dateRange}. Do 4-5 searches:
-  - site:sf.eater.com new restaurant openings
-  - site:theinfatuation.com san-francisco restaurants
-  - site:sfchronicle.com new restaurant bar San Francisco
-  - San Francisco newly opened restaurants Yelp Google Maps
-  - site:dothebay.com events this week OR site:sf.funcheap.com free events OR site:lu.ma San Francisco events
-  For each: name, location, date, price, 1-2 sentences.`);
-
-const r3 = await searchBatch("Sports & arts",
-  `Search for San Francisco sports and arts for the week of ${dateRange}. Do 4-5 searches:
-  - SF Giants schedule this week (home games at Oracle Park) + Golden State Warriors NBA + Golden State Valkyries WNBA + Oakland Ballers
-  - SFMOMA, de Young, Asian Art Museum, Minnesota Street Project, Southern Exposure, Exploratorium After Dark exhibitions
-  - San Francisco comedy shows Cobb's Comedy Club Punch Line Doc's Lab
-  - San Francisco theater shows SF Playhouse ACT Club Fugazi + immersive art pop-up installations
-  - City Lights Booksmith Green Apple book readings poetry this week
-  For each: name, venue, date/time, price, 1-2 sentences.`);
-
-const r4 = await searchBatch("Singles & nightlife",
-  `Search for San Francisco singles events and nightlife for the week of ${dateRange}. Do 4-5 searches:
-  - site:eventbrite.com San Francisco singles mixer speed dating
-  - San Francisco social sports leagues running clubs meetups
-  - site:ra.co San Francisco DJ events electronic music
-  - San Francisco EDM events 19hz.info The Midway Public Works Audio SF 1015 Folsom Halcyon Temple Nightclub
-  For each: name, venue, date/time, price, 1-2 sentences.`);
-
-const allResearch = `CONCERTS & MUSIC:\n${r1}\n\nFOOD & EVENTS:\n${r2}\n\nSPORTS & ARTS:\n${r3}\n\nSINGLES & NIGHTLIFE:\n${r4}`;
 console.log(`📝 Total research: ${allResearch.length} chars. Generating JSON...\n`);
+
+// BUILD HERO INSTRUCTION
+const heroInstruction = heroEventName
+  ? `\n- HERO OVERRIDE: The event "${heroEventName}" MUST be the first pick with "hero":true and the highest score. This was Sammy's personal pick.`
+  : "";
 
 // GENERATE JSON
 const gen = await client.messages.create({
@@ -107,6 +133,7 @@ Return ONLY valid JSON. No markdown fences. Structure:
 RULES:
 - picks: 10-14 items sorted by score. First item must have "hero":true
 - SCORING: one-night-only=5, weekend=4, opening week=3, ongoing=0 | new opening=4, selling out=3, notable venue=2 | iconic location=2 | free=2, deal=1
+- MAJOR FESTIVAL BONUS: If it's a major annual SF event (Fleet Week, Outside Lands, Hardly Strictly Bluegrass, Bay to Breakers, Pride, Carnaval, Chinese New Year Parade, Folsom Street Fair, etc.) add +3 points${heroInstruction}
 - DIVERSITY: must include 1 music, 1 food, 1 free, 1 cultural, 1 outdoors
 - eats.new: 4-6, eats.classic: 4-6, bars: 6-8, concerts: 6-10, singles: 4-6
 - Each playbook: exactly 3 plans (free/$$/$$$ tiers), 3-5 steps each using THIS WEEK's events
@@ -142,13 +169,11 @@ try {
   if (posMatch) {
     const pos = parseInt(posMatch[1]);
     console.log("🔧 Problem near:", raw.substring(Math.max(0, pos - 40), pos + 40));
-    // Try removing bad character
     let fixed = raw.substring(0, pos) + raw.substring(pos + 1);
     try {
       data = JSON.parse(cleanJson(fixed));
       console.log("✅ Fixed by removing bad character");
     } catch(e2) {
-      // Try cutting at last complete section
       try {
         let lastGood = raw.lastIndexOf('}]', pos);
         if (lastGood < 0) lastGood = raw.lastIndexOf('},', pos);
@@ -167,7 +192,7 @@ try {
   }
 }
 
-// SAFETY CHECK: don't overwrite good data with empty content
+// SAFETY CHECK
 const picks = data.picks || [];
 if (picks.length < 3 || (picks[0] && picks[0].t && picks[0].t.includes("No research"))) {
   console.error("❌ Generated content looks empty or placeholder. Keeping existing data.json");
