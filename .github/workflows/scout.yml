@@ -1,0 +1,56 @@
+name: Monday Scout
+
+on:
+  schedule:
+    - cron: '0 5 * * 2'  # Tuesday 5am UTC = Monday 9pm PT
+  workflow_dispatch:       # Manual trigger
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      # Close any old scout issues
+      - name: Close old scout issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue list --label "scout-pick" --state open --json number -q '.[].number' | while read num; do
+            gh issue close "$num" --comment "Closing: new scout issue created."
+          done
+
+      # Run the scout
+      - name: Run scout
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scout.mjs
+
+      # Commit scout.json
+      - name: Commit scout data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scout.json
+          git commit -m "Scout data for $(date +%Y-%m-%d)" || echo "No changes"
+          git push
+
+      # Create GitHub issue with top 5 picks
+      - name: Create scout issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "🎯 Sammy's Pick - $(cat scout.json | node -pe 'JSON.parse(require("fs").readFileSync("/dev/stdin","utf8")).dateRange')" \
+            --body-file scout-issue.md \
+            --label "scout-pick"

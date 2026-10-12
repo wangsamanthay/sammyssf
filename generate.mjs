@@ -3,110 +3,355 @@ import fs from "fs";
 
 const client = new Anthropic();
 
-// Get current date info
 const now = new Date();
 const weekStart = new Date(now);
-weekStart.setDate(now.getDate() - now.getDay() + 5); // Friday
+weekStart.setDate(now.getDate() - now.getDay() + 5);
 const weekEnd = new Date(weekStart);
-weekEnd.setDate(weekStart.getDate() + 6); // Thursday next week
+weekEnd.setDate(weekStart.getDate() + 6);
+const fmt = (d) => d.toLocaleDateString("en-US", { month: "long", day: "numeric" });
+const dateRange = `${fmt(weekStart)} - ${fmt(weekEnd)}, ${weekEnd.getFullYear()}`;
+const issueNum = Math.ceil((now - new Date("2026-07-25")) / (7 * 24 * 60 * 60 * 1000)) + 1;
 
-const fmt = (d) =>
-  d.toLocaleDateString("en-US", { month: "long", day: "numeric" });
-const fmtFull = (d) =>
-  d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+console.log(`\n🎯 Generating data for Sammy's SF - ${dateRange} (Issue #${issueNum})\n`);
 
-const dateRange = `${fmt(weekStart)} – ${fmt(weekEnd)}, ${weekEnd.getFullYear()}`;
-const issueNum = Math.ceil(
-  (now - new Date("2026-07-25")) / (7 * 24 * 60 * 60 * 1000)
-) + 1;
+// CHECK FOR SCOUT DATA (from Monday night scout)
+let allResearch;
+let heroPick = parseInt(process.env.HERO_PICK || "1", 10);
+if (isNaN(heroPick) || heroPick < 1 || heroPick > 5) {
+  console.log(`⚠️  Invalid HERO_PICK "${process.env.HERO_PICK}", defaulting to 1`);
+  heroPick = 1;
+}
+let heroEventName = null;
+let useScout = false;
 
-console.log(`\n🎯 Generating Sammy's SF — ${dateRange} (Issue #${issueNum})\n`);
+if (fs.existsSync("scout.json")) {
+  try {
+    console.log("📋 Found scout.json from Monday scout\n");
+    const scout = JSON.parse(fs.readFileSync("scout.json", "utf-8"));
+    if (scout.research && scout.research.length > 100) {
+      allResearch = scout.research;
+      useScout = true;
+      if (scout.top5 && scout.top5.length > 0) {
+        const pickIndex = Math.min(heroPick, scout.top5.length) - 1;
+        heroEventName = scout.top5[pickIndex].name;
+        console.log(`🏆 Hero pick #${heroPick}: ${heroEventName}\n`);
+      }
+    } else {
+      console.log("⚠️  scout.json has no/empty research, doing fresh research...\n");
+    }
+  } catch (err) {
+    console.log(`⚠️  scout.json is corrupted (${err.message}), doing fresh research...\n`);
+  }
+}
 
-// Read the current template for reference
-const currentTemplate = fs.readFileSync("index.html", "utf-8");
+if (!useScout) {
+  console.log("🔍 No scout.json found, doing fresh research...\n");
 
-// Step 1: Research events
-console.log("🔍 Searching for SF events...\n");
+  // FRESH RESEARCH (same as scout.mjs)
+  async function searchBatch(label, prompt) {
+    console.log(`🔍 ${label}...`);
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const r = await client.messages.create({
+          model: "claude-sonnet-4-6",
+          max_tokens: 3000,
+          tools: [{ type: "web_search_20250305", name: "web_search" }],
+          messages: [{ role: "user", content: prompt }]
+        });
+        const text = r.content.filter(b => b.type === "text").map(b => b.text).join("\n");
+        console.log(`  ✅ Got ${text.length} chars\n`);
+        return text;
+      } catch (err) {
+        console.error(`  ⚠️  Attempt ${attempt}/3 failed: ${err.message}`);
+        if (attempt === 3) { console.error(`  ❌ ${label} failed after 3 attempts`); return ""; }
+        await new Promise(r => setTimeout(r, 5000 * attempt));
+      }
+    }
+  }
 
-const researchResponse = await client.messages.create({
+  const r1 = await searchBatch("Concerts & music",
+    `Search for San Francisco concerts and live music for the week of ${dateRange}. Do 4-5 searches:
+    - General SF concerts this week
+    - Stern Grove concert schedule
+    - Fillmore, Independent, Warfield, Great American Music Hall, Bottom of the Hill, Rickshaw Stop, The Chapel, August Hall shows
+    - Chase Center and Davies Symphony Hall events
+    - Greek Theatre Berkeley
+    For each: name, venue, date/time, price, 2-sentence description.`);
+
+  const r2 = await searchBatch("Food, bars & events",
+    `Search for San Francisco food, restaurants, bars, and events for the week of ${dateRange}. Do 4-5 searches:
+    - site:sf.eater.com new restaurant openings
+    - site:theinfatuation.com san-francisco restaurants
+    - site:sfchronicle.com new restaurant bar San Francisco
+    - San Francisco newly opened restaurants Yelp Google Maps
+    - site:dothebay.com events this week OR site:sf.funcheap.com free events OR site:lu.ma San Francisco events
+    Also search for major San Francisco festivals and citywide events happening this week (Fleet Week, Outside Lands, Hardly Strictly Bluegrass, Bay to Breakers, Pride, Carnaval, Folsom, Litquake, etc.)
+    For each: name, location, date, price, 1-2 sentences.`);
+
+  const r3 = await searchBatch("Sports & arts",
+    `Search for San Francisco sports and arts for the week of ${dateRange}. Do 4-5 searches:
+    - SF Giants schedule this week (home games at Oracle Park) + Golden State Warriors NBA + Golden State Valkyries WNBA + Oakland Ballers
+    - SFMOMA, de Young, Asian Art Museum, Minnesota Street Project, Southern Exposure, Exploratorium After Dark exhibitions
+    - San Francisco comedy shows Cobb's Comedy Club Punch Line Doc's Lab
+    - San Francisco theater shows SF Playhouse ACT Club Fugazi + immersive art pop-up installations
+    - City Lights Booksmith Green Apple book readings poetry this week
+    For each: name, venue, date/time, price, 1-2 sentences.`);
+
+  const r4 = await searchBatch("Singles & nightlife",
+    `Search for San Francisco singles events and nightlife for the week of ${dateRange}. Do 4-5 searches:
+    - site:eventbrite.com San Francisco singles mixer speed dating
+    - San Francisco social sports leagues running clubs meetups
+    - site:ra.co San Francisco DJ events electronic music
+    - San Francisco EDM events 19hz.info The Midway Public Works Audio SF 1015 Folsom Halcyon Temple Nightclub
+    For each: name, venue, date/time, price, 1-2 sentences.`);
+
+  allResearch = `CONCERTS & MUSIC:\n${r1}\n\nFOOD & EVENTS:\n${r2}\n\nSPORTS & ARTS:\n${r3}\n\nSINGLES & NIGHTLIFE:\n${r4}`;
+}
+
+console.log(`📝 Total research: ${allResearch.length} chars. Generating JSON...\n`);
+
+// BUILD HERO INSTRUCTION
+const heroInstruction = heroEventName
+  ? `\n- HERO OVERRIDE: The event "${heroEventName}" MUST be the first pick with "hero":true and the highest score. This was Sammy's personal pick.`
+  : "";
+
+// GENERATE JSON
+let gen;
+try {
+  gen = await client.messages.create({
   model: "claude-sonnet-4-6",
-  max_tokens: 4000,
-  tools: [{ type: "web_search_20250305", name: "web_search" }],
-  messages: [
-    {
-      role: "user",
-      content: `Search for things to do in San Francisco for the week of ${dateRange}. I need:
+  max_tokens: 14000,
+  messages: [{
+    role: "user",
+    content: `Generate content for "Sammy's SF" weekly guide. Voice: fun, warm, friend-to-friend.
 
-1. Concerts and live music (check SeatGeek SF, Stern Grove schedule, Fillmore, The Independent, Chase Center, Davies Symphony Hall)
-2. New restaurant and bar openings
-3. Outdoor events, festivals, pop-ups, markets
-4. Art exhibitions, theater, film screenings
-5. Sports (Giants schedule, Valkyries, Oakland Ballers)
-6. Any notable free events
+RESEARCH:
+${allResearch}
 
-Do at least 8-10 searches to be thorough. For each event, include: name, venue, date/time, price range, and a brief description. Return everything as a structured list organized by category.`,
-    },
+Return ONLY valid JSON. No markdown fences. Structure:
+{
+  "dateRange": "${dateRange}",
+  "issue": "${String(issueNum).padStart(2,'0')}",
+  "picks": [
+    {"t":"Event name","w":"Day Mon DD · Time","d":"2-3 fun sentences","cats":"music","price":"free","badge":"Free","tags":["Free","Music"],"hero":true,"score":11}
   ],
-});
+  "ongoing": [{"t":"Name","d":"One line"}],
+  "eats": {
+    "new": [{"type":"Cuisine · Hood","name":"Place","d":"One line","price":"$$ · $30/pp"}],
+    "classic": [{"type":"Cuisine · Hood","name":"Place","d":"One line","price":"$$ · $30/pp"}]
+  },
+  "bars": [{"type":"Style · Hood","name":"Bar","d":"One line","price":"$ · $12/drink"}],
+  "sports": [{"section":"⚾ Team · Venue","games":[{"teams":"vs Team","detail":"Info","when":"Day\\nTime","price":"$25"}],"note":"Optional"}],
+  "concerts": [{"t":"Artist","w":"Day · Time","d":"2-3 sentences","venue":"Venue · Price","tags":["Genre"],"hi":false}],
+  "concertsOngoing": [{"t":"Name","d":"One line"}],
+  "singles": [{"t":"Event","w":"Day · Time","d":"2-3 sentences","tags":["Type"],"badge":"$$ · ~$30","link":"https://...","linkText":"Tickets"}],
+  "singlesOngoing": [{"t":"Name","d":"One line"}],
+  "playbooks": {
+    "date": [{"tier":"free","badge":"The Free One","est":"$0","title":"Plan","tagline":"Line","steps":[{"time":"6pm","title":"Step","detail":"Detail"}]}],
+    "solo": [same format, 3 plans],
+    "birthday": [same format, 3 plans],
+    "friends": [same format, 3 plans],
+    "parents": [same format, 3 plans]
+  }
+}
 
-// Extract the research text
-const researchText = researchResponse.content
-  .filter((b) => b.type === "text")
-  .map((b) => b.text)
-  .join("\n");
+RULES:
+- picks: 10-14 items sorted by score. First item must have "hero":true
+- SCORING: one-night-only=5, weekend=4, opening week=3, ongoing=0 | new opening=4, selling out=3, notable venue=2 | iconic location=2 | free=2, deal=1
+- MAJOR FESTIVAL BONUS: If it's a major annual SF event (Fleet Week, Outside Lands, Hardly Strictly Bluegrass, Bay to Breakers, Pride, Carnaval, Chinese New Year Parade, Folsom Street Fair, etc.) add +3 points${heroInstruction}
+- DIVERSITY: must include 1 music, 1 food, 1 free, 1 cultural, 1 outdoors
+- eats.new: 4-6, eats.classic: 4-6, bars: 6-8, concerts: 6-10, singles: 4-6
+- Each playbook: exactly 3 plans (free/$$/$$$ tiers), 3-5 steps each using THIS WEEK's events
+- cats from: music,shows,food,nightlife,active,sports. price from: free,$,$$,$$$
+- Use ONLY real events from the research. Never invent events.`
+  }]
+  });
+} catch (err) {
+  console.error(`❌ JSON generation API call failed: ${err.message}`);
+  console.error("Keeping existing data.json");
+  process.exit(1);
+}
 
-console.log("📝 Research complete. Generating HTML...\n");
+let raw = gen.content.filter(b => b.type === "text").map(b => b.text).join("\n")
+  .replace(/^```json?\n?/, "").replace(/\n?```$/, "").trim();
 
-// Step 2: Generate the HTML using the research and template
-const generateResponse = await client.messages.create({
-  model: "claude-sonnet-4-6",
-  max_tokens: 16000,
-  messages: [
-    {
-      role: "user",
-      content: `You are generating the weekly edition of "Sammy's SF" — a fun, curated guide to what's happening in San Francisco this week, shared among friends.
+let data;
 
-Here is the current site template for reference — keep the EXACT same HTML structure, CSS, tabs, and JavaScript. Only update the content (event cards, dates, descriptions):
+function cleanJson(str) {
+  str = str.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
+  str = str.replace(/\t/g, ' ');
+  const openQuotes = (str.match(/"/g) || []).length;
+  if (openQuotes % 2 !== 0) str += '"';
+  const openBrackets = (str.match(/\[/g) || []).length - (str.match(/\]/g) || []).length;
+  const openBraces = (str.match(/\{/g) || []).length - (str.match(/\}/g) || []).length;
+  for (let i = 0; i < openBrackets; i++) str += ']';
+  for (let i = 0; i < openBraces; i++) str += '}';
+  str = str.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
+  return str;
+}
 
-<template>
-${currentTemplate}
-</template>
+try {
+  data = JSON.parse(cleanJson(raw));
+  console.log("✅ JSON parsed successfully");
+} catch(e) {
+  console.error("❌ JSON parse failed:", e.message);
+  const posMatch = e.message.match(/position (\d+)/);
+  if (posMatch) {
+    const pos = parseInt(posMatch[1]);
+    console.log("🔧 Problem near:", raw.substring(Math.max(0, pos - 40), pos + 40));
+    let fixed = raw.substring(0, pos) + raw.substring(pos + 1);
+    try {
+      data = JSON.parse(cleanJson(fixed));
+      console.log("✅ Fixed by removing bad character");
+    } catch(e2) {
+      try {
+        let lastGood = raw.lastIndexOf('}]', pos);
+        if (lastGood < 0) lastGood = raw.lastIndexOf('},', pos);
+        if (lastGood > 0) {
+          data = JSON.parse(cleanJson(raw.substring(0, lastGood + 2)));
+          console.log("✅ Parsed truncated JSON");
+        } else { throw e2; }
+      } catch(e3) {
+        console.error("❌ All fixes failed. Keeping existing data.json");
+        process.exit(1);
+      }
+    }
+  } else {
+    console.error("❌ Keeping existing data.json");
+    process.exit(1);
+  }
+}
 
-Here is this week's research:
+// SAFETY CHECK
+const picks = data.picks || [];
+if (picks.length < 3 || (picks[0] && picks[0].t && picks[0].t.includes("No research"))) {
+  console.error("❌ Generated content looks empty or placeholder. Keeping existing data.json");
+  process.exit(1);
+}
 
-<research>
-${researchText}
-</research>
+// ENFORCE HERO PICK (don't trust Claude to follow the prompt)
+if (heroEventName && picks.length > 0) {
+  // Clear any existing hero flags
+  picks.forEach(p => { p.hero = false; });
 
-Generate the complete updated HTML file for the week of ${dateRange} (Issue #${String(issueNum).padStart(2, "0")}). Rules:
+  // Find the picked event (fuzzy match on name)
+  const heroLower = heroEventName.toLowerCase();
+  let heroIdx = picks.findIndex(p => p.t && p.t.toLowerCase().includes(heroLower));
+  if (heroIdx < 0) {
+    // Try matching first few words
+    const firstWords = heroLower.split(/\s+/).slice(0, 3).join(" ");
+    heroIdx = picks.findIndex(p => p.t && p.t.toLowerCase().includes(firstWords));
+  }
 
-1. Keep the EXACT same HTML structure, CSS styles, JavaScript, and tab system
-2. Update the header date to "${dateRange}"
-3. Update the footer to "Issue ${String(issueNum).padStart(2, "0")}"
-4. Replace all event cards with this week's events from the research
-5. THIS WEEK tab: Pick the 8-10 best events across all categories. Include data-cats and data-price attributes for filtering.
-6. DATE NIGHT tab: Create 3 new curated date plans (Free / $$ / $$$) using this week's actual events
-7. EATS & BARS tab: Update with any new openings. Keep bars that are still relevant from last week.
-8. SPORTS tab: Update all game schedules
-9. CONCERTS tab: Update all shows and concerts
-10. Keep the writing voice fun, warm, and friend-to-friend — like texting your group chat
-11. Price tiers: free, $ (under $20), $$ ($20-75), $$$ ($75+)
+  if (heroIdx > 0) {
+    // Move it to position 0
+    const [heroPick] = picks.splice(heroIdx, 1);
+    heroPick.hero = true;
+    picks.unshift(heroPick);
+    console.log(`🏆 Enforced hero: "${heroPick.t}" moved to #1`);
+  } else if (heroIdx === 0) {
+    picks[0].hero = true;
+    console.log(`🏆 Hero already at #1: "${picks[0].t}"`);
+  } else {
+    // Event not found in picks at all — just make #1 the hero
+    picks[0].hero = true;
+    console.log(`⚠️  Hero "${heroEventName}" not found in picks, defaulting #1: "${picks[0].t}"`);
+  }
+  data.picks = picks;
+} else if (picks.length > 0) {
+  // No hero override — make sure #1 has hero flag
+  picks.forEach(p => { p.hero = false; });
+  picks[0].hero = true;
+}
 
-Output ONLY the complete HTML file, no markdown fences or explanation.`,
-    },
-  ],
-});
+fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
+console.log(`✅ data.json written (${(Buffer.byteLength(JSON.stringify(data)) / 1024).toFixed(1)} KB)`);
+console.log(`📊 ${picks.length} picks, Issue #${issueNum}\n`);
 
-const html = generateResponse.content
-  .filter((b) => b.type === "text")
-  .map((b) => b.text)
-  .join("\n")
-  .replace(/^```html?\n?/, "")
-  .replace(/\n?```$/, "")
-  .trim();
+// Newsletter (only if key exists)
+const bk = process.env.BUTTONDOWN_API_KEY;
+if (bk) {
+  console.log("📧 Sending newsletter...\n");
+  const nr = await client.messages.create({
+    model: "claude-sonnet-4-6", max_tokens: 3000,
+    messages: [{ role: "user", content: `Generate an email newsletter for "Sammy's SF" using this event data. Output ONLY the HTML body, no markdown fences.
 
-// Write the output
-fs.writeFileSync("index.html", html);
-console.log(`✅ Generated index.html for ${dateRange}`);
-console.log(`📊 Issue #${issueNum}`);
-console.log(`📦 File size: ${(Buffer.byteLength(html) / 1024).toFixed(1)} KB\n`);
+VOICE & STYLE (match this exactly, this is critical):
+- You are Sammy, writing to a friend. Casual, enthusiastic, hype but genuine.
+- Start with "Hey friend!" and a punchy 2-sentence hook about why this week is special.
+- Use phrases like: "honestly this might be...", "absolutely unhinged", "do not sleep on this one", "this is legitimately...", "let's get into it", "this is the mid-week treat you absolutely deserve", "this is a tell-your-grandkids situation", "peak [X] energy", "I mean that in the best possible way"
+- Short punchy sentences mixed with longer ones. Use <em> tags for emphasis.
+- End event descriptions with a strong closer: "This is SF at its absolute finest." or "Do not miss this energy."
+- CRITICAL: NEVER use em dashes anywhere in the output. Not a single one. Use periods, commas, semicolons, or "and" instead. Use hyphens only in date ranges like "Oct 2-4".
+
+Use this structure:
+<div style="max-width:520px;margin:0 auto;font-family:Arial,sans-serif;">
+  <div style="background:linear-gradient(135deg,#C4724A 0%,#B85A6A 50%,#5A7A9A 100%);padding:28px 24px;text-align:center;border-radius:12px 12px 0 0;">
+    <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);">WEEKLY PICKS FROM YOUR BFF SAMMY</div>
+    <div style="font-size:28px;color:#fff;font-family:Georgia,serif;">Sammy's <em>SF</em></div>
+    <div style="font-size:13px;color:rgba(255,255,255,0.5);">${dateRange}</div>
+  </div>
+  <div style="background:#fff;padding:24px;border:1px solid #eee;border-radius:0 0 12px 12px;">
+    STRUCTURE (follow this exactly):
+
+    1. INTRO: 2 fun sentences about this week. No em dashes.
+
+    2. THIS WEEK'S PICKS: Top 5-6 events. For each:
+    <div style="margin-bottom:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <strong style="font-size:14px;color:#333;">Event Name</strong>
+        <span style="font-size:10px;color:#C4724A;">PRICE</span>
+      </div>
+      <div style="font-size:13px;color:#666;margin-top:2px;">Day Date · Time. One line description.</div>
+    </div>
+    LINK RULES (critical):
+    - ONLY link to stable, well-known venue or festival homepages (e.g. thefillmore.com, fleetweeksf.org, exploratorium.edu, chasecenter.com)
+    - NEVER link to specific event pages, Eventbrite listings, or ticket URLs. Those break.
+    - If an event has a clear, major venue or festival homepage, add: <div style="margin-top:4px;"><a href="VENUE_HOMEPAGE" style="font-size:12px;color:#C4724A;text-decoration:none;font-weight:bold;">Visit venue →</a></div>
+    - If there's no obvious stable homepage (pop-ups, block parties, small bars, meetups), just skip the link entirely. No link is better than a broken link.
+
+    3. PLAYBOOK OF THE WEEK: Pick the best date night or solo date plan from the playbooks data. Format:
+    <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#999;border-bottom:1px solid #eee;padding-bottom:6px;margin:20px 0 12px;">PLAYBOOK OF THE WEEK</div>
+    <div style="background:#f8f6f4;border-radius:8px;padding:12px 14px;">
+      <strong style="font-size:14px;color:#333;">Plan Title · ~$X for two</strong>
+      <div style="font-size:13px;color:#666;line-height:1.6;margin-top:4px;">
+        Time: Step one<br>Time: Step two<br>Time: Step three
+      </div>
+      <div style="margin-top:8px;"><a href="https://sammyssf-1.vercel.app" style="font-size:12px;color:#C4724A;text-decoration:none;font-weight:bold;">See all 5 playbooks on the site →</a></div>
+    </div>
+
+    4. CTA BUTTON:
+    <div style="text-align:center;margin:24px 0 8px;">
+      <a href="https://sammyssf-1.vercel.app" style="display:inline-block;background:linear-gradient(135deg,#C4724A,#B85A6A);color:#fff;font-size:13px;font-weight:bold;padding:10px 28px;border-radius:100px;text-decoration:none;">See the full guide →</a>
+    </div>
+
+    5. FORWARD NUDGE + SIGN-OFF:
+    <div style="text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid #eee;">
+      <div style="font-size:13px;color:#666;margin-bottom:12px;">Know someone who needs plans this weekend? <a href="mailto:?subject=Check out Sammy's SF&body=Weekly SF event guide: https://sammyssf-1.vercel.app" style="color:#C4724A;font-weight:bold;text-decoration:none;">Forward this →</a></div>
+      <div style="font-family:Georgia,serif;font-size:15px;color:#333;">See you out there.</div>
+      <div style="font-size:11px;color:#999;margin-top:4px;">Sammy's SF · ${dateRange}</div>
+    </div>
+  </div>
+</div>
+
+REMEMBER: Zero em dashes anywhere in the output. Not a single one.
+
+Data: ${JSON.stringify(data).substring(0,5000)}` }]
+  });
+  let body = nr.content.filter(b=>b.type==="text").map(b=>b.text).join("\n").replace(/^```html?\n?/,"").replace(/\n?```$/,"").trim();
+  // Strip any em dashes or en dashes that slipped through
+  body = body.replace(/—/g, ', ').replace(/–/g, '-');
+  const r = await fetch("https://api.buttondown.com/v1/emails", {
+    method:"POST",
+    headers:{"Content-Type":"application/json",Authorization:`Token ${bk}`,"X-Buttondown-Live-Dangerously":"true"},
+    body: JSON.stringify({subject:`Sammy's SF - ${dateRange}`,body,status:"about_to_send"})
+  });
+  if (r.ok) { console.log("✅ Newsletter sent!\n"); }
+  else {
+    const errText = await r.text();
+    console.error("❌ Newsletter failed:", r.status, errText);
+    // Don't exit(1) — data.json was already written successfully, site will still update
+    // But log loudly so the GitHub Action shows a warning
+    console.error("⚠️  SITE UPDATED but NEWSLETTER DID NOT SEND. Check Buttondown.");
+  }
+} else console.log("⏭️  No BUTTONDOWN_API_KEY\n");
