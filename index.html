@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SF This Week — July 25–31, 2026</title>
+<title>Sammy's SF — October 16–22, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,7 +16,7 @@
 
   /* HEADER */
   .header { background: var(--night); color: var(--white); padding: 2.5rem 1.5rem 0; text-align: center; position: relative; overflow: hidden; }
-  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #E8734A 0%, #D4536B 50%, #2E6B8A 100%); opacity: 0.9; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #5B3A8A 0%, #8A3A5B 50%, #2E6B8A 100%); opacity: 0.9; }
   .header * { position: relative; z-index: 1; }
   .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #FFD9C4; margin-bottom: 0.5rem; }
   .header h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2.8rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.3rem; }
@@ -153,7 +153,7 @@
   <div class="header-eyebrow">Weekly picks from your bff Sammy</div>
   <h1>Sammy's <em>SF</em></h1>
   <div class="header-sub">the scene this week</div>
-  <div class="header-date">July 25 – 31, 2026</div>
+  <div class="header-date">October 16 – 22, 2026</div>
   <div class="tabs">
     <button class="tab active" onclick="showView('picks')">This Week</button>
     <button class="tab" onclick="showView('datenight')">Date Night</button>
@@ -173,7 +173,7 @@
       <button class="fbtn" data-c="arts" onclick="tog(this,'c')">🎨 Arts</button>
       <button class="fbtn" data-c="food" onclick="tog(this,'c')">🍽 Food</button>
       <button class="fbtn" data-c="outdoors" onclick="tog(this,'c')">🌿 Outdoors</button>
-      <button class="fbtn" data-c="sports" onclick="tog(this,'c')">⚾ Sports</button>
+      <button class="fbtn" data-c="sports" onclick="tog(this,'c')">🏀 Sports</button>
     </div>
     <div class="filter-row">
       <span class="filter-row-label">Price</span>
@@ -187,136 +187,130 @@
 
   <div class="section-label" style="border-top:none;padding-top:0">Editor's Picks</div>
 
-  <div class="highlight-card card" data-cats="music" data-price="free">
+  <div class="highlight-card card" data-cats="music" data-price="$$$">
     <div class="card-top">
-      <h3>Suki Waterhouse at Stern Grove</h3>
-      <div class="card-when">Sun Jul 26 · 2pm</div>
+      <h3>Joe Hisaishi Conducts Hisaishi — SF Symphony</h3>
+      <div class="card-when">Thu Oct 22 · 7:30pm</div>
     </div>
-    <p>Free concert in the eucalyptus-lined amphitheater. Doors at noon, show at 2. Bring a jacket. Try the community box office for day-of passes.</p>
+    <p>The man behind every Studio Ghibli score you've ever loved — Spirited Away, Howl's Moving Castle, My Neighbor Totoro — is personally conducting his own music at Davies Symphony Hall. This is a once-in-a-lifetime show. Tickets start at $175 and worth every cent.</p>
     <div class="tags">
-      <span class="tag">Free</span>
-      <span class="tag">Music</span>
+      <span class="tag">Classical</span>
+      <span class="tag">Ghibli</span>
+      <span class="price-badge">$$$ · From $175</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="arts,outdoors" data-price="free">
+    <div class="card-top">
+      <h3>Market Street Arts & Theater Festival</h3>
+      <div class="card-when">Sat Oct 17 · 4–10pm</div>
+    </div>
+    <p>Inaugural and massive: 50+ experiences, 35+ locations, 6 blocks of Market Street turned into a walkable arts spectacle. Aerialists, drag karaoke on a cable car, a free main stage. This is the kind of thing you'll be telling people about next month.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="tag tag-arts">Arts</span>
+      <span class="tag tag-outdoors">Outdoors</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="outdoors,arts" data-price="free">
+    <div class="card-top">
+      <h3>Shipyard Open Studios</h3>
+      <div class="card-when">Sat–Sun Oct 17–18 · 11am–6pm</div>
+    </div>
+    <p>130+ artists open their studios at the historic Hunters Point Shipyard. Live jazz, a beer garden, silent art auction, kids' art activities. Free parking, free entry. One of SF's best fall traditions and genuinely worth the drive out.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="tag tag-arts">Art</span>
+      <span class="tag tag-outdoors">Outdoors</span>
     </div>
   </div>
 
   <div class="card" data-cats="music" data-price="$$$">
     <div class="card-top">
-      <h3>St. Vincent w/ SF Symphony</h3>
-      <div class="card-when">Thu Jul 30</div>
+      <h3>Sara Bareilles — The Good Grief Tour</h3>
+      <div class="card-when">Thu–Fri Oct 16–17 · 8pm</div>
     </div>
-    <p>First-ever orchestral tour at Davies Symphony Hall. Grammy-winning catalog backed by a full symphony. This is the show of the week.</p>
+    <p>Two nights at Bill Graham Civic Auditorium supporting her first album in seven years. If you've been a fan since "Love Song" this is going to hit different. Deeply personal, big room, big voice. Grab your person and go.</p>
     <div class="tags">
       <span class="tag tag-music">Concert</span>
-      <span class="price-badge">$$$ · $75+</span>
+      <span class="price-badge">$$$ · From $112</span>
     </div>
   </div>
 
-  <div class="card" data-cats="arts" data-price="free">
+  <div class="card" data-cats="outdoors,food" data-price="free">
     <div class="card-top">
-      <h3>Outdoor Movie: The Princess Diaries</h3>
-      <div class="card-when">Sat Jul 25 · 6pm</div>
+      <h3>Fort Mason Night Market</h3>
+      <div class="card-when">Fri Oct 16 · 5–10pm</div>
     </div>
-    <p>Union Square's free summer movie series. Pre-show at 6, film at sunset. Bring a blanket.</p>
+    <p>60+ artisan vendors curated by West Coast Craft, waterfront views, and a solid food lineup. This is the free Friday night hang. Show up, grab something to eat, wander the tents, stare at the bay. Perfect autumn evening activity.</p>
+    <div class="tags">
+      <span class="tag tag-free">Free</span>
+      <span class="tag tag-food">Food</span>
+      <span class="tag tag-outdoors">Outdoors</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="arts,outdoors" data-price="free">
+    <div class="card-top">
+      <h3>Sundown Cinema: Beetlejuice at Crane Cove Park</h3>
+      <div class="card-when">Fri Oct 16 · 5pm</div>
+    </div>
+    <p>The SF Standard's outdoor film series screens Beetlejuice at Crane Cove Park in Dogpatch. It's spooky season, it's free, it's by the water. Bring a layer and something warm to drink. This is the move if you're not dropping $112 on Sara Bareilles tonight.</p>
     <div class="tags">
       <span class="tag tag-free">Free</span>
       <span class="tag tag-arts">Film</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="food" data-price="$">
-    <div class="card-top">
-      <h3>Jollibee Opens on Market Street</h3>
-      <div class="card-when">Fri Jul 31</div>
-    </div>
-    <p>The beloved Filipino chain opens at 934 Market near Powell BART — first SF location since 2011. Fried chicken, Peach Mango Pie. Expect lines.</p>
-    <div class="tags">
-      <span class="tag tag-new">New Opening</span>
-      <span class="tag tag-food">Food</span>
-      <span class="price-badge">$ · Under $15</span>
+      <span class="tag tag-outdoors">Outdoors</span>
     </div>
   </div>
 
   <div class="card" data-cats="music" data-price="$$">
     <div class="card-top">
-      <h3>Chance Peña at The Fillmore</h3>
-      <div class="card-when">Sat Jul 25 · 8pm</div>
+      <h3>Jessie Ware — The Superbloom Tour</h3>
+      <div class="card-when">Sat Oct 17 · The Warfield</div>
     </div>
-    <p>Pop and acoustic singer-songwriter tonight at one of the city's most iconic venues. Standing room, doors at 7.</p>
+    <p>Pitchfork called it "sumptuous classic disco revival done right." The Warfield is a perfect room for it — just the right size, great sound. DHRUV opens. If you don't know Jessie Ware yet, this is your introduction and you're going to thank yourself.</p>
     <div class="tags">
       <span class="tag tag-music">Concert</span>
-      <span class="price-badge">$$ · ~$35–50</span>
+      <span class="price-badge">$$ · Check Ticketmaster</span>
     </div>
   </div>
 
-  <div class="card" data-cats="sports,outdoors" data-price="$">
+  <div class="card" data-cats="outdoors,music" data-price="free">
     <div class="card-top">
-      <h3>Oakland Ballers: Halloween in July</h3>
-      <div class="card-when">Sun Jul 26 · 1:05pm</div>
+      <h3>51st Annual Potrero Hill R&B Festival</h3>
+      <div class="card-when">Sat Oct 17 · 10am–5pm</div>
     </div>
-    <p>Indie baseball with weird theme nights at Raimondi Park. Tonight is "Night of the Living Possum." Friday is Grateful Dead Night. Tickets ~$24.</p>
-    <div class="tags">
-      <span class="tag tag-outdoors">Baseball</span>
-      <span class="price-badge">$ · ~$24</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="arts" data-price="free">
-    <div class="card-top">
-      <h3>ChoreoFest + Free Museum Weekend</h3>
-      <div class="card-when">Sat–Sun Jul 25–26</div>
-    </div>
-    <p>Free outdoor dance festival at Yerba Buena Gardens (Sat 2–4pm), plus free admission all weekend at the Museum of Craft & Design.</p>
+    <p>51 years of this neighborhood street festival and it still delivers. Four blocks of 20th Street shut down for live R&B, food, and good-neighbor energy. Free, family-friendly, and one of those quintessentially SF fall afternoons.</p>
     <div class="tags">
       <span class="tag tag-free">Free</span>
-      <span class="tag tag-arts">Arts</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="arts" data-price="$$">
-    <div class="card-top">
-      <h3>Matisse's Jazz Unbound — Last Chance</h3>
-      <div class="card-when">Through Jul 26</div>
-    </div>
-    <p>Exhibition closes this weekend at the de Young in Golden Gate Park. Pair it with a post-marathon walk.</p>
-    <div class="tags">
-      <span class="tag tag-arts">Art</span>
-      <span class="price-badge">$$ · ~$30</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="outdoors" data-price="free">
-    <div class="card-top">
-      <h3>SF Marathon Weekend</h3>
-      <div class="card-when">Sat–Sun Jul 25–26</div>
-    </div>
-    <p>Thousands of runners cross the Golden Gate Bridge and wind through the city. Spectator energy is block-party level — grab coffee and a good corner.</p>
-    <div class="tags">
-      <span class="tag tag-outdoors">Outdoors</span>
-      <span class="tag tag-free">Free to watch</span>
-    </div>
-  </div>
-
-  <div class="card" data-cats="food" data-price="free">
-    <div class="card-top">
-      <h3>Tokyo Central Food Fair</h3>
-      <div class="card-when">Sat–Sun Jul 25–26 · 9am–9pm</div>
-    </div>
-    <p>Free food samples, giveaways, and deals on Japanese groceries at Bay Street Emeryville. Worth the trip across the bridge.</p>
-    <div class="tags">
-      <span class="tag tag-free">Free</span>
-      <span class="tag tag-food">Food</span>
+      <span class="tag tag-music">R&B</span>
+      <span class="tag tag-outdoors">Street Festival</span>
     </div>
   </div>
 
   <div class="card" data-cats="sports" data-price="$$">
     <div class="card-top">
-      <h3>Giants vs. Brewers (4 home games)</h3>
-      <div class="card-when">Sun–Wed · Oracle Park</div>
+      <h3>Warriors vs. Trail Blazers — NBA Preseason</h3>
+      <div class="card-when">Fri Oct 16 · 7pm · Chase Center</div>
     </div>
-    <p>Angels series finale Sunday, then Brewers Mon–Wed. Wednesday's 12:45pm day game is a sneaky midweek outing.</p>
+    <p>First taste of Warriors basketball at Chase Center this fall. Preseason energy is loose and fun, tickets are cheaper than regular season, and you still get the full game-night experience. Good excuse to get back in the habit.</p>
     <div class="tags">
-      <span class="tag tag-outdoors">Baseball</span>
-      <span class="price-badge">$$ · From $15</span>
+      <span class="tag tag-outdoors">Basketball</span>
+      <span class="price-badge">$$ · Check SeatGeek</span>
+    </div>
+  </div>
+
+  <div class="card" data-cats="food" data-price="$$">
+    <div class="card-top">
+      <h3>Lucania Opens at the Ferry Building</h3>
+      <div class="card-when">Now Open</div>
+    </div>
+    <p>The team behind A16 takes over one of the Ferry Building's best spaces with a Southern Italian all-day restaurant — fresh pasta, seasonal dishes, and a big outdoor piazza patio with bay views. This is going to be a new regular.</p>
+    <div class="tags">
+      <span class="tag tag-new">New</span>
+      <span class="tag tag-food">Italian</span>
+      <span class="price-badge">$$ · $25–50/pp</span>
     </div>
   </div>
 
@@ -324,10 +318,10 @@
     Nothing matches those filters. <a onclick="resetFilters()">Clear all</a>
   </div>
 
-  <div class="section-label" data-ongoing="true">Always On This Summer</div>
-  <div class="ongoing" data-cats="music" data-price="free"><h4>Stern Grove Sundays</h4><p>Free concerts every Sunday through Aug 16. Coming up: Violent Femmes (Aug 2), Patti LaBelle (Aug 9), Public Enemy (Aug 15), Al Green (Aug 16).</p></div>
-  <div class="ongoing" data-cats="music" data-price="free"><h4>Lunch Break Concerts</h4><p>130+ free lunchtime concerts in public plazas near Market St, through late September.</p></div>
-  <div class="ongoing" data-cats="food" data-price="$"><h4>Fort Mason Night Market</h4><p>Monthly evening market with food vendors, DJs, makers, and pop-ups along the waterfront.</p></div>
+  <div class="section-label" data-ongoing="true">Always On This Fall</div>
+  <div class="ongoing" data-cats="music" data-price="$"><h4>Candlelight: The Best of The Beatles</h4><p>String quartet plays Beatles classics surrounded by hundreds of candles at St. Ignatius Church. Running through January 8, 2027. Check Fever for dates and tickets.</p></div>
+  <div class="ongoing" data-cats="arts" data-price="$$"><h4>Hairspray · SF Playhouse</h4><p>The feel-good musical runs through September 12. Intimate theater, every seat is a good seat.</p></div>
+  <div class="ongoing" data-cats="arts" data-price="$$"><h4>Beauty and the Beast · Orpheum Theatre</h4><p>Broadway touring production on Market Street. Matinee and evening shows available all week.</p></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
@@ -345,35 +339,35 @@
       <span class="dn-tier-est">$0 + whatever you eat</span>
     </div>
     <div class="dn-body">
-      <h3>Movie Under the Stars</h3>
-      <p class="dn-tagline">Blankets, The Princess Diaries, and dumplings at midnight.</p>
+      <h3>Beetlejuice & Waterfront Bites</h3>
+      <p class="dn-tagline">Spooky season, bay views, and a night that costs basically nothing.</p>
       <ul class="dn-steps">
         <li class="dn-step" data-step="1">
           <div>
-            <div class="dn-step-time">5:30 PM</div>
-            <div class="dn-step-title">Grab provisions</div>
-            <div class="dn-step-detail">Pick up snacks and a bottle of something at a corner store near Union Square. Or pack from home if you're organized like that.</div>
+            <div class="dn-step-time">4:30 PM</div>
+            <div class="dn-step-title">Swing by Fort Mason Night Market first</div>
+            <div class="dn-step-detail">It's free and it's on the way. Browse the West Coast Craft vendors, grab something to eat from the food stalls, and soak up the waterfront golden hour before heading south to Dogpatch.</div>
           </div>
         </li>
         <li class="dn-step" data-step="2">
           <div>
-            <div class="dn-step-time">6:00 PM</div>
-            <div class="dn-step-title">Claim your spot at Union Square</div>
-            <div class="dn-step-detail">The free outdoor movie series has pre-show activities starting at 6. Lay out a blanket, settle in while the sky turns pink.</div>
+            <div class="dn-step-time">5:00 PM</div>
+            <div class="dn-step-title">Settle in at Crane Cove Park</div>
+            <div class="dn-step-detail">Crane Cove is a beautiful little park in Dogpatch right on the water. Bring a blanket, find your spot on the grass, and watch the sky go dark over the bay while the pre-show atmosphere builds.</div>
           </div>
         </li>
         <li class="dn-step" data-step="3">
           <div>
             <div class="dn-step-time">Sunset</div>
-            <div class="dn-step-title">The Princess Diaries rolls</div>
-            <div class="dn-step-detail">A perfect crowd movie. Fun even if you've seen it. Especially if you've seen it.</div>
+            <div class="dn-step-title">Beetlejuice rolls</div>
+            <div class="dn-step-detail">It's October. It's outdoors. It's Beetlejuice. There is genuinely no better combination. Bring a jacket — it gets cold in Dogpatch once the sun drops.</div>
           </div>
         </li>
         <li class="dn-step" data-step="4">
           <div>
-            <div class="dn-step-time">~10 PM</div>
-            <div class="dn-step-title">Late-night dumplings in Chinatown</div>
-            <div class="dn-step-detail">It's a 10-minute walk. Good Fortune Dumpling House or wherever looks good and open. End the night with soup dumplings and no bill over $25.</div>
+            <div class="dn-step-time">~8:30 PM</div>
+            <div class="dn-step-title">Nightcap in the neighborhood</div>
+            <div class="dn-step-detail">Dogpatch has a few good spots to land after. Standard Deviant at Pier 70 is a 10-minute walk — huge industrial taproom, waterfront, solid beers. End the night on a high note without spending much.</div>
           </div>
         </li>
       </ul>
@@ -383,31 +377,31 @@
   <div class="dn-card dn-tier-mid">
     <div class="dn-tier">
       <span class="dn-tier-badge">The Midrange Move</span>
-      <span class="dn-tier-est">~$80–120 for two</span>
+      <span class="dn-tier-est">~$90–130 for two</span>
     </div>
     <div class="dn-body">
-      <h3>Mission Cocktail Crawl</h3>
-      <p class="dn-tagline">New bars, good food, and a neighborhood that rewards wandering.</p>
+      <h3>Market Street Arts Night + Dinner</h3>
+      <p class="dn-tagline">A walkable art spectacle, then something good to eat nearby.</p>
       <ul class="dn-steps">
         <li class="dn-step" data-step="1">
           <div>
-            <div class="dn-step-time">6:30 PM</div>
-            <div class="dn-step-title">Start at Stray Dog</div>
-            <div class="dn-step-detail">New cafe-bar on Utah & 24th. Pandan lattes during the day, pan-Asian cocktails at night. Shanghai-inspired, tiny, and just opened. Get an early drink while it's still mellow.</div>
+            <div class="dn-step-time">5:30 PM</div>
+            <div class="dn-step-title">Early dinner in Hayes Valley or Civic Center</div>
+            <div class="dn-step-detail">Get dinner before the festival crowds build. Hayes Valley has excellent options within walking distance of Market — grab a table at Monsieur Benjamin or any of the neighborhood spots you've been meaning to try.</div>
           </div>
         </li>
         <li class="dn-step" data-step="2">
           <div>
-            <div class="dn-step-time">7:30 PM</div>
-            <div class="dn-step-title">Dinner nearby</div>
-            <div class="dn-step-detail">Walk to your pick. Jilli for Korean drinking food and makgeolli (the popcorn fried chicken is mandatory). Or Big Finish for wine under $14/glass and cacio e pepe.</div>
+            <div class="dn-step-time">7:00 PM</div>
+            <div class="dn-step-title">Hit the Market Street Arts & Theater Festival</div>
+            <div class="dn-step-detail">Six blocks of programming: aerialists, drag karaoke on a cable car, pop-up theater, a free main stage. It's inaugural, it's free, and it runs until 10pm. Walk the whole stretch — some of the best stuff will be tucked into side doors and plazas.</div>
           </div>
         </li>
         <li class="dn-step" data-step="3">
           <div>
             <div class="dn-step-time">9:30 PM</div>
-            <div class="dn-step-title">Nightcap at the Madrone parklet</div>
-            <div class="dn-step-detail">Madrone Art Bar on Haight is doing a book sale in their parklet Saturday, but any night the bar itself is a vibe — murals, DJs, and a crowd that's been coming for years.</div>
+            <div class="dn-step-title">Cocktails at Valley Club</div>
+            <div class="dn-step-detail">Hotel G's mezzanine lounge in Union Square is a 10-minute walk from the festival's eastern end. Low lights, velvet corners, inventive cocktails. The kind of bar you stay in longer than you planned. Perfect way to close an unexpectedly great Saturday.</div>
           </div>
         </li>
       </ul>
@@ -417,31 +411,38 @@
   <div class="dn-card dn-tier-splurge">
     <div class="dn-tier">
       <span class="dn-tier-badge">The Splurge</span>
-      <span class="dn-tier-est">~$150–200 for two</span>
+      <span class="dn-tier-est">~$200–280 for two</span>
     </div>
     <div class="dn-body">
-      <h3>Symphony & Speakeasy</h3>
-      <p class="dn-tagline">St. Vincent with an orchestra, then cocktails in a hidden lounge. Thursday only.</p>
+      <h3>Ghibli Night at Davies Symphony Hall</h3>
+      <p class="dn-tagline">Joe Hisaishi conducting his own music. Thursday only. Do not miss this.</p>
       <ul class="dn-steps">
         <li class="dn-step" data-step="1">
           <div>
-            <div class="dn-step-time">6:00 PM</div>
-            <div class="dn-step-title">Early dinner at Hayes Valley</div>
-            <div class="dn-step-detail">Davies Symphony Hall is right by Hayes Valley. Grab dinner before the show — lots of walkable options. Keep it light, you want to be energized not sleepy.</div>
+            <div class="dn-step-time">5:30 PM</div>
+            <div class="dn-step-title">Dinner at Shinka in FiDi</div>
+            <div class="dn-step-detail">Brand new restaurant inside The Jay Hotel — a French-Japanese fusion tasting menu from a Jean-Georges alum. Opening this week and already generating serious buzz. Pre-theater dinner feels very right for tonight's itinerary.</div>
           </div>
         </li>
         <li class="dn-step" data-step="2">
           <div>
-            <div class="dn-step-time">7:30 PM</div>
-            <div class="dn-step-title">St. Vincent w/ the SF Symphony</div>
-            <div class="dn-step-detail">Annie Clark's catalog — "Los Ageless," "Cruel," "Digital Witness" — performed with a full orchestra conducted by Jules Buckley. First-ever orchestral run. It's going to be extraordinary.</div>
+            <div class="dn-step-time">7:00 PM</div>
+            <div class="dn-step-title">Settle into Davies Symphony Hall</div>
+            <div class="dn-step-detail">Get there with time to wander the lobby, grab a drink, find your seats. The hall itself is gorgeous. Tonight Joe Hisaishi — the composer behind Spirited Away, Princess Mononoke, Howl's Moving Castle — is conducting his own work. This is the definition of a bucket-list concert.</div>
           </div>
         </li>
         <li class="dn-step" data-step="3">
           <div>
+            <div class="dn-step-time">7:30 PM</div>
+            <div class="dn-step-title">Joe Hisaishi: Hisaishi Conducts Hisaishi</div>
+            <div class="dn-step-detail">Sit back. Let it wash over you. You're going to hear music you've loved your whole life performed live by the person who wrote it, with a full orchestra. There's nothing else to say.</div>
+          </div>
+        </li>
+        <li class="dn-step" data-step="4">
+          <div>
             <div class="dn-step-time">~10 PM</div>
-            <div class="dn-step-title">Cocktails at Valley Club</div>
-            <div class="dn-step-detail">Cab to Hotel G's mezzanine in Union Square. Low lights, velvet corners, and The Lovemaker — a Negroni riff with raspberry and cocoa butter. The kind of place where you stay longer than planned.</div>
+            <div class="dn-step-title">Bar Shoji for a nightcap</div>
+            <div class="dn-step-detail">Head to SoMa's Bar Shoji — wagyu-fat-washed whisky, a fondue burger, and a dark moody room that feels just right after a transcendent concert. You'll want somewhere to sit and talk about what you just heard.</div>
           </div>
         </li>
       </ul>
@@ -457,31 +458,31 @@
 
   <div class="card">
     <div class="card-top">
-      <h3>Jollibee</h3>
-      <div class="card-when">Opens Fri Jul 31</div>
+      <h3>Lucania</h3>
+      <div class="card-when">Now Open</div>
     </div>
-    <p>934 Market St near Powell BART. First SF location since 2011. Fried chicken, Jolly Spaghetti, Peach Mango Pie. The mayor announced it on X. Expect lines day one.</p>
-    <div class="tags"><span class="tag tag-new">New</span><span class="tag tag-food">Filipino</span><span class="price-badge">$ · Under $15</span></div>
+    <p>1 Ferry Building, Embarcadero. The team behind A16 takes over one of the Ferry Building's prime spaces with a Southern Italian all-day restaurant. Fresh pasta, seasonal salads, and an expansive outdoor piazza patio with bay views. This is going to be a new go-to.</p>
+    <div class="tags"><span class="tag tag-new">New</span><span class="tag tag-food">Southern Italian</span><span class="price-badge">$$ · $25–50/pp</span></div>
   </div>
 
   <div class="grid-2">
-    <div class="mini-card"><div class="mini-type">Middle Eastern · Ferry Building</div><h4>Hayati</h4><p>Taking over the old Boulettes Larder space. From the team behind Sens.</p><div class="mini-price">$$ · $25–50/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Spanish Tapas · Berkeley</div><h4>Mesón</h4><p>Former César staff. Patatas bravas, bocadillos, cocktails in Westbrae.</p><div class="mini-price">$$ · $30–55/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Cafe & Cocktails · Mission</div><h4>Stray Dog</h4><p>Shanghai-inspired all-day cafe → pan-Asian cocktail bar at night. Utah & 24th.</p><div class="mini-price">$ · $8–20</div></div>
-    <div class="mini-card"><div class="mini-type">Russian Bakery · Mission</div><h4>Cinderella Bakery</h4><p>The Richmond favorite's long-awaited second location. Rye bread and honey cakes.</p><div class="mini-price">$ · $5–15</div></div>
+    <div class="mini-card"><div class="mini-type">Japanese-French · FiDi</div><h4>Shinka</h4><p>Inside The Jay Hotel at 433 Clay St. French technique meets Japanese sensibility from a Jean-Georges alum. Opening mid-October.</p><div class="mini-price">$$$ · Tasting menu</div></div>
+    <div class="mini-card"><div class="mini-type">Wellness Cafe · Lower Haight</div><h4>Olive Juice</h4><p>354 Divisadero. All-day Mediterranean cafe — olive oil in everything, including your espresso. Thu–Sun 8am–2pm on the back patio.</p><div class="mini-price">$ · $8–18</div></div>
+    <div class="mini-card"><div class="mini-type">Handroll Bar · Cow Hollow</div><h4>Kaiyō Handroll Bar</h4><p>The former Kaiyō on Union St is now a handroll bar with tableside carts. Ceviche and lomo saltado still on the menu.</p><div class="mini-price">$$ · $20–40/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Cocktail Bar · North Beach</div><h4>15 Romolo</h4><p>The beloved pseudo-speakeasy down Romolo Alley in North Beach reopens mid-October. No password required — just great cocktails and tapas in a refreshed interior.</p><div class="mini-price">$$ · $16–22/cocktail</div></div>
   </div>
 
   <div class="section-label">Bars Worth Hitting</div>
 
   <div class="grid-2">
-    <div class="mini-card"><div class="mini-type">Korean · Mission</div><h4>Jilli</h4><p>Makgeolli from teapots, popcorn fried chicken, kimchi vodka rigatoni. Communal and loud.</p><div class="mini-price">$$ · $15–20/drink + food</div></div>
-    <div class="mini-card"><div class="mini-type">Cocktail Lounge · Union Square</div><h4>Valley Club</h4><p>Hotel G mezzanine. Low lights, cocoa-butter Negroni. Date-night energy.</p><div class="mini-price">$$ · $18–22/cocktail</div></div>
-    <div class="mini-card"><div class="mini-type">Wine Tavern · Mission</div><h4>Big Finish</h4><p>48 wines on tap, most under $14. Buffalo wings and cacio e pepe.</p><div class="mini-price">$ · Under $14/glass</div></div>
-    <div class="mini-card"><div class="mini-type">Japanese · SoMa</div><h4>Bar Shoji</h4><p>Coffee by day, cocktail den by night. Wagyu-fat-washed whisky, fondue burger.</p><div class="mini-price">$$ · $18–24/cocktail</div></div>
-    <div class="mini-card"><div class="mini-type">Neighborhood · Upper Haight</div><h4>The Green Heron</h4><p>Took over Hobson's Choice. Martinis, old fashioneds, Miller Lite — no judgment.</p><div class="mini-price">$ · $8–15/drink</div></div>
-    <div class="mini-card"><div class="mini-type">Brewery · Dogpatch</div><h4>Standard Deviant at Pier 70</h4><p>Waterfront taproom. Barrel-aged rosé-saison wine-beer hybrid. Huge industrial space.</p><div class="mini-price">$ · $8–12/beer</div></div>
-    <div class="mini-card"><div class="mini-type">Sports Bar · Castro</div><h4>Rikki's</h4><p>First women-focused bar in the Castro in years. Valkyries watch parties, lavender cocktails.</p><div class="mini-price">$ · $10–16/drink</div></div>
-    <div class="mini-card"><div class="mini-type">Members Club · FiDi</div><h4>The Bank at Amador</h4><p>1908 bank turned social club. Marble walls, vault door, three kinds of martinis. $50/mo.</p><div class="mini-price">$$ · $50/mo + drinks</div></div>
+    <div class="mini-card"><div class="mini-type">Cocktail Lounge · Union Square</div><h4>Valley Club</h4><p>Hotel G mezzanine. Low lights, cocoa-butter Negroni. Date-night energy all week.</p><div class="mini-price">$$ · $18–22/cocktail</div></div>
+    <div class="mini-card"><div class="mini-type">Japanese · SoMa</div><h4>Bar Shoji</h4><p>Coffee by day, cocktail den by night. Wagyu-fat-washed whisky, fondue burger. One of the city's most interesting bars right now.</p><div class="mini-price">$$ · $18–24/cocktail</div></div>
+    <div class="mini-card"><div class="mini-type">Korean · Mission</div><h4>Jilli</h4><p>Makgeolli from teapots, popcorn fried chicken, kimchi vodka rigatoni. Communal and loud in the best way.</p><div class="mini-price">$$ · $15–20/drink + food</div></div>
+    <div class="mini-card"><div class="mini-type">Wine Tavern · Mission</div><h4>Big Finish</h4><p>48 wines on tap, most under $14. Buffalo wings and cacio e pepe. Still the best deal in the city.</p><div class="mini-price">$ · Under $14/glass</div></div>
+    <div class="mini-card"><div class="mini-type">Brewery · Dogpatch</div><h4>Standard Deviant at Pier 70</h4><p>Waterfront taproom with a barrel-aged rosé-saison hybrid and a massive industrial space. Great after Crane Cove Cinema on Friday.</p><div class="mini-price">$ · $8–12/beer</div></div>
+    <div class="mini-card"><div class="mini-type">Sports Bar · Castro</div><h4>Rikki's</h4><p>SF's first women-focused bar in the Castro in years. Great cocktails, great crowd, watch parties all season.</p><div class="mini-price">$ · $10–16/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Neighborhood · Upper Haight</div><h4>The Green Heron</h4><p>Took over Hobson's Choice. Martinis, old fashioneds, Miller Lite — no judgment, great vibe.</p><div class="mini-price">$ · $8–15/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Members Club · FiDi</div><h4>The Bank at Amador</h4><p>1908 bank turned social club. Marble walls, vault door, three kinds of martinis. $50/mo membership.</p><div class="mini-price">$$ · $50/mo + drinks</div></div>
   </div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
@@ -489,28 +490,22 @@
 
 <!-- ==================== SPORTS ==================== -->
 <div class="view" id="view-sports">
-  <div class="section-label" style="border-top:none;padding-top:0">⚾ Giants · Oracle Park</div>
+  <div class="section-label" style="border-top:none;padding-top:0">🏀 Warriors · Chase Center</div>
 
-  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Angels</h4><p>Series finale</p></div><div class="sr-when">Sun Jul 26<br>1:05 PM</div><div class="sr-price">From $15</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Brewers</h4><p>Game 1</p></div><div class="sr-when">Mon Jul 27<br>6:45 PM</div><div class="sr-price">From $15</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Brewers</h4><p>Game 2</p></div><div class="sr-when">Tue Jul 28<br>6:45 PM</div><div class="sr-price">From $15</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Giants vs. Brewers</h4><p>Day game — midweek gem</p></div><div class="sr-when">Wed Jul 29<br>12:45 PM</div><div class="sr-price">From $15</div></div>
-  <p class="sport-note">Giants head to San Diego Thu–Fri to close the week.</p>
+  <div class="sport-row"><div class="sr-teams"><h4>Warriors vs. Trail Blazers</h4><p>NBA Preseason — first home game of the fall</p></div><div class="sr-when">Fri Oct 16<br>7:00 PM</div><div class="sr-price">Check SeatGeek</div></div>
+  <p class="sport-note">Preseason energy is loose and fun — cheaper tickets, same Chase Center atmosphere. Good time to ease back in. Doja Cat is also at the arena Monday if you want a very different kind of night.</p>
 
-  <div class="section-label">⚾ Oakland Ballers · Raimondi Park</div>
+  <div class="section-label">🎤 Chase Center — Also This Week</div>
+  <div class="sport-row"><div class="sr-teams"><h4>Doja Cat — Tour Ma Vie World Tour</h4><p>feat. Latto · Not a sporting event but same venue</p></div><div class="sr-when">Mon Oct 19<br>7:30 PM</div><div class="sr-price">From $92</div></div>
+  <p class="sport-note">Mentioned here because Chase Center is Chase Center. If you're going to be in that building Monday, you'll know why.</p>
 
-  <div class="sport-row"><div class="sr-teams"><h4>Ballers vs. Boise Hawks</h4><p>🦝 Night of the Living Possum</p></div><div class="sr-when">Sat Jul 25<br>4:35 PM</div><div class="sr-price">~$24</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Ballers vs. Boise Hawks</h4><p>🎃 Halloween in July</p></div><div class="sr-when">Sun Jul 26<br>1:05 PM</div><div class="sr-price">~$24</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Ballers vs. PBL Travel Team</h4><p>💀 Grateful Dead Night</p></div><div class="sr-when">Fri Jul 31<br>6:35 PM</div><div class="sr-price">~$28</div></div>
-  <p class="sport-note">Cheap indie baseball, wild theme nights. Raimondi Park, 1800 Wood St, Oakland.</p>
-
-  <div class="section-label">🏀 Valkyries · WNBA</div>
-
-  <div class="sport-row"><div class="sr-teams"><h4>Valkyries @ Phoenix Mercury</h4><p>Record: 13-8 · Favored (65.6%)</p></div><div class="sr-when">Wed Jul 29<br>7:00 PM</div><div class="sr-price">Away game</div></div>
-  <p class="sport-note">Watch at Rikki's in the Castro for packed watch parties. Next home game: Sun Aug 2 vs. Toronto at Chase Center.</p>
+  <div class="section-label">⚾ Bay Area Baseball — Postseason Watch</div>
+  <div class="sport-row"><div class="sr-teams"><h4>MLB Postseason</h4><p>League Championship Series ongoing — check schedules</p></div><div class="sr-when">All week</div><div class="sr-price">TV / Bar</div></div>
+  <p class="sport-note">Giants and A's are both out of it, but October baseball is October baseball. Catch the LCS games at any sports bar — Rikki's in the Castro, The Green Heron on Haight, or wherever your crew watches.</p>
 
   <div class="section-label">💪 Also This Weekend</div>
-  <div class="sport-row"><div class="sr-teams"><h4>CrossFit Games</h4><p>SAP Center, San Jose</p></div><div class="sr-when">Sat–Sun<br>Jul 25–27</div><div class="sr-price">$75+</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>SF Photobook Fair</h4><p>Harvey Milk Photo Center — for the sport of it</p></div><div class="sr-when">Sat–Sun<br>Oct 17–18</div><div class="sr-price">Check website</div></div>
+  <div class="sport-row"><div class="sr-teams"><h4>Shipyard Open Studios</h4><p>Hunters Point — 130+ artists, beer garden, live jazz</p></div><div class="sr-when">Sat–Sun<br>Oct 17–18</div><div class="sr-price">Free</div></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
@@ -521,83 +516,92 @@
 
   <div class="highlight-card card">
     <div class="card-top">
-      <h3>Suki Waterhouse · Stern Grove</h3>
-      <div class="card-when">Sun Jul 26 · 2pm</div>
+      <h3>Sara Bareilles — The Good Grief Tour</h3>
+      <div class="card-when">Thu–Fri Oct 16–17 · 8pm</div>
     </div>
-    <p>Free concert in the amphitheater. Doors at noon, show at 2. Try the community box office for day-of passes. Bring a jacket — it's near the ocean.</p>
-    <div class="tags"><span class="tag">Free</span><span class="tag">Outdoors</span></div>
+    <p>Two nights at Bill Graham Civic Auditorium supporting her first album in seven years — 14 deeply personal songs. This is going to be a big, emotional room. She's a world-class live performer and this is her best material in years.</p>
+    <div class="tags"><span class="tag">Pop</span><span class="price-badge">$$$ · From $112</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Chance Peña · The Fillmore</h3><div class="card-when">Sat Jul 25 · 8pm</div></div>
-    <p>Pop and acoustic singer-songwriter touring through SF. Standing room / open dance floor. Doors at 7.</p>
-    <div class="tags"><span class="tag tag-music">Pop / Acoustic</span><span class="price-badge">$$ · ~$35–50</span></div>
+    <div class="card-top"><h3>Neurosis (TWO NIGHTS) — SOLD OUT</h3><div class="card-when">Fri–Sat Oct 16–17 · The Fillmore</div></div>
+    <p>The Oakland heavy metal/post-metal legends are back at the Fillmore for two rare hometown nights. Both shows sold out — check resale if you need tickets. If you know, you know.</p>
+    <div class="tags"><span class="tag tag-music">Metal / Post-Metal</span><span class="price-badge">Sold Out — check resale</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Party Pupils · The Midway</h3><div class="card-when">Sat Jul 25 · 2pm</div></div>
-    <p>Daytime dance party at The Midway in SoMa.</p>
-    <div class="tags"><span class="tag tag-music">DJ / Dance</span><span class="price-badge">$$ · ~$30–45</span></div>
+    <div class="card-top"><h3>Iron & Wine · Castro Theatre</h3><div class="card-when">Fri Oct 16</div></div>
+    <p>Sam Beam's intimate folk-rock in one of SF's most storied venues. The Castro Theatre is beautiful on its own — Iron & Wine inside it is something else entirely. A quiet, gorgeous Friday night alternative.</p>
+    <div class="tags"><span class="tag tag-music">Folk / Indie</span><span class="price-badge">$$ · Check SeatGeek</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Andy Grammer + Walk Off The Earth</h3><div class="card-when">Sun Jul 26 · 7pm</div></div>
-    <p>Outdoor amphitheater at the Green Music Center in Rohnert Park. Worth the drive for a summer evening.</p>
-    <div class="tags"><span class="tag tag-music">Pop</span><span class="price-badge">$$ · $40–70</span></div>
+    <div class="card-top"><h3>Jessie Ware — The Superbloom Tour</h3><div class="card-when">Sat Oct 17 · The Warfield</div></div>
+    <p>DHRUV opens. Ware's disco revival sound is made for a room like the Warfield — great acoustics, the right size, a crowd that shows up to dance. Saturday night perfect.</p>
+    <div class="tags"><span class="tag tag-music">Disco / Pop</span><span class="price-badge">$$ · Check Ticketmaster</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>The Wallflowers — 30th Anniversary Tour</h3><div class="card-when">Sun Oct 18 · The Fillmore</div></div>
+    <p>Bringing Down the Horse turns 30. "One Headlight," "6th Avenue Heartache," all of it, live at the Fillmore. A genuinely great '90s alt-rock night. Jakob Dylan still has it.</p>
+    <div class="tags"><span class="tag tag-music">Alt-Rock</span><span class="price-badge">$$ · Check thefillmore.com</span></div>
   </div>
 
   <div class="section-label">This Week</div>
 
-  <div class="card">
-    <div class="card-top"><h3>St. Vincent w/ SF Symphony</h3><div class="card-when">Thu Jul 30 · 7:30pm</div></div>
-    <p>First-ever orchestral tour. Full catalog performed with the San Francisco Symphony at Davies Symphony Hall. Conducted by Jules Buckley. The show of the week.</p>
-    <div class="tags"><span class="tag tag-music">Art Pop / Orchestral</span><span class="price-badge">$$$ · $75+</span></div>
+  <div class="highlight-card card">
+    <div class="card-top">
+      <h3>Joe Hisaishi: Hisaishi Conducts Hisaishi</h3>
+      <div class="card-when">Thu Oct 22 · 7:30pm · Davies Symphony Hall</div>
+    </div>
+    <p>The composer of every Studio Ghibli film score you've ever loved — Spirited Away, My Neighbor Totoro, Princess Mononoke, Howl's Moving Castle — conducting his own work with the SF Symphony. This is the concert of the year. Tickets from $175. Buy them now.</p>
+    <div class="tags"><span class="tag">Classical</span><span class="tag">Ghibli</span><span class="price-badge">$$$ · From $175</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Trevor Noah · The Mountain Winery</h3><div class="card-when">Sun–Tue Jul 26–28</div></div>
-    <p>Three nights at the outdoor amphitheater in Saratoga. Bring a layer and grab wine before the show.</p>
-    <div class="tags"><span class="tag tag-nightlife">Comedy</span><span class="price-badge">$$$ · $80+</span></div>
+    <div class="card-top"><h3>Doja Cat — Tour Ma Vie World Tour</h3><div class="card-when">Mon Oct 19 · 7:30pm · Chase Center</div></div>
+    <p>Her fifth studio album Vie tour hits Chase Center with Latto as support. Big production, big stage, big Monday night energy. Face value runs $92–$456 depending on where you want to sit.</p>
+    <div class="tags"><span class="tag tag-music">Pop / Hip-Hop</span><span class="price-badge">$$$ · From $92</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Julian Lage · Davies Symphony Hall</h3><div class="card-when">Mon Oct 19</div></div>
+    <p>One of the most technically accomplished jazz guitarists alive, playing a world-class hall. Laura Itandehui joins him. If you appreciate musicianship, this is the quiet must-see of the week.</p>
+    <div class="tags"><span class="tag tag-music">Jazz</span><span class="price-badge">$$ · Check SeatGeek</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>SF Symphony — Dvořák Symphony No. 8</h3><div class="card-when">Fri Oct 16, Sat Oct 17, Sun Oct 18 · 7:30pm</div></div>
+    <p>The Symphony performs Dvořák's glorious Symphony No. 8 across three evenings at Davies. A lush, joyful piece — one of the great orchestral works. A reliable and wonderful night out.</p>
+    <div class="tags"><span class="tag tag-music">Classical</span><span class="price-badge">$$ · From $51</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Allan Rayman — Hotel Allan 10th Anniversary</h3><div class="card-when">Fri Oct 16 · Swedish American Hall</div></div>
+    <p>Cinematic, character-driven songwriting marking a decade of Hotel Allan at an intimate Market Street venue. The Swedish American Hall is a gem of a room — small enough that you feel every song.</p>
+    <div class="tags"><span class="tag tag-music">Indie / Folk</span><span class="price-badge">$ · Check Eventbrite</span></div>
   </div>
 
   <div class="section-label">Nightly Live Music</div>
 
   <div class="card">
     <div class="card-top"><h3>The Deluxe · Haight St</h3><div class="card-when">Every night</div></div>
-    <p>Live jazz and soul nightly, $5–$10 cover. Mon: DeLuxe Jazz Collective. Thu: Tony Peebles. Fri: Angela LaFlamme. Sat: Hammond Cheese Combo + Big Blu Soul Revue ($15).</p>
+    <p>Live jazz and soul nightly, $5–$15 cover. One of the most reliable spots in the city for a mid-week live music fix. Walk-in friendly.</p>
     <div class="tags"><span class="tag tag-music">Jazz / Soul</span><span class="price-badge">$ · $5–15</span></div>
   </div>
 
-  <div class="section-label">Broadway & Theater</div>
+  <div class="section-label">Ongoing & Theater</div>
 
-  <div class="card">
-    <div class="card-top"><h3>Beauty and the Beast · Orpheum Theatre</h3><div class="card-when">Multiple shows</div></div>
-    <p>Broadway touring production on Market Street. Matinee and evening shows available this week.</p>
-    <div class="tags"><span class="tag tag-arts">Broadway</span><span class="price-badge">$$ · $50–130+</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-top"><h3>Hairspray · SF Playhouse</h3><div class="card-when">Through Sep 12</div></div>
-    <p>The musical is running all summer. Intimate theater — every seat is a good seat.</p>
-    <div class="tags"><span class="tag tag-arts">Theater</span><span class="price-badge">$$ · $35–75</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-top"><h3>SF Symphony: Matilda (Live-to-Picture)</h3><div class="card-when">Sun Jul 26 · 2pm</div></div>
-    <p>The orchestra plays the score live while the film screens. At Davies Symphony Hall — fun for all ages.</p>
-    <div class="tags"><span class="tag tag-arts">Film + Orchestra</span><span class="price-badge">$$ · $30–60</span></div>
-  </div>
-
-  <div class="section-label">Coming Up</div>
-  <div class="ongoing"><h4>Stern Grove · Remaining Lineup</h4><p>Violent Femmes (Aug 2) · Patti LaBelle (Aug 9) · Public Enemy (Aug 15) · Al Green (Aug 16). All free.</p></div>
-  <div class="ongoing"><h4>Outside Lands · Aug 7–9</h4><p>Charli XCX, Rufus Du Sol, The Strokes. Golden Gate Park. Tickets on sale now.</p></div>
+  <div class="ongoing"><h4>Candlelight: The Best of The Beatles · St. Ignatius Church</h4><p>String quartet performs Beatles classics by candlelight through January 8, 2027. Check Fever for available dates — a genuinely lovely evening any time of year.</p></div>
+  <div class="ongoing"><h4>Beauty and the Beast · Orpheum Theatre</h4><p>Broadway touring production on Market Street. Matinee and evening shows all week.</p></div>
+  <div class="ongoing"><h4>SF Conservatory — Beethoven's Eroica (Free)</h4><p>50 Oak St · Friday Oct 16, 7:30pm. Free concert featuring Beethoven's 3rd Symphony and Grace Williams' "Sea Sketches." Underrated free classical option this weekend.</p></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
 <div class="footer">
   <div class="sign-off">See you out there. — Sammy</div>
-  <p>Sammy's SF · Issue 01 · July 2026</p>
+  <p>Sammy's SF · Issue 13 · October 2026</p>
 </div>
 
 <script>
@@ -661,7 +665,7 @@ function filterPicks() {
 // Share
 function shareThis() {
   if (navigator.share) {
-    navigator.share({ title: 'SF This Week — July 25–31', text: 'Fun stuff happening in SF this week.', url: window.location.href }).catch(() => {});
+    navigator.share({ title: "Sammy's SF — October 16–22", text: 'Fun stuff happening in SF this week.', url: window.location.href }).catch(() => {});
   } else {
     navigator.clipboard.writeText(window.location.href).then(() => {
       const btn = event.target;
