@@ -11,8 +11,18 @@
     --fog: #F0F2F5; --night: #1A1D23; --bay: #2E6B8A; --sunset: #E8734A;
     --golden: #D4A843; --mist: #C8CDD5; --white: #FFFFFF; --card-bg: #FFFFFF;
     --rose: #AD1457; --rose-light: #FCE4EC;
+    --card: #fff; --card-border: rgba(0,0,0,0.06);
+    --card-shadow: 0 1px 4px rgba(0,0,0,0.04);
   }
-  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--fog); color: var(--night); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #F3F2F6;
+    background-attachment: fixed;
+    color: var(--night);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
 
   /* HEADER */
   .header { background: var(--night); color: var(--white); padding: 2.5rem 1.5rem 0; text-align: center; position: relative; overflow: hidden; }
@@ -21,130 +31,166 @@
   .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #FFD9C4; margin-bottom: 0.5rem; }
   .header h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2.8rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.3rem; }
   .header h1 em { font-style: italic; }
-  .header-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: rgba(255,255,255,0.55); margin-bottom: 0.75rem; }
-  .header-date { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+  .header-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+  .header-date { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
 
   /* TABS */
-  .tabs { display: flex; gap: 0; justify-content: center; padding: 0 1rem; }
-  .tab { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; padding: 0.7rem 1.2rem; color: rgba(255,255,255,0.5); background: transparent; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; white-space: nowrap; letter-spacing: 0.01em; }
+  .tabs { display: flex; gap: 0; justify-content: center; border-bottom: none; margin: 0 -1.5rem; padding: 0 1.5rem; }
+  .tab { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; padding: 0.7rem 1.2rem; color: rgba(255,255,255,0.5); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
   .tab:hover { color: rgba(255,255,255,0.8); }
-  .tab.active { color: var(--white); border-bottom-color: var(--sunset); }
-  @media (max-width: 520px) { .tab { font-size: 0.68rem; padding: 0.6rem 0.7rem; } }
+  .tab.active { color: var(--white); border-bottom-color: #E8734A; }
+  @media (max-width: 520px) { .tab { font-size: 0.65rem; padding: 0.55rem 0.55rem; } }
 
   /* VIEWS */
-  .view { display: none; max-width: 700px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .view { display: none; max-width: 640px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
   .view.active { display: block; }
 
-  /* SHARED CARD STYLES */
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bay); margin-bottom: 1rem; padding-top: 2rem; border-top: 2px solid var(--night); }
-  .section-label:first-child { padding-top: 0; border-top: none; }
+  /* FILTER PILLS */
+  .filter-pills { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
+  .fpill { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; padding: 5px 12px; border-radius: 100px; background: #fff; border: 0.5px solid rgba(0,0,0,0.1); color: #444; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .fpill:hover { border-color: rgba(0,0,0,0.15); color: #555; }
+  .fpill.on { background: #C4724A; border-color: #E8734A; color: #fff; }
 
-  .card { background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: transform 0.15s ease, box-shadow 0.15s ease; }
-  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem; }
-  .card h3 { font-family: 'Instrument Serif', serif; font-size: 1.3rem; font-weight: 400; line-height: 1.3; }
-  .card-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.05em; color: var(--sunset); white-space: nowrap; padding-top: 0.3rem; }
-  .card p { font-size: 0.88rem; color: #555; line-height: 1.65; margin-bottom: 0.75rem; }
-  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
-  .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; }
+  /* PRICE SLIDER */
+  .slider-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding: 0 2px; }
+  .slider-label { font-size: 0.7rem; font-weight: 600; min-width: 28px; }
+  .slider-label-left { color: #1B5E20; }
+  .slider-label-right { color: #999; text-align: right; }
+  .price-slider { flex: 1; -webkit-appearance: none; appearance: none; height: 4px; border-radius: 2px; outline: none; background: linear-gradient(90deg, #1B5E20 0%, #C4724A 100%); }
+  .price-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; background: #fff; border: 2px solid #C4724A; border-radius: 50%; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .price-slider::-moz-range-thumb { width: 16px; height: 16px; background: #fff; border: 2px solid #C4724A; border-radius: 50%; cursor: pointer; }
+  .slider-ticks { display: flex; justify-content: space-between; margin-top: -14px; padding: 0 6px; margin-bottom: 8px; }
+  .slider-ticks span { font-size: 0.65rem; color: #777; }
+  .filter-status { font-size: 0.8rem; color: #555; margin-bottom: 14px; }
+  .filter-status strong { color: #777; font-weight: 500; }
+
+  /* SECTION LABELS */
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #E8734A; margin-bottom: 12px; margin-top: 24px; }
+  .section-label:first-child { margin-top: 0; }
+  .section-label-muted { color: #555; }
+
+  /* CARDS */
+  .card { background: var(--card); border: 0.5px solid var(--card-border); border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 10px; box-shadow: var(--card-shadow); transition: transform 0.15s, box-shadow 0.15s; }
+  .card:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .card.filtered-out { display: none; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px; }
+  .card h3 { font-family: 'Instrument Serif', serif; font-size: 1.2rem; font-weight: 400; line-height: 1.3; color: var(--night); }
+  .card-when { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #E8734A; white-space: nowrap; padding-top: 3px; }
+  .card p { font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; }
   .tag-free { background: #D4EDDA; color: #1B5E20; }
-  .tag-food { background: #FFF3E0; color: #BF360C; }
   .tag-music { background: #E8DEF8; color: #4A148C; }
-  .tag-outdoors { background: #E0F2F1; color: #004D40; }
+  .tag-food { background: #FFF3E0; color: #BF360C; }
   .tag-arts { background: #FCE4EC; color: #880E4F; }
-  .tag-nightlife { background: var(--night); color: var(--fog); }
-  .tag-bars { background: #EFEBE9; color: #5D4037; }
+  .tag-nightlife { background: #EDE7F6; color: #311B92; }
+  .tag-outdoors { background: #E0F2F1; color: #004D40; }
+  .tag-sports { background: #E3F2FD; color: #1565C0; }
   .tag-new { background: #FFF8E1; color: #F57F17; }
-  .price-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; color: var(--bay); margin-left: auto; padding-left: 0.5rem; }
+  .price-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #777; margin-left: auto; }
 
-  .highlight-card { background: linear-gradient(135deg, var(--night) 0%, #2D2040 100%); color: var(--white); border-radius: 12px; padding: 2rem 1.5rem; margin-bottom: 1rem; }
-  .highlight-card .card-when { color: var(--golden); }
-  .highlight-card h3 { color: var(--white); font-size: 1.5rem; }
-  .highlight-card p { color: rgba(255,255,255,0.75); }
-  .highlight-card .tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
-  .highlight-card .price-badge { color: var(--golden); }
+  /* HERO CARD */
+  .hero-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #E8734A; margin-bottom: 12px; }
+  .highlight-card { background: linear-gradient(135deg, #1A1D23 0%, #2A1828 30%, #1E2940 70%, #1A1D23 100%); border: none; box-shadow: 0 4px 24px rgba(0,0,0,0.25); position: relative; overflow: hidden; }
+  .highlight-card::before { content: ''; position: absolute; top: -20px; right: -20px; width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle, rgba(200,150,62,0.06) 0%, transparent 70%); pointer-events: none; }
+  .highlight-card h3 { color: #fff; font-size: 1.25rem; }
+  .highlight-card .card-when { color: rgba(255,255,255,0.5); }
+  .highlight-card p { color: rgba(255,255,255,0.7); }
+  .highlight-card .tag { background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.85); }
+  .highlight-card .price-badge { color: rgba(255,255,255,0.5); }
 
-  /* EATS/BARS GRID */
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  /* CARD LINK */
+  .card-link { display: inline-block; font-size: 0.75rem; font-weight: 600; color: #E8734A; text-decoration: none; margin-top: 4px; transition: color 0.15s; }
+  .card-link:hover { color: #A0583A; }
+  .card-link::after { content: ' →'; }
+
+  /* MINI CARDS (eats/bars grid) */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
   @media (max-width: 540px) { .grid-2 { grid-template-columns: 1fr; } }
-  .mini-card { background: var(--card-bg); border-radius: 10px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .mini-card h4 { font-family: 'Instrument Serif', serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 0.25rem; }
-  .mini-card .mini-type { font-size: 0.7rem; color: var(--sunset); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
-  .mini-card p { font-size: 0.8rem; color: #666; line-height: 1.5; }
-  .mini-card .mini-price { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--bay); margin-top: 0.5rem; }
+  .mini-card { background: var(--card); border: 0.5px solid var(--card-border); border-radius: 12px; padding: 1.1rem 1.25rem; box-shadow: var(--card-shadow); }
+  .mini-card h4 { font-family: 'Instrument Serif', serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 3px; }
+  .mini-type { font-size: 0.65rem; color: #E8734A; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .mini-card p { font-size: 0.82rem; color: #555; line-height: 1.5; }
+  .mini-price { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #666; margin-top: 6px; }
 
-  .ongoing { background: var(--fog); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 1.25rem; margin-bottom: 0.75rem; }
-  .ongoing h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
-  .ongoing p { font-size: 0.8rem; color: #666; line-height: 1.5; }
+  /* SPORT ROWS */
+  .sport-row { display: flex; align-items: center; background: #fff; border: 0.5px solid rgba(0,0,0,0.06); border-radius: 10px; padding: 0.9rem 1.25rem; margin-bottom: 6px; box-shadow: var(--card-shadow); gap: 1rem; }
+  .sr-teams { flex: 1; }
+  .sr-teams h4 { font-size: 0.9rem; font-weight: 600; }
+  .sr-teams p { font-size: 0.8rem; color: #777; }
+  .sr-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #E8734A; text-align: right; white-space: nowrap; }
+  .sr-price { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--mist); text-align: right; white-space: nowrap; }
+  .sport-note { font-size: 0.78rem; color: #999; font-style: italic; margin-top: 6px; margin-bottom: 18px; }
 
-  /* ===== DATE NIGHT VIEW ===== */
-  .dn-intro { text-align: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
-  .dn-intro h2 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; margin-bottom: 0.5rem; }
-  .dn-intro p { font-size: 0.9rem; color: #888; max-width: 420px; margin: 0 auto; }
+  /* ONGOING */
+  .ongoing { background: rgba(255,255,255,0.8); border: 0.5px solid rgba(0,0,0,0.05); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 8px; }
+  .ongoing.filtered-out { display: none; }
+  .ongoing h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 2px; }
+  .ongoing p { font-size: 0.82rem; color: #555; line-height: 1.5; }
 
-  .dn-card { background: var(--card-bg); border-radius: 16px; padding: 0; margin-bottom: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; }
-  .dn-tier { padding: 1rem 1.75rem 0; display: flex; align-items: center; gap: 0.75rem; }
-  .dn-tier-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; }
+  /* PLAYBOOKS */
+  .plans-intro { text-align: center; margin-bottom: 1.5rem; }
+  .plans-intro h2 { font-family: 'Instrument Serif', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 4px; }
+  .plans-intro p { font-size: 0.85rem; color: #999; }
+  .occasion-picker { display: flex; gap: 4px; justify-content: center; margin-bottom: 2rem; flex-wrap: nowrap; }
+  .occasion-btn { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; padding: 6px 10px; border-radius: 100px; border: 0.5px solid rgba(0,0,0,0.08); background: #fff; color: #666; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .occasion-btn:hover { border-color: rgba(0,0,0,0.2); color: #555; }
+  .occasion-btn.active { background: var(--night); color: #fff; border-color: var(--night); }
+  .occasion-btn.active[data-oc="date"] { background: var(--rose); border-color: var(--rose); }
+  .occasion-btn.active[data-oc="solo"] { background: #00838F; border-color: #00838F; }
+  .occasion-btn.active[data-oc="birthday"] { background: #E65100; border-color: #E65100; }
+  .occasion-btn.active[data-oc="friends"] { background: #1565C0; border-color: #1565C0; }
+  .occasion-btn.active[data-oc="parents"] { background: #2E7D32; border-color: #2E7D32; }
+  @media (max-width: 520px) { .occasion-picker { flex-wrap: wrap; } }
+  .occasion-view { display: none; }
+  .occasion-view.active { display: block; }
+
+  .dn-card { background: #fff; border: 0.5px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 0; margin-bottom: 1.5rem; box-shadow: var(--card-shadow); overflow: hidden; }
+  .dn-tier { padding: 1rem 1.5rem 0; display: flex; align-items: center; gap: 0.75rem; }
+  .dn-tier-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; }
   .dn-tier-free .dn-tier-badge { background: #D4EDDA; color: #1B5E20; }
   .dn-tier-mid .dn-tier-badge { background: #E3F2FD; color: #1565C0; }
-  .dn-tier-splurge .dn-tier-badge { background: var(--rose-light); color: var(--rose); }
-  .dn-tier-est { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #999; }
-
-  .dn-body { padding: 1rem 1.75rem 1.75rem; }
-  .dn-body h3 { font-family: 'Instrument Serif', serif; font-size: 1.6rem; font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; }
-  .dn-body .dn-tagline { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1rem; color: #888; margin-bottom: 1.25rem; }
-
+  .dn-tier-splurge .dn-tier-badge { background: #FCE4EC; color: #AD1457; }
+  .dn-tier-est { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #999; }
+  .dn-body { padding: 0.75rem 1.5rem 1.5rem; }
+  .dn-body h3 { font-family: 'Instrument Serif', serif; font-size: 1.5rem; font-weight: 400; line-height: 1.25; margin-bottom: 4px; }
+  .dn-tagline { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 0.9rem; color: #999; margin-bottom: 1rem; }
   .dn-steps { list-style: none; padding: 0; margin: 0; }
-  .dn-step { display: flex; gap: 1rem; margin-bottom: 1.25rem; position: relative; padding-left: 2.5rem; }
+  .dn-step { display: flex; gap: 1rem; margin-bottom: 1rem; position: relative; padding-left: 2.5rem; }
   .dn-step:last-child { margin-bottom: 0; }
-  .dn-step::before { content: attr(data-step); position: absolute; left: 0; top: 0; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--fog); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; display: flex; align-items: center; justify-content: center; color: var(--night); }
-  .dn-tier-splurge .dn-step::before { background: var(--rose-light); color: var(--rose); }
+  .dn-step::before { content: attr(data-step); position: absolute; left: 0; top: 0; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: rgba(0,0,0,0.04); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 600; display: flex; align-items: center; justify-content: center; color: var(--night); }
+  .dn-tier-splurge .dn-step::before { background: #FCE4EC; color: #AD1457; }
   .dn-tier-mid .dn-step::before { background: #E3F2FD; color: #1565C0; }
   .dn-tier-free .dn-step::before { background: #D4EDDA; color: #1B5E20; }
-  .dn-step-title { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.15rem; }
-  .dn-step-detail { font-size: 0.82rem; color: #666; line-height: 1.55; }
-  .dn-step-time { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--sunset); margin-bottom: 0.15rem; }
+  .dn-step-time { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #E8734A; margin-bottom: 2px; }
+  .dn-step-title { font-weight: 600; font-size: 0.88rem; margin-bottom: 2px; }
+  .dn-step-detail { font-size: 0.82rem; color: #555; line-height: 1.55; }
 
-  /* SPORTS VIEW */
-  .sport-row { display: flex; align-items: center; background: var(--card-bg); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.6rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); gap: 1rem; }
-  .sport-row .sr-teams { flex: 1; }
-  .sport-row .sr-teams h4 { font-size: 0.9rem; font-weight: 600; }
-  .sport-row .sr-teams p { font-size: 0.78rem; color: #888; }
-  .sport-row .sr-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--sunset); text-align: right; white-space: nowrap; }
-  .sport-row .sr-price { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--bay); text-align: right; white-space: nowrap; }
-  .sport-note { font-size: 0.82rem; color: #888; font-style: italic; margin-top: 0.5rem; margin-bottom: 1.5rem; }
+  /* NEWSLETTER SIGNUP */
+  .signup { background: var(--night); border-radius: 14px; padding: 2rem 1.75rem; text-align: center; margin: 2rem 0; position: relative; overflow: hidden; }
+  .signup::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #C4724A 0%, #B85A6A 50%, #7B6B9A 100%); opacity: 0.12; }
+  .signup * { position: relative; z-index: 1; }
+  .signup h3 { font-family: 'Instrument Serif', serif; font-size: 1.3rem; font-weight: 400; color: #fff; margin-bottom: 4px; }
+  .signup p { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-bottom: 1rem; }
+  .signup-form { display: flex; gap: 6px; max-width: 360px; margin: 0 auto; }
+  .signup-form input { flex: 1; padding: 0.6rem 1rem; border-radius: 100px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.08); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.8rem; outline: none; }
+  .signup-form input::placeholder { color: rgba(255,255,255,0.25); }
+  .signup-form input:focus { border-color: var(--coral); }
+  .signup-form button { padding: 0.6rem 1.2rem; border-radius: 100px; border: none; background: #C4724A; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; cursor: pointer; }
+  .signup-note { font-size: 0.65rem; color: rgba(255,255,255,0.25); margin-top: 8px; }
+  @media (max-width: 420px) { .signup-form { flex-direction: column; } }
 
-  /* FILTER BAR (This Week only) */
-  .filter-bar { margin-bottom: 1.5rem; }
-  .filter-row { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-bottom: 0.5rem; }
-  .filter-row:last-child { margin-bottom: 0; }
-  .filter-row-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); min-width: 36px; }
-  .fbtn { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500; padding: 0.3rem 0.65rem; border-radius: 100px; border: 1.5px solid rgba(0,0,0,0.1); background: transparent; color: #777; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
-  .fbtn:hover { border-color: var(--night); color: var(--night); }
-  .fbtn.on { background: var(--night); color: var(--white); border-color: var(--night); }
-  .fbtn.on[data-c="food"]     { background: #BF360C; border-color: #BF360C; }
-  .fbtn.on[data-c="music"]    { background: #4A148C; border-color: #4A148C; }
-  .fbtn.on[data-c="arts"]     { background: #880E4F; border-color: #880E4F; }
-  .fbtn.on[data-c="outdoors"] { background: #004D40; border-color: #004D40; }
-  .fbtn.on[data-c="sports"]   { background: #1565C0; border-color: #1565C0; }
-  .fbtn.on[data-p="free"]     { background: #1B5E20; border-color: #1B5E20; }
-  .fbtn.on[data-p="$"]        { background: var(--bay); border-color: var(--bay); }
-  .fbtn.on[data-p="$$"]       { background: var(--sunset); border-color: var(--sunset); }
-  .fbtn.on[data-p="$$$"]      { background: #8D6E63; border-color: #8D6E63; }
-  .filter-count { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--mist); margin-left: auto; }
-  .picks-empty { text-align: center; padding: 2.5rem 1rem; color: #999; font-size: 0.88rem; display: none; }
-  .picks-empty.show { display: block; }
-  .picks-empty a { color: var(--bay); cursor: pointer; text-decoration: underline; }
-  .card.filtered-out { display: none; }
+  /* SHARE & FOOTER */
+  .share-bar { text-align: center; margin: 1.5rem 0; }
+  .share-btn { display: inline-block; background: var(--night); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; padding: 0.6rem 1.5rem; border-radius: 100px; cursor: pointer; border: none; transition: background 0.15s; }
+  .share-btn:hover { background: #333; }
+  .footer { text-align: center; padding: 1.5rem; font-size: 0.75rem; color: #C0B8BC; }
+  .footer .sign-off { font-family: 'Instrument Serif', serif; font-size: 1.1rem; color: var(--night); margin-bottom: 4px; }
+
   .section-label.filtered-out { display: none; }
-  .ongoing.filtered-out { display: none; }
-
-  /* FOOTER */
-  .share-bar { text-align: center; margin: 2rem 0; }
-  .share-btn { display: inline-block; background: var(--night); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; padding: 0.7rem 1.8rem; border-radius: 100px; cursor: pointer; border: none; transition: background 0.15s; letter-spacing: 0.02em; }
-  .share-btn:hover { background: var(--bay); }
-  .footer { text-align: center; padding: 2rem 1.5rem 3rem; font-size: 0.8rem; color: var(--mist); }
-  .footer .sign-off { font-family: 'Instrument Serif', serif; font-size: 1.2rem; color: var(--night); margin-bottom: 0.5rem; }
+  .picks-empty { text-align: center; padding: 2rem 1rem; color: #999; font-size: 0.85rem; display: none; }
+  .picks-empty.show { display: block; }
+  .picks-empty a { color: var(--coral); cursor: pointer; text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -156,15 +202,31 @@
   <div class="header-date">October 16 – 22, 2026</div>
   <div class="tabs">
     <button class="tab active" onclick="showView('picks')">This Week</button>
-    <button class="tab" onclick="showView('datenight')">Date Night</button>
     <button class="tab" onclick="showView('eats')">Eats & Bars</button>
     <button class="tab" onclick="showView('sports')">Sports</button>
     <button class="tab" onclick="showView('concerts')">Concerts</button>
+    <button class="tab" onclick="showView('singles')">Singles</button>
+    <button class="tab" onclick="showView('plans')">Playbooks</button>
   </div>
 </div>
 
-<!-- ==================== THIS WEEK ==================== -->
+<!-- THIS WEEK -->
 <div class="view active" id="view-picks">
+  <div class="filter-pills">
+    <button class="fpill" data-c="music" onclick="tog(this)">🎵 Music</button>
+    <button class="fpill" data-c="shows" onclick="tog(this)">🎭 Museums & Shows</button>
+    <button class="fpill" data-c="food" onclick="tog(this)">🍽 Food</button>
+    <button class="fpill" data-c="nightlife" onclick="tog(this)">🌙 Nightlife</button>
+    <button class="fpill" data-c="active" onclick="tog(this)">🏃 Outdoors</button>
+    <button class="fpill" data-c="sports" onclick="tog(this)">⚾ Sports</button>
+  </div>
+  <div class="slider-row">
+    <span class="slider-label slider-label-left">Free</span>
+    <input type="range" class="price-slider" id="priceSlider" min="0" max="3" step="1" value="3" oninput="sliderChange()">
+    <span class="slider-label slider-label-right">$$$</span>
+  </div>
+  <div class="slider-ticks"><span>Free</span><span>$</span><span>$$</span><span>$$$</span></div>
+  <div class="filter-status" id="filterStatus"></div>
 
   <div class="filter-bar">
     <div class="filter-row">
@@ -465,6 +527,7 @@
     <div class="tags"><span class="tag tag-new">New</span><span class="tag tag-food">Southern Italian</span><span class="price-badge">$$ · $25–50/pp</span></div>
   </div>
 
+  <div class="section-label">Worth going back to</div>
   <div class="grid-2">
     <div class="mini-card"><div class="mini-type">Japanese-French · FiDi</div><h4>Shinka</h4><p>Inside The Jay Hotel at 433 Clay St. French technique meets Japanese sensibility from a Jean-Georges alum. Opening mid-October.</p><div class="mini-price">$$$ · Tasting menu</div></div>
     <div class="mini-card"><div class="mini-type">Wellness Cafe · Lower Haight</div><h4>Olive Juice</h4><p>354 Divisadero. All-day Mediterranean cafe — olive oil in everything, including your espresso. Thu–Sun 8am–2pm on the back patio.</p><div class="mini-price">$ · $8–18</div></div>
@@ -472,8 +535,7 @@
     <div class="mini-card"><div class="mini-type">Cocktail Bar · North Beach</div><h4>15 Romolo</h4><p>The beloved pseudo-speakeasy down Romolo Alley in North Beach reopens mid-October. No password required — just great cocktails and tapas in a refreshed interior.</p><div class="mini-price">$$ · $16–22/cocktail</div></div>
   </div>
 
-  <div class="section-label">Bars Worth Hitting</div>
-
+  <div class="section-label">Bars worth hitting</div>
   <div class="grid-2">
     <div class="mini-card"><div class="mini-type">Cocktail Lounge · Union Square</div><h4>Valley Club</h4><p>Hotel G mezzanine. Low lights, cocoa-butter Negroni. Date-night energy all week.</p><div class="mini-price">$$ · $18–22/cocktail</div></div>
     <div class="mini-card"><div class="mini-type">Japanese · SoMa</div><h4>Bar Shoji</h4><p>Coffee by day, cocktail den by night. Wagyu-fat-washed whisky, fondue burger. One of the city's most interesting bars right now.</p><div class="mini-price">$$ · $18–24/cocktail</div></div>
@@ -488,7 +550,7 @@
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
-<!-- ==================== SPORTS ==================== -->
+<!-- SPORTS -->
 <div class="view" id="view-sports">
   <div class="section-label" style="border-top:none;padding-top:0">🏀 Warriors · Chase Center</div>
 
@@ -510,9 +572,13 @@
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
-<!-- ==================== CONCERTS ==================== -->
+<!-- CONCERTS -->
 <div class="view" id="view-concerts">
-  <div class="section-label" style="border-top:none;padding-top:0">This Weekend</div>
+  <div class="highlight-card card">
+    <div class="card-top"><h3>My Morning Jacket — Fillmore Residency (Nights 5, 6 &amp; 7)</h3><div class="card-when">Fri–Sun · 8pm</div></div>
+    <p>The final three nights of MMJ's epic 7-show Fillmore residency. Each night is a different setlist — the Louisville rockers are known for sprawling, psychedelic sets that run well past two hours. If you only catch one of the three, Sunday is typically the most emotional closer.</p>
+    <div class="tags"><span class="tag tag-music">Rock</span><span class="tag tag-music">Psychedelic</span><span class="tag tag-music">Residency</span><span class="price-badge">The Fillmore · Varies</span></div>
+  </div>
 
   <div class="highlight-card card">
     <div class="card-top">
@@ -599,6 +665,193 @@
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
+<!-- SINGLES -->
+<div class="view" id="view-singles">
+  <div class="plans-intro">
+    <h2>Meet people IRL</h2>
+    <p>Speed dating, mixers, social sports, and ways to actually talk to humans.</p>
+  </div>
+
+  <div class="section-label" style="margin-top:0">This week</div>
+  <div class="card">
+    <div class="card-top"><h3>SF Speed Dating @ Alameda Brewing — Ages 44–59 &amp; 29–49</h3><div class="card-when">Fri Oct 9 · 6:30pm &amp; 8:15pm</div></div>
+    <p>Pre-Dating has facilitated over 5 million mini-dates since 2001, and this Friday they're running two back-to-back events at Alameda Brewing. The 44–59 crowd goes first at 6:30pm, followed by the 29–49 group at 8:15pm — so you could technically do both if you're ambitious.</p>
+    <a class="card-link" href="https://www.eventbrite.com" target="_blank">Register on Eventbrite</a>
+    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="tag tag-nightlife">East Bay</span><span class="tag tag-nightlife">All Ages</span><span class="price-badge">Free to start</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>The Speed Dating Alternative SF at O'Reilly's Pub</h3><div class="card-when">Sun Oct 11</div></div>
+    <p>Billed as 'an immersive singles group date for people who want more than small talk across a table' — think games, challenges, and organic mingling at a classic SF pub. Way less stiff than traditional speed dating, and honestly more fun for it.</p>
+    <a class="card-link" href="https://www.eventbrite.com" target="_blank">Register on Eventbrite</a>
+    <div class="tags"><span class="tag tag-nightlife">Social Mixer</span><span class="tag tag-nightlife">Games</span><span class="tag tag-nightlife">Pub</span><span class="tag tag-nightlife">Singles</span><span class="price-badge">TBD</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Cityswoon Midweek Date Night — Marina District, Ages 30–45</h3><div class="card-when">Tue Oct 14</div></div>
+    <p>Cityswoon's 'Speed Dating 2.0' uses a smart-matching algorithm to pair you throughout the night at Rick &amp; Roxy's in the Marina — so instead of a boring round-robin, you're only meeting people you're actually compatible with. Tuesday night, Marina vibes, good people.</p>
+    <a class="card-link" href="https://www.eventbrite.com" target="_blank">Register on Eventbrite</a>
+    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="tag tag-nightlife">Marina</span><span class="tag tag-nightlife">Ages 30-45</span><span class="tag tag-nightlife">Algorithm Matching</span><span class="price-badge">TBD</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Black &amp; Dating: Black-Centered Singles Mixer, Open to All</h3><div class="card-when">Thu Oct 15 · 7pm</div></div>
+    <p>An inclusive, community-focused singles mixer at DACHA Kitchen &amp; Bar in Lower Nob Hill — good food, good drinks, and real conversations in a relaxed setting. Exactly the kind of low-pressure social event that's actually fun to attend.</p>
+    <a class="card-link" href="https://www.eventbrite.com" target="_blank">Register on Eventbrite</a>
+    <div class="tags"><span class="tag tag-nightlife">Singles Mixer</span><span class="tag tag-nightlife">Inclusive</span><span class="tag tag-nightlife">Nob Hill</span><span class="tag tag-nightlife">Community</span><span class="price-badge">TBD</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Volo Sports: Glow Kickball + Flip Cup League Kickoff</h3><div class="card-when">Thu Oct 15 · 6:30–8:30pm</div></div>
+    <p>Volo's coed Glow Kickball + Flip Cup league launches at Mission Dolores Park this Thursday — and honestly, joining a sports league is one of the best ways to meet people in SF. Volo runs leagues in kickball, volleyball, pickleball, and more all over the city.</p>
+    <a class="card-link" href="https://www.volosports.com" target="_blank">Join on Volo</a>
+    <div class="tags"><span class="tag tag-nightlife">Sports League</span><span class="tag tag-nightlife">Active</span><span class="tag tag-nightlife">Mission Dolores Park</span><span class="tag tag-nightlife">Coed</span><span class="price-badge">League fee</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Roam x Sirens: Man Power — 25 Years of Roam at Public Works</h3><div class="card-when">Fri Oct 9</div></div>
+    <p>Roam Recordings' 25th anniversary party at Public Works is an RA Pick and one of the best underground club nights of the week. Man Power brings a wide range of feel-good tunes, the crowd is always friendly and unpretentious, and Public Works is one of the best small clubs in America.</p>
+    <a class="card-link" href="https://www.residentadvisor.net" target="_blank">Tickets on RA</a>
+    <div class="tags"><span class="tag tag-nightlife">Club Night</span><span class="tag tag-nightlife">Electronic</span><span class="tag tag-nightlife">SoMa</span><span class="tag tag-nightlife">Underground</span><span class="price-badge">~$22</span></div>
+  </div>
+
+  <div class="section-label">Low-key ways to meet people</div>
+  <div class="ongoing"><h4>Run Club SF — Tues, Thurs &amp; Sat</h4><p>Tuesday nights in Golden Gate Park, Thursday speedwork at Kezar Stadium, Saturday adventure runs — one of the best free ways to meet active people in SF.</p></div>
+  <div class="ongoing"><h4>Slow Runners Club — Sunday Mornings</h4><p>2,386 members, 5-star rating, Sunday 10am at the Panhandle — all paces welcome, optional coffee after. Zero intimidation, maximum good vibes.</p></div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<!-- PLAYBOOKS -->
+<div class="view" id="view-plans">
+  <div class="plans-intro">
+    <h2>Curated Playbooks</h2>
+    <p>Pick the occasion. We've got the whole night planned.</p>
+  </div>
+
+  <div class="occasion-picker">
+    <button class="occasion-btn active" data-oc="date" onclick="showOccasion('date')">💘 Date Night</button>
+    <button class="occasion-btn" data-oc="solo" onclick="showOccasion('solo')">✨ Solo Date</button>
+    <button class="occasion-btn" data-oc="birthday" onclick="showOccasion('birthday')">🎂 Birthday</button>
+    <button class="occasion-btn" data-oc="friends" onclick="showOccasion('friends')">🎉 Friends Visiting</button>
+    <button class="occasion-btn" data-oc="parents" onclick="showOccasion('parents')">👨‍👩‍👧 Parents in Town</button>
+  </div>
+
+  <div class="occasion-view active" id="oc-date"><div class="dn-card dn-tier-free">
+      <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
+      <div class="dn-body"><h3>Fleet Week Finale + Farmers Market Morning</h3><p class="dn-tagline">The most impressive free first date SF can offer</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">11am</div><div class="dn-step-title">Parade of Ships Under the Golden Gate</div><div class="dn-step-detail">Head to Crissy Field for the Fleet Week Parade of Ships — watching military vessels pass under the Golden Gate Bridge is one of those moments that makes people fall in love with this city (and possibly each other).</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12:30pm</div><div class="dn-step-title">Walk the Ferry Building</div><div class="dn-step-detail">Stroll through the Ferry Building — grab a coffee, share a snack from one of the vendors, and peek into Lucania if it's open yet. The vibe is relaxed, there's always something interesting to look at, and the Embarcadero views are unbeatable.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2pm</div><div class="dn-step-title">Jacob Hashimoto: Giant Arc at SFMOMA</div><div class="dn-step-detail">The Floor 1 installation at SFMOMA is completely free to see — 75,000 hand-crafted kites turned into a floating cloudscape. It's genuinely stunning and takes about 20 minutes. Great conversation starter.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">3:30pm</div><div class="dn-step-title">Yerba Buena Illuminated (Evening Preview Walk)</div><div class="dn-step-detail">Wander down to 785 Market St before sunset to position yourselves for the nightly digital art projection on the Humboldt Bank Building. Grab a bench in Yerba Buena Gardens while you wait — the gardens are free and beautiful.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$80–$120 for two</span></div>
+      <div class="dn-body"><h3>North Beach Reopening + Psyched! Fest</h3><p class="dn-tagline">Cocktails in a 115-year-old alley bar, then live music at GAMH</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Drinks at 15 Romolo</div><div class="dn-step-detail">The freshly renovated North Beach pseudo-speakeasy just reopened after two years. Order a Pimm's cup or a sherry, find a corner in the refreshed interior, and enjoy the fact that you're in a bar that's been here since 1911.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">8:30pm</div><div class="dn-step-title">Dinner at a North Beach Classic</div><div class="dn-step-detail">Walk to dinner nearby — North Beach has no shortage of Italian spots. Keep it simple: pasta, wine, good bread. You're building up to a big night.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">10pm</div><div class="dn-step-title">Kelsey Lu at Great American Music Hall (Thu) or Kat Robichaud's Misfit Cabaret (Sat)</div><div class="dn-step-detail">Kelsey Lu's avant-garde R&amp;B cello performance on Thursday is emotionally stunning and unlike anything else. Saturday's Misfit Cabaret is the ultimate SF theatrical Halloween extravaganza. Pick your night, pick your vibe.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$250–$350 for two</span></div>
+      <div class="dn-body"><h3>AURA at Grace Cathedral + Dinner in Nob Hill</h3><p class="dn-tagline">The most romantic night in SF this week, no contest</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6:30pm</div><div class="dn-step-title">Dinner in Nob Hill</div><div class="dn-step-detail">Start with an elegant dinner in Nob Hill — you're near Grace Cathedral, so take your time and let dinner stretch into real conversation.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">8:30pm</div><div class="dn-step-title">AURA at Grace Cathedral — Live Music Prelude (Fri Oct 9)</div><div class="dn-step-detail">Friday night has a special live music performance before the main AURA experience — arrive early enough to catch it. Then settle in for the full seven-chapter immersive projection journey inside the Cathedral.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">10pm</div><div class="dn-step-title">Nightcap at a Nob Hill Bar</div><div class="dn-step-detail">After AURA you'll want to sit quietly with a drink and talk about what you just experienced. Nob Hill has several good hotel bars for exactly this — unhurried, elegant, and a perfect end to the evening.</div></div></li></ul></div>
+    </div></div>
+  <div class="occasion-view" id="oc-solo"><div class="dn-card dn-tier-free">
+      <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
+      <div class="dn-body"><h3>SF Indigenous Peoples Day + Free Art Tour</h3><p class="dn-tagline">Culture, community, and world-class art without spending a dime</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">12pm</div><div class="dn-step-title">SF Indigenous Peoples Day at Yerba Buena Gardens</div><div class="dn-step-detail">Jeremy Dutcher performs at this free outdoor celebration at Yerba Buena Gardens. It's meaningful, beautiful, and the kind of event that reminds you why living in SF is special.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">2pm</div><div class="dn-step-title">Walk to SFMOMA — Free Floor 1</div><div class="dn-step-detail">Pop into SFMOMA to see the Jacob Hashimoto Giant Arc installation on Floor 1 — it's free, it's stunning, and it's one block away. If you want to go upstairs, the RM exhibition is $10 weekdays.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">3:30pm</div><div class="dn-step-title">Minnesota Street Project in Dogpatch</div><div class="dn-step-detail">Hop on the T-Third to Dogpatch and spend an afternoon at Minnesota Street Project — free galleries open Wed–Sat 12–5pm with shows including Character Development and Alex Weinstein through Oct 17.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$50–$80</span></div>
+      <div class="dn-body"><h3>Museum Deep Dive + Lunchtime Concert</h3><p class="dn-tagline">A full, satisfying day of art and music on your own schedule</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10am</div><div class="dn-step-title">de Young Museum — Treasures of the Pharaohs</div><div class="dn-step-detail">Spend a leisurely morning at the de Young in Golden Gate Park. The Pharaohs exhibition is running through January and the park walk in is half the fun. Saturday is free for Bay Area residents.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12:30pm</div><div class="dn-step-title">Free Lunchtime Concert at Yerba Buena Gardens (Thu Oct 15)</div><div class="dn-step-detail">Richard Howell performs a free outdoor concert at the Great Lawn from 12:30–1:30pm on Thursday. Pack a lunch or grab something nearby and eat outside.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">3pm</div><div class="dn-step-title">RM x SFMOMA: Between You and Me</div><div class="dn-step-detail">Spend the afternoon with the RM exhibition — $10 on weekdays, $12 weekends. Budget for a couple of hours: there's a lot to see and it rewards slow looking.</div></div></li>
+          <li class="dn-step" data-step="4"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Exploratorium After Dark: Speak Easy (Thu Oct 15)</div><div class="dn-step-detail">End the week at Exploratorium After Dark — decode hidden patterns in communication, try brand-new activities, and enjoy the adults-only vibe at Pier 15. ~$20 entry.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$150–$200</span></div>
+      <div class="dn-body"><h3>World-Class Classical Music Marathon</h3><p class="dn-tagline">Three extraordinary concerts in one week — pick your night</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">Friday or Saturday 7:30pm</div><div class="dn-step-title">SF Symphony: Rachmaninoff Symphonic Dances at Davies</div><div class="dn-step-detail">Rachmaninoff's final orchestral work, performed by the SF Symphony. Brooding, nostalgic, dramatic — this is serious concert-going. Three performances this weekend.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">Monday 7:30pm</div><div class="dn-step-title">Ludovico Einaudi Solo Piano at Davies</div><div class="dn-step-detail">The Italian composer plays Davies Symphony Hall alone. Solo piano in a grand hall is one of the most intimate concert experiences you can have — and Einaudi's minimalism lands differently live than on a playlist.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">Thursday 7:30pm</div><div class="dn-step-title">Batiashvili / Capuçon / Thibaudet Trio at Davies</div><div class="dn-step-detail">Three of the world's best classical soloists on one stage. This chamber trio is genuinely rare — book it now and treat yourself to dinner at Bar Coto beforehand.</div></div></li></ul></div>
+    </div></div>
+  <div class="occasion-view" id="oc-birthday"><div class="dn-card dn-tier-free">
+      <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
+      <div class="dn-body"><h3>Birthday Parade of Ships</h3><p class="dn-tagline">A birthday morning that's legitimately iconic</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10:30am</div><div class="dn-step-title">Coffee at the Ferry Building</div><div class="dn-step-detail">Start the birthday morning right — grab a great coffee from one of the Ferry Building's rotating vendors and enjoy it on the waterfront. The light is beautiful and it's all free.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">11am</div><div class="dn-step-title">Parade of Ships at Crissy Field (Fri Oct 9)</div><div class="dn-step-detail">Walk or Lyft to Crissy Field for the Fleet Week Parade of Ships under the Golden Gate. This is a legitimately great birthday moment — military vessels, the Bridge, the Bay.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">1pm</div><div class="dn-step-title">Chinatown Night Market (Fri Oct 9 · 5–9pm)</div><div class="dn-step-detail">Come back in the evening for the Chinatown Night Market — birthday dinner from food vendors, cultural performances, and open-air festivity. Free, festive, and fun.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$100–$150/person</span></div>
+      <div class="dn-body"><h3>Misfit Cabaret Birthday Spectacular</h3><p class="dn-tagline">Kat Robichaud's Halloween cabaret was basically made for birthdays</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Pre-Show Drinks at 15 Romolo</div><div class="dn-step-detail">The just-reopened North Beach speakeasy is a perfect birthday pre-game — order a round of Pimm's cups and revel in the fact that you're in a 115-year-old bar that just got a glow-up.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Dinner in North Beach</div><div class="dn-step-detail">Birthday dinner with the crew — North Beach Italian is always the right call. Keep it festive and don't rush.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">8pm</div><div class="dn-step-title">Kat Robichaud's Misfit Cabaret: Final Girl at GAMH</div><div class="dn-step-detail">Rock, burlesque, comedy, and Halloween costumes in one wild Saturday night. Tickets run $50–$500 — splurge on good seats for the birthday person. This is a proper event.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$300+/person</span></div>
+      <div class="dn-body"><h3>AURA + Shinka Tasting Menu Birthday</h3><p class="dn-tagline">The most special birthday night in SF this week</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6:30pm</div><div class="dn-step-title">Shinka Tasting Menu at The Jay Hotel</div><div class="dn-step-detail">The new Japanese-French tasting menu inside The Jay in FiDi is the most ambitious new restaurant opening in SF this month. Birthday dinner here is a statement.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">8:30pm</div><div class="dn-step-title">Walk to Yerba Buena Illuminated</div><div class="dn-step-detail">After dinner, walk to 785 Market St for the free digital art projection on the Humboldt Bank Building. A luxurious post-dinner stroll with a free visual payoff.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">9:30pm</div><div class="dn-step-title">AURA at Grace Cathedral (Fri Oct 9 Live Music Night)</div><div class="dn-step-detail">End the birthday with the most stunning visual experience in SF — seven chapters of light, music, and projection mapping inside Grace Cathedral. Friday's live music prelude makes it extra special.</div></div></li></ul></div>
+    </div></div>
+  <div class="occasion-view" id="oc-friends"><div class="dn-card dn-tier-free">
+      <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
+      <div class="dn-body"><h3>Yacht Rock Block Party + Night Market</h3><p class="dn-tagline">Free outdoor music plus free Halloween vibes — a full free Friday</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">4pm</div><div class="dn-step-title">Fridays on Front Street: Yacht Rock Block Party</div><div class="dn-step-detail">Downtown SF Partnership and Noise Pop throw a free outdoor block party on Front Street. Live music, drinks, and smooth '70s–'80s sounds — start the Friday here.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Grab Dinner en Route to Chinatown</div><div class="dn-step-detail">Walk or Lyft to Chinatown and grab dinner from the vendors opening up for the Night Market — it's casual, cheap, and everyone gets to pick their own thing.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Chinatown Night Market 2026 (Fri Oct 9 · 5–9pm)</div><div class="dn-step-detail">Wander the Night Market together — food, cultural performances, shopping, and the festive energy of Fleet Week weekend. Completely free and one of the best group hangouts of the week.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$50–$80/person</span></div>
+      <div class="dn-body"><h3>Valkyries Playoff Game Watch + SoMa Club Night</h3><p class="dn-tagline">Cheer the Valkyries on, then take the night to SoMa</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">TBD Tip-off</div><div class="dn-step-title">Golden State Valkyries Playoff Game 4 at Chase Center (Sun Oct 11)</div><div class="dn-step-detail">Get tickets at valkyries.wnba.com and get to Chase Center. The Valkyries are in the WNBA Semifinals and this could be a series-clinching home game. The energy is going to be electric.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">Post-game</div><div class="dn-step-title">Celebrate (Win or Lose) in SoMa</div><div class="dn-step-detail">Head down to SoMa for drinks and dancing. 1015 Folsom, Halcyon, and Audio SF are all nearby and all have great options this week.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$150–$200/person</span></div>
+      <div class="dn-body"><h3>My Morning Jacket Final Night + Late Dinner</h3><p class="dn-tagline">The perfect send-off to SF's best residency of the year</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6:30pm</div><div class="dn-step-title">Pre-Show Dinner at a Fillmore-Area Spot</div><div class="dn-step-detail">The Fillmore is in the Western Addition — gather the crew for dinner nearby before the show. Keep it relaxed; you've got a long night ahead.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">8pm</div><div class="dn-step-title">My Morning Jacket at The Fillmore — Night 7 (Sun Oct 11)</div><div class="dn-step-detail">The final night of the 7-show residency. MMJ is famous for closing out residencies with their most emotional, sprawling setlists. This is a two-plus hour experience with a unique set — you will not hear the same show twice.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">11pm</div><div class="dn-step-title">Late-Night Drinks on Divisadero</div><div class="dn-step-detail">After the show, walk to Divisadero for late-night drinks and a debrief. This is the kind of night you'll be talking about for a while — give it the proper ending it deserves.</div></div></li></ul></div>
+    </div></div>
+  <div class="occasion-view" id="oc-parents"><div class="dn-card dn-tier-free">
+      <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
+      <div class="dn-body"><h3>Fleet Week + Golden Gate Park with the Family</h3><p class="dn-tagline">The kids will talk about this for years</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">11am</div><div class="dn-step-title">Parade of Ships at Crissy Field (Fri Oct 9)</div><div class="dn-step-detail">Bring the whole family to Crissy Field for the Fleet Week Parade of Ships under the Golden Gate. It's free, it's spectacular, and kids absolutely love it. Arrive early for a good spot.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">1pm</div><div class="dn-step-title">Picnic in the Presidio</div><div class="dn-step-detail">Pack a picnic or grab food from a nearby café and eat in the Presidio — you're already there and the grounds are gorgeous in October.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">3pm</div><div class="dn-step-title">de Young Museum — Free Saturday for Bay Area Residents</div><div class="dn-step-detail">On Saturday, Bay Area residents with valid ID get in free. The Treasures of the Pharaohs exhibition is genuinely great for kids — ancient Egypt, big artifacts, real wow moments.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-mid">
+      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$60–$100 for a family of four</span></div>
+      <div class="dn-body"><h3>SFMOMA Family Day + Ferry Building Lunch</h3><p class="dn-tagline">Art, food, and a waterfront afternoon the whole family will love</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10am</div><div class="dn-step-title">Jacob Hashimoto: Giant Arc at SFMOMA (Floor 1 — Free)</div><div class="dn-step-detail">Start with the free Floor 1 installation — 75,000 kites floating in a cloudscape. Kids are completely mesmerized by it. Spend as long as you want; there's no ticket needed.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">11:30am</div><div class="dn-step-title">RM x SFMOMA: Between You and Me</div><div class="dn-step-detail">$10/adult weekdays — younger kids are free. The RM exhibition is visually rich and engaging enough to hold attention. Give yourselves 90 minutes to go through it properly.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">1:30pm</div><div class="dn-step-title">Lunch at the Ferry Building</div><div class="dn-step-detail">Walk down to the Ferry Building for lunch — everyone picks their own thing from different vendors, you eat on the waterfront, and the kids can watch the ferries. Classic SF afternoon.</div></div></li></ul></div>
+    </div>
+
+    <div class="dn-card dn-tier-splurge">
+      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$200–$300 for a family of four</span></div>
+      <div class="dn-body"><h3>AURA at Grace Cathedral — The Family Magic Night</h3><p class="dn-tagline">An immersive cathedral experience kids and parents will never forget</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">5pm</div><div class="dn-step-title">Dinner in Nob Hill</div><div class="dn-step-detail">Start with an early dinner in Nob Hill — the neighborhood has good options at multiple price points, and eating early means the kids aren't hungry during the show.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Walk to Grace Cathedral</div><div class="dn-step-detail">It's a short walk from most Nob Hill restaurants to Grace Cathedral at 1100 California St. The Cathedral itself is worth seeing from the outside before you go in.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7:30pm</div><div class="dn-step-title">AURA at Grace Cathedral</div><div class="dn-step-detail">Seven chapters of immersive light, music, and projection mapping inside the Cathedral. AURA is designed for all ages — the visuals are stunning, the music is original, and watching kids experience it is honestly its own kind of magic. From $24.27/person.</div></div></li></ul></div>
+    </div></div>
+
+  <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
+</div>
+
+<div class="signup">
+  <h3>Get this in your inbox every week</h3>
+  <p>New edition every Tuesday morning. No spam, just plans.</p>
+  <form class="signup-form" action="https://buttondown.com/api/emails/embed-subscribe/sammyssf" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/sammyssf', 'popupwindow')">
+    <input type="email" name="email" placeholder="your@email.com" required />
+    <button type="submit">I'm in</button>
+  </form>
+  <div class="signup-note">Free, every Tuesday morning. No spam.</div>
+</div>
+
 <div class="footer">
   <div class="sign-off">See you out there. — Sammy</div>
   <p>Sammy's SF · Issue 13 · October 2026</p>
@@ -614,53 +867,84 @@ function showView(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Filters (This Week tab only)
-const ac = new Set(), ap = new Set();
+// Occasion picker
+function showOccasion(id) {
+  document.querySelectorAll('.occasion-view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.occasion-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('oc-' + id).classList.add('active');
+  document.querySelector('.occasion-btn[data-oc="' + id + '"]').classList.add('active');
+}
 
-function tog(btn, type) {
+// Filters
+const ac = new Set();
+const priceMap = ['free', '$', '$$', '$$$'];
+const priceOrder = { 'free': 0, '$': 1, '$$': 2, '$$$': 3 };
+
+function tog(btn) {
   btn.classList.toggle('on');
-  const val = type === 'c' ? btn.dataset.c : btn.dataset.p;
-  const set = type === 'c' ? ac : ap;
-  set.has(val) ? set.delete(val) : set.add(val);
-  filterPicks();
+  const v = btn.dataset.c;
+  ac.has(v) ? ac.delete(v) : ac.add(v);
+  applyFilters();
+}
+
+function sliderChange() {
+  const slider = document.getElementById('priceSlider');
+  const pct = (slider.value / 3) * 100;
+  slider.style.background = 'linear-gradient(90deg, #1B5E20 0%, #C4724A ' + pct + '%, rgba(0,0,0,0.08) ' + pct + '%)';
+  applyFilters();
 }
 
 function resetFilters() {
-  ac.clear(); ap.clear();
-  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
-  filterPicks();
+  ac.clear();
+  document.querySelectorAll('.fpill').forEach(b => b.classList.remove('on'));
+  document.getElementById('priceSlider').value = 3;
+  applyFilters();
 }
 
-function filterPicks() {
+function applyFilters() {
+  const maxPrice = parseInt(document.getElementById('priceSlider').value);
   const view = document.getElementById('view-picks');
   const items = view.querySelectorAll('.card, .ongoing');
   let vis = 0;
-  const any = ac.size > 0 || ap.size > 0;
+  const anyFilter = ac.size > 0 || maxPrice < 3;
 
   items.forEach(el => {
     const cats = (el.dataset.cats || '').split(',').filter(Boolean);
-    const price = el.dataset.price || '';
+    const price = el.dataset.price || 'free';
     const catOk = ac.size === 0 || cats.some(c => ac.has(c));
-    const priceOk = ap.size === 0 || ap.has(price);
+    const priceLevel = priceOrder.hasOwnProperty(price) ? priceOrder[price] : 0;
+    const priceOk = priceLevel <= maxPrice;
     if (catOk && priceOk) { el.classList.remove('filtered-out'); vis++; }
     else { el.classList.add('filtered-out'); }
   });
 
-  // Hide section labels if all their siblings are hidden
+  // Section labels
   view.querySelectorAll('.section-label').forEach(label => {
     let next = label.nextElementSibling;
     let hasVis = false;
-    while (next && !next.classList.contains('section-label') && !next.classList.contains('filter-bar') && !next.classList.contains('share-bar') && !next.classList.contains('picks-empty')) {
+    while (next && !next.classList.contains('section-label') && !next.classList.contains('filter-pills') && !next.classList.contains('share-bar') && !next.classList.contains('picks-empty') && !next.classList.contains('signup')) {
       if ((next.classList.contains('card') || next.classList.contains('ongoing')) && !next.classList.contains('filtered-out')) hasVis = true;
       next = next.nextElementSibling;
     }
     label.classList.toggle('filtered-out', !hasVis);
   });
 
-  document.getElementById('picks-empty').classList.toggle('show', any && vis === 0);
-  const fc = document.getElementById('fcount');
-  fc.textContent = any ? vis + ' match' + (vis !== 1 ? 'es' : '') : '';
+  document.getElementById('picks-empty').classList.toggle('show', anyFilter && vis === 0);
+  const st = document.getElementById('filterStatus');
+  if (anyFilter) {
+    const parts = [];
+    if (ac.size > 0) parts.push([...ac].join(', '));
+    if (maxPrice < 3) parts.push('up to ' + priceMap[maxPrice]);
+    st.innerHTML = 'Showing <strong>' + (parts.join(' · ') || 'all') + '</strong> · ' + vis + ' event' + (vis !== 1 ? 's' : '');
+  } else {
+    st.innerHTML = '';
+  }
 }
+
+// Init slider gradient on load
+document.addEventListener('DOMContentLoaded', function() {
+  sliderChange();
+});
 
 // Share
 function shareThis() {
