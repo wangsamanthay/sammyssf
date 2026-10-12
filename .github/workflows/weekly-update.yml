@@ -65,14 +65,16 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
           HERO_PICK: ${{ steps.pick.outputs.pick }}
-        run: node generate.mjs
+        run: |
+          node generate.mjs
+          node build.mjs
 
       # Commit and push
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
+          git add data.json index.html
           git commit -m "Update data for $(date +%Y-%m-%d)" || echo "No changes"
           git push
 
