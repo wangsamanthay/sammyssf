@@ -132,6 +132,7 @@ Return ONLY valid JSON. No markdown fences. Structure:
 {
   "dateRange": "${dateRange}",
   "issue": "${String(issueNum).padStart(2,'0')}",
+  "editorialHook": "One atmospheric sentence about the vibe in SF this week. Warm, inviting, short.",
   "picks": [
     {"t":"Event name","w":"Day Mon DD · Time","d":"2-3 fun sentences","cats":"music","price":"free","badge":"Free","tags":["Free","Music"],"hero":true,"score":11}
   ],
@@ -159,6 +160,7 @@ RULES:
 - picks: 10-14 items sorted by score. First item must have "hero":true
 - SCORING: one-night-only=5, weekend=4, opening week=3, ongoing=0 | new opening=4, selling out=3, notable venue=2 | iconic location=2 | free=2, deal=1
 - MAJOR FESTIVAL BONUS: If it's a major annual SF event (Fleet Week, Outside Lands, Hardly Strictly Bluegrass, Bay to Breakers, Pride, Carnaval, Chinese New Year Parade, Folsom Street Fair, etc.) add +3 points${heroInstruction}
+- editorialHook: one evocative sentence about SF this week (weather, mood, season). Keep it warm and short.
 - DIVERSITY: must include 1 music, 1 food, 1 free, 1 cultural, 1 outdoors
 - eats.new: 4-6, eats.classic: 4-6, bars: 6-8, concerts: 6-10, singles: 4-6
 - Each playbook: exactly 3 plans (free/$$/$$$ tiers), 3-5 steps each using THIS WEEK's events

@@ -206,20 +206,20 @@
 <div class="header">
   <div class="header-eyebrow">Weekly picks from your bff Sammy</div>
   <h1>Sammy's <em>SF</em></h1>
-  <div class="header-sub">the scene this week</div>
+  <div class="header-sub">where will you be this week?</div>
   <div class="header-date">October 30 - November 5, 2026</div>
   <div class="tabs">
-    <button class="tab active" onclick="showView('picks')">This Week</button>
+    <button class="tab active" onclick="showView('plans')">Playbooks</button>
+    <button class="tab" onclick="showView('picks')">This Week</button>
     <button class="tab" onclick="showView('eats')">Eats & Bars</button>
     <button class="tab" onclick="showView('sports')">Sports</button>
     <button class="tab" onclick="showView('concerts')">Concerts</button>
     <button class="tab" onclick="showView('singles')">Singles</button>
-    <button class="tab" onclick="showView('plans')">Playbooks</button>
   </div>
 </div>
 
 <!-- THIS WEEK -->
-<div class="view active" id="view-picks">
+<div class="view" id="view-picks">
   <div class="filter-pills">
     <button class="fpill" data-c="music" onclick="tog(this)">🎵 Music</button>
     <button class="fpill" data-c="shows" onclick="tog(this)">🎭 Museums & Shows</button>
@@ -521,7 +521,18 @@
 </div>
 
 <!-- PLAYBOOKS -->
-<div class="view" id="view-plans">
+<div class="view active" id="view-plans">
+  
+
+  <div class="hero-label">Sammy's pick of the week</div>
+  <div class="highlight-card card">
+    <div class="card-top"><h3>Oh, Mary! – Final Weekend at ACT Curran Theatre</h3><div class="card-when">Fri Oct 30 – Sun Nov 1 · Various Times</div></div>
+    <p>This is it — the Tony Award-winning dark comedy closes forever on November 1st and Sammy personally insists you go. If you've been sleeping on this one, wake up right now and buy a ticket. Final curtain falls Sunday night and you will absolutely regret missing it.</p>
+    <div class="tags"><span class="tag">Last Chance</span><span class="tag">Theater</span><span class="tag">Award-Winning</span><span class="price-badge">Closing Now</span></div>
+  </div>
+
+  <div style="border-top: 1px solid rgba(0,0,0,0.06); margin: 1.5rem 0;"></div>
+
   <div class="plans-intro">
     <h2>Curated Playbooks</h2>
     <p>Pick the occasion. We've got the whole night planned.</p>

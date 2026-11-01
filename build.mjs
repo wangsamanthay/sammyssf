@@ -11,6 +11,14 @@ const esc = s => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replac
 html = html.replace(/<!--DATE-->/g, data.dateRange || "This Week");
 html = html.replace(/<!--ISSUE-->/g, data.issue || "01");
 
+// Editorial hook (playbooks landing)
+const editorialHook = data.editorialHook || "";
+if (editorialHook) {
+  html = html.replace("<!--EDITORIAL_HOOK-->", `<p style="font-family: 'Instrument Serif', serif; font-size: 1.1rem; color: #555; line-height: 1.7; text-align: center; margin-bottom: 0.5rem; font-style: italic;">${esc(editorialHook)}</p>`);
+} else {
+  html = html.replace("<!--EDITORIAL_HOOK-->", "");
+}
+
 // Build hero + picks
 const picks = data.picks || [];
 const hero = picks.find(p => p.hero) || picks[0];
@@ -25,6 +33,17 @@ if (hero) {
   </div>`;
 }
 html = html.replace("<!--HERO-->", heroHtml);
+
+// Sammy's Pick in Playbooks view (reuses hero pick)
+let sammysPickHtml = "";
+if (hero) {
+  sammysPickHtml = `<div class="highlight-card card">
+    <div class="card-top"><h3>${esc(hero.t)}</h3><div class="card-when">${esc(hero.w)}</div></div>
+    <p>${esc(hero.d)}</p>
+    <div class="tags">${(hero.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}${hero.badge?`<span class="price-badge">${esc(hero.badge)}</span>`:""}</div>
+  </div>`;
+}
+html = html.replace("<!--SAMMYS_PICK-->", sammysPickHtml);
 
 let picksHtml = rest.map(p => `<div class="card" data-cats="${esc(p.cats)}" data-price="${esc(p.price)}">
     <div class="card-top"><h3>${esc(p.t)}</h3><div class="card-when">${esc(p.w)}</div></div>
