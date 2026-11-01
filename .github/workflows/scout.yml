@@ -2,7 +2,7 @@ name: Monday Scout
 
 on:
   schedule:
-    - cron: '0 5 * * 2'  # Tuesday 5am UTC = Monday 9pm PT
+    - cron: '0 5 * * 2'  # Tuesday 5am UTC = Monday 9pm PST / 10pm PDT
   workflow_dispatch:       # Manual trigger
 
 permissions:

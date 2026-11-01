@@ -2,7 +2,7 @@ name: Weekly Update
 
 on:
   schedule:
-    - cron: '0 17 * * 2'  # Tuesday 5pm UTC = Tuesday 9am PT
+    - cron: '0 17 * * 2'  # Tuesday 5pm UTC = Tuesday 9am PST / 10am PDT
   workflow_dispatch:
     inputs:
       hero_pick:

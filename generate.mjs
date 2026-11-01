@@ -264,6 +264,40 @@ if (heroEventName && picks.length > 0) {
   picks[0].hero = true;
 }
 
+
+// FIX DAY-OF-WEEK LABELS (the AI sometimes gets them wrong)
+function fixDays(str) {
+  if (!str || typeof str !== "string") return str;
+  const months = { Jan:0, Feb:1, Mar:2, Apr:3, May:4, Jun:5, Jul:6, Aug:7, Sep:8, Oct:9, Nov:10, Dec:11 };
+  const dayNames = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  return str.replace(/\b(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})\b/g,
+    (match, claimedDay, mon, dd) => {
+      const m = months[mon];
+      if (m === undefined) return match;
+      const d = new Date(weekEnd.getFullYear(), m, parseInt(dd));
+      if (isNaN(d.getTime())) return match;
+      const correct = dayNames[d.getDay()];
+      if (correct !== claimedDay) {
+        console.log(`  \u{1f4c5} Fixed: ${claimedDay} ${mon} ${dd} \u{2192} ${correct} ${mon} ${dd}`);
+      }
+      return `${correct} ${mon} ${dd}`;
+    });
+}
+
+function fixDaysInObject(obj) {
+  if (typeof obj === "string") return fixDays(obj);
+  if (Array.isArray(obj)) return obj.map(fixDaysInObject);
+  if (obj && typeof obj === "object") {
+    for (const key of Object.keys(obj)) {
+      obj[key] = fixDaysInObject(obj[key]);
+    }
+  }
+  return obj;
+}
+
+console.log("\u{1f4c5} Checking day-of-week labels...");
+data = fixDaysInObject(data);
+
 fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
 console.log(`✅ data.json written (${(Buffer.byteLength(JSON.stringify(data)) / 1024).toFixed(1)} KB)`);
 console.log(`📊 ${picks.length} picks, Issue #${issueNum}\n`);
