@@ -42,78 +42,6 @@
   .header-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
   .header-date { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
 
-  /* LANDING PAGE */
-  .landing { background: #fff; }
-  .landing-hero { background: linear-gradient(135deg, #E8734A 0%, #D4536B 40%, #6B7FAA 100%); padding: 3rem 1.5rem 2.5rem; text-align: center; }
-  .landing-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(3.2rem, 8vw, 5rem); font-weight: 400; color: #fff; line-height: 1; margin-bottom: 6px; }
-  .landing-hero h1 em { font-style: italic; }
-  .landing-hero-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
-  .landing-hero-date { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
-
-  .landing-body { padding: 2.5rem 1.5rem; max-width: 540px; margin: 0 auto; }
-  .landing-tagline { font-family: 'Instrument Serif', serif; font-size: clamp(1.4rem, 4vw, 1.8rem); color: #222; line-height: 1.4; margin-bottom: 0.75rem; font-weight: 400; }
-  .landing-desc { font-size: 0.9rem; color: #888; line-height: 1.6; margin-bottom: 2.5rem; }
-
-  .landing-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #E8734A; margin-bottom: 12px; }
-
-  /* EVENT PICK - EDITORIAL LAYOUT */
-  .landing-pick-wrap { position: relative; margin: 0 calc(-50vw + 50%) 2.5rem; padding: 0 1.5rem; }
-  .pick-editorial { position: relative; display: flex; border-radius: 16px; overflow: hidden; min-height: 380px; max-width: 900px; margin: 0 auto; background: #1a1a2e; }
-  .pick-editorial-img { flex: 0 0 48%; background-size: cover; background-position: center top; position: relative; }
-  .pick-editorial-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 50%, #1a1a2e 100%); }
-  .pick-editorial-img-fallback { background: linear-gradient(135deg, #E8734A 0%, #D4536B 40%, #6B7FAA 100%); }
-  .pick-editorial-img-fallback::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 60%, rgba(255,255,255,0.12) 0%, transparent 50%); animation: pickGlow 8s ease-in-out infinite; }
-  @keyframes pickGlow { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-  .pick-editorial-body { flex: 1; padding: 2.2rem 2rem; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 1; }
-  .pick-editorial-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #E8734A; margin-bottom: 10px; }
-  .pick-editorial-body h3 { font-family: 'Instrument Serif', serif; font-size: 1.9rem; font-weight: 400; color: #fff; line-height: 1.15; margin-bottom: 10px; }
-  .pick-editorial-body .card-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
-  .pick-editorial-body p { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; }
-  .pick-editorial-body .tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .pick-editorial-body .tag { font-size: 0.6rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); padding: 3px 8px; border-radius: 4px; }
-  .pick-editorial-body .price-badge { font-size: 0.6rem; color: rgba(232,115,74,0.8); }
-  @media (max-width: 480px) {
-    .pick-editorial { flex-direction: column; }
-    .pick-editorial-img { flex: none; height: 260px; }
-    .pick-editorial-img::after { background: linear-gradient(180deg, transparent 40%, #1a1a2e 100%); }
-    .pick-editorial-body { padding: 1.2rem 1.3rem 1.5rem; }
-  }
-
-  .landing-divider { display: flex; justify-content: center; gap: 6px; padding: 2rem 0; }
-  .landing-divider-dot { width: 4px; height: 4px; border-radius: 50%; background: #ccc; }
-
-  /* SECTION PANELS */
-  .landing-panels-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #bbb; margin-bottom: 12px; }
-  .landing-panels-wrap { margin: 0 calc(-50vw + 50%); padding: 0; }
-  .landing-panels { display: flex; gap: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 1.5rem 1rem; scroll-snap-type: x mandatory; }
-  .landing-panels::-webkit-scrollbar { display: none; }
-  .landing-panel { position: relative; flex: 0 0 55vw; max-width: 260px; min-height: 240px; border-radius: 14px; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; cursor: pointer; overflow: hidden; text-decoration: none; transition: transform 0.15s; scroll-snap-align: start; }
-  .landing-panel:hover { transform: scale(1.02); }
-  .landing-panel-icon { font-size: 1.8rem; }
-  .landing-panel-title { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 700; color: rgba(0,0,0,0.8); line-height: 1.2; margin-bottom: 3px; }
-  .landing-panel-sub { font-size: 0.65rem; color: rgba(0,0,0,0.5); line-height: 1.4; }
-  .panel-featured { margin-bottom: auto; margin-top: 0.6rem; position: relative; z-index: 1; max-width: 65%; }
-  .panel-feat-name { font-family: 'Instrument Serif', serif; font-size: 0.85rem; font-style: italic; color: rgba(0,0,0,0.75); line-height: 1.25; margin-bottom: 3px; }
-  .panel-feat-detail { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; letter-spacing: 0.04em; color: rgba(0,0,0,0.45); line-height: 1.4; }
-  .panel-feat-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; color: rgba(0,0,0,0.35); margin-top: 3px; }
-  .panel-deco { position: absolute; right: -5px; top: 40%; transform: translateY(-50%); width: 110px; height: 110px; opacity: 0.13; pointer-events: none; }
-  .panel-deco svg { width: 100%; height: 100%; fill: rgba(0,0,0,0.6); }
-
-  /* ANIMATED PANEL BACKGROUNDS */
-  .panel-shapes { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-  .panel-shape { position: absolute; border-radius: 50%; opacity: 0.15; }
-  .panel-shape-1 { width: 70px; height: 70px; top: -20px; right: -20px; animation: floatShape 6s ease-in-out infinite; }
-  .panel-shape-2 { width: 45px; height: 45px; bottom: 20%; left: -15px; animation: floatShape 8s ease-in-out infinite reverse; }
-  .panel-shape-3 { width: 30px; height: 30px; top: 45%; right: 10px; animation: floatShape 7s ease-in-out infinite 1s; }
-  @keyframes floatShape { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-15px) scale(1.15); } }
-  .landing-panel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.06) 100%); animation: panelShimmer 4s ease-in-out infinite; }
-  @keyframes panelShimmer { 0%,100% { opacity: 0; } 50% { opacity: 1; } }
-  .landing-panel::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%); animation: panelGlow 10s linear infinite; }
-  @keyframes panelGlow { 0% { transform: translate(0,0) rotate(0deg); } 100% { transform: translate(10%,-10%) rotate(360deg); } }
-
-  .main-content { display: none; }
-  .main-content.visible { display: block; }
-
   /* TABS */
   .tabs { display: flex; gap: 0; justify-content: center; border-bottom: none; margin: 0 -1.5rem; padding: 0 1.5rem; }
   .tab { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; padding: 0.7rem 1.2rem; color: rgba(255,255,255,0.5); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
@@ -288,113 +216,9 @@
 </head>
 <body>
 
-<!-- LANDING PAGE -->
-<div class="landing" id="landing">
-  <div class="landing-hero">
-    <h1>Sammy's <em>SF</em></h1>
-    <div class="landing-hero-sub">where will you be this week?</div>
-    <div class="landing-hero-date">October 30 - November 5, 2026</div>
-  </div>
-
-  <div class="landing-body">
-    
-    <h2 class="landing-tagline">Your weekly guide to the best things happening in San Francisco.</h2>
-    <p class="landing-desc">Every week, Sammy hand-picks the best events, restaurants, and curated playbooks so you don't have to figure it out yourself.</p>
-
-    <div class="landing-pick-wrap">
-      <div class="pick-editorial">
-    <div class="pick-editorial-img" style="background-image:url('https://images.ctfassets.net/6pezt69ih962/4E7VUiRxFtL2NRiOLLLNSa/a1d20c1621dd5d5c8d41d56cd3982e11/NORAM_1600x1200.jpg')"></div>
-    <div class="pick-editorial-body">
-      <div class="pick-editorial-label">Sammy's Event Pick of the Week</div>
-      <h3>Oh, Mary! - Final Weekend at ACT Curran Theatre</h3>
-      <div class="card-when">Fri Oct 30 - Sun Nov 1 · Various Times</div>
-      <p>This is it ,  the Tony Award-winning dark comedy closes forever on November 1st and Sammy personally insists you go. If you've been sleeping on this one, wake up right now and buy a ticket. Final curtain falls Sunday night and you will absolutely regret missing it.</p>
-      <div class="tags"><span class="tag">Last Chance</span><span class="tag">Theater</span><span class="tag">Award-Winning</span><span class="price-badge">Closing Now</span></div>
-    </div>
-  </div>
-    </div>
-
-    <div class="landing-divider">
-      <span class="landing-divider-dot"></span>
-      <span class="landing-divider-dot"></span>
-      <span class="landing-divider-dot"></span>
-    </div>
-
-    <div class="landing-panels-label">Jump to a section</div>
-    <div class="landing-panels-wrap">
-    <div class="landing-panels">
-      <a class="landing-panel" style="background: linear-gradient(160deg, #E88B7A, #F2AAB8);" onclick="enterSite();showView('plans');">
-        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
-        <div class="panel-deco"><svg viewBox="0 0 100 120"><rect x="15" y="12" width="70" height="90" rx="6" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="4"/><rect x="30" y="0" width="40" height="20" rx="4"/><rect x="28" y="38" width="36" height="4" rx="2"/><rect x="28" y="52" width="28" height="4" rx="2"/><rect x="28" y="66" width="32" height="4" rx="2"/><rect x="28" y="80" width="24" height="4" rx="2"/></svg></div>
-        <div class="landing-panel-icon">📋</div>
-        <div class="panel-featured">
-    <div class="panel-feat-name">Halloween in the City</div>
-    <div class="panel-feat-detail">The Free One</div>
-    <div class="panel-feat-meta">4 stops · $0</div>
-  </div>
-        <div class="landing-panel-title">Playbooks</div>
-        <div class="landing-panel-sub">Curated plans for every occasion</div>
-      </a>
-      <a class="landing-panel" style="background: linear-gradient(160deg, #7BC8A4, #A8D8B9);" onclick="enterSite();showView('eats');">
-        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
-        <div class="panel-deco"><svg viewBox="0 0 100 120"><path d="M30 10 L30 55 Q30 65 38 65 L38 110" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="5" stroke-linecap="round"/><path d="M20 10 L20 35 Q20 45 30 45" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="3" stroke-linecap="round"/><path d="M40 10 L40 35 Q40 45 30 45" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="3" stroke-linecap="round"/><path d="M70 10 L70 45 Q78 46 78 30 L78 10 Q78 8 76 8 L72 8 Q70 8 70 10 Z" stroke="rgba(0,0,0,0.5)" stroke-width="3" fill="none"/><path d="M74 45 L74 110" stroke="rgba(0,0,0,0.5)" stroke-width="5" stroke-linecap="round"/></svg></div>
-        <div class="landing-panel-icon">🍽</div>
-        <div class="panel-featured">
-    <div class="panel-feat-name">Lucania</div>
-    <div class="panel-feat-detail">Southern Italian · Embarcadero</div>
-    <div class="panel-feat-meta">$$ · ~$50/pp</div>
-  </div>
-        <div class="landing-panel-title">Eats & Bars</div>
-        <div class="landing-panel-sub">New spots and classics</div>
-      </a>
-      <a class="landing-panel" style="background: linear-gradient(160deg, #A8B4D6, #C3B8E3);" onclick="enterSite();showView('concerts');">
-        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
-        <div class="panel-deco"><svg viewBox="0 0 100 120"><ellipse cx="28" cy="95" rx="16" ry="12" transform="rotate(-20 28 95)"/><path d="M42 90 L42 20" stroke="rgba(0,0,0,0.5)" stroke-width="5"/><path d="M42 20 L85 10 L85 50 L42 60" fill="rgba(0,0,0,0.5)"/><ellipse cx="73" cy="55" rx="16" ry="12" transform="rotate(-20 73 55)" opacity="0.6"/></svg></div>
-        <div class="landing-panel-icon">🎵</div>
-        <div class="panel-featured">
-    <div class="panel-feat-name">Galactic (Night 1)</div>
-    <div class="panel-feat-detail">The Fillmore · ~$82-$96</div>
-    <div class="panel-feat-meta">Fri Oct 30</div>
-  </div>
-        <div class="landing-panel-title">Concerts</div>
-        <div class="landing-panel-sub">Live music this week</div>
-      </a>
-      <a class="landing-panel" style="background: linear-gradient(160deg, #F5C16C, #F7D99E);" onclick="enterSite();showView('sports');">
-        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
-        <div class="panel-deco"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="4"/><path d="M30 8 Q42 30 38 50 Q34 70 28 92" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="3"/><path d="M70 8 Q58 30 62 50 Q66 70 72 92" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="3"/><path d="M33 15 L38 20 M35 25 L40 30 M36 36 L41 41 M37 48 L42 53 M35 58 L40 63 M32 68 L37 73 M30 78 L35 83" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="2" stroke-linecap="round"/><path d="M67 15 L62 20 M65 25 L60 30 M64 36 L59 41 M63 48 L58 53 M65 58 L60 63 M68 68 L63 73 M70 78 L65 83" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div class="landing-panel-icon">⚾</div>
-        <div class="panel-featured">
-    <div class="panel-feat-name">Warriors vs. Lakers</div>
-    <div class="panel-feat-detail">Fri Oct 30
-7:00 PM</div>
-    <div class="panel-feat-meta">From ~$60</div>
-  </div>
-        <div class="landing-panel-title">Sports</div>
-        <div class="landing-panel-sub">Games and watch parties</div>
-      </a>
-      <a class="landing-panel" style="background: linear-gradient(160deg, #89CCD4, #B5DFE5);" onclick="enterSite();showView('singles');">
-        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
-        <div class="panel-deco"><svg viewBox="0 0 100 100"><path d="M50 88 L12 50 Q2 38 10 24 Q18 10 32 10 Q42 10 50 22 Q58 10 68 10 Q82 10 90 24 Q98 38 88 50 Z"/></svg></div>
-        <div class="landing-panel-icon">💫</div>
-        <div class="panel-featured">
-    <div class="panel-feat-name">FALL for Someone SF</div>
-    <div class="panel-feat-detail">Wed Oct 29 · 7pm</div>
-    <div class="panel-feat-meta">Speed Dating · 25-45</div>
-  </div>
-        <div class="landing-panel-title">Singles</div>
-        <div class="landing-panel-sub">Speed dating, mixers, and ways to meet people IRL</div>
-      </a>
-    </div>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN SITE -->
-<div class="main-content" id="mainContent">
-
 <div class="header">
   <div class="header-eyebrow">Weekly curated playbooks and places to go from your bff Sammy</div>
-  <h1 style="cursor:pointer" onclick="goHome()">Sammy's <em>SF</em></h1>
+  <h1>Sammy's <em>SF</em></h1>
   <div class="header-sub">where will you be this week?</div>
   <div class="header-date">October 30 - November 5, 2026</div>
   <div class="tabs">
@@ -711,6 +535,17 @@
 
 <!-- PLAYBOOKS -->
 <div class="view active" id="view-plans">
+  
+
+  <div class="hero-label">Sammy's Event Pick of the Week</div>
+  <div class="highlight-card card">
+    <div class="card-top"><h3>Oh, Mary! - Final Weekend at ACT Curran Theatre</h3><div class="card-when">Fri Oct 30 - Sun Nov 1 · Various Times</div></div>
+    <p>This is it ,  the Tony Award-winning dark comedy closes forever on November 1st and Sammy personally insists you go. If you've been sleeping on this one, wake up right now and buy a ticket. Final curtain falls Sunday night and you will absolutely regret missing it.</p>
+    <div class="tags"><span class="tag">Last Chance</span><span class="tag">Theater</span><span class="tag">Award-Winning</span><span class="price-badge">Closing Now</span></div>
+  </div>
+
+  <div style="border-top: 1px solid rgba(0,0,0,0.06); margin: 1.5rem 0;"></div>
+
   <div class="plans-intro">
     <h2>Curated Playbooks</h2>
     <div class="plans-hook">Feeling stressed about planning?<br>Too many options? Don't know what's good?</div>
@@ -847,20 +682,7 @@
   <p>Sammy's SF · Issue 15 · 2026</p>
 </div>
 
-</div><!-- end main-content -->
-
 <script>
-// Landing page
-function enterSite() {
-  document.getElementById('landing').style.display = 'none';
-  document.getElementById('mainContent').classList.add('visible');
-  window.scrollTo(0, 0);
-}
-function goHome() {
-  document.getElementById('mainContent').classList.remove('visible');
-  document.getElementById('landing').style.display = '';
-  window.scrollTo(0, 0);
-}
 // Tab switching
 function showView(id) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
