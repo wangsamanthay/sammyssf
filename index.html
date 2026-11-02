@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="Sammy's SF - the scene this week">
-<meta property="og:description" content="Weekly picks from your bff Sammy. Concerts, bars, eats, date nights, sports, and singles events in San Francisco.">
+<meta property="og:description" content="Weekly curated playbooks and places to go from your bff Sammy. Concerts, bars, eats, date nights, sports, and singles events in San Francisco.">
 <meta property="og:image" content="https://sammyssf-1.vercel.app/og-image.png">
 <meta property="og:url" content="https://sammyssf-1.vercel.app">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sammy's SF - the scene this week">
-<meta name="twitter:description" content="Weekly picks from your bff Sammy. Concerts, bars, eats, date nights, sports, and singles events in SF.">
+<meta name="twitter:description" content="Weekly curated playbooks and places to go from your bff Sammy. Concerts, bars, eats, date nights, sports, and singles events in SF.">
 <meta name="twitter:image" content="https://sammyssf-1.vercel.app/og-image.png">
 <title>Sammy's SF - October 30 - November 5, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -138,8 +138,10 @@
 
   /* PLAYBOOKS */
   .plans-intro { text-align: center; margin-bottom: 1.5rem; }
-  .plans-intro h2 { font-family: 'Instrument Serif', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 4px; }
+  .plans-intro h2 { font-family: 'Instrument Serif', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 8px; }
   .plans-intro p { font-size: 0.85rem; color: #999; }
+  .plans-hook { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 0.95rem; color: #999; line-height: 1.5; margin-bottom: 10px; }
+  .plans-cta { font-size: 0.85rem; color: #555; line-height: 1.6; }
   .occasion-picker { display: flex; gap: 4px; justify-content: center; margin-bottom: 2rem; flex-wrap: nowrap; }
   .occasion-btn { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500; padding: 6px 10px; border-radius: 100px; border: 0.5px solid rgba(0,0,0,0.08); background: #fff; color: #666; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
   .occasion-btn:hover { border-color: rgba(0,0,0,0.2); color: #555; }
@@ -215,7 +217,7 @@
 <body>
 
 <div class="header">
-  <div class="header-eyebrow">Weekly picks from your bff Sammy</div>
+  <div class="header-eyebrow">Weekly curated playbooks and places to go from your bff Sammy</div>
   <h1>Sammy's <em>SF</em></h1>
   <div class="header-sub">where will you be this week?</div>
   <div class="header-date">October 30 - November 5, 2026</div>
@@ -247,7 +249,7 @@
   <div class="slider-ticks"><span>Free</span><span>$</span><span>$$</span><span>$$$</span></div>
   <div class="filter-status" id="filterStatus"></div>
 
-  <div class="hero-label">Sammy's pick of the week</div>
+  <div class="hero-label">Sammy's Event Pick of the Week</div>
   <div class="highlight-card card" data-cats="shows" data-price="$$">
     <div class="card-top"><h3>Oh, Mary! - Final Weekend at ACT Curran Theatre</h3><div class="card-when">Fri Oct 30 - Sun Nov 1 · Various Times</div></div>
     <p>This is it ,  the Tony Award-winning dark comedy closes forever on November 1st and Sammy personally insists you go. If you've been sleeping on this one, wake up right now and buy a ticket. Final curtain falls Sunday night and you will absolutely regret missing it.</p>
@@ -535,7 +537,7 @@
 <div class="view active" id="view-plans">
   
 
-  <div class="hero-label">Sammy's pick of the week</div>
+  <div class="hero-label">Sammy's Event Pick of the Week</div>
   <div class="highlight-card card">
     <div class="card-top"><h3>Oh, Mary! - Final Weekend at ACT Curran Theatre</h3><div class="card-when">Fri Oct 30 - Sun Nov 1 · Various Times</div></div>
     <p>This is it ,  the Tony Award-winning dark comedy closes forever on November 1st and Sammy personally insists you go. If you've been sleeping on this one, wake up right now and buy a ticket. Final curtain falls Sunday night and you will absolutely regret missing it.</p>
@@ -546,7 +548,8 @@
 
   <div class="plans-intro">
     <h2>Curated Playbooks</h2>
-    <p>Pick the occasion. We've got the whole night planned.</p>
+    <div class="plans-hook">Feeling stressed about planning?<br>Too many options? Don't know what's good?</div>
+    <p class="plans-cta">Pick the occasion. Your willingness to pay. And we'll handle the rest.</p>
   </div>
 
   <div class="occasion-picker">
