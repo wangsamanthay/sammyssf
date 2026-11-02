@@ -34,16 +34,89 @@ if (hero) {
 }
 html = html.replace("<!--HERO-->", heroHtml);
 
-// Sammy's Pick in Playbooks view (reuses hero pick)
+// Sammy's Pick on landing page (editorial card with image)
 let sammysPickHtml = "";
 if (hero) {
-  sammysPickHtml = `<div class="highlight-card card">
-    <div class="card-top"><h3>${esc(hero.t)}</h3><div class="card-when">${esc(hero.w)}</div></div>
-    <p>${esc(hero.d)}</p>
-    <div class="tags">${(hero.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}${hero.badge?`<span class="price-badge">${esc(hero.badge)}</span>`:""}</div>
+  const imgUrl = hero.img || "";
+  const imgHtml = imgUrl
+    ? `<div class="pick-editorial-img" style="background-image:url('${esc(imgUrl)}')"></div>`
+    : `<div class="pick-editorial-img pick-editorial-img-fallback"></div>`;
+  sammysPickHtml = `<div class="pick-editorial">
+    ${imgHtml}
+    <div class="pick-editorial-body">
+      <div class="pick-editorial-label">Sammy's Event Pick of the Week</div>
+      <h3>${esc(hero.t)}</h3>
+      <div class="card-when">${esc(hero.w)}</div>
+      <p>${esc(hero.d)}</p>
+      <div class="tags">${(hero.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}${hero.badge?`<span class="price-badge">${esc(hero.badge)}</span>`:""}</div>
+    </div>
   </div>`;
 }
 html = html.replace("<!--SAMMYS_PICK-->", sammysPickHtml);
+
+// Panel featured items - rich previews
+const panelFeatHtml = {};
+
+// Playbooks
+const featPlay = (data.playbooks?.date || [])[0];
+if (featPlay) {
+  const playSteps = (featPlay.steps||[]).length;
+  const playMeta = `${playSteps} stops · ${esc(featPlay.est)}`;
+  panelFeatHtml.playbooks = `<div class="panel-featured">
+    <div class="panel-feat-name">${esc(featPlay.title)}</div>
+    <div class="panel-feat-detail">${esc(featPlay.badge)}</div>
+    <div class="panel-feat-meta">${playMeta}</div>
+  </div>`;
+}
+
+// Eats
+const featEat = (data.eats?.new || [])[0];
+if (featEat) {
+  panelFeatHtml.eats = `<div class="panel-featured">
+    <div class="panel-feat-name">${esc(featEat.name)}</div>
+    <div class="panel-feat-detail">${esc(featEat.type)}</div>
+    <div class="panel-feat-meta">${esc(featEat.price)}</div>
+  </div>`;
+}
+
+// Concerts
+const featConcert = (data.concerts || [])[0];
+if (featConcert) {
+  const concertWhen = (featConcert.w || '').split(' · ')[0];
+  panelFeatHtml.concerts = `<div class="panel-featured">
+    <div class="panel-feat-name">${esc(featConcert.t)}</div>
+    <div class="panel-feat-detail">${esc(featConcert.venue)}</div>
+    <div class="panel-feat-meta">${esc(concertWhen)}</div>
+  </div>`;
+}
+
+// Sports
+const featGame = (data.sports || []).find(s => s.games?.length)?.games?.[0];
+if (featGame) {
+  const gameWhen = (featGame.when || '').replace(/\\n/g, ' · ');
+  panelFeatHtml.sports = `<div class="panel-featured">
+    <div class="panel-feat-name">${esc(featGame.teams)}</div>
+    <div class="panel-feat-detail">${esc(gameWhen)}</div>
+    <div class="panel-feat-meta">${esc(featGame.price)}</div>
+  </div>`;
+}
+
+// Singles
+const featSingle = (data.singles || [])[0];
+if (featSingle) {
+  const singleName = featSingle.t?.split(' - ')[0] || featSingle.t;
+  panelFeatHtml.singles = `<div class="panel-featured">
+    <div class="panel-feat-name">${esc(singleName)}</div>
+    <div class="panel-feat-detail">${esc(featSingle.w)}</div>
+    <div class="panel-feat-meta">${(featSingle.tags||[]).slice(0,2).map(t=>esc(t)).join(' · ')}</div>
+  </div>`;
+}
+
+Object.entries(panelFeatHtml).forEach(([key, val]) => {
+  html = html.replace(`<!--PANEL_FEAT_${key.toUpperCase()}-->`, val);
+});
+// Clean up any unreplaced placeholders
+html = html.replace(/<!--PANEL_FEAT_\w+-->/g, '');
 
 let picksHtml = rest.map(p => `<div class="card" data-cats="${esc(p.cats)}" data-price="${esc(p.price)}">
     <div class="card-top"><h3>${esc(p.t)}</h3><div class="card-when">${esc(p.w)}</div></div>
