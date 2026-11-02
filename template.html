@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="Sammy's SF — the scene this week">
+<meta property="og:title" content="Sammy's SF - the scene this week">
 <meta property="og:description" content="Weekly picks from your bff Sammy. Concerts, bars, eats, date nights, sports, and singles events in San Francisco.">
 <meta property="og:image" content="https://sammyssf-1.vercel.app/og-image.png">
 <meta property="og:url" content="https://sammyssf-1.vercel.app">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sammy's SF — the scene this week">
+<meta name="twitter:title" content="Sammy's SF - the scene this week">
 <meta name="twitter:description" content="Weekly picks from your bff Sammy. Concerts, bars, eats, date nights, sports, and singles events in SF.">
 <meta name="twitter:image" content="https://sammyssf-1.vercel.app/og-image.png">
-<title>Sammy's SF — <!--DATE--></title>
+<title>Sammy's SF - <!--DATE--></title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -199,6 +199,17 @@
   .picks-empty { text-align: center; padding: 2rem 1rem; color: #999; font-size: 0.85rem; display: none; }
   .picks-empty.show { display: block; }
   .picks-empty a { color: var(--coral); cursor: pointer; text-decoration: underline; }
+
+  /* MOBILE FIXES */
+  @media (max-width: 640px) {
+    .highlight-card .card-top { flex-direction: column; gap: 2px; }
+    .highlight-card .card-when { white-space: normal; padding-top: 0; font-size: 0.65rem; }
+    .highlight-card h3 { font-size: 1.15rem; }
+  }
+
+  /* SCROLLABLE TABS */
+  .tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; justify-content: flex-start; scrollbar-width: none; padding-bottom: 2px; }
+  .tabs::-webkit-scrollbar { display: none; }
 </style>
 </head>
 <body>

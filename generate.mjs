@@ -165,7 +165,8 @@ RULES:
 - eats.new: 4-6, eats.classic: 4-6, bars: 6-8, concerts: 6-10, singles: 4-6
 - Each playbook: exactly 3 plans (free/$$/$$$ tiers), 3-5 steps each using THIS WEEK's events
 - cats from: music,shows,food,nightlife,active,sports. price from: free,$,$$,$$$
-- Use ONLY real events from the research. Never invent events.`
+- Use ONLY real events from the research. Never invent events.
+- NEVER use em dashes (—) or en dashes (–) anywhere. Use commas, periods, or hyphens instead.`
   }]
   });
 } catch (err) {
@@ -299,6 +300,21 @@ function fixDaysInObject(obj) {
 
 console.log("\u{1f4c5} Checking day-of-week labels...");
 data = fixDaysInObject(data);
+
+// STRIP EM DASHES AND EN DASHES (use commas/hyphens instead)
+function stripDashes(obj) {
+  if (typeof obj === "string") return obj.replace(/—/g, ", ").replace(/–/g, "-");
+  if (Array.isArray(obj)) return obj.map(stripDashes);
+  if (obj && typeof obj === "object") {
+    for (const key of Object.keys(obj)) {
+      obj[key] = stripDashes(obj[key]);
+    }
+  }
+  return obj;
+}
+console.log("✏️  Removing em/en dashes...");
+data = stripDashes(data);
+
 
 fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
 console.log(`✅ data.json written (${(Buffer.byteLength(JSON.stringify(data)) / 1024).toFixed(1)} KB)`);
