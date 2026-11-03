@@ -12,7 +12,7 @@
 <meta name="twitter:title" content="Sammy's SF - the scene this week">
 <meta name="twitter:description" content="Weekly curated playbooks and places to go from your bff Sammy. Concerts, bars, eats, date nights, sports, and singles events in SF.">
 <meta name="twitter:image" content="https://sammyssf-1.vercel.app/og-image.png">
-<title>Sammy's SF - October 30 - November 5, 2026</title>
+<title>Sammy's SF - November 6 - November 12, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,6 +41,78 @@
   .header h1 em { font-style: italic; }
   .header-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
   .header-date { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
+
+  /* LANDING PAGE */
+  .landing { background: #fff; }
+  .landing-hero { background: linear-gradient(135deg, #E8734A 0%, #D4536B 40%, #6B7FAA 100%); padding: 3rem 1.5rem 2.5rem; text-align: center; }
+  .landing-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(3.2rem, 8vw, 5rem); font-weight: 400; color: #fff; line-height: 1; margin-bottom: 6px; }
+  .landing-hero h1 em { font-style: italic; }
+  .landing-hero-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+  .landing-hero-date { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
+
+  .landing-body { padding: 2.5rem 1.5rem; max-width: 540px; margin: 0 auto; }
+  .landing-tagline { font-family: 'Instrument Serif', serif; font-size: clamp(1.4rem, 4vw, 1.8rem); color: #222; line-height: 1.4; margin-bottom: 0.75rem; font-weight: 400; }
+  .landing-desc { font-size: 0.9rem; color: #888; line-height: 1.6; margin-bottom: 2.5rem; }
+
+  .landing-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #E8734A; margin-bottom: 12px; }
+
+  /* EVENT PICK - EDITORIAL LAYOUT */
+  .landing-pick-wrap { position: relative; margin: 0 calc(-50vw + 50%) 2.5rem; padding: 0 1.5rem; }
+  .pick-editorial { position: relative; display: flex; border-radius: 16px; overflow: hidden; min-height: 380px; max-width: 900px; margin: 0 auto; background: #1a1a2e; }
+  .pick-editorial-img { flex: 0 0 48%; background-size: cover; background-position: center top; position: relative; }
+  .pick-editorial-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 50%, #1a1a2e 100%); }
+  .pick-editorial-img-fallback { background: linear-gradient(135deg, #E8734A 0%, #D4536B 40%, #6B7FAA 100%); }
+  .pick-editorial-img-fallback::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 60%, rgba(255,255,255,0.12) 0%, transparent 50%); animation: pickGlow 8s ease-in-out infinite; }
+  @keyframes pickGlow { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  .pick-editorial-body { flex: 1; padding: 2.2rem 2rem; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 1; }
+  .pick-editorial-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #E8734A; margin-bottom: 10px; }
+  .pick-editorial-body h3 { font-family: 'Instrument Serif', serif; font-size: 1.9rem; font-weight: 400; color: #fff; line-height: 1.15; margin-bottom: 10px; }
+  .pick-editorial-body .card-when { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+  .pick-editorial-body p { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; }
+  .pick-editorial-body .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .pick-editorial-body .tag { font-size: 0.6rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); padding: 3px 8px; border-radius: 4px; }
+  .pick-editorial-body .price-badge { font-size: 0.6rem; color: rgba(232,115,74,0.8); }
+  @media (max-width: 480px) {
+    .pick-editorial { flex-direction: column; }
+    .pick-editorial-img { flex: none; height: 260px; }
+    .pick-editorial-img::after { background: linear-gradient(180deg, transparent 40%, #1a1a2e 100%); }
+    .pick-editorial-body { padding: 1.2rem 1.3rem 1.5rem; }
+  }
+
+  .landing-divider { display: flex; justify-content: center; gap: 6px; padding: 2rem 0; }
+  .landing-divider-dot { width: 4px; height: 4px; border-radius: 50%; background: #ccc; }
+
+  /* SECTION PANELS */
+  .landing-panels-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #bbb; margin-bottom: 12px; }
+  .landing-panels-wrap { margin: 0 calc(-50vw + 50%); padding: 0; }
+  .landing-panels { display: flex; gap: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 1.5rem 1rem; scroll-snap-type: x mandatory; }
+  .landing-panels::-webkit-scrollbar { display: none; }
+  .landing-panel { position: relative; flex: 0 0 55vw; max-width: 260px; min-height: 240px; border-radius: 14px; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; cursor: pointer; overflow: hidden; text-decoration: none; transition: transform 0.15s; scroll-snap-align: start; }
+  .landing-panel:hover { transform: scale(1.02); }
+  .landing-panel-icon { font-size: 1.8rem; }
+  .landing-panel-title { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 700; color: rgba(0,0,0,0.8); line-height: 1.2; margin-bottom: 3px; }
+  .landing-panel-sub { font-size: 0.65rem; color: rgba(0,0,0,0.5); line-height: 1.4; }
+  .panel-featured { margin-bottom: auto; margin-top: 0.6rem; position: relative; z-index: 1; max-width: 65%; }
+  .panel-feat-name { font-family: 'Instrument Serif', serif; font-size: 0.85rem; font-style: italic; color: rgba(0,0,0,0.75); line-height: 1.25; margin-bottom: 3px; }
+  .panel-feat-detail { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; letter-spacing: 0.04em; color: rgba(0,0,0,0.45); line-height: 1.4; }
+  .panel-feat-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; color: rgba(0,0,0,0.35); margin-top: 3px; }
+  .panel-deco { position: absolute; right: -5px; top: 40%; transform: translateY(-50%); width: 110px; height: 110px; opacity: 0.13; pointer-events: none; }
+  .panel-deco svg { width: 100%; height: 100%; fill: rgba(0,0,0,0.6); }
+
+  /* ANIMATED PANEL BACKGROUNDS */
+  .panel-shapes { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+  .panel-shape { position: absolute; border-radius: 50%; opacity: 0.15; }
+  .panel-shape-1 { width: 70px; height: 70px; top: -20px; right: -20px; animation: floatShape 6s ease-in-out infinite; }
+  .panel-shape-2 { width: 45px; height: 45px; bottom: 20%; left: -15px; animation: floatShape 8s ease-in-out infinite reverse; }
+  .panel-shape-3 { width: 30px; height: 30px; top: 45%; right: 10px; animation: floatShape 7s ease-in-out infinite 1s; }
+  @keyframes floatShape { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-15px) scale(1.15); } }
+  .landing-panel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.06) 100%); animation: panelShimmer 4s ease-in-out infinite; }
+  @keyframes panelShimmer { 0%,100% { opacity: 0; } 50% { opacity: 1; } }
+  .landing-panel::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%); animation: panelGlow 10s linear infinite; }
+  @keyframes panelGlow { 0% { transform: translate(0,0) rotate(0deg); } 100% { transform: translate(10%,-10%) rotate(360deg); } }
+
+  .main-content { display: none; }
+  .main-content.visible { display: block; }
 
   /* TABS */
   .tabs { display: flex; gap: 0; justify-content: center; border-bottom: none; margin: 0 -1.5rem; padding: 0 1.5rem; }
@@ -216,11 +288,115 @@
 </head>
 <body>
 
+<!-- LANDING PAGE -->
+<div class="landing" id="landing">
+  <div class="landing-hero">
+    <h1>Sammy's <em>SF</em></h1>
+    <div class="landing-hero-sub">where will you be this week?</div>
+    <div class="landing-hero-date">November 6 - November 12, 2026</div>
+  </div>
+
+  <div class="landing-body">
+    <p style="font-family: 'Instrument Serif', serif; font-size: 1.1rem; color: #555; line-height: 1.7; text-align: center; margin-bottom: 0.5rem; font-style: italic;">November fog is rolling in soft and slow, and SF is countering with a week so packed with music, coffee, and good vibes that you honestly have no excuse to stay on the couch.</p>
+    <h2 class="landing-tagline">Your weekly guide to the best things happening in San Francisco.</h2>
+    <p class="landing-desc">Every week, Sammy hand-picks the best events, restaurants, and curated playbooks so you don't have to figure it out yourself.</p>
+
+    <div class="landing-pick-wrap">
+      <div class="pick-editorial">
+    <div class="pick-editorial-img pick-editorial-img-fallback"></div>
+    <div class="pick-editorial-body">
+      <div class="pick-editorial-label">Sammy's Event Pick of the Week</div>
+      <h3>SF Coffee Festival (10th Annual!)</h3>
+      <div class="card-when">Sat-Sat Nov 7-8 · 9:30am-4:30pm</div>
+      <p>Ten years of caffeination at Fort Mason and they are not slowing down. Dozens of specialty roasters, live bands, tea nerds welcome too, and unlimited samplings for $29 is genuinely one of the best deals of the season. Grab your most coffee-obsessed friend and make a full morning of it by the water.</p>
+      <div class="tags"><span class="tag">Coffee</span><span class="tag">Festival</span><span class="tag">Weekend</span><span class="tag">Fort Mason</span><span class="price-badge">$29+</span></div>
+    </div>
+  </div>
+    </div>
+
+    <div class="landing-divider">
+      <span class="landing-divider-dot"></span>
+      <span class="landing-divider-dot"></span>
+      <span class="landing-divider-dot"></span>
+    </div>
+
+    <div class="landing-panels-label">Jump to a section</div>
+    <div class="landing-panels-wrap">
+    <div class="landing-panels">
+      <a class="landing-panel" style="background: linear-gradient(160deg, #E88B7A, #F2AAB8);" onclick="enterSite();showView('plans');">
+        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
+        <div class="panel-deco"><svg viewBox="0 0 100 120"><rect x="15" y="12" width="70" height="90" rx="6" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="4"/><rect x="30" y="0" width="40" height="20" rx="4"/><rect x="28" y="38" width="36" height="4" rx="2"/><rect x="28" y="52" width="28" height="4" rx="2"/><rect x="28" y="66" width="32" height="4" rx="2"/><rect x="28" y="80" width="24" height="4" rx="2"/></svg></div>
+        <div class="landing-panel-icon">📋</div>
+        <div class="panel-featured">
+    <div class="panel-feat-name">Free Waterfront Friday</div>
+    <div class="panel-feat-detail">The Free One</div>
+    <div class="panel-feat-meta">3 stops · $0</div>
+  </div>
+        <div class="landing-panel-title">Playbooks</div>
+        <div class="landing-panel-sub">Curated plans for every occasion</div>
+      </a>
+      <a class="landing-panel" style="background: linear-gradient(160deg, #7BC8A4, #A8D8B9);" onclick="enterSite();showView('eats');">
+        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
+        <div class="panel-deco"><svg viewBox="0 0 100 120"><path d="M30 10 L30 55 Q30 65 38 65 L38 110" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="5" stroke-linecap="round"/><path d="M20 10 L20 35 Q20 45 30 45" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="3" stroke-linecap="round"/><path d="M40 10 L40 35 Q40 45 30 45" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="3" stroke-linecap="round"/><path d="M70 10 L70 45 Q78 46 78 30 L78 10 Q78 8 76 8 L72 8 Q70 8 70 10 Z" stroke="rgba(0,0,0,0.5)" stroke-width="3" fill="none"/><path d="M74 45 L74 110" stroke="rgba(0,0,0,0.5)" stroke-width="5" stroke-linecap="round"/></svg></div>
+        <div class="landing-panel-icon">🍽</div>
+        <div class="panel-featured">
+    <div class="panel-feat-name">Bare Bones</div>
+    <div class="panel-feat-detail">Rotisserie · Parkside</div>
+    <div class="panel-feat-meta">$ · ~$15/pp</div>
+  </div>
+        <div class="landing-panel-title">Eats & Bars</div>
+        <div class="landing-panel-sub">New spots and classics</div>
+      </a>
+      <a class="landing-panel" style="background: linear-gradient(160deg, #A8B4D6, #C3B8E3);" onclick="enterSite();showView('concerts');">
+        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
+        <div class="panel-deco"><svg viewBox="0 0 100 120"><ellipse cx="28" cy="95" rx="16" ry="12" transform="rotate(-20 28 95)"/><path d="M42 90 L42 20" stroke="rgba(0,0,0,0.5)" stroke-width="5"/><path d="M42 20 L85 10 L85 50 L42 60" fill="rgba(0,0,0,0.5)"/><ellipse cx="73" cy="55" rx="16" ry="12" transform="rotate(-20 73 55)" opacity="0.6"/></svg></div>
+        <div class="landing-panel-icon">🎵</div>
+        <div class="panel-featured">
+    <div class="panel-feat-name">SYML</div>
+    <div class="panel-feat-detail">Castro Theatre · TBD</div>
+    <div class="panel-feat-meta">Fri Nov 6</div>
+  </div>
+        <div class="landing-panel-title">Concerts</div>
+        <div class="landing-panel-sub">Live music this week</div>
+      </a>
+      <a class="landing-panel" style="background: linear-gradient(160deg, #F5C16C, #F7D99E);" onclick="enterSite();showView('sports');">
+        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
+        <div class="panel-deco"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="4"/><path d="M30 8 Q42 30 38 50 Q34 70 28 92" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="3"/><path d="M70 8 Q58 30 62 50 Q66 70 72 92" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="3"/><path d="M33 15 L38 20 M35 25 L40 30 M36 36 L41 41 M37 48 L42 53 M35 58 L40 63 M32 68 L37 73 M30 78 L35 83" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="2" stroke-linecap="round"/><path d="M67 15 L62 20 M65 25 L60 30 M64 36 L59 41 M63 48 L58 53 M65 58 L60 63 M68 68 L63 73 M70 78 L65 83" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="landing-panel-icon">⚾</div>
+        <div class="panel-featured">
+    <div class="panel-feat-name">Golden State Warriors vs. Orlando Magic</div>
+    <div class="panel-feat-detail">Sat Nov 7
+5:30pm</div>
+    <div class="panel-feat-meta">Varies</div>
+  </div>
+        <div class="landing-panel-title">Sports</div>
+        <div class="landing-panel-sub">Games and watch parties</div>
+      </a>
+      <a class="landing-panel" style="background: linear-gradient(160deg, #89CCD4, #B5DFE5);" onclick="enterSite();showView('singles');">
+        <div class="panel-shapes"><div class="panel-shape panel-shape-1" style="background:rgba(0,0,0,0.06);"></div><div class="panel-shape panel-shape-2" style="background:rgba(0,0,0,0.04);"></div><div class="panel-shape panel-shape-3" style="background:rgba(0,0,0,0.03);"></div></div>
+        <div class="panel-deco"><svg viewBox="0 0 100 100"><path d="M50 88 L12 50 Q2 38 10 24 Q18 10 32 10 Q42 10 50 22 Q58 10 68 10 Q82 10 90 24 Q98 38 88 50 Z"/></svg></div>
+        <div class="landing-panel-icon">💫</div>
+        <div class="panel-featured">
+    <div class="panel-feat-name">SF Singles Speed Dating Game Night</div>
+    <div class="panel-feat-detail">Tue Nov 10 · 7pm</div>
+    <div class="panel-feat-meta">Speed Dating · Cocktail Bar</div>
+  </div>
+        <div class="landing-panel-title">Singles</div>
+        <div class="landing-panel-sub">Speed dating, mixers, and ways to meet people IRL</div>
+      </a>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN SITE -->
+<div class="main-content" id="mainContent">
+
 <div class="header">
   <div class="header-eyebrow">Weekly curated playbooks and places to go from your bff Sammy</div>
-  <h1>Sammy's <em>SF</em></h1>
+  <h1 style="cursor:pointer" onclick="goHome()">Sammy's <em>SF</em></h1>
   <div class="header-sub">where will you be this week?</div>
-  <div class="header-date">October 30 - November 5, 2026</div>
+  <div class="header-date">November 6 - November 12, 2026</div>
   <div class="tabs">
     <button class="tab active" onclick="showView('plans')">Playbooks</button>
     <button class="tab" onclick="showView('picks')">This Week</button>
@@ -250,89 +426,83 @@
   <div class="filter-status" id="filterStatus"></div>
 
   <div class="hero-label">Sammy's Event Pick of the Week</div>
-  <div class="highlight-card card" data-cats="shows" data-price="$$">
-    <div class="card-top"><h3>Oh, Mary! - Final Weekend at ACT Curran Theatre</h3><div class="card-when">Fri Oct 30 - Sun Nov 1 · Various Times</div></div>
-    <p>This is it ,  the Tony Award-winning dark comedy closes forever on November 1st and Sammy personally insists you go. If you've been sleeping on this one, wake up right now and buy a ticket. Final curtain falls Sunday night and you will absolutely regret missing it.</p>
-    <div class="tags"><span class="tag">Last Chance</span><span class="tag">Theater</span><span class="tag">Award-Winning</span><span class="price-badge">Closing Now</span></div>
+  <div class="highlight-card card" data-cats="food" data-price="$">
+    <div class="card-top"><h3>SF Coffee Festival (10th Annual!)</h3><div class="card-when">Sat-Sat Nov 7-8 · 9:30am-4:30pm</div></div>
+    <p>Ten years of caffeination at Fort Mason and they are not slowing down. Dozens of specialty roasters, live bands, tea nerds welcome too, and unlimited samplings for $29 is genuinely one of the best deals of the season. Grab your most coffee-obsessed friend and make a full morning of it by the water.</p>
+    <div class="tags"><span class="tag">Coffee</span><span class="tag">Festival</span><span class="tag">Weekend</span><span class="tag">Fort Mason</span><span class="price-badge">$29+</span></div>
   </div>
 
   <div class="section-label section-label-muted" style="margin-top:20px">More this week</div>
+  <div class="card" data-cats="music" data-price="$">
+    <div class="card-top"><h3>Brand New at Bill Graham Civic</h3><div class="card-when">Wed Nov 11</div></div>
+    <p>If you know, you know. Brand New is one of the most beloved and historically elusive bands in emo and post-hardcore, and any appearance is a genuine event. Bill Graham Civic Auditorium is the perfect room for their dense, layered guitar work and heavy introspective energy. Do not sleep on this one.</p>
+    <div class="tags"><span class="tag">Emo</span><span class="tag">Post-Hardcore</span><span class="tag">One Night Only</span><span class="tag">Live Music</span><span class="price-badge">TBD</span></div>
+  </div>
+
+  <div class="card" data-cats="music" data-price="$">
+    <div class="card-top"><h3>The Damned - Final Damnation 50 Tour</h3><div class="card-when">Wed Nov 11 · 8pm</div></div>
+    <p>One of the original UK punk bands is celebrating 50 years and calling it a farewell tour, which makes this a certified bucket-list moment for punk and goth fans. The Fillmore is an iconic room for a show this historically significant. If you have ever even casually liked punk music, go.</p>
+    <div class="tags"><span class="tag">Punk</span><span class="tag">Goth</span><span class="tag">Farewell Tour</span><span class="tag">The Fillmore</span><span class="price-badge">TBD</span></div>
+  </div>
+
+  <div class="card" data-cats="music" data-price="$">
+    <div class="card-top"><h3>Olafur Arnalds at the Castro Theater</h3><div class="card-when">Nov 11-12</div></div>
+    <p>The Icelandic sound artist who blends neo-classical piano and strings with lush electronic textures is doing two nights at the Castro, which is honestly the most perfectly matched venue-artist pairing imaginable. His live show is a full sensory experience that feels more like stepping into a film than attending a concert. A genuinely special way to spend an evening.</p>
+    <div class="tags"><span class="tag">Neo-Classical</span><span class="tag">Electronic</span><span class="tag">Atmospheric</span><span class="tag">Castro Theater</span><span class="price-badge">TBD</span></div>
+  </div>
+
   <div class="card" data-cats="nightlife" data-price="free">
-    <div class="card-top"><h3>Castro Halloween Block Party</h3><div class="card-when">Sat Oct 31 · All Day</div></div>
-    <p>Four blocks, three stages, a costume contest, trick-or-treating, a glowing neon dance party, and the most legendary Halloween crowd in San Francisco ,  all for free. The Castro on Halloween is a bucket-list experience, full stop. Wear something spectacular.</p>
-    <div class="tags"><span class="tag">Free</span><span class="tag">Halloween</span><span class="tag">Outdoor</span><span class="tag">LGBTQ+</span><span class="price-badge">Free</span></div>
+    <div class="card-top"><h3>Dirtybird Night Market at Thrive City</h3><div class="card-when">Fri Nov 6 · 5-10pm</div></div>
+    <p>Free DJ sets, vendors, games, and cocktails right outside Chase Center on a Friday evening. This is the perfect low-commitment start to the weekend where you can grab a drink, dance a little, shop a little, and see where the night takes you. Bring friends or go solo and make some.</p>
+    <div class="tags"><span class="tag">Free</span><span class="tag">Outdoors</span><span class="tag">DJ</span><span class="tag">Night Market</span><span class="price-badge">Free</span></div>
   </div>
 
   <div class="card" data-cats="music" data-price="$">
-    <div class="card-top"><h3>Galactic - Two-Night Halloween Run at The Fillmore</h3><div class="card-when">Fri Oct 30 &amp; Sat Oct 31 · Doors 7pm</div></div>
-    <p>New Orleans funk legends Galactic are doing two nights at The Fillmore for Halloween weekend, and honestly there is no better band to ring in the spooky season with. Friday has young guitar phenom Bella Rayne opening, Saturday features instrumental organ trio Parlor Greens. Either night is a guaranteed dance party.</p>
-    <div class="tags"><span class="tag">Funk</span><span class="tag">New Orleans</span><span class="tag">Halloween</span><span class="tag">Live Music</span><span class="price-badge">2 Nights</span></div>
+    <div class="card-top"><h3>SYML at the Castro Theatre</h3><div class="card-when">Fri Nov 6</div></div>
+    <p>SYML performing his Solo in North America tour inside the ornate Castro Theatre is one of those rare venue-and-artist combinations that feels almost too perfect. His cinematic, emotionally atmospheric indie folk hits differently in a room with that much history and character. A quietly stunning Friday night option.</p>
+    <div class="tags"><span class="tag">Indie Folk</span><span class="tag">Atmospheric</span><span class="tag">One Night Only</span><span class="tag">Castro Theater</span><span class="price-badge">TBD</span></div>
   </div>
 
-  <div class="card" data-cats="nightlife" data-price="free">
-    <div class="card-top"><h3>Nightmare on Front Street - Free Halloween Block Party</h3><div class="card-when">Fri Oct 30 · 4-9pm</div></div>
-    <p>Three beloved downtown bars ,  Schroeder's, Harrington's, and Royal Exchange ,  take over Front Street for a totally free Halloween block party with live DJs, themed cocktails, spooky activities, and a sea of costumes. Great pre-game for a bigger night out, or perfect as the main event.</p>
-    <div class="tags"><span class="tag">Free</span><span class="tag">Halloween</span><span class="tag">Outdoor</span><span class="tag">Block Party</span><span class="price-badge">Free</span></div>
-  </div>
-
-  <div class="card" data-cats="music" data-price="$">
-    <div class="card-top"><h3>Galactic: Madre Cumbia - Los Gaiteros de San Jacinto, Fruko &amp; Carmelo Torres</h3><div class="card-when">Mon Nov 2 · Doors 6:30pm</div></div>
-    <p>This one is genuinely rare ,  a landmark gathering of Colombian cumbia masters at GAMH, bringing together the traditional Gaita flute sounds of Los Gaiteros de San Jacinto with salsa-funk royalty Fruko and guitar legend Carmelo Torres. World music fans, this is your moment. Monday nights don't usually look like this.</p>
-    <div class="tags"><span class="tag">World Music</span><span class="tag">Cumbia</span><span class="tag">Colombian</span><span class="tag">Cultural</span><span class="price-badge">Rare Show</span></div>
-  </div>
-
-  <div class="card" data-cats="shows" data-price="$">
-    <div class="card-top"><h3>AURA: An Immersive Odyssey at Grace Cathedral</h3><div class="card-when">Ongoing · Nightly</div></div>
-    <p>Montreal studio Moment Factory has turned Grace Cathedral into a living stage of light, projection, and original music ,  and it is absolutely stunning in person. The 52-minute experience includes an interactive web app exploration and a 37-minute full immersive show inside one of SF's most iconic spaces. Tickets from around $24 and worth every penny.</p>
-    <div class="tags"><span class="tag">Immersive</span><span class="tag">Art</span><span class="tag">Cultural</span><span class="tag">Iconic Venue</span><span class="price-badge">Immersive</span></div>
+  <div class="card" data-cats="food" data-price="$">
+    <div class="card-top"><h3>SF Fall Cider Fest</h3><div class="card-when">Sat Nov 7 · 12-4pm</div></div>
+    <p>A whole festival dedicated entirely to cider at SPARK Social SF in Mission Bay, which is exactly the kind of very good idea that belongs in November. The outdoor setting is lively, the vibes are autumnal, and you will almost certainly discover a new favorite. 21+ and very much worth the afternoon.</p>
+    <div class="tags"><span class="tag">Cider</span><span class="tag">Outdoors</span><span class="tag">21+</span><span class="tag">Mission Bay</span><span class="price-badge">Ticketed</span></div>
   </div>
 
   <div class="card" data-cats="music" data-price="$">
-    <div class="card-top"><h3>Marshmello - Lost in Dreams Halloween Block Party</h3><div class="card-when">Fri Oct 30 · 5pm-11pm</div></div>
-    <p>Marshmello headlines a massive outdoor block party at The Midway with ARMNHMR, Grabbitz, CHYL, GhostDragon, and more on the bill ,  then an afterparty runs until 2am. If big EDM and a high-energy Halloween crowd is your scene, The Midway is the place to be Friday night. GA tickets start around $32.</p>
-    <div class="tags"><span class="tag">EDM</span><span class="tag">Halloween</span><span class="tag">Outdoor</span><span class="tag">Block Party</span><span class="price-badge">Halloween</span></div>
+    <div class="card-top"><h3>Foy Vance at Great American Music Hall</h3><div class="card-when">Sun Nov 8 · 7pm (Doors 6pm)</div></div>
+    <p>The Irish singer-songwriter with one of the most deeply soulful voices in folk and blues is playing one of SF's most beautiful historic rooms, joined by Bonnie Bishop and Ryan McMullan. This triple bill is a rare treat and the ornate GAMH interior makes everything feel more special. A perfect Sunday evening.</p>
+    <div class="tags"><span class="tag">Folk</span><span class="tag">Soul</span><span class="tag">GAMH</span><span class="tag">Sunday</span><span class="price-badge">TBD</span></div>
+  </div>
+
+  <div class="card" data-cats="food" data-price="free">
+    <div class="card-top"><h3>Fort Mason Night Market</h3><div class="card-when">Fri Nov 6 · 5-10pm</div></div>
+    <p>Food, local vendors, and a Friday evening by the waterfront at Fort Mason. Free to attend and the views alone are worth showing up for. A lovely and very San Francisco way to ease into the weekend before things get louder elsewhere.</p>
+    <div class="tags"><span class="tag">Free</span><span class="tag">Outdoors</span><span class="tag">Night Market</span><span class="tag">Fort Mason</span><span class="price-badge">Free</span></div>
   </div>
 
   <div class="card" data-cats="music" data-price="$">
-    <div class="card-top"><h3>Team Dresch + Longstocking + The Third Sex at Bottom of the Hill</h3><div class="card-when">Thu Nov 5 · Doors 7pm</div></div>
-    <p>Queercore legends Team Dresch playing Bottom of the Hill alongside fellow icons Longstocking and The Third Sex ,  all-ages, $20-$25, and exactly the kind of sweaty, joyful, politically-charged punk show that Bottom of the Hill was built for. This is a genuinely special reunion night.</p>
-    <div class="tags"><span class="tag">Punk</span><span class="tag">Queercore</span><span class="tag">All Ages</span><span class="tag">Legendary</span><span class="price-badge">All Ages</span></div>
+    <div class="card-top"><h3>Russian Circles w/ Primitive Man at GAMH</h3><div class="card-when">Thu Nov 12 · 8pm (Doors 7pm)</div></div>
+    <p>The Chicago post-metal trio who do crushing, all-instrumental heaviness are playing the Great American Music Hall with doom-metal bruisers Primitive Man opening. This is one of the most intense and well-curated double bills of the whole week. Tickets are $30 advance and absolutely worth every dollar.</p>
+    <div class="tags"><span class="tag">Post-Metal</span><span class="tag">Doom</span><span class="tag">Instrumental</span><span class="tag">GAMH</span><span class="price-badge">$30 ADV</span></div>
   </div>
 
-  <div class="card" data-cats="music" data-price="$">
-    <div class="card-top"><h3>Squirrel Flower + Sour Widows at The Chapel</h3><div class="card-when">Thu Nov 5 · Doors 7pm, Show 8pm</div></div>
-    <p>Squirrel Flower's Ella Williams makes luminous folk-indie that deserves to be heard in a room as warm and beautiful as The Chapel ,  and local favorites Sour Widows are basically the perfect opener. If you want a Thursday night that feels like a hug, this is it. Tickets around $27.</p>
-    <div class="tags"><span class="tag">Folk</span><span class="tag">Indie</span><span class="tag">Intimate</span><span class="tag">Local Love</span><span class="price-badge">Perfect Pairing</span></div>
-  </div>
-
-  <div class="card" data-cats="active" data-price="free">
-    <div class="card-top"><h3>Scaregrove at Stern Grove - Free Family Halloween</h3><div class="card-when">Fri Oct 30 · 3-9pm</div></div>
-    <p>Stern Grove goes full Halloween with a haunted house, carnival rides, a hay maze, arts and crafts, live entertainment, and food ,  all completely free in one of SF's most beautiful outdoor settings. Perfect if you've got kids in tow or just want to ease into the Halloween weekend with something wholesome and fun before it gets weird later.</p>
-    <div class="tags"><span class="tag">Free</span><span class="tag">Outdoor</span><span class="tag">Family</span><span class="tag">Halloween</span><span class="price-badge">Free</span></div>
-  </div>
-
-  <div class="card" data-cats="music" data-price="$">
-    <div class="card-top"><h3>Devendra Banhart at The Fillmore</h3><div class="card-when">Tue Nov 3 · 8pm</div></div>
-    <p>The Venezuelan-American freak-folk icon brings his otherworldly baritone, playful mysticism, and beautifully ornate songwriting to The Fillmore ,  one of those perfect venue-artist matches that SF is so good at producing. If you've never seen Devendra live, this is your week to fix that.</p>
-    <div class="tags"><span class="tag">Folk</span><span class="tag">Indie</span><span class="tag">Iconic Venue</span><span class="price-badge">Don't Sleep</span></div>
-  </div>
-
-  <div class="card" data-cats="shows" data-price="$">
-    <div class="card-top"><h3>RM x SFMOMA: Between You and Me</h3><div class="card-when">Ongoing · Museum Hours</div></div>
-    <p>BTS's RM has co-curated an exhibition with SFMOMA bringing together 200 works from both of their collections ,  it's genuinely fascinating and drawing a wonderfully unexpected crowd of art lovers and stans alike. First-floor installations are free to see, and the full show opened this October.</p>
-    <div class="tags"><span class="tag">Art</span><span class="tag">Cultural</span><span class="tag">Museum</span><span class="tag">Only in SF</span><span class="price-badge">Only in SF</span></div>
+  <div class="card" data-cats="active" data-price="$">
+    <div class="card-top"><h3>Exploratorium After Dark: Unplug and Play</h3><div class="card-when">Thu Nov 12 · 6-10pm</div></div>
+    <p>The Exploratorium opens its doors after hours for adults only and this month the theme is unplugging and playing, which sounds like a genuinely fun and different way to spend a Thursday. 18+ only, and it hits differently when the kids are not around. Great solo or group option.</p>
+    <div class="tags"><span class="tag">Adults Only</span><span class="tag">Interactive</span><span class="tag">Pier 15</span><span class="tag">Thursday</span><span class="price-badge">Paid</span></div>
   </div>
 
   <div class="card" data-cats="shows" data-price="free">
-    <div class="card-top"><h3>Asian Art Museum - Free First Sunday (Nov 1)</h3><div class="card-when">Sun Nov 1 · Museum Hours</div></div>
-    <p>November 1st is Free First Sunday at the Asian Art Museum, where you can catch Ha Chong-Hyun's sweeping retrospective of six decades of innovative abstraction AND a once-in-a-lifetime visit from Southeast Asia's largest ancient bronze of Vishnu. Completely free, genuinely world-class. Go before brunch.</p>
-    <div class="tags"><span class="tag">Free</span><span class="tag">Cultural</span><span class="tag">Museum</span><span class="tag">Art</span><span class="price-badge">Free</span></div>
+    <div class="card-top"><h3>de Young Museum - Free Admission Weekend</h3><div class="card-when">Sat-Sat Nov 7-8</div></div>
+    <p>Bank of America Museums on Us means Bay Area residents get into the de Young for free this Saturday and Sunday. The permanent collection alone is worth the trip, and Golden Gate Park in November has a whole moody, beautiful thing going on. A completely free and genuinely lovely way to spend a weekend morning.</p>
+    <div class="tags"><span class="tag">Free</span><span class="tag">Museum</span><span class="tag">Golden Gate Park</span><span class="tag">Weekend</span><span class="price-badge">Free</span></div>
   </div>
 
-  <div class="card" data-cats="nightlife" data-price="$">
-    <div class="card-top"><h3>Halcyon's 10th Anniversary: Sam Divine - Welcome to the Raveyard</h3><div class="card-when">Fri Oct 30 · 10pm</div></div>
-    <p>House music icon Sam Divine headlines Halcyon's 10th birthday party with a Halloween theme called Welcome to the Raveyard ,  and Halcyon's 24-hour licensed warehouse space with its pristine Pioneer Pro Audio system is the kind of room that makes you fall in love with clubbing all over again. A decade of this venue is worth celebrating.</p>
-    <div class="tags"><span class="tag">House Music</span><span class="tag">Halloween</span><span class="tag">Club Night</span><span class="tag">Anniversary</span><span class="price-badge">Anniversary</span></div>
+  <div class="card" data-cats="shows" data-price="$">
+    <div class="card-top"><h3>ACT - John Proctor Is the Villain (Opens!)</h3><div class="card-when">Thu Nov 12</div></div>
+    <p>Kimberly Belflower's Tony-nominated play gets its West Coast premiere at ACT's Toni Rembe Theater, directed by Jess McLeod in collaboration with Seattle Rep and Center Theatre Group. It follows a high school class reading The Crucible and asking very sharp questions about who the story is really about. Opening night energy is always electric.</p>
+    <div class="tags"><span class="tag">Theater</span><span class="tag">Opening Week</span><span class="tag">ACT</span><span class="tag">West Coast Premiere</span><span class="price-badge">Opening Night</span></div>
   </div>
 
   <div class="picks-empty" id="picks-empty">
@@ -340,11 +510,11 @@
   </div>
 
   <div class="section-label section-label-muted" style="margin-top:28px" data-ongoing="true">Always on this summer</div>
-  <div class="ongoing"><h4>Dear San Francisco at Club Fugazi</h4><p>The 7 Fingers' acrobatic love letter to the city runs nightly ,  tickets from $79 and worth it.</p></div>
-  <div class="ongoing"><h4>Peter Pan Goes Wrong - SF Playhouse</h4><p>High-energy comedic theater runs through November 28 at the Union Square stage.</p></div>
-  <div class="ongoing"><h4>SFMOMA: Graciela Iturbide - Between Two Worlds</h4><p>Stunning black-and-white photography survey through November 29.</p></div>
-  <div class="ongoing"><h4>de Young: Treasures of the Pharaohs</h4><p>Major Egyptian antiquities exhibition runs through January 31 ,  free for Bay Area residents first Tuesday of the month.</p></div>
-  <div class="ongoing"><h4>Minnesota Street Project - David Driskell: Wake Up Everybody</h4><p>Free admission, Jenkins Johnson Gallery, through December 19 in Dogpatch.</p></div>
+  <div class="ongoing"><h4>Dear San Francisco at Club Fugazi</h4><p>Circus meets SF history in an immersive acrobatics and storytelling show running all week in North Beach.</p></div>
+  <div class="ongoing"><h4>SF Playhouse: Peter Pan Goes Wrong</h4><p>The beloved comedy runs through November 28 at the intimate 199-seat theater on Post St.</p></div>
+  <div class="ongoing"><h4>SFMOMA: RM x SFMOMA - Between You and Me</h4><p>The BTS leader's collection of Korean modernists alongside SFMOMA's own works, ongoing through 2027.</p></div>
+  <div class="ongoing"><h4>Asian Art Museum: Ha Chong-Hyun</h4><p>Monumental hemp-cloth paintings filling the galleries on Larkin St, open Tue-Sun.</p></div>
+  <div class="ongoing"><h4>Minnesota Street Project: Raymond Meeks - Assemblage</h4><p>Free photography show at Casemore Gallery through November 14.</p></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
@@ -353,34 +523,32 @@
 <div class="view" id="view-eats">
   <div class="section-label" style="margin-top:0">New this week</div>
   <div class="grid-2">
-    <div class="mini-card"><div class="mini-type">Southern Italian · Embarcadero</div><h4>Lucania</h4><p>All-day ferry building gem from the A16 team ,  sardines, pizza, pasta, and a killer outdoor patio overlooking the Embarcadero.</p><div class="mini-price">$$ · ~$50/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Japanese-French Fine Dining · FiDi</div><h4>Shinka</h4><p>Omakase-style tasting inside The Jay Hotel with chawanmushi, miso cod, and shio koji duck wellington.</p><div class="mini-price">$$ · ~$120/pp</div></div>
-    <div class="mini-card"><div class="mini-type">New Orleans Seafood · Bayview</div><h4>Bayview Oyster Bar</h4><p>Grilled and raw oysters, Dungeness crab with garlic noodles, and clam chowder from the chef behind the beloved Auntie April's.</p><div class="mini-price">$ · ~$35/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Mexican Tasting Menu · Bernal Heights</div><h4>Chicano Nuevo</h4><p>A $95 tasting menu with absolutely no skips ,  critics say it's one of the best value tasting menus in the city right now.</p><div class="mini-price">$$ · ~$95/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Cocktail Bar &amp; Tapas · North Beach</div><h4>15 Romolo</h4><p>The 115-year-old pseudo-speakeasy just finished a two-year renovation ,  back with Pimm's cups, sherry, and a refreshed interior down its hidden alley.</p><div class="mini-price">$ · ~$25/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Craft Beer &amp; Empanadas · Fisherman's Wharf</div><h4>Woods Grotto</h4><p>Woods Beer &amp; Wine Co.'s sixth SF location brings their reliable lineup plus harbor views and empanadas to Fisherman's Wharf.</p><div class="mini-price">$ · ~$20/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Rotisserie · Parkside</div><h4>Bare Bones</h4><p>Three restaurant-world friends opening a counter-service rotisserie chicken spot on Taraval, one of fall 2026's most anticipated debuts.</p><div class="mini-price">$ · ~$15/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Italian-ish · Marina</div><h4>Scout</h4><p>Neighborhood pasta and pizza concept landing on Chestnut St just in time for cozy season.</p><div class="mini-price">$ · ~$35/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Cocktail Bar · Marina</div><h4>Stir Crazy</h4><p>Longtime Mezcalito bartender Jacob Morris opens his first solo project with thoughtfully made classics in the old Black Magic Voodoo Lounge space.</p><div class="mini-price">$ · ~$14/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Seafood · Bayview</div><h4>Bayview Oyster Bar</h4><p>Fresh oysters and Louisiana-Bay Area fusion from April Spears, part of an exciting new dining cluster on Third St.</p><div class="mini-price">$ · ~$35/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Cocktail Bar · Union Square</div><h4>Bar Antoine Lounge</h4><p>A 22-year-old bar director opens an 80-seat lounge at the Galleria Park Hotel with clever bites and serious cocktails.</p><div class="mini-price">$$ · ~$18/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Cantonese Fusion · Richmond</div><h4>Ah Ma's Kitchen</h4><p>Yelp's Best New Restaurant of 2026 is on Clement St and serving Hong Kong flavors with a creative twist.</p><div class="mini-price">$ · ~$30/pp</div></div>
   </div>
 
   <div class="section-label">Worth going back to</div>
   <div class="grid-2">
-    <div class="mini-card"><div class="mini-type">Indian · Embarcadero</div><h4>Noor</h4><p>Order the Muglai Chicken Changezi ,  a spicy cashew curry loaded with smoky chicken that critics say is the only thing you need on the menu.</p><div class="mini-price">$ · ~$30/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Asian Fusion · Richmond</div><h4>Ah Ma's Kitchen</h4><p>One of only two Bay Area spots on Yelp's national Best New Restaurants of 2026 list ,  Cantonese flavors and a taste of Hong Kong on Clement Street.</p><div class="mini-price">$ · ~$35/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Nikkei Handrolls · Cow Hollow</div><h4>Kaiyō Handroll Bar</h4><p>The beloved Cow Hollow spot reinvented as a handroll bar ,  tableside carts, ceviche, lomo saltado, and excellent cocktails still intact.</p><div class="mini-price">$$ · ~$55/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Spanish Tapas · Mission</div><h4>Sangria &amp; Salt</h4><p>Rated the worthy spiritual successor to Cha Cha Cha with a fun atmosphere, great sangria, and open until midnight.</p><div class="mini-price">$ · ~$30/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Coffee &amp; Pastries · Mission</div><h4>Linea Caffe (18th St)</h4><p>Their third SF location right by Dolores Park ,  espresso drinks, frozen coffee slushies, and pastries from Neighbor Bakehouse and Dynamo Donuts.</p><div class="mini-price">$ · ~$10/pp</div></div>
-    <div class="mini-card"><div class="mini-type">Wood-Fired · Glen Park</div><h4>La Cigale</h4><p>No tips, no reservations ,  just excellent wood-fired cooking in a refreshingly unpretentious Glen Park neighborhood spot.</p><div class="mini-price">$ · ~$40/pp</div></div>
+    <div class="mini-card"><div class="mini-type">New American · Hayes Valley</div><h4>RT Bistro</h4><p>One of the most buzzed-about new restaurants of 2026, earning serious praise from locals all fall.</p><div class="mini-price">$ · ~$40/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Wood-Fired · Glen Park</div><h4>La Cigale</h4><p>No tips, no reservations, just excellent wood-fired food and a refreshingly unpretentious neighborhood vibe.</p><div class="mini-price">$ · ~$45/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Thai · Mission</div><h4>Khao Tiew</h4><p>Walk-in-only Thai spot with a devoted following and the kind of food people rearrange their nights for.</p><div class="mini-price">$ · ~$20/pp</div></div>
+    <div class="mini-card"><div class="mini-type">Banh Mi · Laurel Heights</div><h4>Banh Mi A Mui</h4><p>The spiritual successor to the beloved Sing Sing, bringing serious banh mi craft back to the neighborhood.</p><div class="mini-price">$ · ~$12/pp</div></div>
   </div>
 
   <div class="section-label">Bars worth hitting</div>
   <div class="grid-2">
-    <div class="mini-card"><div class="mini-type">Speakeasy Tapas · North Beach</div><h4>15 Romolo</h4><p>Freshly renovated after two years away ,  the alley speakeasy is back with great cocktails and that same irreplaceable bohemian energy.</p><div class="mini-price">$ · ~$16/drink</div></div>
-    <div class="mini-card"><div class="mini-type">House Music Club · SoMa</div><h4>Halcyon SF</h4><p>Celebrating its 10th anniversary this week with Sam Divine on the decks ,  pristine sound system, wrap-around projections, and a 24-hour license for special events.</p><div class="mini-price">$ · ~$15/drink</div></div>
-    <div class="mini-card"><div class="mini-type">EDM Mega-Club · Dogpatch</div><h4>The Midway</h4><p>The epicenter of SF's Halloween EDM weekend with Marshmello Friday and RL Grime Saturday ,  massive outdoor block parties both nights.</p><div class="mini-price">$ · ~$14/drink</div></div>
-    <div class="mini-card"><div class="mini-type">Underground Techno · Haight</div><h4>Underground SF</h4><p>Intimate 100-capacity room on Haight Street hosting Halloween Underground with Primo and Oso Feo ,  the real underground Halloween experience.</p><div class="mini-price">$ · ~$12/drink</div></div>
-    <div class="mini-card"><div class="mini-type">Melodic House · SoMa</div><h4>Public Works SF</h4><p>Lost Miracle (Sébastien Léger &amp; Roy Rosenfeld) plus Satori on Halloween eve ,  one of SF's most beloved mid-size venues doing what it does best.</p><div class="mini-price">$ · ~$14/drink</div></div>
-    <div class="mini-card"><div class="mini-type">Tech-House · SoMa</div><h4>Audio SF</h4><p>Darude on Friday and Sistek on Saturday make Audio the underground Halloween alternative to the mega-shows ,  serious club sound, serious crowd.</p><div class="mini-price">$ · ~$15/drink</div></div>
-    <div class="mini-card"><div class="mini-type">Yemeni Coffee · Various</div><h4>Delah Coffee / Haraz / Heyma</h4><p>Late-night Yemeni coffee and pastries ,  all three open past 10pm, some until 1am on weekends, and genuinely one of SF's best late-night habits.</p><div class="mini-price">$ · ~$8/drink</div></div>
-    <div class="mini-card"><div class="mini-type">Craft Beer · Richmond</div><h4>Hi NRG</h4><p>New Richmond location with expanded food, pastries, sandwiches, ice cream sundaes ,  and wine at night when the coffee crowd clears out.</p><div class="mini-price">$ · ~$10/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Neighborhood Cocktail Bar · Marina</div><h4>Stir Crazy</h4><p>Jacob Morris brings his years behind the stick at Mezcalito to his very own corner of Lombard St.</p><div class="mini-price">$ · ~$14/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Cocktail Lounge · Union Square</div><h4>Bar Antoine Lounge</h4><p>Dark wood, velvet armchairs, clever food, and serious craft cocktails on the mezzanine of the Galleria Park Hotel.</p><div class="mini-price">$$ · ~$18/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Natural Wine Bar · Mission</div><h4>Bar Part Time</h4><p>The Mission natural wine bar known for good pours and legendary late-night dance raves.</p><div class="mini-price">$ · ~$13/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Cocktail Bar · Mission</div><h4>Dalva</h4><p>One of the Mission's most reliable bars for well-made drinks and a crowd that actually wants to be there.</p><div class="mini-price">$ · ~$12/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Queer Bar · Castro</div><h4>Blackbird</h4><p>Beloved Castro neighborhood bar hosting the Gay Men Speed Dating event Saturday and always worth a visit.</p><div class="mini-price">$ · ~$11/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Agave Bar · Polk Street</div><h4>Mezcalito</h4><p>The Polk St favorite that trained the guy who just opened Stir Crazy. High bar. The mezcal selection is excellent.</p><div class="mini-price">$ · ~$15/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Nightclub · SoMa</div><h4>Halcyon SF</h4><p>Early 1900s brick and steel warehouse turned elegant nightclub, hosting FOVOS on Saturday.</p><div class="mini-price">$ · ~$12/drink</div></div>
+    <div class="mini-card"><div class="mini-type">Nightclub · SoMa</div><h4>1015 Folsom</h4><p>SF's premier electronic music venue with Main Phase bringing UK garage and breaks on Friday.</p><div class="mini-price">$ · ~$13/drink</div></div>
   </div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
@@ -388,20 +556,10 @@
 
 <!-- SPORTS -->
 <div class="view" id="view-sports">
-  <div class="section-label">🏀 Golden State Warriors · Chase Center</div>
-  <div class="sport-row"><div class="sr-teams"><h4>Warriors vs. Lakers</h4><p>NBA Cup matchup ,  new food and beverage lineup this season featuring 25+ local Bay Area flavors</p></div><div class="sr-when">Fri Oct 30
-7:00 PM</div><div class="sr-price">From ~$60</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Valkyries vs. Atlanta Dream</h4><p>Potential WNBA Finals Game 7 ,  winner-take-all on Halloween night, tickets on sale now</p></div><div class="sr-when">Sat Oct 31
-5:00 PM</div><div class="sr-price">From ~$40</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Warriors vs. Clippers</h4><p>Sunday home game ,  great afternoon option before evening shows</p></div><div class="sr-when">Sun Nov 1
-5:30 PM</div><div class="sr-price">From ~$55</div></div>
-  <div class="sport-row"><div class="sr-teams"><h4>Warriors vs. Miami Heat</h4><p>Close out the week with another home game at Chase Center</p></div><div class="sr-when">Thu Nov 5
-7:00 PM</div><div class="sr-price">From ~$55</div></div>
-  <p class="sport-note">Four home games in one week is rare ,  Chase Center is THE place to be this week.</p>
-
-  <div class="section-label">⚾ SF Giants / Oakland Ballers</div>
-  
-  <p class="sport-note">Both the Giants (Oracle Park) and the Oakland Ballers (Raimondi Park) have finished their 2026 seasons. Giants return to Oracle Park in July 2027. Watch for Oakland Ballers' 2027 schedule announcement.</p>
+  <div class="section-label">🏀 Warriors · Chase Center</div>
+  <div class="sport-row"><div class="sr-teams"><h4>Golden State Warriors vs. Orlando Magic</h4><p>Home game with new local Bay Area food and beverage lineup to try at the arena.</p></div><div class="sr-when">Sat Nov 7
+5:30pm</div><div class="sr-price">Varies</div></div>
+  <p class="sport-note">The Golden State Valkyries are your 2026 WNBA Champions! Their parade already happened on Nov 4 but the city is still celebrating.</p>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
@@ -409,69 +567,68 @@
 <!-- CONCERTS -->
 <div class="view" id="view-concerts">
   <div class="highlight-card card">
-    <div class="card-top"><h3>Galactic (Night 1)</h3><div class="card-when">Fri Oct 30 · Doors 7pm, Show 8pm</div></div>
-    <p>New Orleans funk legends open their two-night Fillmore Halloween run with 18-year-old guitar prodigy Bella Rayne on support. Galactic's Halloween shows are the stuff of legend ,  expect nonstop groove from start to finish.</p>
-    <div class="tags"><span class="tag tag-music">Funk</span><span class="tag tag-music">New Orleans</span><span class="tag tag-music">Halloween</span><span class="price-badge">The Fillmore · ~$82-$96</span></div>
+    <div class="card-top"><h3>SYML</h3><div class="card-when">Fri Nov 6</div></div>
+    <p>Intimate, cinematic indie folk in the ornate Castro Theatre as part of his Solo in North America tour. If atmospheric, emotionally rich songwriting is your thing, this is a perfect Friday.</p>
+    <div class="tags"><span class="tag tag-music">Indie Folk</span><span class="tag tag-music">Atmospheric</span><span class="price-badge">Castro Theatre · TBD</span></div>
   </div>
 
   <div class="highlight-card card">
-    <div class="card-top"><h3>Galactic (Halloween Night)</h3><div class="card-when">Sat Oct 31 · Doors 7pm, Show 8pm</div></div>
-    <p>Night two of the Fillmore Halloween run features instrumental organ trio Parlor Greens as support ,  and Galactic on actual Halloween is arguably the best way to spend October 31st in San Francisco. Dress up.</p>
-    <div class="tags"><span class="tag tag-music">Funk</span><span class="tag tag-music">Halloween</span><span class="tag tag-music">Live Music</span><span class="price-badge">The Fillmore · ~$82-$96</span></div>
+    <div class="card-top"><h3>Brandi Carlile</h3><div class="card-when">Sat Nov 7 · 8pm</div></div>
+    <p>Grammy-winning powerhouse vocalist and storyteller performing in SF on Saturday night. Her live shows are consistently called transcendent and that is not an exaggeration.</p>
+    <div class="tags"><span class="tag tag-music">Americana</span><span class="tag tag-music">Singer-Songwriter</span><span class="price-badge">TBD · TBD</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>The Chicks</h3><div class="card-when">Fri Oct 30 · 8:30pm</div></div>
-    <p>The legendary country trio brings their powerhouse harmonies and bold artistry to The Masonic ,  rare Bay Area appearances from one of the most iconic acts in American music. A genuinely special night for country and roots fans.</p>
-    <div class="tags"><span class="tag tag-music">Country</span><span class="tag tag-music">Rock</span><span class="tag tag-music">Legendary</span><span class="price-badge">The Masonic SF · Check venue</span></div>
+    <div class="card-top"><h3>Bahamas</h3><div class="card-when">Fri Nov 6</div></div>
+    <p>Canadian singer-songwriter Afie Jurvanen brings his lush, jazz-tinged indie folk to August Hall. Cool, sophisticated, and effortlessly listenable.</p>
+    <div class="tags"><span class="tag tag-music">Indie Folk</span><span class="tag tag-music">Jazz</span><span class="price-badge">August Hall · TBD</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Montell Fish</h3><div class="card-when">Fri Oct 30 · Time TBA</div></div>
-    <p>The soulful lo-fi gospel-R&amp;B singer plays the stunning Art Deco Castro Theatre ,  his vulnerable, intimate sound in that spectacular room is going to be something. Perfect Halloween alternative if you'd rather feel things than dance.</p>
-    <div class="tags"><span class="tag tag-music">R&amp;B</span><span class="tag tag-music">Soul</span><span class="tag tag-music">Intimate</span><span class="price-badge">Castro Theatre · Check venue</span></div>
+    <div class="card-top"><h3>Foy Vance w/ Bonnie Bishop and Ryan McMullan</h3><div class="card-when">Sun Nov 8 · 7pm</div></div>
+    <p>A triple bill of deeply soulful folk and blues at one of SF's most beautiful rooms. Doors at 6pm so get there early and soak in the GAMH interior.</p>
+    <div class="tags"><span class="tag tag-music">Folk</span><span class="tag tag-music">Soul</span><span class="tag tag-music">Blues</span><span class="price-badge">Great American Music Hall · TBD</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><h3>Teddy Swims</h3><div class="card-when">Tue Nov 10 · 7pm</div></div>
+    <p>The R&amp;B and soul breakout of the decade brings his raspy, emotive vocals to Chase Center. Big room, big voice, big night.</p>
+    <div class="tags"><span class="tag tag-music">R&amp;B</span><span class="tag tag-music">Soul</span><span class="price-badge">Chase Center · From $60</span></div>
   </div>
 
   <div class="highlight-card card">
-    <div class="card-top"><h3>folkYEAH! Presents: A Night of the Living Dead - Paul Simon Halloween Ball</h3><div class="card-when">Fri Oct 30 · Time TBA</div></div>
-    <p>Lebo, Holly Bowling, Wally Ingram, Elliott Peck, and more become Bone Diggers for a one-night-only Halloween tribute to Paul Simon's catalog at The Chapel. Wildly creative and musically impeccable ,  this one is for the music nerds.</p>
-    <div class="tags"><span class="tag tag-music">Halloween</span><span class="tag tag-music">Tribute</span><span class="tag tag-music">Americana</span><span class="tag tag-music">One Night Only</span><span class="price-badge">The Chapel · Check thechapelsf.com</span></div>
+    <div class="card-top"><h3>Brand New</h3><div class="card-when">Wed Nov 11</div></div>
+    <p>Any Brand New show is a rare and significant event. Dense guitar work, introspective lyrics, and a room full of people who have waited years for this.</p>
+    <div class="tags"><span class="tag tag-music">Emo</span><span class="tag tag-music">Post-Hardcore</span><span class="price-badge">Bill Graham Civic Auditorium · TBD</span></div>
+  </div>
+
+  <div class="highlight-card card">
+    <div class="card-top"><h3>The Damned - Final Damnation 50</h3><div class="card-when">Wed Nov 11 · 8pm</div></div>
+    <p>Fifty years of punk history on stage at the Fillmore on a farewell tour. Genuinely historic. Go tell your friends right now.</p>
+    <div class="tags"><span class="tag tag-music">Punk</span><span class="tag tag-music">Goth</span><span class="tag tag-music">Farewell Tour</span><span class="price-badge">The Fillmore · TBD</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Frankie and the Witch Fingers</h3><div class="card-when">Sun Nov 1 · Doors 7pm, Show 8pm</div></div>
-    <p>LA psych-rock fuzz merchants Frankie and the Witch Fingers bring their woozy, hypnotic live show to GAMH with Carrion Kids and Starzdust in tow. The perfect post-Halloween Sunday comedown ,  or continuation, depending on your weekend.</p>
-    <div class="tags"><span class="tag tag-music">Psych Rock</span><span class="tag tag-music">Fuzz</span><span class="tag tag-music">Indie</span><span class="price-badge">Great American Music Hall · ~$30-$53</span></div>
+    <div class="card-top"><h3>Sparta w/ Public Opinion</h3><div class="card-when">Wed Nov 11 · 8pm (Doors 7pm)</div></div>
+    <p>The ex-At the Drive-In post-hardcore outfit playing the intimate Rickshaw Stop is exactly as good as it sounds. Angular, intense, emotionally charged. $20 advance.</p>
+    <div class="tags"><span class="tag tag-music">Post-Hardcore</span><span class="tag tag-music">Indie Rock</span><span class="price-badge">Rickshaw Stop · $20 ADV</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Jose Madero</h3><div class="card-when">Sun Nov 1 · Doors 7pm, Show 8pm</div></div>
-    <p>The beloved Mexican singer-songwriter brings his poetic, emotionally-charged solo artistry to The Fillmore ,  a wonderful pick for fans of Latin alternative and indie rock who want something beautiful on a Sunday night.</p>
-    <div class="tags"><span class="tag tag-music">Latin Alternative</span><span class="tag tag-music">Indie</span><span class="tag tag-music">Singer-Songwriter</span><span class="price-badge">The Fillmore · Check venue</span></div>
+    <div class="card-top"><h3>Band of Horses</h3><div class="card-when">Thu Nov 12</div></div>
+    <p>Reverb-drenched indie rock anthems like The Funeral in the intimate Regency Ballroom. The 1,400-cap room makes this a rare chance to see them up close.</p>
+    <div class="tags"><span class="tag tag-music">Indie Rock</span><span class="tag tag-music">Alternative</span><span class="price-badge">Regency Ballroom · TBD</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Devendra Banhart</h3><div class="card-when">Tue Nov 3 · 8pm</div></div>
-    <p>Freak-folk icon with an otherworldly baritone and playful mysticism plays The Fillmore ,  the venue practically was made for this kind of singular, intimate artistry. One of those shows you'll be talking about for years.</p>
-    <div class="tags"><span class="tag tag-music">Folk</span><span class="tag tag-music">Freak-Folk</span><span class="tag tag-music">Indie</span><span class="price-badge">The Fillmore · Check venue</span></div>
+    <div class="card-top"><h3>Russian Circles w/ Primitive Man</h3><div class="card-when">Thu Nov 12 · 8pm</div></div>
+    <p>All-instrumental post-metal heaviness at GAMH with one of doom metal's most crushing openers. $30 advance for a double bill this good is a steal.</p>
+    <div class="tags"><span class="tag tag-music">Post-Metal</span><span class="tag tag-music">Doom</span><span class="tag tag-music">Instrumental</span><span class="price-badge">Great American Music Hall · $30 ADV</span></div>
   </div>
 
-  <div class="card">
-    <div class="card-top"><h3>Squirrel Flower + Sour Widows</h3><div class="card-when">Thu Nov 5 · Doors 7pm, Show 8pm</div></div>
-    <p>Ella Williams' luminous folk-indie project plays The Chapel with beloved local openers Sour Widows ,  a hushed, evocative Thursday night that will hit you right in the chest. Tickets around $27, and the perfect way to close out the week.</p>
-    <div class="tags"><span class="tag tag-music">Folk</span><span class="tag tag-music">Indie</span><span class="tag tag-music">Local</span><span class="price-badge">The Chapel · ~$27</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-top"><h3>Team Dresch + Longstocking + The Third Sex</h3><div class="card-when">Thu Nov 5 · Doors 7pm, Show 8pm</div></div>
-    <p>Queercore punk legends reunite at Bottom of the Hill for a raw, electrifying all-ages night of punk history and pure intensity. If you know, you know ,  and if you don't, this is a great time to get educated.</p>
-    <div class="tags"><span class="tag tag-music">Punk</span><span class="tag tag-music">Queercore</span><span class="tag tag-music">All Ages</span><span class="price-badge">Bottom of the Hill · $20-$25</span></div>
-  </div>
-
-  <div class="ongoing"><h4>John Scofield at SFJAZZ</h4><p>Jazz guitar legend at Miner Auditorium Friday Oct 30 ,  intimate, world-class, unmissable for jazz fans.</p></div>
-  <div class="ongoing"><h4>My Brightest Diamond at Ann Getty Center</h4><p>Shara Nova's avant-pop orchestral spectacle Friday Oct 30 ,  a breathtaking and intimate performance.</p></div>
-  <div class="ongoing"><h4>High Step Society at The Independent</h4><p>Electro-swing funk electronic dance party Friday Oct 30 at 9pm ,  the whole crowd will be moving.</p></div>
-  <div class="ongoing"><h4>Dave Hause at Café du Nord</h4><p>Philly punk-folk storyteller in Café du Nord's intimate basement Thursday Nov 5 ,  cult favorite show.</p></div>
+  <div class="ongoing"><h4>SF Symphony: Isabel Leonard Sings Ravel</h4><p>Runs Friday Nov 6 at 7:30pm and Sunday Nov 8 at 2pm at Davies Symphony Hall.</p></div>
+  <div class="ongoing"><h4>SF Opera: The Marriage of Figaro</h4><p>Mozart's classic running through the month at the War Memorial Opera House, from $30.</p></div>
+  <div class="ongoing"><h4>SF Opera: Strauss in Concert</h4><p>Friday Nov 6 at 7:30pm at the War Memorial Opera House, from $30.</p></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
@@ -485,67 +642,57 @@
 
   <div class="section-label" style="margin-top:0">This week</div>
   <div class="card">
-    <div class="card-top"><h3>FALL for Someone SF - Speed Dating Ages 25-45</h3><div class="card-when">Wed Oct 29 · 7pm</div></div>
-    <p>Seasonally themed speed dating night at ERIA Marina aimed at the 25-45 crowd ,  one of the more charming formats in the city's dating calendar right now. The Marina neighborhood venue keeps things upscale without being stuffy, and the Halloween-week timing makes everyone a little more fun.</p>
+    <div class="card-top"><h3>SF Singles Speed Dating Game Night</h3><div class="card-when">Tue Nov 10 · 7pm</div></div>
+    <p>Speed dating at a cocktail bar with a game night twist, which immediately makes the whole thing less intimidating and more fun. Iron Horse Cocktails is a solid venue and the game format gives you something to talk about besides the usual opener questions.</p>
     <a class="card-link" href="https://www.eventbrite.com" target="_blank">Get Tickets</a>
-    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="tag tag-nightlife">25-45</span><span class="tag tag-nightlife">Marina</span><span class="price-badge">$ · Check Eventbrite</span></div>
+    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="tag tag-nightlife">Cocktail Bar</span><span class="tag tag-nightlife">Midweek</span><span class="price-badge">Check Eventbrite</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>San Francisco Singles Speed Dating Game Night</h3><div class="card-when">Tue Nov 3 · 7pm</div></div>
-    <p>Speed dating meets interactive games at Iron Horse Cocktails ,  a genuinely fun twist on the format that takes the pressure way down. Breaking the ice is literally built into the structure, which means you can just show up and enjoy yourself instead of sweating your opener.</p>
+    <div class="card-top"><h3>SF Singles Speed Dating Ages 22-30 at Coffee Shop</h3><div class="card-when">Sat Nov 7 · 3:15pm</div></div>
+    <p>A daytime low-key speed dating session for younger singles at Sunset Commons, which is genuinely the least stressful format for meeting people. Start with structured speed dating then hang out and talk freely afterward. Afternoon coffee-shop energy only.</p>
     <a class="card-link" href="https://www.eventbrite.com" target="_blank">Get Tickets</a>
-    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="tag tag-nightlife">Game Night</span><span class="tag tag-nightlife">Cocktail Bar</span><span class="price-badge">$ · Check Eventbrite</span></div>
+    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="tag tag-nightlife">20s</span><span class="tag tag-nightlife">Daytime</span><span class="tag tag-nightlife">Low-Key</span><span class="price-badge">Check Eventbrite</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Slow Runners Club - Sunday Morning Run</h3><div class="card-when">Sun Nov 1 · 10am</div></div>
-    <p>Meet at the Panhandle (Baker &amp; Oak) for a social run through Golden Gate Park at a genuinely beginner-friendly 10-15 min/mile pace. One of the best low-pressure ways to meet people in this city ,  you're exercising together, which gives you something to talk about that isn't 'so what do you do'.</p>
-    <a class="card-link" href="https://www.eventbrite.com" target="_blank">Find the Group</a>
-    <div class="tags"><span class="tag tag-nightlife">Active</span><span class="tag tag-nightlife">Outdoors</span><span class="tag tag-nightlife">Social</span><span class="tag tag-nightlife">Free</span><span class="price-badge">Free</span></div>
+    <div class="card-top"><h3>Gay Men Speed Dating at Blackbird</h3><div class="card-when">Sat Nov 7 · 7pm</div></div>
+    <p>Dedicated speed dating night for gay men at the beloved Castro bar Blackbird. Pre-Dating Speed Dating runs these well and Blackbird is exactly the right kind of cozy neighborhood spot to make it feel comfortable rather than awkward.</p>
+    <a class="card-link" href="https://www.eventbrite.com" target="_blank">Get Tickets</a>
+    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="tag tag-nightlife">LGBTQ+</span><span class="tag tag-nightlife">Castro</span><span class="price-badge">Check Eventbrite</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Speed Dating for 40s &amp; 50s at Hotel Zeppelin</h3><div class="card-when">Sat Nov 1 · 7-9pm</div></div>
-    <p>The Society of Single Professionals hosts an upscale speed dating night at Hotel Zeppelin on Post Street ,  specifically designed for singles in their 40s and 50s, five minutes per person, and prior dates have sold out. Book early, dress well, and actually show up.</p>
-    <a class="card-link" href="https://www.eventbrite.com" target="_blank">Book Early</a>
-    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="tag tag-nightlife">40s-50s</span><span class="tag tag-nightlife">Upscale</span><span class="price-badge">$ · Check Eventbrite</span></div>
+    <div class="card-top"><h3>SpeedCalifornia Speed Dating Ages 32-46</h3><div class="card-when">Sun Nov 8</div></div>
+    <p>Meet 8 to 12 local singles in one evening at the stylish Jay Hotel. A structured and efficient format that works especially well for busy professionals who want to actually meet people rather than swipe forever.</p>
+    <a class="card-link" href="https://www.eventbrite.com" target="_blank">Get Tickets</a>
+    <div class="tags"><span class="tag tag-nightlife">Speed Dating</span><span class="tag tag-nightlife">30s-40s</span><span class="tag tag-nightlife">Hotel</span><span class="tag tag-nightlife">Professional</span><span class="price-badge">Check Eventbrite</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Midnight Runners SF - Wednesday City Run</h3><div class="card-when">Wed Oct 29 · 6:30pm</div></div>
-    <p>A city run with music, workout stops, and a genuine party vibe ,  find the route on the Heylo app and show up ready to sweat and socialize in equal measure. Midnight Runners SF is one of the city's most energetic social clubs and a legitimately great way to meet people who aren't glued to their phones.</p>
-    <a class="card-link" href="https://heylo.co" target="_blank">Find on Heylo</a>
-    <div class="tags"><span class="tag tag-nightlife">Active</span><span class="tag tag-nightlife">Social</span><span class="tag tag-nightlife">Run Club</span><span class="tag tag-nightlife">Free</span><span class="price-badge">Free</span></div>
+    <div class="card-top"><h3>Run Club SF - Weekly Group Runs</h3><div class="card-when">Tue, Thu, Sat</div></div>
+    <p>If you can run a couple of miles at a 12-minute pace you are in, and they call themselves a social club with a running problem which tells you everything about the vibe. Tuesday in Golden Gate Park, Thursday at Kezar Stadium, Saturday mornings at rotating spots.</p>
+    <a class="card-link" href="https://www.runclubbsf.com" target="_blank">Learn More</a>
+    <div class="tags"><span class="tag tag-nightlife">Active</span><span class="tag tag-nightlife">Social</span><span class="tag tag-nightlife">Running</span><span class="tag tag-nightlife">Free</span><span class="price-badge">Free</span></div>
   </div>
 
   <div class="card">
-    <div class="card-top"><h3>Mother Armenia: Sha Ray &amp; DJ Haram - Critical Thot Live</h3><div class="card-when">Sat Nov 7 · 9pm-2am</div></div>
-    <p>Just outside the week but worth planning ahead ,  DJ Haram's abrasive percussion meets Sha Ray's defiant vocals in a genuinely unique live performance at Underground SF, with Discnogirl and DJ Ari B also on the bill. The kind of night where you'll have a great story by midnight.</p>
-    <a class="card-link" href="https://ra.co" target="_blank">Tickets on RA</a>
-    <div class="tags"><span class="tag tag-nightlife">Club Night</span><span class="tag tag-nightlife">Live Electronic</span><span class="tag tag-nightlife">Queer</span><span class="tag tag-nightlife">Underground</span><span class="price-badge">$20 door · 21+</span></div>
+    <div class="card-top"><h3>SF Social Club November Happy Hour</h3><div class="card-when">Thu Nov 12</div></div>
+    <p>SF Social Club and Neighbourgood are combining their communities for drinks, conversation, and karaoke at Lost and Found SF. The kind of event where you show up not knowing anyone and leave with actual plans for the weekend.</p>
+    <a class="card-link" href="https://www.eventbrite.com" target="_blank">Learn More</a>
+    <div class="tags"><span class="tag tag-nightlife">Happy Hour</span><span class="tag tag-nightlife">Social</span><span class="tag tag-nightlife">Karaoke</span><span class="tag tag-nightlife">Networking</span><span class="price-badge">Members</span></div>
   </div>
 
   <div class="section-label">Low-key ways to meet people</div>
-  <div class="ongoing"><h4>Volo Sports SF Recreational Leagues</h4><p>Coed volleyball Mondays at John O'Connell Gym and basketball Thursdays at the JCC ,  register for the November season.</p></div>
-  <div class="ongoing"><h4>Run Club SF - Fall Season</h4><p>Tuesday and Thursday evening runs plus Saturday mornings through November 1 ,  social, beginner-friendly, and a genuinely great way to meet people.</p></div>
+  <div class="ongoing"><h4>November Project SF - Free Weekly Workouts</h4><p>Multiple mornings per week at rotating SF locations. Radically inclusive, no sign-up, just show up.</p></div>
+  <div class="ongoing"><h4>Slow Runners Club - Sunday Mornings</h4><p>Sundays at 10am from the Panhandle through Golden Gate Park, 2,599 members strong, all paces welcome.</p></div>
+  <div class="ongoing"><h4>Volo Sports Social Leagues</h4><p>Flag football, kickball, bocce, and more running through November across SF recreational spots.</p></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
 </div>
 
 <!-- PLAYBOOKS -->
 <div class="view active" id="view-plans">
-  
-
-  <div class="hero-label">Sammy's Event Pick of the Week</div>
-  <div class="highlight-card card">
-    <div class="card-top"><h3>Oh, Mary! - Final Weekend at ACT Curran Theatre</h3><div class="card-when">Fri Oct 30 - Sun Nov 1 · Various Times</div></div>
-    <p>This is it ,  the Tony Award-winning dark comedy closes forever on November 1st and Sammy personally insists you go. If you've been sleeping on this one, wake up right now and buy a ticket. Final curtain falls Sunday night and you will absolutely regret missing it.</p>
-    <div class="tags"><span class="tag">Last Chance</span><span class="tag">Theater</span><span class="tag">Award-Winning</span><span class="price-badge">Closing Now</span></div>
-  </div>
-
-  <div style="border-top: 1px solid rgba(0,0,0,0.06); margin: 1.5rem 0;"></div>
-
   <div class="plans-intro">
     <h2>Curated Playbooks</h2>
     <div class="plans-hook">Feeling stressed about planning?<br>Too many options? Don't know what's good?</div>
@@ -562,106 +709,103 @@
 
   <div class="occasion-view active" id="oc-date"><div class="dn-card dn-tier-free">
       <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
-      <div class="dn-body"><h3>Halloween in the City</h3><p class="dn-tagline">Costumes, crowds, and the Castro ,  the best free date in SF this week</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">3pm</div><div class="dn-step-title">Scaregrove at Stern Grove</div><div class="dn-step-detail">Meet at Stern Grove for Scaregrove ,  haunted house, hay maze, carnival rides, all completely free. Great low-stakes afternoon opener.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">5pm</div><div class="dn-step-title">Dinner at Sangria &amp; Salt</div><div class="dn-step-detail">Grab dinner nearby before heading downtown ,  try Sangria &amp; Salt in the Mission for fun atmosphere, great sangria, and open until midnight.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Nightmare on Front Street</div><div class="dn-step-detail">Head to the Nightmare on Front Street block party for free DJs, themed cocktails, and the best costumed crowd-watching in the city before the Castro heats up.</div></div></li>
-          <li class="dn-step" data-step="4"><div><div class="dn-step-time">9pm</div><div class="dn-step-title">Castro Halloween Block Party</div><div class="dn-step-detail">Walk or Uber over to Castro for the Halloween Block Party ,  four blocks, three stages, neon dance party, costume contest. This is the date.</div></div></li></ul></div>
+      <div class="dn-body"><h3>Free Waterfront Friday</h3><p class="dn-tagline">Night markets, fog, and good conversation - no wallet required.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">5pm</div><div class="dn-step-title">Fort Mason Night Market</div><div class="dn-step-detail">Start at the Fort Mason Night Market for free food vendor browsing and waterfront views. The bay at dusk is doing its thing.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">6:30pm</div><div class="dn-step-title">Walk to Thrive City</div><div class="dn-step-detail">Stroll or Lyft over to the Dirtybird Night Market at Thrive City Plaza near Chase Center. Also free, also great.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7:30pm</div><div class="dn-step-title">Dance and Explore</div><div class="dn-step-detail">Grab a cocktail from a vendor, check out the DJ sets, and let the evening go wherever it wants to go.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-mid">
-      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$80-$120/couple</span></div>
-      <div class="dn-body"><h3>Folk, Food &amp; Feelings</h3><p class="dn-tagline">A Thursday night that'll have you both reaching for the aux cord on the ride home</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6:30pm</div><div class="dn-step-title">Aperitivo at Lucania</div><div class="dn-step-detail">Start at Lucania in the Ferry Building ,  all-day Southern Italian with the Embarcadero patio and aperitivo vibes from the A16 team. Share the anchovies.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30pm</div><div class="dn-step-title">Head to The Chapel</div><div class="dn-step-detail">Walk or Uber to The Chapel on Valencia. Doors at 7pm ,  get there early to grab drinks and a spot with sightlines.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">8pm</div><div class="dn-step-title">Squirrel Flower + Sour Widows at The Chapel</div><div class="dn-step-detail">Squirrel Flower opens with luminous Joni Mitchell-esque folk-indie, then local favorites Sour Widows warm things up perfectly. Tickets ~$27 each.</div></div></li>
-          <li class="dn-step" data-step="4"><div><div class="dn-step-time">10:30pm</div><div class="dn-step-title">Late-Night Yemeni Coffee</div><div class="dn-step-detail">Cap the night at Delah Coffee or Haraz for late-night Yemeni coffee and pastries ,  open past 10pm and genuinely one of SF's best late-night spots.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Classic One</span><span class="dn-tier-est">$60-80</span></div>
+      <div class="dn-body"><h3>Coffee, Museum, and Something Cozy</h3><p class="dn-tagline">A Saturday that starts slow and ends just right.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10am</div><div class="dn-step-title">SF Coffee Festival</div><div class="dn-step-detail">Start your Saturday at Fort Mason for the 10th Annual SF Coffee Festival. $29 each for unlimited samplings and the vibe is very good.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">1pm</div><div class="dn-step-title">de Young Museum (Free!)</div><div class="dn-step-detail">Walk or bike into Golden Gate Park and hit the de Young for free with Bank of America Museums on Us. The park in November is quietly beautiful.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">4pm</div><div class="dn-step-title">Dinner in the Neighborhood</div><div class="dn-step-detail">Wind up the day at one of the new spots like Scout on Chestnut or Bar Antoine Lounge for cocktails and bites.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-splurge">
-      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$200-$300/couple</span></div>
-      <div class="dn-body"><h3>Last Chance &amp; Luminous Art</h3><p class="dn-tagline">The closing night of Oh Mary plus a cathedral full of light ,  a date neither of you will forget</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Dinner at Shinka</div><div class="dn-step-detail">Dinner at Shinka inside The Jay Hotel ,  Japanese-French fine dining with omakase-style courses including miso cod and shio koji duck wellington. Dress nicely.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">8pm</div><div class="dn-step-title">Oh, Mary! Final Weekend at the Curran</div><div class="dn-step-detail">Walk to the Curran Theatre for the absolute final performances of Oh Mary! ,  the Tony Award-winning dark comedy closes November 1st forever. This is it.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">10:30pm</div><div class="dn-step-title">AURA at Grace Cathedral</div><div class="dn-step-detail">Uber up to Grace Cathedral for AURA ,  Moment Factory's immersive light and sound show turns one of SF's most iconic spaces into something magical. Tickets from ~$24. End the night there.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">$150-200</span></div>
+      <div class="dn-body"><h3>Show Night Done Right</h3><p class="dn-tagline">An unforgettable evening of music and dinner in the city.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Early Dinner at Ah Ma's Kitchen</div><div class="dn-step-detail">Head to Clement St for Cantonese fusion at Yelp's Best New Restaurant of 2026. Book ahead.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30pm</div><div class="dn-step-title">Olafur Arnalds at the Castro Theater</div><div class="dn-step-detail">The Icelandic neo-classical artist's two-night run is the most atmospheric concert of the week. The Castro is a genuinely magical room for this.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">10pm</div><div class="dn-step-title">Nightcap at Bar Antoine Lounge</div><div class="dn-step-detail">End at the Galleria Park Hotel mezzanine bar for a craft cocktail in those dark wood and velvet armchairs. Very good decision.</div></div></li></ul></div>
     </div></div>
   <div class="occasion-view" id="oc-solo"><div class="dn-card dn-tier-free">
       <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
-      <div class="dn-body"><h3>Museum &amp; Mission Saturday</h3><p class="dn-tagline">Free art, free runs, and the best $10 coffee situation in the city</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10am</div><div class="dn-step-title">Slow Runners Club in the Panhandle</div><div class="dn-step-detail">Join the Slow Runners Club at the Panhandle (Baker &amp; Oak) for a social Sunday run through Golden Gate Park. 10-15 min/mile, genuinely welcoming, legitimately fun.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12pm</div><div class="dn-step-title">Asian Art Museum - Free First Sunday</div><div class="dn-step-detail">It's Free First Sunday at the Asian Art Museum ,  walk over to Larkin Street and catch the Ha Chong-Hyun retrospective and the massive ancient Vishnu bronze. No ticket needed.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2pm</div><div class="dn-step-title">Coffee at Linea Caffe by Dolores Park</div><div class="dn-step-detail">Grab a coffee and a frozen matcha slushie at Linea Caffe on 18th Street near Dolores Park ,  sit outside and decompress like a local.</div></div></li>
-          <li class="dn-step" data-step="4"><div><div class="dn-step-time">4pm</div><div class="dn-step-title">Meet the Moment Video Festival, Mid-Market</div><div class="dn-step-detail">Walk the Mid-Market Video Art Walk ,  politically and socially engaged video art projected across storefronts and vacant spaces through November 1. Free, walkable, and genuinely interesting.</div></div></li></ul></div>
+      <div class="dn-body"><h3>Museum and Park Saturday</h3><p class="dn-tagline">Some of the best solo hours you can spend in this city cost nothing.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10am</div><div class="dn-step-title">de Young Museum</div><div class="dn-step-detail">Free for Bay Area residents this weekend via Bank of America Museums on Us. Walk the galleries at your own pace with no one to compromise with.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12pm</div><div class="dn-step-title">Golden Gate Park Wander</div><div class="dn-step-detail">November light in the park is genuinely gorgeous. No plan needed, just walk.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2pm</div><div class="dn-step-title">Minnesota Street Project</div><div class="dn-step-detail">Free galleries including Raymond Meeks: Assemblage through November 14. A quiet, interesting hour.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-mid">
-      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$50-$80</span></div>
-      <div class="dn-body"><h3>Psych Rock Sunday</h3><p class="dn-tagline">A slow start, a great meal, and loud guitars ,  the ideal solo Sunday</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">11am</div><div class="dn-step-title">Brunch at Ah Ma's Kitchen</div><div class="dn-step-detail">Brunch solo at Ah Ma's Kitchen on Clement Street ,  one of Yelp's Best New Restaurants of 2026, Cantonese flavors, the Richmond neighborhood at its best.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">1pm</div><div class="dn-step-title">Coffee at Hi NRG, Richmond</div><div class="dn-step-detail">Walk through the Richmond and pop into Hi NRG on Geary for a coffee ,  expanded food menu, pastries, and a relaxed neighborhood vibe.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Frankie and the Witch Fingers at GAMH</div><div class="dn-step-detail">Head to GAMH for Frankie and the Witch Fingers with Carrion Kids and Starzdust. Doors at 7pm, show at 8 ,  fuzz-drenched psych rock in one of SF's best rooms. Tickets ~$30-$53.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Sweet Spot</span><span class="dn-tier-est">$50-70</span></div>
+      <div class="dn-body"><h3>Coffee Festival Solo Run</h3><p class="dn-tagline">No one to slow you down at the espresso bar.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">9:30am</div><div class="dn-step-title">SF Coffee Festival Opens</div><div class="dn-step-detail">Be there when Fort Mason opens. $29 for unlimited samplings and going solo means you can sprint between roasters without negotiating.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12pm</div><div class="dn-step-title">Walk the Marina</div><div class="dn-step-detail">Coffee-fueled waterfront walk from Fort Mason along the Marina Green. Clear your head.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2pm</div><div class="dn-step-title">Exploratorium or a Bookstore</div><div class="dn-step-detail">Head to Pier 15 for the Exploratorium or find a cozy corner at a neighborhood cafe with a book. A very good solo Saturday.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-splurge">
-      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$150-$200</span></div>
-      <div class="dn-body"><h3>The Halloween You Deserve</h3><p class="dn-tagline">Galactic on Halloween night at The Fillmore ,  that's the whole plan and it's perfect</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Dinner at Noor on the Embarcadero</div><div class="dn-step-detail">Pre-show dinner at Noor on the Embarcadero ,  order the Muglai Chicken Changezi, the spicy cashew curry that critics say is the only thing you need on the menu.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30pm</div><div class="dn-step-title">Arrive at The Fillmore</div><div class="dn-step-detail">Head to The Fillmore early ,  grab your famous complimentary apple and soak in the posters and the history of the room while Parlor Greens opens.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">8:30pm</div><div class="dn-step-title">Galactic on Halloween Night at The Fillmore</div><div class="dn-step-detail">Galactic takes the stage in full Halloween mode ,  two-plus hours of New Orleans funk at one of SF's most legendary venues. Tickets ~$82-$96. Dress up.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Treat Yourself</span><span class="dn-tier-est">$100-130</span></div>
+      <div class="dn-body"><h3>Intense Music Thursday</h3><p class="dn-tagline">Go alone, go heavy, feel something.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Early Dinner at Bayview Oyster Bar</div><div class="dn-step-detail">Start the evening with oysters and Louisiana-Bay Area fusion at the new spot on Third St. Eating at the bar solo is always the right call.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Doors at GAMH</div><div class="dn-step-detail">Head to the Great American Music Hall for Russian Circles and Primitive Man. $30 advance. Arrive early for a good spot.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">8pm</div><div class="dn-step-title">Let the Music Hit</div><div class="dn-step-detail">Post-metal and doom in a gorgeous historic room. No conversation necessary. This is what Thursday nights are for.</div></div></li></ul></div>
     </div></div>
   <div class="occasion-view" id="oc-birthday"><div class="dn-card dn-tier-free">
-      <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">~$0 entry (drinks on friends)</span></div>
-      <div class="dn-body"><h3>Halloween Birthday Block Party</h3><p class="dn-tagline">Born on Halloween week? The city is already throwing your party</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">4pm</div><div class="dn-step-title">Nightmare on Front Street Block Party</div><div class="dn-step-detail">Start the birthday at Nightmare on Front Street ,  free DJs, themed cocktails, costumed crowds. Tell your friends to meet you here.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">6:30pm</div><div class="dn-step-title">Birthday Dinner at Sangria &amp; Salt</div><div class="dn-step-detail">Walk or grab a Lyft to Sangria &amp; Salt in the Mission ,  fun, loud, and the sangria is genuinely great. The birthday dinner that doesn't require a reservation six weeks out.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">9pm</div><div class="dn-step-title">Castro Halloween Block Party</div><div class="dn-step-detail">Head to Castro for the Halloween Block Party. Four blocks, three stages, costume contest ,  you're technically competing in a citywide birthday party. Embrace it.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
+      <div class="dn-body"><h3>Birthday Night Market Crawl</h3><p class="dn-tagline">Two free night markets on the same Friday. The city is basically throwing you a party.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">5pm</div><div class="dn-step-title">Start at Fort Mason Night Market</div><div class="dn-step-detail">Kick off the birthday at the Fort Mason Night Market. Free food vendors, waterfront, and the whole group is happy.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Roll to Thrive City</div><div class="dn-step-detail">Head to the Dirtybird Night Market for DJ sets, games, and cocktails. The birthday person gets to pick the vibe.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">9pm</div><div class="dn-step-title">Keep Going</div><div class="dn-step-detail">The city is yours at this point. SoMa clubs, a bar crawl, wherever the group wants to land.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-mid">
-      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$60-$100/person</span></div>
-      <div class="dn-body"><h3>Punk Birthday at Bottom of the Hill</h3><p class="dn-tagline">Team Dresch, your crew, and the sweatiest room in SF ,  happy birthday</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Birthday Oysters at Bayview Oyster Bar</div><div class="dn-step-detail">Pre-show birthday dinner at Bayview Oyster Bar ,  raw and grilled oysters, Dungeness crab with garlic noodles, New Orleans-style and genuinely celebratory.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Team Dresch at Bottom of the Hill</div><div class="dn-step-detail">Doors open at Bottom of the Hill for Team Dresch, Longstocking, and The Third Sex. All-ages, $20-$25, and one of the most historically significant punk lineups you'll see this year.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">10:30pm</div><div class="dn-step-title">After-Party at Underground SF</div><div class="dn-step-detail">After the show, head to Underground SF on Haight for the Halloween Underground night with DJ Primo and Oso Feo. Intimate 100-cap venue ,  your birthday ends in a proper underground party.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Classic</span><span class="dn-tier-est">$80-120 per person</span></div>
+      <div class="dn-body"><h3>Punk Birthday at the Fillmore</h3><p class="dn-tagline">The Damned on their farewell tour is a legitimately legendary birthday story.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Pre-Show Dinner</div><div class="dn-step-detail">Pick a Hayes Valley spot near Bill Graham or the Fillmore for a group dinner. Keep it casual.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30pm</div><div class="dn-step-title">Drinks Before the Show</div><div class="dn-step-detail">Get to the Fillmore early and grab drinks at the bar. The venue itself is worth showing up for.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">8pm</div><div class="dn-step-title">The Damned Live</div><div class="dn-step-detail">Watch one of the original UK punk bands on their 50-year farewell tour. This is a birthday you will actually talk about.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-splurge">
-      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$200-$350/person</span></div>
-      <div class="dn-body"><h3>The Grand Birthday</h3><p class="dn-tagline">Fine dining, a Tony Award-winning comedy, and a cathedral full of light ,  treat yourself</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Omakase Birthday at Shinka</div><div class="dn-step-detail">Birthday dinner at Shinka in The Jay Hotel ,  Japanese-French omakase-style fine dining with the full tasting menu. This is the special occasion restaurant SF needed.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">8pm</div><div class="dn-step-title">Oh, Mary! Final Weekend at the Curran</div><div class="dn-step-detail">Oh, Mary! closes forever November 1 ,  catching the final weekend of a Tony Award-winning dark comedy is a genuinely great birthday story. Curran Theatre, dress up.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">10:30pm</div><div class="dn-step-title">AURA at Grace Cathedral</div><div class="dn-step-detail">End the birthday at AURA in Grace Cathedral ,  52 minutes of stunning immersive light and sound in one of SF's most iconic buildings. Tickets ~$24, the perfect nightcap.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Big Night</span><span class="dn-tier-est">$150-250 per person</span></div>
+      <div class="dn-body"><h3>Warriors Game Night</h3><p class="dn-tagline">Chase Center, courtside energy, and the whole crew together.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">3pm</div><div class="dn-step-title">Pre-Game Arrivals</div><div class="dn-step-detail">Get the group together early and explore the new local Bay Area food lineup at Chase Center. The arena food is genuinely worth arriving for.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">5:30pm</div><div class="dn-step-title">Warriors vs. Magic</div><div class="dn-step-detail">Golden State hosts Orlando in a Saturday evening game. The energy in that building is unmatched for a birthday group.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">8:30pm</div><div class="dn-step-title">Celebrate After</div><div class="dn-step-detail">Head to Thrive City post-game if Dirtybird is still going, or find a SoMa bar to close out the birthday right.</div></div></li></ul></div>
     </div></div>
   <div class="occasion-view" id="oc-friends"><div class="dn-card dn-tier-free">
-      <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0 entry (plus drinks)</span></div>
-      <div class="dn-body"><h3>Halloween Crew Night</h3><p class="dn-tagline">The Castro, four blocks, zero entry fee ,  coordinate the costumes in the group chat now</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">3pm</div><div class="dn-step-title">Scaregrove at Stern Grove</div><div class="dn-step-detail">Start at Scaregrove in Stern Grove ,  haunted house, hay maze, carnival rides, free admission. Good pre-game laughs before the night gets big.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">6pm</div><div class="dn-step-title">Group Dinner at Sangria &amp; Salt</div><div class="dn-step-detail">Group dinner somewhere casual ,  Sangria &amp; Salt in the Mission fits a crew perfectly, open until midnight, and the atmosphere is already festive.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">9pm</div><div class="dn-step-title">Castro Halloween Block Party (Main Event)</div><div class="dn-step-detail">The Castro Halloween Block Party is your main event ,  four blocks, three stages, costume contest, neon dance party. This is why you live here.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
+      <div class="dn-body"><h3>Free Weekend Double Header</h3><p class="dn-tagline">Museum in the morning, coffee in the afternoon, nothing spent.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10am</div><div class="dn-step-title">de Young Museum</div><div class="dn-step-detail">Free for Bay Area residents Saturday and Sunday thanks to Bank of America Museums on Us. Big enough to roam and argue about art together.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12:30pm</div><div class="dn-step-title">Golden Gate Park Walk</div><div class="dn-step-detail">Walk from the museum through the park. Find a bench, debrief the morning, enjoy the November light.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2pm</div><div class="dn-step-title">SF Coffee Festival Afternoon Session</div><div class="dn-step-detail">Swing by Fort Mason for the afternoon stretch of the Coffee Festival. $29 each is very reasonable for the amount of coffee involved.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-mid">
-      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$60-$100/person</span></div>
-      <div class="dn-body"><h3>Galactic Halloween at The Fillmore</h3><p class="dn-tagline">Your group in costume, New Orleans funk, and The Fillmore on Halloween ,  this is the one</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">5:30pm</div><div class="dn-step-title">Pre-Show Drinks Near The Fillmore</div><div class="dn-step-detail">Pre-show group drinks at a nearby bar ,  The Fillmore is on Geary, so fuel up in the neighborhood before doors open.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Doors at The Fillmore</div><div class="dn-step-detail">Doors open at The Fillmore ,  grab your complimentary apples, find your spot, and let Parlor Greens warm up the room while you get the crew situated.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">8pm</div><div class="dn-step-title">Galactic Halloween Night at The Fillmore</div><div class="dn-step-detail">Galactic takes over for Halloween night ,  two-plus hours of legendary New Orleans funk. Costume-friendly crowd, legendary venue, the whole thing is perfect. Tickets ~$82-$96.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">$60-100 per person</span></div>
+      <div class="dn-body"><h3>Cider Fest and a Concert</h3><p class="dn-tagline">Start the day drinking cider, end it at a show. Perfect Saturday.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">12pm</div><div class="dn-step-title">SF Fall Cider Fest</div><div class="dn-step-detail">SPARK Social SF in Mission Bay for the cider festival. Outdoor, 21+, festive, and very fall.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">4pm</div><div class="dn-step-title">Recovery Snacks and Coffee</div><div class="dn-step-detail">Find a neighborhood spot nearby to eat something and sober up slightly before the evening.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Foy Vance at GAMH</div><div class="dn-step-detail">Head to the Great American Music Hall for Foy Vance and a triple bill of folk and soul. The ornate room is a vibe.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-splurge">
-      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$150-$250/person</span></div>
-      <div class="dn-body"><h3>Art, Cumbia &amp; Late-Night SF</h3><p class="dn-tagline">Museum, Colombian music legends, and dancing ,  the cultured crew night</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">5pm</div><div class="dn-step-title">Aperitivo at Lucania, Ferry Building</div><div class="dn-step-detail">Aperitivo hour at Lucania in the Ferry Building ,  the outdoor Embarcadero patio with the A16 team's Southern Italian spread is genuinely a perfect group gathering spot.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">6:30pm</div><div class="dn-step-title">Madre Cumbia at Great American Music Hall</div><div class="dn-step-detail">Walk over to GAMH for Madre Cumbia ,  Los Gaiteros de San Jacinto, Fruko, and Carmelo Torres bring Colombian cumbia mastery to SF. Doors at 6:30, show at 7:30. Buy tickets in advance.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">10pm</div><div class="dn-step-title">After-Party at Halcyon SF</div><div class="dn-step-detail">After the show, hit Halcyon SF for their 10th Anniversary night with Sam Divine on the decks ,  pristine sound system, great crowd, and the night is still young.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The One to Remember</span><span class="dn-tier-est">$150-200 per person</span></div>
+      <div class="dn-body"><h3>Coffee, Culture, and a Concert</h3><p class="dn-tagline">A Saturday so good the group chat stays active for a week.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">9:30am</div><div class="dn-step-title">SF Coffee Festival Opens</div><div class="dn-step-detail">Fort Mason at opening, unlimited samplings, the whole group caffeinated and ready.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">1pm</div><div class="dn-step-title">Asian Art Museum</div><div class="dn-step-detail">Head downtown for Ha Chong-Hyun's hemp-cloth paintings and the Kim Minwook wood show. Culture secured.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">Brandi Carlile</div><div class="dn-step-detail">Grammy-winning powerhouse on a Saturday night. Buy tickets now. Her live shows are genuinely transcendent and the kind of thing friend groups still talk about years later.</div></div></li></ul></div>
     </div></div>
   <div class="occasion-view" id="oc-parents"><div class="dn-card dn-tier-free">
       <div class="dn-tier"><span class="dn-tier-badge">The Free One</span><span class="dn-tier-est">$0</span></div>
-      <div class="dn-body"><h3>Halloween Weekend with the Fam</h3><p class="dn-tagline">Scaregrove, art, and the Ferry Building ,  a full free day with your parents in the city</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10am</div><div class="dn-step-title">Asian Art Museum - Free First Sunday</div><div class="dn-step-detail">Take them to the Asian Art Museum ,  it's Free First Sunday on November 1st, and the Vishnu bronze alone is worth the trip. Both exhibitions are genuinely accessible and impressive.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12:30pm</div><div class="dn-step-title">Lunch at Lucania, Ferry Building</div><div class="dn-step-detail">Lunch at Lucania in the Ferry Building ,  Southern Italian, outdoor patio, Embarcadero views. Easy, beautiful, no reservations drama.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">3pm</div><div class="dn-step-title">Scaregrove at Stern Grove</div><div class="dn-step-detail">Scaregrove at Stern Grove for the afternoon ,  hay maze, carnival rides, haunted house, live entertainment. Free entry, genuinely fun for all ages, ends at 9pm.</div></div></li></ul></div>
+      <div class="dn-body"><h3>Park and Museum Saturday</h3><p class="dn-tagline">Golden Gate Park is at its most beautiful in November and it costs absolutely nothing.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10am</div><div class="dn-step-title">de Young Museum (Free!)</div><div class="dn-step-detail">Free for Bay Area residents this weekend. The American art collection is accessible and genuinely impressive.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12pm</div><div class="dn-step-title">Picnic in the Park</div><div class="dn-step-detail">Pack a lunch and find a bench or meadow in Golden Gate Park. November light, relatively uncrowded, very peaceful.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2pm</div><div class="dn-step-title">Afternoon Stroll</div><div class="dn-step-detail">Walk through the Panhandle or down to Ocean Beach. A slow, relaxed, lovely afternoon.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-mid">
-      <div class="dn-tier"><span class="dn-tier-badge">The Good One</span><span class="dn-tier-est">~$60-$100/person</span></div>
-      <div class="dn-body"><h3>Jazz, Italian &amp; Immersive Art</h3><p class="dn-tagline">The kind of SF day your parents will brag about at home</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">11am</div><div class="dn-step-title">Brunch at Lucania, Ferry Building</div><div class="dn-step-detail">Brunch at Lucania in the Ferry Building ,  all-day service, outdoor patio, roasted sardines and pasta from the A16 team. Accessible, delicious, impressive.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">1pm</div><div class="dn-step-title">SFMOMA: Graciela Iturbide + RM Exhibition</div><div class="dn-step-detail">Walk the Embarcadero and head to SFMOMA ,  the Graciela Iturbide photography survey is stunning and very approachable, and the RM x SFMOMA show gives you something to talk about.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">7pm</div><div class="dn-step-title">AURA: Immersive Experience at Grace Cathedral</div><div class="dn-step-detail">Evening at AURA in Grace Cathedral ,  52 minutes of immersive light and sound in one of SF's most iconic buildings. Tickets ~$24, accessible to all ages, and genuinely magical.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Classic</span><span class="dn-tier-est">$80-120</span></div>
+      <div class="dn-body"><h3>Coffee Festival and a Nice Lunch</h3><p class="dn-tagline">Fort Mason, good coffee, and a proper sit-down lunch. Very civilized.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">10am</div><div class="dn-step-title">SF Coffee Festival</div><div class="dn-step-detail">Fort Mason Festival Pavilion for the 10th Annual. $29 each, unlimited samplings, and the setting is beautiful. Arrive early before the lines build.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">12:30pm</div><div class="dn-step-title">Lunch in the Marina</div><div class="dn-step-detail">Walk to Chestnut St and try Scout, the new Italian-ish spot, or find a familiar favorite in the neighborhood.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">2:30pm</div><div class="dn-step-title">Walk the Marina Green</div><div class="dn-step-detail">Waterfronts, bay views, and a relaxed afternoon walk. Everything parents visiting SF should see.</div></div></li></ul></div>
     </div>
 
     <div class="dn-card dn-tier-splurge">
-      <div class="dn-tier"><span class="dn-tier-badge">The Splurge</span><span class="dn-tier-est">~$200-$350/person</span></div>
-      <div class="dn-body"><h3>Theater &amp; Fine Dining Weekend</h3><p class="dn-tagline">Last chance for Oh Mary plus the best table in the Ferry Building ,  do this right</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">12pm</div><div class="dn-step-title">de Young Museum: Treasures of the Pharaohs</div><div class="dn-step-detail">Afternoon at the de Young Museum ,  Treasures of the Pharaohs and Rooted in Place: California Native Art are both exceptional. Free for Bay Area residents on Tuesday November 3rd.</div></div></li>
-          <li class="dn-step" data-step="2"><div><div class="dn-step-time">5:30pm</div><div class="dn-step-title">Dinner at Shinka, The Jay Hotel</div><div class="dn-step-detail">Early dinner at Shinka inside The Jay Hotel ,  Japanese-French omakase-style fine dining that will absolutely impress your parents. Reserve in advance.</div></div></li>
-          <li class="dn-step" data-step="3"><div><div class="dn-step-time">8pm</div><div class="dn-step-title">Oh, Mary! Final Weekend at the Curran Theatre</div><div class="dn-step-detail">Oh, Mary! closes forever November 1st ,  the Tony Award-winning dark comedy at the Curran is one of the most talked-about shows of the year and this is genuinely the last weekend. Book immediately.</div></div></li></ul></div>
+      <div class="dn-tier"><span class="dn-tier-badge">The Special Occasion</span><span class="dn-tier-est">$200-300</span></div>
+      <div class="dn-body"><h3>Opera and a Proper Dinner</h3><p class="dn-tagline">San Francisco Opera at the War Memorial is the kind of evening that feels like a gift.</p><ul class="dn-steps"><li class="dn-step" data-step="1"><div><div class="dn-step-time">5:30pm</div><div class="dn-step-title">Pre-Opera Dinner</div><div class="dn-step-detail">Make a reservation in Hayes Valley near the opera house. RT Bistro is getting excellent buzz this fall.</div></div></li>
+          <li class="dn-step" data-step="2"><div><div class="dn-step-time">7:30pm</div><div class="dn-step-title">SF Opera: The Marriage of Figaro</div><div class="dn-step-detail">Mozart at the War Memorial Opera House from $30 per ticket. The building is as impressive as the performance.</div></div></li>
+          <li class="dn-step" data-step="3"><div><div class="dn-step-time">10pm</div><div class="dn-step-title">Nightcap at Bar Antoine Lounge</div><div class="dn-step-detail">End the evening at the Galleria Park Hotel mezzanine bar for a quiet cocktail in a beautiful room. The perfect close to a very good night.</div></div></li></ul></div>
     </div></div>
 
   <div class="share-bar"><button class="share-btn" onclick="shareThis()">Share with friends</button></div>
@@ -679,10 +823,23 @@
 
 <div class="footer">
   <div class="sign-off">See you out there.</div>
-  <p>Sammy's SF · Issue 15 · 2026</p>
+  <p>Sammy's SF · Issue 16 · 2026</p>
 </div>
 
+</div><!-- end main-content -->
+
 <script>
+// Landing page
+function enterSite() {
+  document.getElementById('landing').style.display = 'none';
+  document.getElementById('mainContent').classList.add('visible');
+  window.scrollTo(0, 0);
+}
+function goHome() {
+  document.getElementById('mainContent').classList.remove('visible');
+  document.getElementById('landing').style.display = '';
+  window.scrollTo(0, 0);
+}
 // Tab switching
 function showView(id) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
