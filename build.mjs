@@ -14,7 +14,7 @@ html = html.replace(/<!--ISSUE-->/g, data.issue || "01");
 // Editorial hook (playbooks landing)
 const editorialHook = data.editorialHook || "";
 if (editorialHook) {
-  html = html.replace("<!--EDITORIAL_HOOK-->", `<p style="font-family: 'Instrument Serif', serif; font-size: 1.1rem; color: #555; line-height: 1.7; text-align: center; margin-bottom: 0.5rem; font-style: italic;">${esc(editorialHook)}</p>`);
+  html = html.replace("<!--EDITORIAL_HOOK-->", `<p style="font-family: 'Instrument Serif', serif; font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: #444; line-height: 1.6; text-align: center; margin-bottom: 2.5rem; font-style: italic;">${esc(editorialHook)}</p>`);
 } else {
   html = html.replace("<!--EDITORIAL_HOOK-->", "");
 }
