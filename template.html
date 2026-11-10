@@ -50,9 +50,9 @@
   .landing-hero-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.1rem; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
   .landing-hero-date { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
 
-  .landing-body { padding: 2.5rem 1.5rem; max-width: 540px; margin: 0 auto; }
-  .landing-tagline { font-family: 'Instrument Serif', serif; font-size: clamp(1.4rem, 4vw, 1.8rem); color: #222; line-height: 1.4; margin-bottom: 0.75rem; font-weight: 400; }
-  .landing-desc { font-size: 0.9rem; color: #888; line-height: 1.6; margin-bottom: 2.5rem; }
+  .landing-body { padding: 2.5rem 1.5rem; max-width: 540px; margin: 0 auto; text-align: center; }
+  .landing-tagline { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #bbb; line-height: 1.4; margin-bottom: 2rem; }
+  .landing-desc { display: none; }
 
   .landing-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: #E8734A; margin-bottom: 12px; }
 
@@ -77,6 +77,16 @@
     .pick-editorial-img { flex: none; height: 260px; }
     .pick-editorial-img::after { background: linear-gradient(180deg, transparent 40%, #1a1a2e 100%); }
     .pick-editorial-body { padding: 1.2rem 1.3rem 1.5rem; }
+  }
+
+  /* Full-width variant when no image is available */
+  .pick-editorial-full { justify-content: center; background: linear-gradient(135deg, #1a1a2e 0%, #2a1f3d 50%, #1a2a3e 100%); }
+  .pick-editorial-full .pick-editorial-body { text-align: center; align-items: center; max-width: 600px; margin: 0 auto; padding: 2.8rem 2.5rem; }
+  .pick-editorial-full .tags { justify-content: center; }
+  .pick-editorial-full h3 { font-size: 2.2rem; }
+  @media (max-width: 480px) {
+    .pick-editorial-full .pick-editorial-body { padding: 2rem 1.5rem; }
+    .pick-editorial-full h3 { font-size: 1.7rem; }
   }
 
   .landing-divider { display: flex; justify-content: center; gap: 6px; padding: 2rem 0; }
@@ -298,8 +308,7 @@
 
   <div class="landing-body">
     <!--EDITORIAL_HOOK-->
-    <h2 class="landing-tagline">Your weekly guide to the best things happening in San Francisco.</h2>
-    <p class="landing-desc">Every week, Sammy hand-picks the best events, restaurants, and curated playbooks so you don't have to figure it out yourself.</p>
+    <h2 class="landing-tagline">Your weekly SF guide, hand-picked by Sammy</h2>
 
     <div class="landing-pick-wrap">
       <!--SAMMYS_PICK-->

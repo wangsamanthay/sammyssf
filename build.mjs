@@ -38,19 +38,30 @@ html = html.replace("<!--HERO-->", heroHtml);
 let sammysPickHtml = "";
 if (hero) {
   const imgUrl = hero.img || "";
-  const imgHtml = imgUrl
-    ? `<div class="pick-editorial-img" style="background-image:url('${esc(imgUrl)}')"></div>`
-    : `<div class="pick-editorial-img pick-editorial-img-fallback"></div>`;
-  sammysPickHtml = `<div class="pick-editorial">
-    ${imgHtml}
-    <div class="pick-editorial-body">
-      <div class="pick-editorial-label">Sammy's Event Pick of the Week</div>
-      <h3>${esc(hero.t)}</h3>
-      <div class="card-when">${esc(hero.w)}</div>
-      <p>${esc(hero.d)}</p>
-      <div class="tags">${(hero.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}${hero.badge?`<span class="price-badge">${esc(hero.badge)}</span>`:""}</div>
-    </div>
-  </div>`;
+  if (imgUrl) {
+    // Split layout: image left, text right
+    sammysPickHtml = `<div class="pick-editorial">
+      <div class="pick-editorial-img" style="background-image:url('${esc(imgUrl)}')"></div>
+      <div class="pick-editorial-body">
+        <div class="pick-editorial-label">Sammy's Event Pick of the Week</div>
+        <h3>${esc(hero.t)}</h3>
+        <div class="card-when">${esc(hero.w)}</div>
+        <p>${esc(hero.d)}</p>
+        <div class="tags">${(hero.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}${hero.badge?`<span class="price-badge">${esc(hero.badge)}</span>`:""}</div>
+      </div>
+    </div>`;
+  } else {
+    // Full-width centered layout when no image available
+    sammysPickHtml = `<div class="pick-editorial pick-editorial-full">
+      <div class="pick-editorial-body">
+        <div class="pick-editorial-label">Sammy's Event Pick of the Week</div>
+        <h3>${esc(hero.t)}</h3>
+        <div class="card-when">${esc(hero.w)}</div>
+        <p>${esc(hero.d)}</p>
+        <div class="tags">${(hero.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}${hero.badge?`<span class="price-badge">${esc(hero.badge)}</span>`:""}</div>
+      </div>
+    </div>`;
+  }
 }
 html = html.replace("<!--SAMMYS_PICK-->", sammysPickHtml);
 

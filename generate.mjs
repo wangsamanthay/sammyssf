@@ -268,6 +268,69 @@ if (heroEventName && picks.length > 0) {
 }
 
 
+// AUTO-FIND HERO IMAGE via web search
+if (data.picks && data.picks[0]) {
+  const heroTitle = data.picks[0].t;
+  const heroWhen = data.picks[0].w || "";
+  console.log(`\n🖼️  Searching for promotional image: "${heroTitle}"...`);
+  try {
+    const imgSearch = await client.messages.create({
+      model: "claude-sonnet-4-6",
+      max_tokens: 1500,
+      tools: [{ type: "web_search_20250305", name: "web_search" }],
+      messages: [{
+        role: "user",
+        content: `Find a high-quality promotional image for this San Francisco event: "${heroTitle}" (${heroWhen}).
+
+Search for this event on:
+1. The event's official website
+2. The venue's website
+3. Eventbrite, TodayTix, or other ticketing sites
+
+Look for:
+- og:image meta tags on event pages
+- Large hero/banner images on event or venue pages
+- Event poster or flyer images
+
+Return ONLY a single direct image URL (must start with https://).
+
+The URL should point to an actual image file or image CDN (e.g. ending in .jpg, .jpeg, .png, .webp, or from domains like images.ctfassets.net, img.evbuc.com, cdn.eventbrite.com, images.squarespace-cdn.com).
+
+If you cannot find a suitable promotional image, return exactly the word: NONE
+
+Do NOT return:
+- Placeholder or "coming soon" images
+- Tiny thumbnails or icons (under 200px)
+- Generic stock photos
+- Logo-only images
+- URLs that are not direct image links`
+      }]
+    });
+
+    // Extract text from response
+    const imgText = imgSearch.content
+      .filter(b => b.type === "text")
+      .map(b => b.text)
+      .join("\n")
+      .trim();
+
+    // Find a URL in the response
+    const urlMatch = imgText.match(/https?:\/\/[^\s"'<>\)]+\.(jpg|jpeg|png|webp|gif)/i)
+      || imgText.match(/https?:\/\/[^\s"'<>\)]*(?:images\.ctfassets|img\.evbuc|cdn\.eventbrite|squarespace-cdn|imgix|cloudinary|akamaized)[^\s"'<>\)]*/i);
+
+    if (urlMatch && urlMatch[0] && !imgText.includes("NONE")) {
+      data.picks[0].img = urlMatch[0];
+      console.log(`✅ Found hero image: ${urlMatch[0].substring(0, 100)}...`);
+    } else {
+      console.log("⏭️  No suitable image found, card will use full-width text layout");
+    }
+  } catch (err) {
+    console.error(`⚠️  Image search failed: ${err.message}`);
+    console.log("⏭️  Continuing without image");
+  }
+}
+
+
 // FIX DAY-OF-WEEK LABELS (the AI sometimes gets them wrong)
 function fixDays(str) {
   if (!str || typeof str !== "string") return str;
