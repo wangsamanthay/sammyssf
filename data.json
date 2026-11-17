@@ -1,595 +1,623 @@
 {
-  "dateRange": "November 13 - November 19, 2026",
-  "issue": "17",
-  "editorialHook": "The fog is doing its moody November thing, the holiday lights are starting to flicker on, and somehow SF has packed one of its best weeks of the year into seven little days.",
+  "dateRange": "November 20 - November 26, 2026",
+  "issue": "18",
+  "editorialHook": "San Francisco is slipping into its coziest, most magical mode this week, with twinkling lights coming on all over the city just in time for Thanksgiving.",
   "picks": [
     {
-      "t": "Jorja Smith - Jorja Smith Live 2026",
-      "w": "Mon Nov 16 · 8pm",
-      "d": "Sammy's personal pick of the week, full stop. The British R&B soul queen brings her stunning voice to the Castro Theatre, one of the most beautiful rooms in the city. If you can get a ticket, you will be talking about this one for years.",
-      "cats": "music",
-      "price": "$$$",
-      "badge": "Sammy's Pick",
+      "t": "Golden State Valkyries Championship Parade",
+      "w": "Thu Nov 26 · 12:00 PM",
+      "d": "Your Valkyries are CHAMPIONS and San Francisco is throwing them the party they deserve. Line up along the Embarcadero starting at 9am and cheer your heart out as the parade rolls from the Ferry Building toward Oracle Park. This is a once-in-a-generation moment for Bay Area basketball - do not miss it.",
+      "cats": "sports",
+      "price": "free",
+      "badge": "Free",
       "tags": [
-        "R&B",
-        "Soul",
-        "Historic Venue"
+        "Free",
+        "Sports",
+        "Historic"
       ],
       "hero": true,
-      "score": 14
+      "score": 15,
+      "img": "https://cdn.warriors.com/w_images/2026-w-finals-clouds.jpg"
     },
     {
-      "t": "The Mountain Goats - Six-Night Residency",
-      "w": "Sun Nov 15 + Mon Nov 16 · TBA",
-      "d": "Six nights, six different themes, one of indie rock's greatest storytellers holding court at the Fillmore. John Darnielle and company are doing something genuinely rare here, and each night is its own distinct experience. Grab any night you can.",
-      "cats": "music",
+      "t": "Lightscape at SF Botanical Garden - Opening Night",
+      "w": "Fri Nov 20 · 5:00 PM",
+      "d": "One million lights transform Golden Gate Park into a glowing winter wonderland tonight - and every night through January. Walk a one-mile trail through luminous art installations, optical illusions, and all-new color and sound experiences woven through the garden's ancient trees. Grab tickets fast because weekend slots sell out early.",
+      "cats": "active",
       "price": "$$",
-      "badge": "Residency",
+      "badge": "Opens Tonight",
       "tags": [
-        "Indie Rock",
-        "Fillmore",
-        "Residency"
+        "Outdoors",
+        "Opening Week",
+        "Date Night"
       ],
       "hero": false,
       "score": 11
     },
     {
-      "t": "Jamila Woods - 10 Years of HEAVN",
-      "w": "Wed Nov 18 · Doors 7pm / Show 8pm",
-      "d": "Ten years of a debut album that genuinely changed how people think about neo-soul and conscious hip-hop, and Jamila Woods is celebrating it right here at the Rickshaw Stop. Tickets are $35 advance and $40 day of show, so grab them now. This is an intimate room for a giant talent.",
-      "cats": "music",
-      "price": "$$",
-      "badge": "$35 ADV",
-      "tags": [
-        "Neo-Soul",
-        "Hip-Hop",
-        "Anniversary Tour"
-      ],
-      "hero": false,
-      "score": 10
-    },
-    {
-      "t": "Bhangra and Beats Diwali Night Market",
-      "w": "Fri Nov 13 · 4pm - 9pm",
-      "d": "A free, festive outdoor market at Yerba Buena Gardens blending South Asian culture, music, food, and dancing at one of SoMa's best outdoor spaces. This is the kind of only-in-SF evening that reminds you why you live here. Zero dollars, maximum vibes.",
+      "t": "Great Dickens Christmas Fair - Opening Weekend",
+      "w": "Sat Nov 21 + Sun Nov 22 · All Day",
+      "d": "Victorian London takes over the Cow Palace this weekend as the 42nd Annual Great Dickens Christmas Fair swings open its doors. Hundreds of costumed characters roam 140,000 square feet of pubs, music halls, festive shops, and theatrical streets straight out of a Dickens novel. Active military get in free the first two weekends, and early bird tickets save you a few bucks.",
       "cats": "shows",
-      "price": "free",
-      "badge": "Free",
+      "price": "$$$",
+      "badge": "Opens This Weekend",
       "tags": [
-        "Free",
-        "Cultural",
-        "Outdoor",
-        "Market"
+        "Opening Week",
+        "Family",
+        "Immersive"
       ],
       "hero": false,
       "score": 10
     },
     {
-      "t": "Tank and The Bangas - The Last Balloon Tour",
-      "w": "Fri Nov 13 · TBA",
-      "d": "New Orleans neo-soul and funk royalty, led by the magnetic Tarriona Tank Ball, hit August Hall to kick off your Friday right. With support from Ariel J. and DJ Zeus, this is a full evening of genre-blending goodness that will have you moving from the first note. One of the most purely fun shows of the week.",
+      "t": "The Mountain Goats - Night Six: Closers",
+      "w": "Sat Nov 21 · 8:00 PM",
+      "d": "John Darnielle and company wrap up their extraordinary six-night Fillmore residency tonight with 'Closers,' the grand finale of a week-long journey through their catalog. This is the kind of run that becomes a legend in SF concert history - intimate, emotional, and utterly one-of-a-kind. If you only catch one night of this residency, make it the last one.",
       "cats": "music",
       "price": "$$",
-      "badge": "Fan Fave",
+      "badge": "Final Night",
       "tags": [
-        "Neo-Soul",
-        "Funk",
-        "New Orleans"
+        "One Night Only",
+        "Iconic Venue",
+        "Indie"
       ],
       "hero": false,
-      "score": 9
+      "score": 10
     },
     {
-      "t": "Deborah De Luca at Halcyon",
-      "w": "Sat Nov 14 · TBA",
-      "d": "One of the biggest names in dark, hypnotic techno lands at SF's premier dance destination for what will almost certainly be a sweaty, transcendent Saturday night. Deborah De Luca is internationally celebrated for a reason, and Halcyon is the perfect room for it. Clear your Sunday morning.",
-      "cats": "nightlife",
-      "price": "$$",
-      "badge": "Hot Ticket",
-      "tags": [
-        "Techno",
-        "Electronic",
-        "Dance"
-      ],
-      "hero": false,
-      "score": 9
-    },
-    {
-      "t": "ZENEFIT 2026 - A Night of Sonic Exploration",
-      "w": "Fri Nov 13 · Doors 6pm / Show 7pm",
-      "d": "A one-of-a-kind benefit evening at Great American Music Hall featuring a DJ set from the eclectic Devendra Banhart, plus born i and more. Tickets run $40 to $160 and the whole thing is designed around deep, immersive listening. Equal parts art event, music night, and community gathering.",
+      "t": "The Mountain Goats - Night Five: Cast of Thousands",
+      "w": "Fri Nov 20 · 8:00 PM",
+      "d": "Night Five of the Mountain Goats' epic Fillmore residency digs into 'Cast of Thousands,' one of the band's most beloved eras. The Fillmore's intimate size makes every set here feel like a secret show just for you, and John Darnielle's storytelling between songs is as good as the music itself. Friday night at the Fillmore - does it get more SF than that?",
       "cats": "music",
-      "price": "$$$",
+      "price": "$$",
       "badge": "One Night Only",
       "tags": [
-        "Benefit",
-        "Electronic",
-        "Eclectic",
-        "GAMH"
+        "One Night Only",
+        "Iconic Venue",
+        "Indie"
       ],
       "hero": false,
       "score": 9
     },
     {
-      "t": "Performing Arts Showcase at Fulton Plaza",
-      "w": "Fri Nov 13 · 5pm - 8pm",
-      "d": "Fulton Plaza lights up under the SPECTRA holiday lights for a free showcase bringing together some of SF's most exciting performing arts organizations. It is a perfect no-cost kickoff to the weekend with serious wow factor. Bundle it with the Diwali Night Market and you have a full free Friday evening.",
-      "cats": "shows",
-      "price": "free",
-      "badge": "Free",
-      "tags": [
-        "Free",
-        "Performing Arts",
-        "Civic Center",
-        "Holiday"
-      ],
-      "hero": false,
-      "score": 9
-    },
-    {
-      "t": "Dear San Francisco - Home for the Holidays",
-      "w": "Opens Thu Nov 19",
-      "d": "The critically acclaimed immersive circus experience at Club Fugazi is back with its holiday edition, running through December 30. Acrobatics, aerial work, music, and storytelling all wrapped in a love letter to the city itself. Opening week is the perfect time to catch it fresh.",
-      "cats": "shows",
-      "price": "$$$",
-      "badge": "Opening Week",
-      "tags": [
-        "Immersive",
-        "Circus",
-        "Holiday",
-        "North Beach"
-      ],
-      "hero": false,
-      "score": 9
-    },
-    {
-      "t": "Exploratorium After Dark - Glow Opening",
-      "w": "Thu Nov 19 · 6pm - 10pm",
-      "d": "Your favorite winter tradition kicks off tonight: immersive art and science of light, luminous artworks, optical illusions, and that unmistakable Exploratorium energy, but for adults only. This is opening night of Glow, which means the energy is at a peak. Grab tickets in advance, they go fast.",
-      "cats": "shows",
-      "price": "$$",
-      "badge": "Opening Night",
-      "tags": [
-        "21+",
-        "Art",
-        "Science",
-        "Opening Night"
-      ],
-      "hero": false,
-      "score": 8
-    },
-    {
-      "t": "Allison Russell at the Fillmore",
-      "w": "Sat Nov 14 · TBA",
-      "d": "Juno Award-winning Canadian singer-songwriter Allison Russell brings her soul-stirring blend of folk, gospel, and Americana to one of the great rooms in rock history. Her live shows are known for being emotionally powerful and visually captivating. A quieter pick this week but an absolute gem.",
-      "cats": "music",
-      "price": "$$",
-      "badge": "Must-See",
-      "tags": [
-        "Folk",
-        "Gospel",
-        "Americana",
-        "Fillmore"
-      ],
-      "hero": false,
-      "score": 8
-    },
-    {
-      "t": "THROTTLE - DJ Stingray at 1015 Folsom",
-      "w": "Thu Nov 19 · 9pm - 2am",
-      "d": "Detroit legend Sherard Ingram, aka DJ Stingray, is one of the most anticipated DJ bookings of the month in SF. He came up alongside the original Detroit techno innovators and his masked electro-techno sets are blistering, singular experiences. Tickets are $15 to $25 and this is a room you will not want to leave.",
-      "cats": "nightlife",
-      "price": "$$",
-      "badge": "DJ Legend",
-      "tags": [
-        "Techno",
-        "Electro",
-        "Detroit",
-        "1015"
-      ],
-      "hero": false,
-      "score": 8
-    },
-    {
-      "t": "SF VegFest 2026",
-      "w": "Sat Nov 14 · 11am - 5pm",
-      "d": "The 27th annual SF VegFest returns to the SMC Event Center with speakers, vegan chefs, and a full day of plant-based celebration for $18. Whether you are fully vegan or just veg-curious, this is a fun, food-forward way to spend a Saturday afternoon. Bring your appetite and your tote bag.",
-      "cats": "food",
-      "price": "$",
-      "badge": "$18",
-      "tags": [
-        "Food",
-        "Vegan",
-        "Festival",
-        "Family Friendly"
-      ],
-      "hero": false,
-      "score": 7
-    },
-    {
-      "t": "Golden Gate Bandshell - Tribute to Legends",
-      "w": "Sat Nov 14 · 10am - 2pm",
-      "d": "Four free hours of live music celebrating musical legends in the heart of Golden Gate Park. Pack a blanket, grab a coffee, and settle in for one of the best free mornings the city has to offer. No tickets, no cover, no catch.",
+      "t": "SF SPCA Holiday Windows at Macy's - Opens Today",
+      "w": "Fri Nov 20 · Noon",
+      "d": "For 40 years running, the SF SPCA has filled Macy's Union Square windows with the most irresistible holiday display in the city - adorable, adoptable puppies and kittens doing their cutest thing for passersby on Powell Street. It is completely free, it is open Wednesday through Sunday through New Year's Eve, and yes, you are absolutely allowed to press your nose against the glass. Fair warning: you may leave with a new pet.",
       "cats": "active",
       "price": "free",
       "badge": "Free",
       "tags": [
         "Free",
-        "Outdoor",
-        "Golden Gate Park",
-        "Family Friendly"
+        "Opening Week",
+        "Family"
+      ],
+      "hero": false,
+      "score": 9
+    },
+    {
+      "t": "Divine Offering: Celebrating the Legacy of Alice Coltrane",
+      "w": "Sun Nov 22 · 8:00 PM",
+      "d": "Sita Michelle Coltrane leads a rare and reverential tribute to her mother, Alice Coltrane, one of jazz's most transcendent spiritual artists. Presented by GAMH and Psyched! Fest, this is exactly the kind of soul-nourishing, once-in-a-blue-moon event that makes San Francisco's music scene so special. Tickets run $39.50 to $45 and this one will sell out.",
+      "cats": "music",
+      "price": "$$",
+      "badge": "One Night Only",
+      "tags": [
+        "One Night Only",
+        "Jazz",
+        "Cultural"
+      ],
+      "hero": false,
+      "score": 9
+    },
+    {
+      "t": "SFMOMA - Sarah Sze: Forever is Composed of Nows - Opening",
+      "w": "Opens Sat Nov 21 · Free Floor 1",
+      "d": "Sarah Sze takes over SFMOMA's massive ground-floor atrium for her most ambitious commission yet - three paintings up to 27 feet tall colliding with video projection, sound, and light that spill up through multiple floors of the museum. It is free to experience on the first floor, which is a genuinely wild gift. This one is going to become the must-see installation of the season.",
+      "cats": "shows",
+      "price": "free",
+      "badge": "Free + Opens This Week",
+      "tags": [
+        "Free",
+        "Opening Week",
+        "Art"
+      ],
+      "hero": false,
+      "score": 8
+    },
+    {
+      "t": "Dear San Francisco: Home for the Holidays at Club Fugazi",
+      "w": "Nightly · 7:30 PM",
+      "d": "The critically adored circus-meets-theater experience at Club Fugazi gets a full holiday makeover for its festive seasonal run. World-class acrobats from the 7 Fingers collective perform aerial acts, Korean plank, Chinese pole, juggling, and hand-to-trap inside the intimate North Beach venue. It is the most charming date night in the city right now, full stop.",
+      "cats": "shows",
+      "price": "$$$",
+      "badge": "Opening Week",
+      "tags": [
+        "Opening Week",
+        "Date Night",
+        "Immersive"
       ],
       "hero": false,
       "score": 7
+    },
+    {
+      "t": "The Nightmare Before Christmas with Live Orchestra",
+      "w": "Tue Nov 24 · 7:30 PM",
+      "d": "Tim Burton's beloved dark fantasy gets the full Davies Symphony Hall treatment - the film plays on screen while a live orchestra performs Danny Elfman's iconic score in real time. This is an annual SF tradition that hits a little different when you are watching Jack and Sally while a world-class ensemble plays five feet away. Perfect mid-week Thanksgiving treat.",
+      "cats": "shows",
+      "price": "$$",
+      "badge": "Annual Tradition",
+      "tags": [
+        "Film",
+        "Classical",
+        "Iconic Venue"
+      ],
+      "hero": false,
+      "score": 7
+    },
+    {
+      "t": "Exploratorium After Dark: Glow Opening",
+      "w": "Fri Nov 20 · 6:00 PM",
+      "d": "Exploratorium's beloved Glow exhibition kicks off its season with an adults-only After Dark opening night at Pier 15 - luminescent creatures, glowing T. rex skeletons, optical illusions, and bioluminescent wonders await. Weekend daytime Glow events also run Saturday and Sunday for all ages. It is science, it is art, and it is an absolute blast.",
+      "cats": "active",
+      "price": "$$",
+      "badge": "Opens Tonight",
+      "tags": [
+        "Opening Week",
+        "Adults Only",
+        "Science"
+      ],
+      "hero": false,
+      "score": 7
+    },
+    {
+      "t": "SF Turkey Trot in Golden Gate Park",
+      "w": "Thu Nov 26 · 8:00 AM",
+      "d": "Start Thanksgiving morning the right way with the 24th annual Turkey Trot through Golden Gate Park - choose from a 5-mile run, a 3-mile run, or a 100-meter dash for the little ones. It is festive, it is free-spirited, and burning those pre-feast calories with a few hundred happy strangers is genuinely one of the best feelings this city has to offer. Register online in advance.",
+      "cats": "active",
+      "price": "$",
+      "badge": "Thanksgiving Morning",
+      "tags": [
+        "Active",
+        "Annual Tradition",
+        "Family"
+      ],
+      "hero": false,
+      "score": 6
+    },
+    {
+      "t": "Indigenous Peoples Thanksgiving Sunrise Ceremony - Alcatraz",
+      "w": "Thu Nov 26 · 4:15 AM",
+      "d": "Watch the sun rise over the Bay from Alcatraz Island at this powerful and moving annual gathering organized by the International Indian Treaty Council, commemorating the 1969-71 occupation of Alcatraz by the Indians of All Tribes. The boat ticket runs $12 for adults and the ceremony itself is free. It is a profound and unforgettable way to spend Thanksgiving morning.",
+      "cats": "active",
+      "price": "$",
+      "badge": "Annual Tradition",
+      "tags": [
+        "Cultural",
+        "Annual Tradition",
+        "Outdoors"
+      ],
+      "hero": false,
+      "score": 6
     }
   ],
   "ongoing": [
     {
       "t": "SFMOMA - RM x SFMOMA: Between You and Me",
-      "d": "BTS leader RM's personal collection of Korean modernists alongside SFMOMA's own holdings - a genuinely surprising and beautiful show."
+      "d": "Nearly 150 works from BTS member RM's personal collection alongside SFMOMA holdings - one of the largest presentations of Korean modern art in the US, through Feb 7."
+    },
+    {
+      "t": "SFMOMA - Graciela Iturbide: Between Two Worlds",
+      "d": "Last week to catch this stunning black-and-white photo survey from the Mexico City master - closes Nov 29, do not sleep on it."
     },
     {
       "t": "de Young - Treasures of the Pharaohs",
-      "d": "On view through January 31, 2027 - Bay Area residents get free general admission on Saturdays with a Bay Area ID."
+      "d": "US premiere of 130 artifacts from the Egyptian Museum in Cairo and the Luxor Museum - Bay Area residents get free admission every Saturday."
+    },
+    {
+      "t": "de Young - Rooted in Place: California Native Art",
+      "d": "Gorgeous reimagining of the Indigenous America galleries exploring art, ceremony, and land through Dec 6."
+    },
+    {
+      "t": "Asian Art Museum - Ha Chong-Hyun Retrospective",
+      "d": "Sixty years of innovative Korean abstraction on hemp cloth - a sensory journey through Jan 25."
     },
     {
       "t": "Asian Art Museum - Vishnu's Cosmic Ocean",
-      "d": "Southeast Asia's largest ancient bronze is making a once-in-a-lifetime stop in San Francisco through January 25."
+      "d": "Southeast Asia's largest ancient bronze makes a once-in-a-lifetime US stop, through Jan 25."
     },
     {
       "t": "ACT - John Proctor Is the Villain",
-      "d": "West Coast premiere of Kimberly Belflower's explosive coming-of-age story, running through December 6 at the Toni Rembe Theater."
-    },
-    {
-      "t": "Peter Pan Goes Wrong - SF Playhouse",
-      "d": "A chaotic comedy of backstage disasters that will have you doubled over in laughter, running through November 28."
-    },
-    {
-      "t": "Aura - An Immersive Odyssey",
-      "d": "From the team behind experiences for Billie Eilish and the Las Vegas Sphere, showing until November 29."
+      "d": "West Coast premiere of Kimberly Belflower's sharp coming-of-age play, with post-show talks on Nov 24 and 25."
     }
   ],
   "eats": {
     "new": [
       {
-        "type": "Turkish / Mediterranean - Mid-Market",
-        "name": "Oklava",
-        "d": "The team behind Turquaz just opened this Mediterranean-inspired spot inside the Saluhall food hall - a fresh and exciting addition to the corridor.",
-        "price": "$$ - approx $35/pp"
+        "type": "Southern Italian - Embarcadero",
+        "name": "Lucania",
+        "d": "Just opened Nov 19 at the Ferry Building with a renovated patio, all-day menu, and a central bar inspired by piazza cafes in Italy.",
+        "price": "$$$ · $45/pp"
       },
       {
-        "type": "Sourdough Cafe - SoMa",
-        "name": "Rize Up Cafe",
-        "d": "Azikiwee Anderson's beloved sourdough brand now has its own cafe, with cheddar and kimchi grilled cheese and smoked trout tartines built on those iconic loaves.",
-        "price": "$ - approx $18/pp"
+        "type": "American Classic - North Beach",
+        "name": "Julius' Castle",
+        "d": "SF landmark at the foot of Coit Tower just reopened after 18 years - steak tartare, lamb chops, panoramic Bay views, and a full bar are back.",
+        "price": "$$$$ · $80/pp"
       },
       {
-        "type": "Seafood - Bayview",
-        "name": "Bayview Oyster Bar",
-        "d": "Grilled and raw oysters, clam chowder, and Dungeness crab with garlic noodles anchor this exciting new seafood spot at 5114 3rd St.",
-        "price": "$$ - approx $40/pp"
+        "type": "Bakery - Russian Hill",
+        "name": "Lorella",
+        "d": "New Polk Street bakery opening late November as part of the neighborhood's exciting fall wave of new spots.",
+        "price": "$$ · $15/pp"
       },
       {
-        "type": "Cocktail Bar / French - Union Square",
-        "name": "Bar Antoine Lounge",
-        "d": "A stylish new mezzanine bar in the Galleria Park Hotel with serious fine-dining pedigree and inventive bites like the Dim Saumon salmon mousse.",
-        "price": "$$$ - approx $55/pp"
-      },
-      {
-        "type": "Cantonese / Asian Fusion - Richmond",
-        "name": "Ah Ma's Kitchen",
-        "d": "Landing at No. 16 on Yelp's Best New Restaurants of 2026 list, this Cantonese-inspired spot on Clement Street is a must-visit for the Richmond.",
-        "price": "$$ - approx $35/pp"
-      },
-      {
-        "type": "Pizza - Richmond",
-        "name": "Rose Pizzeria",
-        "d": "One of SF's most beloved 2026 openings, with a 10/10 sourdough tang rating and a house pizza wine at $13 a glass.",
-        "price": "$$ - approx $30/pp"
-      }
-    ],
-    "classic": [
-      {
-        "type": "Mexican Tasting Menu - Mission",
-        "name": "Chicano Nuevo",
-        "d": "Six courses of masa worship with an average check of $190 for two - the most exciting splurge in the city right now.",
-        "price": "$$$$ - approx $95/pp"
-      },
-      {
-        "type": "Wine Bar / Dinner - Bernal Heights",
-        "name": "Fat Cat and The Mantis",
-        "d": "Called 2026's most fun dinner spot by The Infatuation, this natural-wine-forward Bernal Heights gem is creative, lively, and genuinely joyful.",
-        "price": "$$$$ - approx $70/pp"
+        "type": "All-Day Cafe - Marina",
+        "name": "Scout",
+        "d": "The team behind Norcina opens an upscale all-day cafe at 2359 Chestnut - the Marina's new daytime go-to.",
+        "price": "$$$ · $35/pp"
       },
       {
         "type": "Rotisserie - Parkside",
         "name": "Bare Bones",
-        "d": "Three restaurant pros opened this counter-service spot on Taraval built around slow-cooked rotisserie chicken that is crowd-pleasing perfection.",
-        "price": "$ - approx $20/pp"
+        "d": "Three restaurant pros who met at their kids' preschool open this counter-service spot on Taraval focused on slow-cooked rotisserie chicken.",
+        "price": "$$ · $20/pp"
       },
       {
-        "type": "Thai - Various",
-        "name": "Ruay Mitr Chicken and Rice",
-        "d": "New fast-casual Thai from the operator behind Saam and Song Wat, carving out a sharp niche in focused, affordable Thai dining.",
-        "price": "$ - approx $18/pp"
+        "type": "Filipino Fine Dining - Nob Hill",
+        "name": "Restaurant Naides",
+        "d": "Named one of The Infatuation's Best New Restaurants of 2026 - splurge-worthy Filipino tasting menu that has the city talking.",
+        "price": "$$$$ · $120/pp"
+      }
+    ],
+    "classic": [
+      {
+        "type": "Italian All-Day Cafe - Jackson Square",
+        "name": "Bar Coto",
+        "d": "The Tusks' (Quince, Cotogna) only no-reservations spot - espresso, pastries, and housemade-bread sandwiches in Jackson Square.",
+        "price": "$$ · $25/pp"
+      },
+      {
+        "type": "Wine Bar - Bernal Heights",
+        "name": "Fat Cat and The Mantis",
+        "d": "Named 2026's most fun dinner spot by The Infatuation - come for the natural wine and stay for tagliatelle with mushroom nuoc cham.",
+        "price": "$$$$ · $70/pp"
+      },
+      {
+        "type": "Oyster Bar - Bayview",
+        "name": "Bayview Oyster Bar",
+        "d": "Part of an exciting wave of new Bayview spots supported by city grants - fresh oysters and local pride at 5114 3rd St.",
+        "price": "$$ · $35/pp"
+      },
+      {
+        "type": "Handroll Bar - Russian Hill",
+        "name": "Handroll Hawker",
+        "d": "Casual handroll spot at 2360 Polk bringing tight, quality Japanese bites to the neighborhood.",
+        "price": "$$ · $30/pp"
+      },
+      {
+        "type": "Hotel Bar - Union Square",
+        "name": "Bar Antoine Lounge",
+        "d": "Sophisticated mezzanine bar above Le Parc Bistrobar in the Galleria Park Hotel - try the 'Dim Saumon' salmon mousse in a bamboo steamer.",
+        "price": "$$$ · $22/drink"
+      },
+      {
+        "type": "Natural Wine Bar - Mission",
+        "name": "Downtime",
+        "d": "The 6,000-square-foot new project from the Bar Part Time and Dalva crews - late-night dancing and natural wine incoming to the Mission.",
+        "price": "$$$ · $18/drink"
       }
     ]
   },
   "bars": [
     {
-      "type": "Cocktail Bar / French - Union Square",
-      "name": "Bar Antoine Lounge",
-      "d": "New mezzanine bar above Le Parc Bistro Bar with a French-leaning cocktail list and bites like the bamboo-steamed Dim Saumon.",
-      "price": "$$$ - approx $18/drink"
-    },
-    {
-      "type": "Natural Wine Bar / Late Night - Mission",
+      "type": "Natural Wine + Dancing - Mission",
       "name": "Bar Part Time",
-      "d": "The Mission's beloved natural wine bar known for late-night dance raves and a crowd that genuinely loves both wine and dancing.",
-      "price": "$$ - approx $14/drink"
+      "d": "The OG Mission natural wine bar famous for its late-night dance raves - still the most fun room in the neighborhood.",
+      "price": "$$ · $14/drink"
     },
     {
       "type": "Cocktail Bar - Mission",
       "name": "Dalva",
-      "d": "A Mission classic with a killer back bar, and a partner venue to the upcoming Downtime - the kind of neighborhood bar you stay at way too late.",
-      "price": "$$ - approx $14/drink"
+      "d": "Long-running Mission cocktail institution co-owned by Downtime's Eric Ochoa - neighborhood warmth with serious bartending chops.",
+      "price": "$$ · $16/drink"
     },
     {
-      "type": "Dance Club / Electronic - SoMa",
-      "name": "Halcyon",
-      "d": "SF's premier intimate dance club with a tight-knit house music community and marathon dance nights - Deborah De Luca plays here Saturday.",
-      "price": "$$ - approx $15/drink"
+      "type": "Italian Cafe Bar - Jackson Square",
+      "name": "Bar Coto",
+      "d": "Daytime espresso becomes evening aperitivo at the Tusks' walk-in-only gem in Jackson Square.",
+      "price": "$$ · $14/drink"
     },
     {
-      "type": "Underground Club - Lower Haight",
-      "name": "Underground SF",
-      "d": "A 100-cap Lower Haight staple at 424 Haight St known for dark, serious dance floor energy with no frills and all music.",
-      "price": "$ - approx $10/drink"
+      "type": "Hotel Mezzanine Bar - Union Square",
+      "name": "Bar Antoine Lounge",
+      "d": "Tucked above Le Parc Bistrobar at the Galleria Park Hotel - a civilized pre-theater or post-shopping cocktail spot.",
+      "price": "$$$ · $22/drink"
     },
     {
-      "type": "Dance Club / Warehouse - SoMa",
-      "name": "The Great Northern",
-      "d": "One of SF's top underground spots with a warehouse aesthetic and world-class sound system - Frequency 8 lands here Saturday night.",
-      "price": "$$ - approx $14/drink"
+      "type": "Darkwave + EBM Club - SoMa",
+      "name": "F8",
+      "d": "Interzone Darkwave Tuesdays every week - $5 after 10pm, 21+, and the city's best room for goth and EBM.",
+      "price": "$ · $10/drink"
     },
     {
-      "type": "Dance Club / SoMa",
+      "type": "Multi-Room Dance Club - SoMa",
       "name": "1015 Folsom",
-      "d": "SF's big-room dance institution with Eli and Fur Friday night and Detroit legend DJ Stingray closing out the week on Thursday.",
-      "price": "$$ - approx $14/drink"
+      "d": "The SoMa institution anchoring the club week - Westend Friday and Andy C on Wednesday, full multi-room experience.",
+      "price": "$$ · $14/drink"
     },
     {
-      "type": "Electronic Club / SoMa",
-      "name": "Audio Nightclub",
-      "d": "Nora En Pure plays a rare 2pm to 7pm day party here Saturday - her organic progressive house sound is a perfect fit for this room.",
-      "price": "$$ - approx $14/drink"
+      "type": "Live Music + Club - Mission",
+      "name": "Public Works",
+      "d": "FJAAK and Hiroko Yamamura Friday, DEATHPACT Saturday - two of the best electronic bookings in town this week.",
+      "price": "$$ · $14/drink"
+    },
+    {
+      "type": "Neighborhood Dive + Live Music - SoMa",
+      "name": "Rickshaw Stop",
+      "d": "EMO NITE Saturday and Qendresa Sunday - two wildly different and equally great nights packed into one intimate SoMa spot.",
+      "price": "$ · $10/drink"
     }
   ],
   "sports": [
     {
-      "section": "🏀 Golden State Warriors - Away Games",
+      "section": "🏀 Warriors - Chase Center",
       "games": [
         {
-          "teams": "Warriors vs New Orleans Pelicans",
-          "detail": "Away game at Smoothie King Center, New Orleans",
-          "when": "Mon Nov 16\n7:00 PM",
-          "price": "Watch party TBD"
+          "teams": "Warriors vs. Celtics",
+          "detail": "Big rivalry matchup - Boston comes to town for a Saturday showdown.",
+          "when": "Sun Nov 22\n5:30 PM",
+          "price": "Check chasecenter.com"
         },
         {
-          "teams": "Warriors vs Dallas Mavericks",
-          "detail": "Away game at American Airlines Center, Dallas",
-          "when": "Wed Nov 18\n8:30 PM",
-          "price": "Watch party TBD"
+          "teams": "Warriors vs. Kings (NBA Cup)",
+          "detail": "High-stakes in-state NBA Cup clash with Sacramento.",
+          "when": "Wed Nov 25\n7:00 PM",
+          "price": "Check chasecenter.com"
         }
       ],
-      "note": "No Warriors home games this week. Next home game is Nov 22 vs Boston Celtics at Chase Center."
+      "note": "And of course - cheer the Valkyries at their Championship Parade on Thanksgiving morning along the Embarcadero!"
     },
     {
-      "section": "⚽ Volo Sports - Coed Soccer",
+      "section": "🏆 Golden State Valkyries - Championship Parade",
       "games": [
         {
-          "teams": "Coed 8v8 Open Soccer",
-          "detail": "Franklin Square, The Mission - recreational league with strong post-game social scene",
-          "when": "Sat Nov 14\n10am - 2pm",
-          "price": "League fee"
+          "teams": "2026 WNBA Champions Parade",
+          "detail": "Parade from Ferry Building along the Embarcadero toward Oracle Park. Fan line-up begins at 9am.",
+          "when": "Thu Nov 26\n12:00 PM",
+          "price": "Free"
         }
       ],
-      "note": "Great way to meet active people - register at volosports.com."
+      "note": "This is the one. Be there."
     }
   ],
   "concerts": [
     {
-      "t": "IDEMI",
-      "w": "Fri Nov 13 · TBA",
-      "d": "Deep electronic sounds at one of SF's best-regarded electronic music clubs. A solid, immersive way to kick off the weekend for fans who like their Friday nights dark and hypnotic.",
-      "venue": "Audio SF - Price TBD",
-      "tags": [
-        "Electronic",
-        "DJ"
-      ],
-      "hi": false
-    },
-    {
-      "t": "MARIS - MARIS Live 2026",
-      "w": "Fri Nov 13 · TBA",
-      "d": "An emerging OnesToWatch artist in an intimate small-room setting at the beloved Cafe Du Nord. This is the kind of show you will brag about catching before they blew up - window favors early buyers.",
-      "venue": "Cafe Du Nord - Price TBD",
-      "tags": [
-        "Emerging",
-        "Indie"
-      ],
-      "hi": false
-    },
-    {
-      "t": "Sean Hayes",
-      "w": "Sat Nov 14 · TBA",
-      "d": "A Bay Area folk-pop favorite known for introspective songwriting and warm stripped-back performances. The Independent's intimate setting is perfect for a close-and-personal Saturday show with a beloved local.",
-      "venue": "The Independent - Price TBD",
-      "tags": [
-        "Folk",
-        "Pop",
-        "Local"
-      ],
-      "hi": false
-    },
-    {
-      "t": "INNA",
-      "w": "Sat Nov 14 · TBA",
-      "d": "Romanian pop superstar with infectious dance-pop anthems and a massive international fanbase brings her high-energy show to August Hall's stylish room. A proper Saturday night pop party.",
-      "venue": "August Hall - Price TBD",
-      "tags": [
-        "Pop",
-        "Dance"
-      ],
-      "hi": false
-    },
-    {
-      "t": "Thao",
-      "w": "Sun Nov 15 · Doors 7pm / Show 8pm",
-      "d": "A beloved Bay Area indie folk act in one of the city's most storied rooms. At $30 advance and $35 day of show, this is an intimate evening with a genuinely singular songwriter in a room that suits her perfectly.",
-      "venue": "Great American Music Hall - $30 ADV / $35 DOS",
+      "t": "The Mountain Goats - Night Five: Cast of Thousands",
+      "w": "Fri Nov 20 · 8 PM",
+      "d": "Night Five of an extraordinary six-show Fillmore residency, each night themed around a different era of their catalog. John Darnielle's storytelling and emotional intensity make every night feel essential - this one digs into the beloved 'Cast of Thousands' chapter. See it tonight, then come back tomorrow for the finale.",
+      "venue": "The Fillmore · Check fillmore.com",
       "tags": [
         "Indie Folk",
-        "Local",
-        "GAMH"
+        "Residency"
       ],
       "hi": true
     },
     {
-      "t": "Son Volt with Kelly Willis",
-      "w": "Tue Nov 17 · TBA",
-      "d": "Alt-country legends Son Volt paired with Texas country icon Kelly Willis is as good a double bill as Americana fans are going to find this month. Jay Farrar's literate roots-rock songwriting deserves a room this good.",
-      "venue": "August Hall - Price TBD",
+      "t": "The Mountain Goats - Night Six: Closers",
+      "w": "Sat Nov 21 · 8 PM",
+      "d": "The grand finale of one of the most ambitious residencies the Fillmore has hosted in years - 'Closers' wraps up six nights of deep catalog dives with the kind of emotional payoff only the Mountain Goats can deliver. This is a show people will be talking about for years. Get your ticket.",
+      "venue": "The Fillmore · Check fillmore.com",
       "tags": [
-        "Alt-Country",
-        "Americana",
-        "Double Bill"
+        "Indie Folk",
+        "Final Night"
       ],
       "hi": true
     },
     {
-      "t": "Computerwife with Double Helix Peace Treaty",
-      "w": "Thu Nov 19 · TBA",
-      "d": "A quirky, indie and experimental closer at the beloved 4 Star Theater. If you like your Thursday nights a little left-of-center with great support acts, this is your move to close out the week.",
-      "venue": "4 Star Theater - Price TBD",
+      "t": "Divine Offering: Celebrating the Legacy of Alice Coltrane",
+      "w": "Sun Nov 22 · 8 PM",
+      "d": "Sita Michelle Coltrane and special guests honor the cosmic, spiritual genius of Alice Coltrane in a rare and reverent tribute presented by GAMH and Psyched! Fest. Alice Coltrane's music rewired what jazz could be - harp, organ, strings, and devotion all woven together into something transcendent. One of the most meaningful concerts of the year.",
+      "venue": "Great American Music Hall · $39.50-$45",
       "tags": [
-        "Indie",
-        "Experimental"
+        "Jazz",
+        "Tribute",
+        "One Night Only"
+      ],
+      "hi": true
+    },
+    {
+      "t": "Eivör with Midori Jaeger",
+      "w": "Fri Nov 20",
+      "d": "The Faroese singer-songwriter brings her hauntingly beautiful Nordic folk and cinematic soundscapes to August Hall for a night that feels like it belongs in a fjord under the northern lights. Eivör weaves ancient vocal traditions with modern production in a way that is utterly unlike anything else on the bill this week. A quiet stunner of a show.",
+      "venue": "August Hall · Check augusthallsf.com",
+      "tags": [
+        "Nordic Folk",
+        "Cinematic"
       ],
       "hi": false
     },
     {
-      "t": "Crucial Reggae Sunday",
-      "w": "Sun Nov 15 · 4:30pm - 7:30pm",
-      "d": "A free weekly reggae-themed concert in the heart of Golden Gate Park for a laid-back Sunday evening. No cover, all vibes, and the kind of only-in-SF free experience that never gets old.",
-      "venue": "Golden Gate Bandshell, Golden Gate Park - FREE",
+      "t": "Jayski and the Dawn featuring Jay Lane and Dave Ellis",
+      "w": "Fri Nov 20 · 8 PM",
+      "d": "A groove-heavy jazz night at the GAMH anchored by two of the Bay Area's most respected instrumentalists - Jay Lane's drumming alone is worth the ticket. If you want something warm and funky to ease into your Friday, this is your room. Doors at 7, show at 8.",
+      "venue": "Great American Music Hall · Check gamh.com",
       "tags": [
-        "Reggae",
-        "Free",
-        "Outdoor"
+        "Jazz",
+        "Groove",
+        "Bay Area"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Andrew McMahon",
+      "w": "Sat Nov 21 · 7 PM",
+      "d": "The indie king who gave us Something Corporate and Jack's Mannequin brings his solo catalog to the intimate GAMH stage for a Saturday night that will hit you right in the feelings. His live shows are piano-forward, emotionally generous, and completely disarming - exactly the kind of night you want when the holidays are creeping in. Doors at 6.",
+      "venue": "Great American Music Hall · Check gamh.com",
+      "tags": [
+        "Indie Pop",
+        "Singer-Songwriter"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Jonas Brothers - The Burning Up Tour All Over Again",
+      "w": "Sat Nov 21 · 7:30 PM",
+      "d": "The JoBros roll into Chase Center fresh off a Madison Square Garden sellout run, with Magnus Ferrell, Franklin Jonas, and All Time Low joining as special guests. If you have been a fan since the Disney Channel days or just want a giant, fun arena pop show the night before Thanksgiving, this is your move. It is going to be loud, joyful, and absolutely packed.",
+      "venue": "Chase Center · Check ticketmaster.com",
+      "tags": [
+        "Pop",
+        "Arena Show"
+      ],
+      "hi": false
+    },
+    {
+      "t": "DEATHPACT: From Darkness, Comes Light: Eclipsed",
+      "w": "Sat Nov 21 · 9 PM",
+      "d": "Public Works transforms into a full-space immersive club experience with DEATHPACT headlining alongside Jiqui and DJ Dials for a limited-capacity night built to sell out. Dark, hypnotic, and absolutely the underground alternative to the arena show happening across town. Tickets run $15 to $30, 21+, and yes - this one will sell out.",
+      "venue": "Public Works · $15-$30",
+      "tags": [
+        "Electronic",
+        "Club Night",
+        "Selling Out"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Andre Nickatina",
+      "w": "Wed Nov 25 · 8 PM",
+      "d": "The legendary Bay Area rapper is a true cult hero of SF hip-hop - his devoted hometown crowd turns every GAMH show into a celebration. If you are in town for Thanksgiving week and want to do something genuinely local and special, this is your night. Doors at 7.",
+      "venue": "Great American Music Hall · Check gamh.com",
+      "tags": [
+        "Hip-Hop",
+        "Bay Area Legend"
+      ],
+      "hi": false
+    },
+    {
+      "t": "Andy C at 1015 Folsom",
+      "w": "Wed Nov 25 · 9 PM",
+      "d": "The founder of Ram Records and one of drum and bass's most iconic figures ever headlines 1015 Folsom for a mid-week Thanksgiving eve banger. Andy C is the rare DJ who can make a room feel like it is levitating - if you are not making it home for the holiday until Thursday morning, stay out for this. Tickets $22 to $32, 21+, 9pm to 2am.",
+      "venue": "1015 Folsom · $22-$32",
+      "tags": [
+        "Drum and Bass",
+        "Club Night"
       ],
       "hi": false
     }
   ],
   "concertsOngoing": [
     {
-      "t": "The Mountain Goats Residency at the Fillmore",
-      "d": "Six nights, six themes, running November 15 through 21 - grab any available night for one of indie rock's most beloved storytelling acts."
+      "t": "Brian Blade at SFJAZZ Miner Auditorium",
+      "d": "One of jazz's most celebrated and spiritually sensitive drummers performs Sunday Nov 22 - check sfjazz.org for tickets."
     },
     {
-      "t": "Golden Gate Bandshell Friday Happy Hour",
-      "d": "Every Friday 4:30 to 7:30 PM in Golden Gate Park - free live music to wind down the work week, no tickets needed."
+      "t": "SF Symphony Youth Orchestra at Davies",
+      "d": "One of the country's most prestigious youth orchestras performs Sunday Nov 22 at 6pm - a beautiful pre-Thanksgiving concert."
+    },
+    {
+      "t": "Boston Manor at August Hall",
+      "d": "British post-hardcore with intense emotional live sets Sunday Nov 22 - check augusthallsf.com."
+    },
+    {
+      "t": "Agriculture at August Hall",
+      "d": "Buzzed-about experimental metal act with Dry Socket and Pure Hex on Saturday Nov 21."
+    },
+    {
+      "t": "Qendresa at Rickshaw Stop",
+      "d": "Kosovo-born genre-defying vocalist blending Balkan folk with pop and soul, Sunday Nov 22, $25-$28, all ages."
+    },
+    {
+      "t": "Endzeit x Non Series at TBA Downtown",
+      "d": "Luigi Tozzi, Psyk, Neel, and more for a deep underground techno night Friday Nov 20 - follow @EndzeitSF for venue reveal."
     }
   ],
   "singles": [
     {
-      "t": "SF Social Club - Full Hearts Full Plates Friendsgiving",
-      "w": "Thu Nov 19 · 6:30pm - 9:30pm",
-      "d": "A warm, cozy potluck social at ERIA Marina on Chestnut Street designed to help you relax and connect with new people in the community. Thanksgiving energy without the family chaos - honestly kind of ideal. Members only, so check the SF Social Club site to join.",
+      "t": "Tantra Speed Date - San Francisco",
+      "w": "Sat Nov 21 · 6:00-9:00 PM",
+      "d": "Hosted at a yoga studio on Union Street by The Tantra Institute, this is not your average speed dating night - chemistry games, conscious connection, and a claimed 94% connection rate make it one of the more intentional ways to meet someone in this city. Come with an open mind and comfortable clothes. Singles looking for something a little more meaningful than small talk will love this format.",
       "tags": [
-        "Social",
-        "Food",
-        "Networking"
+        "Speed Dating",
+        "Conscious"
       ],
-      "badge": "Members",
-      "link": "https://www.sfsocialclub.com",
-      "linkText": "Learn More"
-    },
-    {
-      "t": "Eli and Fur at 1015 Folsom",
-      "w": "Fri Nov 13 · 10pm",
-      "d": "The British melodic house duo in a great room with tickets starting at $4.37 - yes, really - making this one of the best value nights out this week. The dance floor at 1015 is legitimately one of the better places to meet fellow music lovers in SF. 21 plus.",
-      "tags": [
-        "Nightlife",
-        "Electronic",
-        "Dance"
-      ],
-      "badge": "From $4",
-      "link": "https://www.1015.com",
+      "badge": "Check Eventbrite",
+      "link": "https://www.eventbrite.com",
       "linkText": "Get Tickets"
     },
     {
-      "t": "Bontan, Jordan Michael and Santino at Halcyon",
-      "w": "Fri Nov 13 · 10pm - 4am",
-      "d": "Deep house and tech house until 4am at SF's most community-driven dance club, with $12 tickets before 11pm. Halcyon has a genuinely tight-knit regular crowd and a friendly vibe that makes it easier than most clubs to actually talk to people. 21 plus.",
+      "t": "SpeedSanFrancisco - Ages 32-46 Speed Dating",
+      "w": "Sun Nov 22",
+      "d": "Meet 8 to 12 local singles in one focused, fun night at The Jay Hotel - SpeedSanFrancisco runs tight, well-organized events with a clear age bracket so you are always meeting relevant people. Sunday evening is a surprisingly great time for this: low-key, early enough to be home at a reasonable hour, and the holiday-week energy adds a fun warmth to the room.",
       "tags": [
-        "Nightlife",
-        "House Music",
-        "Dance"
+        "Speed Dating",
+        "Ages 32-46"
       ],
-      "badge": "$12 before 11pm",
-      "link": "https://www.ra.co",
+      "badge": "Check Eventbrite",
+      "link": "https://www.eventbrite.com",
       "linkText": "Get Tickets"
     },
     {
-      "t": "Nora En Pure Day Party at Audio",
-      "w": "Sat Nov 14 · 2pm - 7pm",
-      "d": "A Saturday afternoon progressive house show is a genuinely great format for meeting people - relaxed, early enough to grab dinner after, and anchored by one of the most beloved DJs in the organic house world. Tickets start at $55, so this is a crowd that is there on purpose. 21 plus.",
+      "t": "The Comeunity Project - SF 30s Mingle",
+      "w": "Sat Nov 21",
+      "d": "A relaxed social mixer format specifically for singles in their thirties - no pressure, no buzzers, just meeting people over drinks in a thoughtfully curated setting. The Comeunity Project events are known for attracting genuinely interesting humans who are tired of apps and ready to meet IRL. Thanksgiving week energy makes everyone a little more open and sociable.",
       "tags": [
-        "Nightlife",
-        "Electronic",
-        "Day Party"
+        "Mixer",
+        "30s"
       ],
-      "badge": "$55+",
-      "link": "https://www.ra.co",
+      "badge": "Check Eventbrite",
+      "link": "https://www.eventbrite.com",
       "linkText": "Get Tickets"
     },
     {
-      "t": "Founders Running Club at Murphy Windmill",
-      "w": "Sat Nov 14 · 9:30am",
-      "d": "A free weekly run in Golden Gate Park with a brainy, sociable crowd of founders, investors, operators, and creative people. Easy 5 to 10km pace means you can actually hold a conversation, and the post-run coffee chat is where the real connecting happens.",
+      "t": "Gay Men Speed Dating - Fancy a Go?",
+      "w": "Tue Nov 24 · 7:00 PM",
+      "d": "Part of the recurring 'Fancy a Go?' series, this welcoming and well-run speed dating night for gay men takes place Tuesday at The Jay Hotel - a fun mid-week Thanksgiving-week option that beats staying home and doom-scrolling. The structured format takes the awkwardness out of the introduction and leaves the fun parts in.",
       "tags": [
-        "Active",
-        "Social",
-        "Free",
-        "Outdoors"
+        "Speed Dating",
+        "LGBTQ+"
+      ],
+      "badge": "Check Eventbrite",
+      "link": "https://www.eventbrite.com",
+      "linkText": "Get Tickets"
+    },
+    {
+      "t": "EMO NITE at Rickshaw Stop",
+      "w": "Sat Nov 21",
+      "d": "Fall Out Boy, My Chemical Romance, Paramore, and all the anthems of your formative years packed into the Rickshaw Stop's intimate dancefloor for one of the most social nights in the city. Emo Nite is legitimately one of the best ways to meet people in SF - shared nostalgia is the ultimate icebreaker and everyone in that room has the same emotional damage. In the best way.",
+      "tags": [
+        "Dance Party",
+        "Social"
+      ],
+      "badge": "Check Rickshaw Stop",
+      "link": "https://www.therickshawstop.com",
+      "linkText": "Get Tickets"
+    },
+    {
+      "t": "Founders Running Club - Easy 5-10km + Coffee",
+      "w": "Sat Nov 21 · 9:30 AM",
+      "d": "Meet founders, investors, operators, and creators for an easy social run at Murphy Windmill in Golden Gate Park, followed by coffee and conversation. If you are new to SF or just want to expand your circle with interesting people before the holiday weekend kicks off, this is an unbeatable free option. They explicitly say they want you comfortable - no one is racing.",
+      "tags": [
+        "Run Club",
+        "Networking",
+        "Free"
       ],
       "badge": "Free",
-      "link": "https://www.eventbrite.com",
-      "linkText": "RSVP"
-    },
-    {
-      "t": "Volo Sports Coed Soccer at Franklin Square",
-      "w": "Sat Nov 14 · 10am - 2pm",
-      "d": "Recreational coed 8v8 soccer in the Mission with Volo Sports, the city's go-to league for people who want to play sports and also make friends who are not from work. Teams welcome solo sign-ups, so no crew needed to show up.",
-      "tags": [
-        "Active",
-        "Social",
-        "Sports"
-      ],
-      "badge": "League Fee",
-      "link": "https://www.volosports.com",
-      "linkText": "Sign Up"
+      "link": "https://www.meetup.com",
+      "linkText": "RSVP Free"
     }
   ],
   "singlesOngoing": [
     {
-      "t": "Run Club SF - Weekly Runs",
-      "d": "Tuesday nights in Golden Gate Park, Thursday speedwork at Kezar Stadium, and Saturday adventure runs - all free and all genuinely social."
+      "t": "November Project SF - Free Weekly Workouts",
+      "d": "Free, radically inclusive community workouts multiple mornings a week across SF - no signup, no pace requirement, just show up and make friends."
     },
     {
-      "t": "SpeedCalifornia Speed Dating Ages 32 to 46",
-      "d": "Recurring structured speed dating at The Jay Hotel - meet 8 to 12 local singles in one efficient, low-pressure evening."
+      "t": "Marina Run Club - Tues and Thurs",
+      "d": "SF's biggest social run club meets Tuesday at 7am and Thursday at 7am and 5:30pm at Marina Green and Duboce Park - free to join."
+    },
+    {
+      "t": "Run Club SF - Winter Season",
+      "d": "Tuesday nights in Golden Gate Park, Thursday nights at Kezar for speedwork, Saturday mornings around the city - all paces welcome."
     }
   ],
   "playbooks": {
@@ -598,71 +626,81 @@
         "tier": "free",
         "badge": "The Free One",
         "est": "$0",
-        "title": "Golden Gate Park Golden Hour",
-        "tagline": "Four hours of free music, fresh air, and zero pressure.",
+        "title": "Lights, Pups, and Pie",
+        "tagline": "A Thanksgiving-week date that costs nothing but time",
         "steps": [
           {
-            "time": "10am",
-            "title": "Tribute to Legends Concert",
-            "detail": "Pack a blanket and head to the Golden Gate Bandshell for the free four-hour concert celebrating musical legends. Find a good spot, share a coffee from a thermos, and let the music do the talking."
+            "time": "12:00 PM",
+            "title": "SF SPCA Holiday Windows at Macy's",
+            "detail": "Start at Union Square and press your faces against the windows together watching adoptable puppies and kittens do their thing. Free, festive, and an instant mood booster."
           },
           {
-            "time": "2pm",
-            "title": "Walk Through the Park",
-            "detail": "After the show winds down, wander through Golden Gate Park together - Stow Lake, the Conservatory of Flowers, or just wherever looks interesting."
+            "time": "1:30 PM",
+            "title": "Walk to Golden Gate Park",
+            "detail": "Grab a coffee to go from any of the great spots on Haight Street and walk into the park together - this week it has a little extra magic with Lightscape setting up."
           },
           {
-            "time": "4:30pm",
-            "title": "Crucial Reggae Sunday",
-            "detail": "Circle back to the Bandshell for Crucial Reggae Sunday, running 4:30 to 7:30 PM. Still free, still outdoors, and the vibe shifts to something more laid-back and evening-ready. Perfect."
+            "time": "3:00 PM",
+            "title": "de Young - Rooted in Place",
+            "detail": "Free with general admission, this beautiful Indigenous California art exhibition is quietly one of the best things in the park right now - thoughtful conversation guaranteed."
+          },
+          {
+            "time": "5:00 PM",
+            "title": "Lightscape at SF Botanical Garden",
+            "detail": "Okay, this one requires a ticket ($32 adults) - but starting at 5pm the garden transforms into one million lights and it is absolutely worth every penny for a first date or a tenth."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$80 - $120 for two",
-        "title": "Diwali Night Market to Neo-Soul Night",
-        "tagline": "Street food, dancing, and a show that will give you chills.",
+        "est": "$80-$120 for two",
+        "title": "Art, Acrobats, and Italian",
+        "tagline": "Culture, wonder, and a plate of pasta",
         "steps": [
           {
-            "time": "4pm",
-            "title": "Bhangra and Beats Diwali Night Market",
-            "detail": "Start the evening at Yerba Buena Gardens for the free Diwali Night Market. Eat whatever smells best, watch the dancers, and soak up the energy of one of SF's most festive free events."
+            "time": "11:00 AM",
+            "title": "Lauren Elkin at City Lights - Free",
+            "detail": "Start the morning with the free City Lights author event on Saturday the 21st - literary conversation is a great date energy and City Lights is one of SF's most romantic spots."
           },
           {
-            "time": "6:30pm",
-            "title": "Dinner at Rose Pizzeria",
-            "detail": "Head to 1 Clement Street in the Richmond for some of the city's best sourdough pizza and a glass of the house pizza wine at $13. Relaxed, delicious, and totally unpretentious."
+            "time": "1:00 PM",
+            "title": "Lunch at Lucania - Ferry Building",
+            "detail": "The brand-new Southern Italian spot just opened Nov 19 at the Ferry Building - grab a table on their renovated patio and order everything. Opening week energy is contagious."
           },
           {
-            "time": "8pm",
-            "title": "Jamila Woods at the Rickshaw Stop",
-            "detail": "Make it to the Rickshaw Stop by 8pm for Jamila Woods celebrating 10 Years of HEAVN. Tickets are $35 advance and this is an intimate room for a massive talent - an evening you will both remember."
+            "time": "3:30 PM",
+            "title": "SFMOMA - Sarah Sze Opening + RM Collection",
+            "detail": "Sarah Sze's new monumental installation opens this Saturday - it is free on the first floor, then spring for admission to also see the RM x SFMOMA Korean art exhibition upstairs."
+          },
+          {
+            "time": "7:30 PM",
+            "title": "Dear SF: Home for the Holidays at Club Fugazi",
+            "detail": "End the night with the most charming show in the city - world-class acrobats and heartfelt circus storytelling in an intimate North Beach venue. Tickets from around $79-$87."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$200 - $280 for two",
-        "title": "Castro Theatre and a Big Night Out",
-        "tagline": "An unforgettable room, an unforgettable voice.",
+        "est": "$250-$350 for two",
+        "title": "Fillmore Friday",
+        "tagline": "An iconic SF night from start to finish",
         "steps": [
           {
-            "time": "6pm",
-            "title": "Drinks at Bar Antoine Lounge",
-            "detail": "Start at the new mezzanine bar in the Galleria Park Hotel. Order the Dim Saumon and a French-leaning cocktail from Christie Chemel's list. It is intimate, stylish, and sets a great tone."
+            "time": "6:00 PM",
+            "title": "Dinner at Julius' Castle",
+            "detail": "The legendary hilltop restaurant just reopened after 18 years - panoramic Bay views, steak tartare, lamb chops, and pure old-school SF glamour. Book ahead."
           },
           {
-            "time": "7:30pm",
-            "title": "Dinner at Fat Cat and The Mantis",
-            "detail": "Head to Bernal Heights for what The Infatuation called 2026's most fun dinner spot. Natural wine, creative food, and a lively room that feels like a great dinner party."
+            "time": "8:00 PM",
+            "title": "Mountain Goats Night Five at The Fillmore",
+            "detail": "Walk (or ride) to the Fillmore for Night Five of this historic six-show residency. John Darnielle on stage at 8pm in one of SF's most storied rooms - this is the date story you will tell forever."
           },
           {
-            "time": "8pm",
-            "title": "Jorja Smith at the Castro Theatre",
-            "detail": "Monday November 16 - Jorja Smith in one of the most beautiful rooms in San Francisco. Her voice in that space is something you simply cannot replicate anywhere else. Book now."
+            "time": "10:30 PM",
+            "title": "Nightcap at Bar Coto",
+            "detail": "Wind down with a late aperitivo at the Tusks' walk-in-only gem in Jackson Square - no reservations needed, just two people glowing from a perfect Friday in San Francisco."
           }
         ]
       }
@@ -672,71 +710,81 @@
         "tier": "free",
         "badge": "The Free One",
         "est": "$0",
-        "title": "Free SF Friday",
-        "tagline": "An entire evening of only-in-SF experiences that cost absolutely nothing.",
+        "title": "Thanksgiving Morning, Done Right",
+        "tagline": "Start the holiday with something that actually means something",
         "steps": [
           {
-            "time": "5pm",
-            "title": "Performing Arts Showcase at Fulton Plaza",
-            "detail": "Walk over to Civic Center for the free holiday showcase under the SPECTRA lights. SF's most exciting performing arts orgs, all in one outdoor space. Just show up."
+            "time": "4:15 AM",
+            "title": "Indigenous Peoples Sunrise Ceremony - Alcatraz",
+            "detail": "Take the early boat ($12) to Alcatraz and join the International Indian Treaty Council's annual gathering as the sun rises over the Bay. Powerful, moving, and unlike anything else in the city."
           },
           {
-            "time": "7pm",
-            "title": "Stroll to Bhangra and Beats Diwali Night Market",
-            "detail": "It is a quick trip from Civic Center to Yerba Buena Gardens where the Diwali Night Market runs until 9pm. Eat, wander, listen to music, feel alive."
+            "time": "8:00 AM",
+            "title": "SF Turkey Trot - Golden Gate Park",
+            "detail": "Back on the mainland in time for the 24th annual Turkey Trot - 5 miles, 3 miles, or just cheer from the sidelines. The park at Thanksgiving morning is genuinely magical."
           },
           {
-            "time": "9pm",
-            "title": "Wrap up and decompress",
-            "detail": "Walk home through SoMa or hop on transit. You just had a full, beautiful Friday evening and spent nothing. That is the city working the way it is supposed to."
+            "time": "10:30 AM",
+            "title": "Line up for the Valkyries Parade",
+            "detail": "Head to the Embarcadero early - fans can line up from 9am for the noon parade. Find your spot, get a coffee, and soak in one of the great civic celebrations of the year. Free."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$50 - $80",
-        "title": "Museum Afternoon Plus Thao",
-        "tagline": "A quietly perfect solo Sunday in the city.",
+        "est": "$60-$90",
+        "title": "Sunday Soul Reset",
+        "tagline": "The perfect end-of-week recharge",
         "steps": [
           {
-            "time": "11am",
-            "title": "de Young Museum - Treasures of the Pharaohs",
-            "detail": "Bay Area residents get free general admission on Saturdays with a Bay Area ID, so this is a nearly free museum afternoon. The Pharaohs show requires a timed ticket but is worth it. Take your time."
+            "time": "11:00 AM",
+            "title": "de Young - Treasures of the Pharaohs",
+            "detail": "Bay Area residents get in free every Saturday - but on Sunday treat yourself and linger over 130 extraordinary Egyptian artifacts from the Cairo and Luxor museums. No rush."
           },
           {
-            "time": "2pm",
-            "title": "Golden Gate Park Walk",
-            "detail": "After the museum, wander the park at your own pace. The Conservatory of Flowers, the buffalo paddock, or just wherever your feet take you. This is the good stuff."
+            "time": "2:00 PM",
+            "title": "Walk Lightscape Early Setup or Golden Gate Park",
+            "detail": "Spend the afternoon in the park, grab a bench by the Botanical Garden, and just breathe. The city is quieter on Sunday afternoons and Golden Gate Park in late November is stunning."
           },
           {
-            "time": "7pm",
-            "title": "Thao at Great American Music Hall",
-            "detail": "Doors at 7pm, show at 8pm, $30 advance tickets. GAMH is one of the great rooms in SF and Thao is a beloved Bay Area voice. A solo show at a great venue is a genuinely restorative experience."
+            "time": "7:00 PM",
+            "title": "Qendresa at Rickshaw Stop - All Ages",
+            "detail": "End the week with something genuinely surprising - Qendresa's Balkan folk-meets-soul vocals are like nothing else on a Sunday night in SF. Tickets $25-$28, all ages, doors at 7."
+          },
+          {
+            "time": "8:00 PM",
+            "title": "Divine Offering: Alice Coltrane Tribute at GAMH",
+            "detail": "If you can only pick one, make it this - Sita Michelle Coltrane honoring her mother's spiritual jazz legacy is the most meaningful 90 minutes you can spend this week. $39.50-$45."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$120 - $160",
-        "title": "Glow Night at the Exploratorium",
-        "tagline": "A sensory evening built for curiosity and wonder.",
+        "est": "$120-$180",
+        "title": "The Art and Sound Tour",
+        "tagline": "Fill up your senses before Thanksgiving",
         "steps": [
           {
-            "time": "5:30pm",
-            "title": "Dinner at Rize Up Cafe",
-            "detail": "Head to SoMa for a early dinner at Rize Up Cafe. The cheddar and kimchi grilled cheese on that legendary sourdough is a perfect pre-event meal. Quick, delicious, and very SF."
+            "time": "10:00 AM",
+            "title": "SFMOMA - Full Visit",
+            "detail": "Start with the free Sarah Sze installation on the ground floor, then pay for admission and dive into RM x SFMOMA. Budget two to three hours - this is a serious museum visit day."
           },
           {
-            "time": "6pm",
-            "title": "Exploratorium After Dark - Glow Opening Night",
-            "detail": "This is opening night of the Glow installation, 21 plus, running 6 to 10pm. Luminous artworks, optical illusions, and the full Exploratorium experience for adults. Buy tickets in advance - they sell out."
+            "time": "1:00 PM",
+            "title": "Lunch at Lucania - Ferry Building",
+            "detail": "Walk over to the brand-new Southern Italian opening at the Ferry Building and eat outside on their piazza-inspired patio. Opening-week menus always have extra energy."
           },
           {
-            "time": "9:30pm",
-            "title": "THROTTLE - DJ Stingray at 1015 Folsom",
-            "detail": "Walk or cab from the Exploratorium to 1015 Folsom. Detroit legend DJ Stingray goes until 2am and tickets are $15 to $25. The ideal way to extend a great evening into a genuinely legendary night."
+            "time": "3:00 PM",
+            "title": "Exploratorium After Dark: Glow Opening",
+            "detail": "The Glow daytime weekend events run Saturday and Sunday 11am-4pm - luminescent creatures, light art, and bioluminescent wonders at Pier 15. Perfectly timed after lunch."
+          },
+          {
+            "time": "8:00 PM",
+            "title": "Mountain Goats Night Six: Closers at The Fillmore",
+            "detail": "Cap the day with the grand finale of one of SF's most ambitious concert residencies. Treat yourself to a poster from the lobby. This is what Saturdays in this city are for."
           }
         ]
       }
@@ -745,72 +793,72 @@
       {
         "tier": "free",
         "badge": "The Free One",
-        "est": "$0 for the group",
-        "title": "Golden Gate Park Birthday Hang",
-        "tagline": "Your birthday, the park, and free music. Classic.",
+        "est": "$0-$20",
+        "title": "Birthday in the Park",
+        "tagline": "No cover, all heart",
         "steps": [
           {
-            "time": "10am",
-            "title": "Tribute to Legends Concert",
-            "detail": "Tell everyone to meet at the Golden Gate Bandshell with blankets and snacks. Four hours of free live music is the most chill birthday morning you can organize with zero effort."
+            "time": "10:00 AM",
+            "title": "SF SPCA Holiday Windows at Macy's",
+            "detail": "Start the birthday with puppies and kittens at Macy's Union Square - completely free and immediately joyful. The birthday person gets bragging rights for the best morning activity."
           },
           {
-            "time": "2pm",
-            "title": "Park Picnic",
-            "detail": "After the concert, find a good spot in the park and stretch the afternoon out. Someone brings a cake. Everyone brings something. This is the move."
+            "time": "12:00 PM",
+            "title": "de Young - Free Saturday Admission for Bay Area Residents",
+            "detail": "Walk through Treasures of the Pharaohs or Rooted in Place for free on Saturday - a world-class museum birthday without spending a dime on admission."
           },
           {
-            "time": "4:30pm",
-            "title": "Crucial Reggae Sunday to close",
-            "detail": "End the afternoon back at the Bandshell for Crucial Reggae Sunday, free until 7:30pm. The birthday crew winds down with great music and no bill to split. Perfection."
+            "time": "5:00 PM",
+            "title": "Lightscape Opening at SF Botanical Garden",
+            "detail": "Lightscape opens Friday Nov 20 and runs nightly from 5pm - split the ticket cost among the group ($32/adult) and walk through one million lights together on the birthday evening."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$60 - $90 per person",
-        "title": "Mission Night Out for the Birthday Crew",
-        "tagline": "Dinner, dancing, and the best neighborhood in the city.",
+        "est": "$100-$150/person",
+        "title": "EMO NITE Birthday Bash",
+        "tagline": "The only birthday theme that matters",
         "steps": [
           {
-            "time": "6pm",
-            "title": "Dinner at Chicano Nuevo",
-            "detail": "Six courses of masa worship in the Mission at $95 per person with the tamale add-on. Reserve well in advance. This is a tasting menu experience that will anchor the whole evening as a genuine memory."
+            "time": "6:30 PM",
+            "title": "Pre-game dinner at Bar Coto - Jackson Square",
+            "detail": "Gather the crew at the Tusks' walk-in Italian cafe for aperitivo, wine, and housemade bread sandwiches before the main event. No reservations needed - perfect for a group."
           },
           {
-            "time": "9pm",
-            "title": "Drinks at Bar Part Time",
-            "detail": "The Mission's natural wine bar and late-night dance haven is right in the neighborhood. Great wine, low pretension, and a crowd that actually knows how to have fun. Birthday energy is very welcome here."
+            "time": "9:00 PM",
+            "title": "EMO NITE at Rickshaw Stop",
+            "detail": "Throw the birthday person into a room full of Fall Out Boy and My Chemical Romance anthems - the Rickshaw Stop floor is small enough that the whole group stays together and dances all night."
           },
           {
-            "time": "11pm",
-            "title": "Dance at Halcyon or 1015",
-            "detail": "Either Deborah De Luca at Halcyon Saturday or Eli and Fur at 1015 on Friday. Pick your night, pick your room, and dance until you have no choice but to go home."
+            "time": "11:00 PM",
+            "title": "Late drinks at Dalva",
+            "detail": "After EMO NITE winds down, migrate to the Mission's beloved Dalva for a proper late-night cocktail round. The birthday person picks the drink, everyone else toasts them."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$150 - $200 per person",
-        "title": "Jorja Smith Birthday Night",
-        "tagline": "Make it a night nobody forgets.",
+        "est": "$200-$300/person",
+        "title": "Julius' Castle Birthday Comeback",
+        "tagline": "Celebrate at the room that just came back from the dead",
         "steps": [
           {
-            "time": "6pm",
-            "title": "Pre-show Dinner at Fat Cat and The Mantis",
-            "detail": "2026's most fun dinner spot in Bernal Heights for the crew - natural wine, creative food, the kind of lively room that is already a party before the party starts."
+            "time": "5:00 PM",
+            "title": "Lightscape at SF Botanical Garden - Golden Hour Entry",
+            "detail": "Start early with the 5pm Lightscape entry - walking through a million lights in the botanical garden as a group sets the perfect tone for a birthday night."
           },
           {
-            "time": "8pm",
-            "title": "Jorja Smith at the Castro Theatre",
-            "detail": "Monday November 16. Book the tickets now, gather your people, and walk into one of the most beautiful venues in America to hear one of the best voices in music. Birthday show of the year."
+            "time": "7:30 PM",
+            "title": "Dinner at Julius' Castle - North Beach",
+            "detail": "Book the whole table at the legendary hilltop restaurant just reopened after 18 years. Panoramic Bay views, old-school American menu, and the story of the comeback is itself the dinner conversation."
           },
           {
-            "time": "10:30pm",
-            "title": "After drinks in the Castro",
-            "detail": "The Castro neighborhood has great late-night bar options right outside the Theatre. Extend the evening in one of SF's most iconic neighborhoods. The birthday person should not pay for a single drink."
+            "time": "10:00 PM",
+            "title": "Mountain Goats Finale or DEATHPACT",
+            "detail": "Split the group by vibe: emotional indie rock royalty at the Fillmore (Mountain Goats Night Six) or immersive underground techno at Public Works (DEATHPACT). Both are selling out - book ahead."
           }
         ]
       }
@@ -820,71 +868,71 @@
         "tier": "free",
         "badge": "The Free One",
         "est": "$0",
-        "title": "Diwali Night Market and Bandshell",
-        "tagline": "A full free Friday evening that actually impresses the crew.",
+        "title": "Friendsgiving Warm-Up",
+        "tagline": "Turkey Trot, parade, and no money spent",
         "steps": [
           {
-            "time": "4:30pm",
-            "title": "Golden Gate Bandshell Friday Happy Hour",
-            "detail": "Meet at the Bandshell in Golden Gate Park for the free Happy Hour series running 4:30 to 7:30 PM. Bring drinks in a bag if that is your style. No tickets, no cover."
+            "time": "8:00 AM",
+            "title": "SF Turkey Trot - Golden Gate Park",
+            "detail": "Get the whole crew out for the Turkey Trot on Thanksgiving morning - 5 miles, 3 miles, or kids dash. Communal suffering before communal eating is a time-honored tradition."
           },
           {
-            "time": "7pm",
-            "title": "Head to Yerba Buena for Diwali Night Market",
-            "detail": "The Bhangra and Beats Diwali Night Market runs until 9pm at Yerba Buena Gardens. Eat street food, watch performers, and wander around with no agenda. A free, festive group hang."
+            "time": "9:30 AM",
+            "title": "SF SPCA Holiday Windows at Macy's - Walk Over",
+            "detail": "Post-run, grab coffee and walk to Macy's Union Square to see the puppies and kittens. Free, festive, and everyone's heart grows three sizes."
           },
           {
-            "time": "9pm",
-            "title": "Decide what comes next",
-            "detail": "The night is young and you have spent nothing. Underground SF is a few blocks away with a $0 door situation earlier in the evening, or just find a bar in SoMa. The crew energy takes it from here."
+            "time": "11:00 AM",
+            "title": "Line Up for Valkyries Championship Parade",
+            "detail": "Head to the Embarcadero, find the best spot, and cheer your lungs out for the Golden State Valkyries. Free, historic, and the ultimate Thanksgiving morning flex."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$50 - $75 per person",
-        "title": "VegFest Saturday then Nora En Pure",
-        "tagline": "A full Saturday of food and music that works for every kind of friend.",
+        "est": "$60-$80/person",
+        "title": "Great Dickens Christmas Fair Crew Day",
+        "tagline": "Victorian chaos with your best people",
         "steps": [
           {
-            "time": "11am",
-            "title": "SF VegFest 2026",
-            "detail": "The 27th annual VegFest at the SMC Event Center is $18 and runs 11am to 5pm. Speakers, chefs, samples, and a lot of fun even if nobody in the group is fully vegan. Bring your appetite."
+            "time": "12:00 PM",
+            "title": "Great Dickens Christmas Fair - Cow Palace",
+            "detail": "Get to the Cow Palace for opening weekend of the 42nd Annual Dickens Fair - 140,000 square feet of Victorian London, pubs, music halls, and costumed characters. Budget 3-4 hours minimum."
           },
           {
-            "time": "1pm",
-            "title": "Lunch inside VegFest",
-            "detail": "Eat your way through the vendor stalls. This is the main event inside the main event. Budget $15 to $25 for food and you will eat very well."
+            "time": "4:00 PM",
+            "title": "Post-Fair drinks at a SoMa bar",
+            "detail": "Decompress from Victorian London with a round at 1015 Folsom's bar or Public Works pre-show - decompress, laugh about your favorite Dickens character encounters, and plan the evening."
           },
           {
-            "time": "2pm",
-            "title": "Nora En Pure Day Party at Audio Nightclub",
-            "detail": "The progressive house day party runs 2 to 7 PM at Audio with tickets from $55. The timing is perfect for a group that just came from VegFest and wants to transition into full Saturday mode."
+            "time": "8:00 PM",
+            "title": "Mountain Goats Night Five or Six at The Fillmore",
+            "detail": "End the day with a legendary show - the Mountain Goats Fillmore residency is the perfect Friday or Saturday night with a group of music lovers. Buy tickets in advance."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$100 - $150 per person",
-        "title": "Dear San Francisco Opening Week",
-        "tagline": "An immersive circus night the whole group will talk about for months.",
+        "est": "$150-$200/person",
+        "title": "The Thanksgiving Week Blowout",
+        "tagline": "Acrobats, jazz, and a 27-foot painting walk into a bar",
         "steps": [
           {
-            "time": "6pm",
-            "title": "Pre-show drinks at Bar Antoine Lounge",
-            "detail": "Meet at the new Galleria Park Hotel mezzanine bar for French cocktails and the Dim Saumon bites before heading across town. It is a stylish pre-show ritual."
+            "time": "2:00 PM",
+            "title": "SFMOMA - Sarah Sze Opening + RM Collection",
+            "detail": "Start with the free Sze installation then pay for the full museum - the RM x SFMOMA Korean art collection is extraordinary and spending a few hours here together before a big night sets the right tone."
           },
           {
-            "time": "7:30pm",
-            "title": "Dinner at Ah Ma's Kitchen on Clement",
-            "detail": "Head to the Richmond for Cantonese-inspired dishes at Yelp's No. 16 Best New Restaurant of 2026. Family-style dishes are made for groups and the whole Clement Street corridor is festive right now."
+            "time": "6:00 PM",
+            "title": "Dinner at Fat Cat and The Mantis - Bernal Heights",
+            "detail": "2026's most fun dinner spot per The Infatuation - natural wine, tagliatelle with mushroom nuoc cham, and Bernal Heights neighborhood energy. Book ahead for a group."
           },
           {
-            "time": "9pm",
-            "title": "Dear San Francisco - Home for the Holidays at Club Fugazi",
-            "detail": "Opening week of the holiday edition of this acclaimed immersive circus show at 678 Green St in North Beach. Tickets from $86.90. Acrobatics, aerial work, music, and storytelling - a full experience that works for every type in the group."
+            "time": "7:30 PM",
+            "title": "Dear SF: Home for the Holidays at Club Fugazi",
+            "detail": "Walk or Lyft to North Beach for the holiday circus show - world-class acrobats in an intimate venue is genuinely the best group activity in the city this week. Everyone leaves grinning."
           }
         ]
       }
@@ -893,72 +941,77 @@
       {
         "tier": "free",
         "badge": "The Free One",
-        "est": "$0",
-        "title": "Saturday in the Park with the Folks",
-        "tagline": "A morning of free live music and Golden Gate Park at its best.",
+        "est": "$0-$25",
+        "title": "Holiday Magic on Zero Budget",
+        "tagline": "Show the parents the SF that locals actually love",
         "steps": [
           {
-            "time": "10am",
-            "title": "Tribute to Legends Concert",
-            "detail": "The Golden Gate Bandshell free concert runs 10am to 2pm on Saturday. Blankets, coffee from a nearby cafe, and four hours of live music celebrating musical legends. Zero effort, maximum enjoyment for every generation."
+            "time": "10:00 AM",
+            "title": "SF SPCA Holiday Windows at Macy's - Union Square",
+            "detail": "Start downtown at the Macy's windows - 40 years of adorable adoptable animals is an icebreaker for any family visit and the Union Square holiday atmosphere is properly festive."
           },
           {
-            "time": "12pm",
-            "title": "Lunch on Irving or 9th Avenue",
-            "detail": "Walk a few blocks from the park to the Inner Sunset for lunch. Lots of relaxed, affordable options with minimal wait and a neighborhood feel that tends to be a hit with visiting parents."
+            "time": "12:00 PM",
+            "title": "Walk the Ferry Building + Lunch at Lucania",
+            "detail": "Walk the Embarcadero to the Ferry Building and grab lunch at the brand-new Lucania - Southern Italian all-day menu on the renovated patio with Bay views. Opening week makes it a fun story to share."
           },
           {
-            "time": "2pm",
-            "title": "de Young Museum - Treasures of the Pharaohs",
-            "detail": "Walk back into the park to the de Young. Bay Area residents get free general admission on Saturdays with a Bay Area ID, so only the Pharaohs special exhibition requires a ticket. A museum this good is a gift."
+            "time": "3:00 PM",
+            "title": "de Young Museum - Free Saturday for Bay Area Residents",
+            "detail": "Free general admission on Saturdays for Bay Area residents - take your parents through Treasures of the Pharaohs and let them marvel at 3,000 years of Egyptian history."
           }
         ]
       },
       {
         "tier": "$$",
         "badge": "The Sweet Spot",
-        "est": "$60 - $90 per person",
-        "title": "Allison Russell and a Fillmore Night",
-        "tagline": "Take your parents to the Fillmore. It never fails.",
+        "est": "$80-$120/person",
+        "title": "Tim Burton and Italian Wine",
+        "tagline": "A Thanksgiving week date night for the whole family",
         "steps": [
           {
-            "time": "11am",
-            "title": "Asian Art Museum - Vishnu's Cosmic Ocean",
-            "detail": "A once-in-a-lifetime ancient bronze from Southeast Asia at Civic Center is a genuinely awe-inspiring way to start the day with parents who appreciate culture. The Ha Chong-Hyun retrospective is also on view."
+            "time": "5:30 PM",
+            "title": "Dinner at Bar Coto - Jackson Square",
+            "detail": "Pre-show dinner at the Tusks' all-day Italian cafe - no reservations, great wine, housemade bread, and the kind of relaxed neighborhood warmth that works perfectly with out-of-town guests."
           },
           {
-            "time": "1pm",
-            "title": "Lunch at Rose Pizzeria in the Richmond",
-            "detail": "One of SF's most beloved new openings, with a relaxed atmosphere and 10/10 sourdough pizza. The house wine at $13 a glass makes this a very easy lunch to sell to any parent."
+            "time": "7:00 PM",
+            "title": "Walk Through Jackson Square",
+            "detail": "Jackson Square is one of SF's most beautiful and underrated neighborhoods - take a slow stroll through the historic blocks before heading to Davies Symphony Hall."
           },
           {
-            "time": "8pm",
-            "title": "Allison Russell at the Fillmore",
-            "detail": "A Juno Award-winning folk and gospel songwriter at one of the most famous music venues in America. The Fillmore experience - the posters, the room, the balcony - impresses parents every single time. Saturday November 14."
+            "time": "7:30 PM",
+            "title": "Nightmare Before Christmas with Live Orchestra at Davies",
+            "detail": "The holiday tradition that works for literally every generation - Tim Burton's film with a live orchestra playing Elfman's score at Davies Symphony Hall on Tuesday Nov 24. Book tickets early."
           }
         ]
       },
       {
         "tier": "$$$",
         "badge": "The Splurge",
-        "est": "$150 - $200 per person",
-        "title": "John Proctor, Dinner, and the Castro",
-        "tagline": "Theater, great food, and a neighborhood walk that shows off the city.",
+        "est": "$200-$280/person",
+        "title": "The Grand SF Thanksgiving Tour",
+        "tagline": "Show them why you live here",
         "steps": [
           {
-            "time": "11am",
-            "title": "SFMOMA - RM x SFMOMA and Graciela Iturbide",
-            "detail": "Start the day at SFMOMA with two incredible shows - the RM Korean modernist collection and five decades of Graciela Iturbide photography. Jacob Hashimoto's Giant Arc installation on the first floor is free."
+            "time": "10:00 AM",
+            "title": "Asian Art Museum - Vishnu's Cosmic Ocean",
+            "detail": "Start with the once-in-a-lifetime ancient bronze from Southeast Asia at the Asian Art Museum - this kind of object stops you in your tracks and sparks real conversation."
           },
           {
-            "time": "1pm",
-            "title": "Lunch near Union Square",
-            "detail": "Bar Antoine Lounge in the Galleria Park Hotel is a stylish and interesting lunch option with French-leaning bites and cocktails, right in the Union Square area. Parents tend to love a good hotel bar lunch."
+            "time": "1:00 PM",
+            "title": "Lunch at Julius' Castle - North Beach",
+            "detail": "Take your parents to the legendary hilltop restaurant that just reopened after 18 years - panoramic Bay views, steak tartare, and crab cakes. The comeback story alone makes for great table conversation."
           },
           {
-            "time": "7:30pm",
-            "title": "John Proctor Is the Villain at ACT",
-            "detail": "The West Coast premiere of this critically acclaimed show runs through December 6 at the Toni Rembe Theater. Tickets from $35 and the production quality is at the highest level. A genuinely memorable evening of theater."
+            "time": "5:00 PM",
+            "title": "Lightscape at SF Botanical Garden",
+            "detail": "The most beautiful thing in the city this week - walk through a million lights in Golden Gate Park together as the sun goes down. Timed entry from 5pm, tickets from $32 adults."
+          },
+          {
+            "time": "7:30 PM",
+            "title": "Dear SF: Home for the Holidays at Club Fugazi",
+            "detail": "Cap the visit with the holiday circus show in North Beach - intimate, funny, breathtaking, and entirely family-friendly. World-class acrobats in a small room is universally crowd-pleasing."
           }
         ]
       }
